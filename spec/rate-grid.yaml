@@ -1,0 +1,30 @@
+# Pre-declared variants, written 2026-10-24 (UTC; armed_forces + threshold_dollars added the same day) BEFORE any national ACS data was loaded.
+# Rule: run every combination, record every result in the build log, and pick the variant
+# that matches the benchmark. Nothing is added to this list after results are seen without
+# a dated entry in exception-ledger.md saying why.
+
+nyfed_wages:
+  weeks: [">= 40", "> 40"]
+  armed_forces: [included, excluded]       # ESR 4-5 in "employed"; NY Fed "full-time workers" may be civilian only
+  threshold_dollars: [nominal, adjinc]     # $5,500 basis UNCERTAIN (benchmarks.yaml)
+  median: [lower_weighted, interpolated]
+  major_field: [first, either]
+
+nyfed_rates:
+  # enrolled is NOT a variant: the NY Fed notes say all figures exclude the enrolled.
+  major_field: [first, either]
+  armed_forces: [excluded, included]       # ESR 4-5 in the labor force or not
+  age_basis: [AGEP]                        # single option; listed so a change must be logged
+  unemployment_denominator: [civilian_labor_force, labor_force]
+  graduate_share_population: [all, not_enrolled]   # notes say all figures exclude enrolled; test both
+
+underemployment:
+  onet_release: [TO LIST before step 6 from the O*NET archive, before any run]
+  occupation_link: [SOCP_to_ONET_SOC_6digit, SOCP_to_ONET_SOC_8digit_mean]
+
+hc_tables:
+  weeks: ["> 40", ">= 40"]
+  armed_forces: [included, excluded]
+  dollars: [cpi_u_ratio_to_2022, adjinc_times_cpi_ratio, ipums_cpi99]
+  threshold_basis: [nominal, 2022_dollars]
+  include_2020_experimental: [yes, no]     # Tables 1-2 only

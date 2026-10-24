@@ -1,0 +1,71 @@
+# Benchmark specification for the done checks.
+# Written 2026-10-24 (UTC), BEFORE any national ACS data was loaded.
+# Paper-first ruling (instructor, 2026-10-23): rules come from the published text;
+# the OpenICPSR 241262 code is a fallback if a table misses after the variants below.
+# Where a rule is not settled, it is a variant (see rate-grid.yaml), never a silent choice.
+#
+# Sources (frozen copies + sha256 in raw/benchmarks/PROVENANCE.csv):
+#   NYF24  NY Fed by-major CSV, release Feb 4, 2026, ACS 2024 (IPUMS); chart-meta.json notes
+#   NYF22  NY Fed by-major CSV, Wayback 2024-05-07 (only CSV capture; HC fn. 9 cites the
+#          2024-04-04 page). Its meta (same capture): released Feb 22, 2024, "Figures are for 2022" (VERIFIED).
+#   HC     Holian and Chiu (2026), J. Econ. Educ. 57(3): 326-334 (Zotero XYRAITJR), page cited
+
+common:
+  population: persons in the 50 states + DC (Puerto Rico file not used)        # UNCERTAIN; NY Fed silent
+  major: first field of degree (FOD1P) mapped by spec/major73.csv              # variant: either field
+  overall_row: computed from all eligible people, once each (never an average of majors)
+  weights: PWGTP; standard errors from PWGTP1-80 (SDR, 4/80)
+  weighted_median: lower weighted median (first value where cumulative weight >= 50%)  # variant: interpolated
+  enrolled: excluded (SCH == 1 is "not enrolled")   # NYF24 notes: "All figures exclude those currently enrolled"
+
+nyfed_wages:                       # done check 1, the only NY Fed measure HC's code covered (HC p. 329)
+  source: NYF24 (and NYF22 on the 2022 file)
+  ages: {early: [22, 27], mid: [35, 45]}
+  degree: bachelor's only (SCHL == 21)
+  employed: ESR in [1, 2, 4, 5]
+  hours: WKHP >= 35                                  # HC p. 327 "at least 35 hours"
+  weeks: ">= 40 (WKWN >= 40)"                        # HC p. 327 text; table notes say "more than 40" -> variant
+  income: WAGP (wage income only)                    # HC p. 329, fn. 10: Abel-Deitz use INCWAGE
+  threshold: WAGP >= 5500                            # HC fn. 10 "at least $5500 in wage income"
+  dollars: raw WAGP, no ADJINC                       # hypothesis: published medians are round; test first
+  statistic: weighted median
+
+nyfed_rates:                       # calibration, not replication: no published code (see rate-grid.yaml)
+  unemployment: {ages: [22, 27], degree: "SCHL >= 21", stat: "unemployed (ESR 3) / labor force (ESR 1-5)"}
+  underemployment:
+    ages: [22, 27]
+    degree: "SCHL >= 21"
+    stat: share of employed in non-college jobs
+    rule: "a job is a college job if >= 50% of its workers say a bachelor's or more is necessary (NYF24 meta)"
+    onet: archived release, chosen from a pre-listed set and frozen   # UNCERTAIN which release
+  graduate_share: {ages: [25, 65], stat: "SCHL 22-24 among SCHL >= 21"}
+
+hc_tables_1_2:                     # done check 2
+  source: HC Tables 1-2 (raw/benchmarks/hc-2026/table{1,2}.csv)
+  years: 2018-2023 single-year files, pooled (HC p. 327; table notes)   # includes the 2020 experimental file? UNCERTAIN
+  major: Economics (FOD1P 5501, 6205, 1102)
+  ages: [35, 45]
+  degree: SCHL == 21
+  enrolled: excluded
+  employed: ESR in [1, 2, 4, 5]
+  hours: WKHP >= 35
+  weeks: "> 40 per table notes; >= 40 per text"      # variant
+  income: PERNP (earned = wage + self-employment)    # HC p. 327 "earned income"; INCEARN
+  threshold: PERNP >= 5500                           # dollar basis of the threshold UNCERTAIN
+  dollars: 2022 dollars via CPI (HC p. 328)          # exact rule UNCERTAIN; see exception ledger E4
+  occupation: OCCP as coded in each survey year (HC p. 327)
+  industry: INDP as coded, grouped to sectors        # INDP code set changes in 2023
+  shares: unweighted (table notes); medians: weighted
+  tolerance: {frequency: exact, share: "+-0.05 pt", median: ">=90% exact, all within 1%"}
+
+hc_table_3:
+  source: HC Table 3 (raw/benchmarks/hc-2026/table3.csv), 73 majors, N = 224,415
+  years: 2021-2023 single-year files, pooled (HC p. 329)
+  sample: as hc_tables_1_2, all majors
+  self_employment: "COW in [6, 7]"                   # definition UNCERTAIN; weighting UNCERTAIN
+  tolerance: {frequency: exact, share: "+-0.05 pt", self_employment: "+-0.1 pt", median: ">=90% exact, all within 1%"}
+
+tolerances_nyfed:                  # data-plan D1 (two tiers)
+  wages: {overall: exact, majors: "every miss <= 2% and reconciled; target >= 70 of 73 exact"}
+  unemployment_grad_share: {overall: "+-0.01 pt", majors: "+-0.05 pt", escalate: "> +-0.25 pt after the full grid"}
+  underemployment: {overall: "+-0.2 pt", majors: "+-0.5 pt"}

@@ -1,0 +1,227 @@
+{
+ "source": "raw/acs1-2024/csv_pfl.zip",
+ "unemployment_22_27_ba_plus": {
+  "n": 2701,
+  "pct": 3.928019094785586,
+  "se_pct": 0.43829937094619964
+ },
+ "verification": {
+  "Age 0-4": {
+   "census_est": 1144573.0,
+   "census_se": 3478.0,
+   "est": 1144573.0,
+   "se": 3478.463647934243
+  },
+  "Age 20-24": {
+   "census_est": 1357745.0,
+   "census_se": 7215.0,
+   "est": 1357745.0,
+   "se": 7215.399185076319
+  },
+  "Age 25-34": {
+   "census_est": 2918521.0,
+   "census_se": 8878.0,
+   "est": 2918521.0,
+   "se": 8878.144254290984
+  },
+  "Age 35-44": {
+   "census_est": 3072960.0,
+   "census_se": 6552.0,
+   "est": 3072960.0,
+   "se": 6552.312896985309
+  },
+  "Age 45-54": {
+   "census_est": 2833868.0,
+   "census_se": 7048.0,
+   "est": 2833868.0,
+   "se": 7047.841708636765
+  },
+  "Age 85 and over": {
+   "census_est": 569224.0,
+   "census_se": 8470.0,
+   "est": 569224.0,
+   "se": 8469.989442142181
+  },
+  "GQ institutional population (RELSHIPP=37)": {
+   "census_est": 260948.0,
+   "census_se": 16.0,
+   "est": 260948.0,
+   "se": 16.337074401495514
+  },
+  "Total females (SEX=2)": {
+   "census_est": 11879449.0,
+   "census_se": 6909.0,
+   "est": 11879449.0,
+   "se": 6908.569363478954
+  },
+  "Total males (SEX=1)": {
+   "census_est": 11492766.0,
+   "census_se": 6909.0,
+   "est": 11492766.0,
+   "se": 6908.569363478954
+  },
+  "Total population": {
+   "census_est": 23372215.0,
+   "census_se": 0.0,
+   "est": 23372215.0,
+   "se": 0.0
+  }
+ },
+ "wages": {
+  "early 22-27": {
+   "Economics": {
+    "median_interp_adjinc": {
+     "est": 60915.0,
+     "se": 12120.251844341517
+    },
+    "median_interp_raw": {
+     "est": 60000.0,
+     "se": 11938.19438004582
+    },
+    "median_lower_adjinc": {
+     "est": 60915.0,
+     "se": 12751.394501558447
+    },
+    "median_lower_raw": {
+     "est": 60000.0,
+     "se": 12559.85668708047
+    },
+    "n": 38
+   },
+   "Overall": {
+    "median_interp_adjinc": {
+     "est": 51153.37125000002,
+     "se": 1315.822251756996
+    },
+    "median_interp_raw": {
+     "est": 50385.000000000015,
+     "se": 1296.057376761387
+    },
+    "median_lower_adjinc": {
+     "est": 50762.5,
+     "se": 1728.9084508006779
+    },
+    "median_lower_raw": {
+     "est": 50000.0,
+     "se": 1702.93863659264
+    },
+    "n": 1647
+   },
+   "filter_flow": [
+    [
+     "ages early 22-27",
+     12702,
+     1654478.0
+    ],
+    [
+     "bachelor's only (SCHL 21)",
+     3376,
+     422180.0
+    ],
+    [
+     "not enrolled (SCH 1)",
+     2402,
+     304095.0
+    ],
+    [
+     "employed (ESR 1,2,4,5)",
+     2142,
+     269847.0
+    ],
+    [
+     "hours >= 35",
+     1845,
+     234136.0
+    ],
+    [
+     "weeks >= 40",
+     1681,
+     211468.0
+    ],
+    [
+     "wage income >= 5,500",
+     1647,
+     207429.0
+    ]
+   ]
+  },
+  "mid 35-45": {
+   "Economics": {
+    "median_interp_adjinc": {
+     "est": 85070.03896103894,
+     "se": 17611.678869152154
+    },
+    "median_interp_raw": {
+     "est": 83792.20779220777,
+     "se": 17347.135059494856
+    },
+    "median_lower_adjinc": {
+     "est": 86296.25,
+     "se": 17689.839060178023
+    },
+    "median_lower_raw": {
+     "est": 85000.0,
+     "se": 17424.121211699603
+    },
+    "n": 75
+   },
+   "Overall": {
+    "median_interp_adjinc": {
+     "est": 71067.5,
+     "se": 2088.6476794473147
+    },
+    "median_interp_raw": {
+     "est": 70000.0,
+     "se": 2057.274247177852
+    },
+    "median_lower_adjinc": {
+     "est": 71067.5,
+     "se": 2080.6433530280965
+    },
+    "median_lower_raw": {
+     "est": 70000.0,
+     "se": 2049.3901531919196
+    },
+    "n": 4495
+   },
+   "filter_flow": [
+    [
+     "ages mid 35-45",
+     26508,
+     3343852.0
+    ],
+    [
+     "bachelor's only (SCHL 21)",
+     6688,
+     818132.0
+    ],
+    [
+     "not enrolled (SCH 1)",
+     6336,
+     774489.0
+    ],
+    [
+     "employed (ESR 1,2,4,5)",
+     5455,
+     672075.0
+    ],
+    [
+     "hours >= 35",
+     4858,
+     599241.0
+    ],
+    [
+     "weeks >= 40",
+     4687,
+     574889.0
+    ],
+    [
+     "wage income >= 5,500",
+     4495,
+     548812.0
+    ]
+   ]
+  }
+ },
+ "zip_sha256": "68fa14696f111763f502ae084bec7fc3d9da6ae7e70a65aa1b5a875529655f59"
+}

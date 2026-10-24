@@ -1,0 +1,176 @@
+fod1p,census_label,nyfed_major,basis,years_present,note
+1100,General Agriculture,Agriculture,name,2018-2024,
+1101,Agriculture Production And Management,Agriculture,name,2018-2024,
+1102,Agricultural Economics,Economics,paper,2018-2024,HC p. 327: agricultural economics is in economics
+1103,Animal Sciences,Animal and Plant Sciences,name,2018-2024,
+1104,Food Science,Agriculture,judgment,2018-2024,food science: Agriculture or Nutrition Sciences
+1105,Plant Science And Agronomy,Animal and Plant Sciences,name,2018-2024,
+1106,Soil Science,Animal and Plant Sciences,judgment,2018-2024,soil science (code new in 2023)
+1107,Veterinary Medicine,Animal and Plant Sciences,judgment,2023-2024,veterinary medicine (code new in 2023)
+1199,Miscellaneous Agriculture,Agriculture,name,2018-2024,
+1301,Environmental Science,Environmental Studies,name,2018-2024,
+1302,Forestry,Environmental Studies,judgment,2018-2024,forestry
+1303,Natural Resources Management,Environmental Studies,judgment,2018-2024,natural resources management
+1401,Architecture,Architecture,name,2018-2024,
+1501,Area Ethnic And Civilization Studies,Ethnic Studies,name,2018-2024,
+1901,Communications,Communications,name,2018-2024,
+1902,Journalism,Journalism,name,2018-2024,
+1903,Mass Media,Mass Media,name,2018-2024,
+1904,Advertising And Public Relations,Advertising and Public Relations,name,2018-2024,
+2001,Communication Technologies,Communications,judgment,2018-2024,communication technologies
+2100,Computer And Information Systems,Information Systems & Management,judgment,2018-2024,computer and information systems
+2101,Computer Programming And Data Processing,Information Systems & Management,judgment,2018-2024,computer programming and data processing
+2102,Computer Science,Computer Science,name,2018-2024,
+2105,Information Sciences,Information Systems & Management,judgment,2018-2024,information sciences
+2106,Computer Administration Management And Security,Information Systems & Management,judgment,2018-2024,"computer administration, management, security"
+2107,Computer Networking And Telecommunications,Information Systems & Management,judgment,2018-2024,computer networking
+2201,Cosmetology Services And Culinary Arts,Leisure and Hospitality,judgment,2018-2024,cosmetology services and culinary arts
+2300,General Education,General Education,name,2018-2024,
+2301,Educational Administration And Supervision,General Education,judgment,2018-2024,educational administration
+2303,School Student Counseling,General Education,judgment,2018-2024,school student counseling
+2304,Elementary Education,Elementary Education,name,2018-2024,
+2305,Mathematics Teacher Education,Secondary Education,judgment,2018-2024,mathematics teacher education
+2306,Physical And Health Education Teaching,Miscellaneous Education,judgment,2018-2024,physical and health education teaching
+2307,Early Childhood Education,Early Childhood Education,name,2018-2024,
+2308,Science And Computer Teacher Education,Secondary Education,judgment,2018-2024,science and computer teacher education
+2309,Secondary Teacher Education,Secondary Education,name,2018-2024,
+2310,Special Needs Education,Special Education,name,2018-2024,
+2311,Social Science Or History Teacher Education,Secondary Education,judgment,2018-2024,social science or history teacher education
+2312,Teacher Education: Multiple Levels,General Education,judgment,2018-2024,teacher education: multiple levels
+2313,Language And Drama Education,Miscellaneous Education,judgment,2018-2024,language and drama education
+2314,Art And Music Education,Miscellaneous Education,judgment,2018-2024,art and music education
+2399,Miscellaneous Education,Miscellaneous Education,name,2018-2024,
+2400,General Engineering,General Engineering,name,2018-2024,
+2401,Aerospace Engineering,Aerospace Engineering,name,2018-2024,
+2402,Biological Engineering,Miscellaneous Engineering,judgment,2018-2024,biological engineering
+2403,Architectural Engineering,Miscellaneous Engineering,judgment,2018-2024,architectural engineering
+2404,Biomedical Engineering,Miscellaneous Engineering,judgment,2018-2024,biomedical engineering
+2405,Chemical Engineering,Chemical Engineering,name,2018-2024,
+2406,Civil Engineering,Civil Engineering,name,2018-2024,
+2407,Computer Engineering,Computer Engineering,name,2018-2024,
+2408,Electrical Engineering,Electrical Engineering,name,2018-2024,
+2409,Engineering Mechanics Physics And Science,Miscellaneous Engineering,judgment,2018-2024,"engineering mechanics, physics, science"
+2410,Environmental Engineering,Miscellaneous Engineering,judgment,2018-2024,environmental engineering
+2411,Geological And Geophysical Engineering,Miscellaneous Engineering,judgment,2018-2024,geological and geophysical engineering
+2412,Industrial And Manufacturing Engineering,Industrial Engineering,name,2018-2024,
+2413,Materials Engineering And Materials Science,Miscellaneous Engineering,judgment,2018-2024,materials engineering
+2414,Mechanical Engineering,Mechanical Engineering,name,2018-2024,
+2415,Metallurgical Engineering,Miscellaneous Engineering,judgment,2018-2024,metallurgical
+2416,Mining And Mineral Engineering,Miscellaneous Engineering,judgment,2018-2024,mining
+2417,Naval Architecture And Marine Engineering,Miscellaneous Engineering,judgment,2018-2024,naval architecture
+2418,Nuclear Engineering,Miscellaneous Engineering,judgment,2018-2024,nuclear
+2419,Petroleum Engineering,Miscellaneous Engineering,judgment,2018-2024,petroleum
+2499,Miscellaneous Engineering,Miscellaneous Engineering,name,2018-2024,
+2500,Engineering Technologies,Engineering Technologies,name,2018-2024,
+2501,Engineering And Industrial Management,Industrial Engineering,judgment,2018-2024,engineering and industrial management
+2502,Electrical Engineering Technology,Engineering Technologies,name,2018-2024,
+2503,Industrial Production Technologies,Engineering Technologies,judgment,2018-2024,industrial production tech
+2504,Mechanical Engineering Related Technologies,Engineering Technologies,name,2018-2024,
+2599,Miscellaneous Engineering Technologies,Engineering Technologies,name,2018-2024,
+2601,Linguistics And Comparative Language And Literature,Foreign Language,judgment,2018-2024,linguistics and comparative literature
+2602,French German Latin And Other Common Foreign Language Studies,Foreign Language,name,2018-2024,
+2603,Other Foreign Languages,Foreign Language,name,2018-2024,
+2901,Family And Consumer Sciences,Family and Consumer Sciences,name,2018-2024,
+3201,Court Reporting,Public Policy and Law,judgment,2018-2019,court reporting (2018-19 only)
+3202,Pre-Law And Legal Studies,Public Policy and Law,judgment,2018-2024,pre-law and legal studies
+3301,English Language And Literature,English Language,name,2018-2024,
+3302,Composition And Rhetoric,English Language,judgment,2018-2024,composition and rhetoric
+3401,Liberal Arts,Liberal Arts,name,2018-2024,
+3402,Humanities,Liberal Arts,judgment,2018-2024,humanities
+3501,Library Science,Miscellaneous Education,judgment,2018-2024,library science
+3600,Biology,Biology,name,2018-2024,
+3601,Biochemical Sciences,Biochemistry,name,2018-2024,
+3602,Botany,Biology,judgment,2018-2024,botany
+3603,Molecular Biology,Biology,judgment,2018-2024,molecular biology
+3604,Ecology,Biology,judgment,2018-2024,ecology
+3605,Genetics,Biology,judgment,2018-2024,genetics
+3606,Microbiology,Biology,judgment,2018-2024,microbiology
+3607,Pharmacology,Miscellaneous Biological Science,judgment,2018-2024,pharmacology
+3608,Physiology,Biology,judgment,2018-2024,physiology
+3609,Zoology,Biology,judgment,2018-2024,zoology
+3611,Neuroscience,Miscellaneous Biological Science,judgment,2018-2024,neuroscience
+3699,Miscellaneous Biology,Miscellaneous Biological Science,name,2018-2024,
+3700,Mathematics,Mathematics,name,2018-2024,
+3701,Applied Mathematics,Mathematics,judgment,2018-2024,applied mathematics
+3702,Statistics And Decision Science,Mathematics,judgment,2018-2024,statistics and decision science
+3801,Military Technologies,Miscellaneous Technologies,judgment,2018-2024,military technologies
+4000,Multi/Interdisciplinary Studies,Interdisciplinary Studies,name,2018-2024,
+4001,Intercultural And International Studies,International Affairs,judgment,2018-2024,intercultural and international studies
+4002,Nutrition Sciences,Nutrition Sciences,name,2018-2024,
+4005,Mathematics And Computer Science,Computer Science,judgment,2018-2024,mathematics and computer science
+4006,Cognitive Science And Biopsychology,Interdisciplinary Studies,judgment,2018-2024,cognitive science and biopsychology
+4007,Interdisciplinary Social Sciences,Interdisciplinary Studies,judgment,2018-2024,interdisciplinary social sciences
+4009,Data Science and Data Analytics,Business Analytics,judgment,2023-2024,data science and data analytics (code new in 2023)
+4101,Physical Fitness Parks Recreation And Leisure,Leisure and Hospitality,name,2018-2024,
+4801,Philosophy And Religious Studies,Philosophy,name,2018-2024,
+4901,Theology And Religious Vocations,Theology and Religion,name,2018-2024,
+5000,Physical Sciences,Miscellaneous Physical Sciences,judgment,2018-2024,"physical sciences, general"
+5001,Astronomy And Astrophysics,Physics,judgment,2018-2024,astronomy and astrophysics
+5002,Atmospheric Sciences And Meteorology,Earth Sciences,judgment,2018-2024,atmospheric sciences
+5003,Chemistry,Chemistry,name,2018-2024,
+5004,Geology And Earth Science,Earth Sciences,name,2018-2024,
+5005,Geosciences,Earth Sciences,name,2018-2024,
+5006,Oceanography,Earth Sciences,judgment,2018-2024,oceanography
+5007,Physics,Physics,name,2018-2024,
+5008,Materials Science,Miscellaneous Physical Sciences,judgment,2018-2024,materials science
+5098,Multi-Disciplinary Or General Science,Miscellaneous Physical Sciences,judgment,2018-2024,multidisciplinary or general science
+5102,"Nuclear, Industrial Radiology, And Biological Technologies",Medical Technicians,judgment,2018-2024,"nuclear, industrial radiology, biological technologies"
+5200,Psychology,Psychology,name,2018-2024,
+5201,Educational Psychology,Psychology,name,2018-2024,
+5202,Clinical Psychology,Psychology,name,2018-2024,
+5203,Counseling Psychology,Psychology,name,2018-2024,
+5205,Industrial And Organizational Psychology,Psychology,name,2018-2024,
+5206,Social Psychology,Psychology,name,2018-2024,
+5299,Miscellaneous Psychology,Psychology,name,2018-2024,
+5301,Criminal Justice And Fire Protection,Criminal Justice,name,2018-2024,
+5401,Public Administration,Public Policy and Law,judgment,2018-2024,public administration
+5402,Public Policy,Public Policy and Law,name,2018-2024,
+5403,Human Services And Community Organization,Social Services,name,2018-2024,
+5404,Social Work,Social Services,name,2018-2024,
+5500,General Social Sciences,General Social Sciences,name,2018-2024,
+5501,Economics,Economics,paper,2018-2024,HC p. 327
+5502,Anthropology And Archeology,Anthropology,name,2018-2024,
+5503,Criminology,Criminal Justice,judgment,2018-2024,criminology
+5504,Geography,Geography,name,2018-2024,
+5505,International Relations,International Affairs,name,2018-2024,
+5506,Political Science And Government,Political Science,name,2018-2024,
+5507,Sociology,Sociology,name,2018-2024,
+5599,Miscellaneous Social Sciences,General Social Sciences,judgment,2018-2024,miscellaneous social sciences
+5601,Construction Services,Construction Services,name,2018-2024,
+5701,"Electrical, Mechanical, And Precision Technologies And Production",Miscellaneous Technologies,judgment,2018-2024,"electrical, mechanical, precision technologies"
+5901,Transportation Sciences And Technologies,Miscellaneous Technologies,judgment,2018-2024,transportation sciences
+6000,Fine Arts,Fine Arts,name,2018-2024,
+6001,Drama And Theater Arts,Performing Arts,judgment,2018-2024,drama and theater
+6002,Music,Performing Arts,judgment,2018-2024,music
+6003,Visual And Performing Arts,Performing Arts,judgment,2018-2024,visual and performing arts
+6004,Commercial Art And Graphic Design,Commercial Art & Graphic Design,name,2018-2024,
+6005,Film Video And Photographic Arts,Fine Arts,judgment,2018-2024,"film, video, photographic arts"
+6006,Art History And Criticism,Art History,name,2018-2024,
+6007,Studio Arts,Fine Arts,judgment,2018-2024,studio arts
+6099,Miscellaneous Fine Arts,Fine Arts,judgment,2018-2024,miscellaneous fine arts
+6100,General Medical And Health Services,Health Services,name,2018-2024,
+6102,Communication Disorders Sciences And Services,Health Services,judgment,2018-2024,communication disorders
+6103,Health And Medical Administrative Services,Health Services,judgment,2018-2024,health and medical administrative services
+6104,Medical Assisting Services,Medical Technicians,judgment,2018-2024,medical assisting services
+6105,Medical Technologies Technicians,Medical Technicians,name,2018-2024,
+6106,Health And Medical Preparatory Programs,Health Services,judgment,2018-2024,health preparatory programs
+6107,Nursing,Nursing,name,2018-2024,
+6108,Pharmacy Pharmaceutical Sciences And Administration,Pharmacy,name,2018-2024,
+6109,Treatment Therapy Professions,Treatment Therapy,name,2018-2024,
+6110,Community And Public Health,Health Services,judgment,2018-2024,community and public health
+6199,Miscellaneous Health Medical Professions,Health Services,judgment,2018-2024,miscellaneous health professions
+6200,General Business,General Business,name,2018-2024,
+6201,Accounting,Accounting,name,2018-2024,
+6202,Actuarial Science,Finance,judgment,2018-2024,actuarial science
+6203,Business Management And Administration,Business Management,name,2018-2024,
+6204,Operations Logistics And E-Commerce,Business Management,judgment,2018-2024,"operations, logistics, e-commerce"
+6205,Business Economics,Economics,paper,2018-2024,HC p. 327: business economics is in economics
+6206,Marketing And Marketing Research,Marketing,name,2018-2024,
+6207,Finance,Finance,name,2018-2024,
+6209,Human Resources And Personnel Management,Business Management,judgment,2018-2024,human resources
+6210,International Business,International Affairs,judgment,2018-2024,international business
+6211,Hospitality Management,Leisure and Hospitality,judgment,2018-2024,hospitality management
+6212,Management Information Systems And Statistics,Business Analytics,judgment,2018-2024,management information systems and statistics; HC Table 3 shows Business Analytics before 4009 existed
+6299,Miscellaneous Business And Medical Administration,General Business,judgment,2018-2024,miscellaneous business and medical administration
+6402,History,History,name,2018-2024,
+6403,United States History,History,name,2018-2024,Winters (2016) also merges these

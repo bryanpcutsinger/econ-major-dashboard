@@ -1,0 +1,7 @@
+# Raw Census microdata: never commit or publish
+raw/
+# Build caches and scratch
+cache/
+*.parquet
+__pycache__/
+.DS_Store

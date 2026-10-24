@@ -1,0 +1,5 @@
+# Pinned for reproducibility. Pilot ran on Python 3.9.6 (macOS); the GitHub runner
+# will pin its own Python and a hashed lockfile at step 9.
+numpy==2.0.2
+pandas==2.3.3
+# External tool used by scripts/extract_hc_tables.py: pdftotext (poppler) 26.10.0
