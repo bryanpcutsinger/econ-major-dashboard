@@ -49,7 +49,8 @@ nyfed_rates:                       # calibration, not replication: no published 
     rule: "a job is a college job if >= 50% of its workers say a bachelor's or more is necessary (NYF24 meta)"
     # SOURCED: NYF24 and NYF22 underemployment notes say verbatim: "A job is classified as a college job
     #   if 50 percent or more of the people working in that job indicate that at least a bachelor's
-    #   degree is necessary." The SOC -> O*NET-SOC link and the O*NET release remain open.
+    #   degree is necessary." Link rule = ledger E25 + E26. RESULT (E27): coverage passes, calibration
+    #   fails both years -> D3 "our definition"; production = latest frozen O*NET + 8digit_mean.
     onet: archived release, chosen from a pre-listed set and frozen   # UNCERTAIN which release
   graduate_share: {ages: [25, 65], stat: "SCHL 22-24 among SCHL >= 21"}
 

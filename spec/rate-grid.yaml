@@ -19,7 +19,12 @@ nyfed_rates:
   graduate_share_population: [all, not_enrolled]   # notes say all figures exclude enrolled; test both
 
 underemployment:
-  onet_release: [TO LIST before step 6 from the O*NET archive, before any run]
+  # Listed 2026-10-24 from https://www.onetcenter.org/db_releases.html, before any O*NET download or run.
+  # Rule: for each NY Fed posting, the February release (day unknown; may postdate the posting) and the
+  # two releases before it. Feb 22, 2024 posting (ACS 2022) -> 28.0-28.2; Feb 4, 2026 posting (ACS 2024) -> 30.0-30.2.
+  onet_release:
+    nyf22: ["28.0 (Aug 2023)", "28.1 (Nov 2023)", "28.2 (Feb 2024)"]
+    nyf24: ["30.0 (Aug 2025)", "30.1 (Dec 2025)", "30.2 (Feb 2026)"]
   occupation_link: [SOCP_to_ONET_SOC_6digit, SOCP_to_ONET_SOC_8digit_mean]
 
 hc_tables:

@@ -1,0 +1,7 @@
+release,link,within_05,cells,worst_pt,overall_ours,overall_nyfed,overall_gap_pt,unmapped_civilian_pct
+30.0,8digit_mean,6,73,48.711,40.201,39.35,0.851,0.0
+30.1,8digit_mean,6,73,48.711,40.201,39.35,0.851,0.0
+30.2,8digit_mean,6,73,48.711,40.201,39.35,0.851,0.0
+30.0,6digit,4,73,48.711,41.683,39.35,2.333,0.0
+30.1,6digit,4,73,48.711,41.683,39.35,2.333,0.0
+30.2,6digit,4,73,48.711,41.683,39.35,2.333,0.0

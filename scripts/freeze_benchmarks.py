@@ -38,11 +38,21 @@ for y in [2018, 2019, 2021, 2022, 2023, 2024]:
 for v in ["ESR", "SCH", "SCHL", "COW", "WKWN", "WKHP", "WAGP", "PERNP", "SEMP", "ADJINC", "AGEP", "FOD2P", "MIL"]:
     SOURCES.append(("census-codelists", f"{v}-2024.json", CENSUS_API.format(y=2024, v=v)))
 
+# Occupation (SOC) code lists for the underemployment link (step 6).
+for y in [2022, 2024]:
+    SOURCES.append(("census-codelists", f"SOCP-{y}.json", CENSUS_API.format(y=y, v="SOCP")))
+
 # Census "PUMS estimates for user verification": official estimates + MOEs, the
 # fixture for the replicate-weight standard-error test; and the record counts.
 EST = "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/"
 for f in ["pums_estimates_24.csv", "pums_record_count_24.csv"]:
     SOURCES.append(("census-verification", f, EST + f))
+
+# O*NET database releases (text files) for underemployment: the candidates listed in
+# spec/rate-grid.yaml (underemployment.onet_release) before any download (2026-10-24).
+ONET = "https://www.onetcenter.org/dl_files/database/db_{v}_text.zip"
+for v in ["28_0", "28_1", "28_2", "30_0", "30_1", "30_2"]:
+    SOURCES.append(("onet", f"db_{v}_text.zip", ONET.format(v=v)))
 
 
 def fetch(url):
@@ -67,7 +77,11 @@ def main():
     log = OUT / "PROVENANCE.csv"
     new_log = not log.exists()
     sources = list(SOURCES)
-    wb = wayback(NYFED + "college-labor-outcomes-by-major-data.csv", "20240404203109")  # the snapshot HC fn. 9 cites
+    try:
+        wb = wayback(NYFED + "college-labor-outcomes-by-major-data.csv", "20240404203109")  # the snapshot HC fn. 9 cites
+    except Exception as e:  # e.g. HTTP 429; the snapshot may already be frozen
+        print("WARNING: Wayback lookup failed ->", e)
+        wb = None
     if wb:
         url, ts = wb
         sources.append(("nyfed-2022-wayback", f"college-labor-outcomes-by-major-data_wayback-{ts}.csv", url))
