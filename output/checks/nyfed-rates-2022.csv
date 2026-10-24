@@ -1,0 +1,13 @@
+measure,labor_force,grad_population,major_field,within_005,cells,worst_pt,overall_gap_pt
+grad_share,armed_excluded,not_enrolled,either,5,73,3.407,0.894
+grad_share,armed_excluded,all,first,5,73,5.042,0.7597
+grad_share,armed_included,not_enrolled,first,3,73,3.468,0.8782
+grad_share,armed_excluded,not_enrolled,first,3,73,3.492,0.894
+grad_share,armed_included,all,first,3,73,4.997,0.7491
+grad_share,armed_included,not_enrolled,either,2,73,3.383,0.8782
+grad_share,armed_included,all,either,1,73,5.103,0.7491
+grad_share,armed_excluded,all,either,0,73,5.152,0.7597
+unemployment,with_armed,,first,73,73,0.0,0.0001
+unemployment,civilian,,first,50,73,0.543,0.0461
+unemployment,civilian,,either,22,73,1.439,0.0461
+unemployment,with_armed,,either,15,73,1.333,0.0001

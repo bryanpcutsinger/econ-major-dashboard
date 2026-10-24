@@ -12,13 +12,20 @@
 
 common:
   population: persons in the 50 states + DC (Puerto Rico file not used)        # UNCERTAIN; NY Fed silent
-  major: first field of degree (FOD1P) mapped by spec/major73.csv              # variant: either field
+  major: first field of degree (FOD1P) mapped by spec/major73-hc.csv (was major73.csv; ledger E17)
   overall_row: computed from all eligible people, once each (never an average of majors)
   weights: PWGTP; standard errors from PWGTP1-80 (SDR, 4/80)
   weighted_median: lower weighted median (first value where cumulative weight >= 50%)  # variant: interpolated
   enrolled: excluded (SCH == 1 is "not enrolled")   # NYF24 notes: "All figures exclude those currently enrolled"
 
 nyfed_wages:                       # done check 1, the only NY Fed measure HC's code covered (HC p. 329)
+  # CONFIRMED 2026-10-24 on ACS 2024 and 2022 (output/checks/nyfed-wages-{2024,2022}.csv):
+  #   raw WAGP (no ADJINC), lower weighted median, first major only, armed forces included;
+  #   Overall exact both ages, both years. threshold_dollars is indifferent (ties every run).
+  #   NOT settled: weeks (">40" best in 2024, ">=40" best in 2022) -> ledger E1, E16.
+  # UPDATE 2026-10-24, after the OpenICPSR 241262 code (ledger E17-E21):
+  #   major map = spec/major73-hc.csv (the authors' recode); weeks = ">= 40" (code: WKSWORK2 > 3).
+  #   ACS 2022 vs NYF22: 148/148 exact (PASS). ACS 2024 vs NYF24: 115/148, worst 6.06% (ACCEPTED by instructor ruling 2026-10-24, E21).
   source: NYF24 (and NYF22 on the 2022 file)
   ages: {early: [22, 27], mid: [35, 45]}
   degree: bachelor's only (SCHL == 21)
@@ -31,12 +38,18 @@ nyfed_wages:                       # done check 1, the only NY Fed measure HC's 
   statistic: weighted median
 
 nyfed_rates:                       # calibration, not replication: no published code (see rate-grid.yaml)
+  # RESULTS 2026-10-24 (ledger E23-E24): unemployment 73/73 exact both years with the labor force
+  #   = ESR 1-5 (armed forces in) and first major; graduate share fails every variant (ours ~0.7 pt
+  #   lower) -> ruling D3, shown as "our definition".
   unemployment: {ages: [22, 27], degree: "SCHL >= 21", stat: "unemployed (ESR 3) / labor force (ESR 1-5)"}
   underemployment:
     ages: [22, 27]
     degree: "SCHL >= 21"
     stat: share of employed in non-college jobs
     rule: "a job is a college job if >= 50% of its workers say a bachelor's or more is necessary (NYF24 meta)"
+    # SOURCED: NYF24 and NYF22 underemployment notes say verbatim: "A job is classified as a college job
+    #   if 50 percent or more of the people working in that job indicate that at least a bachelor's
+    #   degree is necessary." The SOC -> O*NET-SOC link and the O*NET release remain open.
     onet: archived release, chosen from a pre-listed set and frozen   # UNCERTAIN which release
   graduate_share: {ages: [25, 65], stat: "SCHL 22-24 among SCHL >= 21"}
 

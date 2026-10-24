@@ -1,0 +1,188 @@
+fod1p,census_label,nyfed_major,r_line,in_census_lists,ours_before
+0,,N/A,1228,,
+1099,N/A (less than bachelor's degree),,,2018-2019,
+1100,General Agriculture,Agriculture,1229,2018-2024,Agriculture
+1101,Agriculture Production And Management,Agriculture,1230,2018-2024,Agriculture
+1102,Agricultural Economics,Economics,1231,2018-2024,Economics
+1103,Animal Sciences,Animal and Plant Sciences,1232,2018-2024,Animal and Plant Sciences
+1104,Food Science,Animal and Plant Sciences,1233,2018-2024,Agriculture
+1105,Plant Science And Agronomy,Animal and Plant Sciences,1234,2018-2024,Animal and Plant Sciences
+1106,Soil Science,Animal and Plant Sciences,1235,2018-2024,Animal and Plant Sciences
+1107,Veterinary Medicine,Animal and Plant Sciences,1236,2023-2024,Animal and Plant Sciences
+1199,Miscellaneous Agriculture,Agriculture,1237,2018-2024,Agriculture
+1300,,Environment and Natural Resources,1238,,
+1301,Environmental Science,Environmental Studies,1239,2018-2024,Environmental Studies
+1302,Forestry,Environmental Studies,1240,2018-2024,Environmental Studies
+1303,Natural Resources Management,Environmental Studies,1241,2018-2024,Environmental Studies
+1401,Architecture,Architecture,1242,2018-2024,Architecture
+1501,Area Ethnic And Civilization Studies,Ethnic Studies,1243,2018-2024,Ethnic Studies
+1900,,Communications,1244,,
+1901,Communications,Communications,1245,2018-2024,Communications
+1902,Journalism,Journalism,1246,2018-2024,Journalism
+1903,Mass Media,Mass Media,1247,2018-2024,Mass Media
+1904,Advertising And Public Relations,Advertising and Public Relations,1248,2018-2024,Advertising and Public Relations
+2001,Communication Technologies,Miscellaneous Technologies,1249,2018-2024,Communications
+2100,Computer And Information Systems,Information Systems & Management,1250,2018-2024,Information Systems & Management
+2101,Computer Programming And Data Processing,Computer Science,1251,2018-2024,Information Systems & Management
+2102,Computer Science,Computer Science,1252,2018-2024,Computer Science
+2105,Information Sciences,Computer Science,1253,2018-2024,Information Systems & Management
+2106,Computer Administration Management And Security,Information Systems & Management,1254,2018-2024,Information Systems & Management
+2107,Computer Networking And Telecommunications,Information Systems & Management,1255,2018-2024,Information Systems & Management
+2201,Cosmetology Services And Culinary Arts,Leisure and Hospitality,1256,2018-2024,Leisure and Hospitality
+2300,General Education,General Education,1257,2018-2024,General Education
+2301,Educational Administration And Supervision,Miscellaneous Education,1258,2018-2024,General Education
+2303,School Student Counseling,Miscellaneous Education,1259,2018-2024,General Education
+2304,Elementary Education,Elementary Education,1260,2018-2024,Elementary Education
+2305,Mathematics Teacher Education,Secondary Education,1261,2018-2024,Secondary Education
+2306,Physical And Health Education Teaching,Secondary Education,1262,2018-2024,Miscellaneous Education
+2307,Early Childhood Education,Early Childhood Education,1263,2018-2024,Early Childhood Education
+2308,Science And Computer Teacher Education,Secondary Education,1264,2018-2024,Secondary Education
+2309,Secondary Teacher Education,Secondary Education,1265,2018-2024,Secondary Education
+2310,Special Needs Education,Special Education,1266,2018-2024,Special Education
+2311,Social Science Or History Teacher Education,Secondary Education,1267,2018-2024,Secondary Education
+2312,Teacher Education: Multiple Levels,Miscellaneous Education,1268,2018-2024,General Education
+2313,Language And Drama Education,Secondary Education,1269,2018-2024,Miscellaneous Education
+2314,Art And Music Education,Secondary Education,1270,2018-2024,Miscellaneous Education
+2399,Miscellaneous Education,Miscellaneous Education,1271,2018-2024,Miscellaneous Education
+2400,General Engineering,General Engineering,1272,2018-2024,General Engineering
+2401,Aerospace Engineering,Aerospace Engineering,1273,2018-2024,Aerospace Engineering
+2402,Biological Engineering,Miscellaneous Engineering,1274,2018-2024,Miscellaneous Engineering
+2403,Architectural Engineering,Miscellaneous Engineering,1275,2018-2024,Miscellaneous Engineering
+2404,Biomedical Engineering,Miscellaneous Engineering,1276,2018-2024,Miscellaneous Engineering
+2405,Chemical Engineering,Chemical Engineering,1277,2018-2024,Chemical Engineering
+2406,Civil Engineering,Civil Engineering,1278,2018-2024,Civil Engineering
+2407,Computer Engineering,Computer Engineering,1279,2018-2024,Computer Engineering
+2408,Electrical Engineering,Electrical Engineering,1280,2018-2024,Electrical Engineering
+2409,Engineering Mechanics Physics And Science,Miscellaneous Engineering,1281,2018-2024,Miscellaneous Engineering
+2410,Environmental Engineering,Miscellaneous Engineering,1282,2018-2024,Miscellaneous Engineering
+2411,Geological And Geophysical Engineering,Miscellaneous Engineering,1283,2018-2024,Miscellaneous Engineering
+2412,Industrial And Manufacturing Engineering,Industrial Engineering,1284,2018-2024,Industrial Engineering
+2413,Materials Engineering And Materials Science,Miscellaneous Engineering,1285,2018-2024,Miscellaneous Engineering
+2414,Mechanical Engineering,Mechanical Engineering,1286,2018-2024,Mechanical Engineering
+2415,Metallurgical Engineering,Miscellaneous Engineering,1287,2018-2024,Miscellaneous Engineering
+2416,Mining And Mineral Engineering,Miscellaneous Engineering,1288,2018-2024,Miscellaneous Engineering
+2417,Naval Architecture And Marine Engineering,Miscellaneous Engineering,1289,2018-2024,Miscellaneous Engineering
+2418,Nuclear Engineering,Miscellaneous Engineering,1290,2018-2024,Miscellaneous Engineering
+2419,Petroleum Engineering,Miscellaneous Engineering,1291,2018-2024,Miscellaneous Engineering
+2499,Miscellaneous Engineering,Miscellaneous Engineering,1292,2018-2024,Miscellaneous Engineering
+2500,Engineering Technologies,Engineering Technologies,1293,2018-2024,Engineering Technologies
+2501,Engineering And Industrial Management,Engineering Technologies,1294,2018-2024,Industrial Engineering
+2502,Electrical Engineering Technology,Engineering Technologies,1295,2018-2024,Engineering Technologies
+2503,Industrial Production Technologies,Engineering Technologies,1296,2018-2024,Engineering Technologies
+2504,Mechanical Engineering Related Technologies,Engineering Technologies,1297,2018-2024,Engineering Technologies
+2599,Miscellaneous Engineering Technologies,Engineering Technologies,1298,2018-2024,Engineering Technologies
+2600,,Linguistics and Foreign Languages,1299,,
+2601,Linguistics And Comparative Language And Literature,Foreign Language,1300,2018-2024,Foreign Language
+2602,French German Latin And Other Common Foreign Language Studies,Foreign Language,1301,2018-2024,Foreign Language
+2603,Other Foreign Languages,Foreign Language,1302,2018-2024,Foreign Language
+2901,Family And Consumer Sciences,Family and Consumer Sciences,1303,2018-2024,Family and Consumer Sciences
+3200,,Law,1304,,
+3201,Court Reporting,Public Policy and Law,1305,2018-2019,Public Policy and Law
+3202,Pre-Law And Legal Studies,Public Policy and Law,1306,2018-2024,Public Policy and Law
+3300,,"English Language, Literature, and Composition",1307,,
+3301,English Language And Literature,English Language,1308,2018-2024,English Language
+3302,Composition And Rhetoric,English Language,1309,2018-2024,English Language
+3400,,Liberal Arts and Humanities,1310,,
+3401,Liberal Arts,Liberal Arts,1311,2018-2024,Liberal Arts
+3402,Humanities,Liberal Arts,1312,2018-2024,Liberal Arts
+3501,Library Science,Miscellaneous Education,1313,2018-2024,Miscellaneous Education
+3600,Biology,Biology,1314,2018-2024,Biology
+3601,Biochemical Sciences,Biochemistry,1315,2018-2024,Biochemistry
+3602,Botany,Miscellaneous Biological Science,1316,2018-2024,Biology
+3603,Molecular Biology,Biology,1317,2018-2024,Biology
+3604,Ecology,Miscellaneous Biological Science,1318,2018-2024,Biology
+3605,Genetics,Miscellaneous Biological Science,1319,2018-2024,Biology
+3606,Microbiology,Biology,1320,2018-2024,Biology
+3607,Pharmacology,Miscellaneous Biological Science,1321,2018-2024,Miscellaneous Biological Science
+3608,Physiology,Miscellaneous Biological Science,1322,2018-2024,Biology
+3609,Zoology,Miscellaneous Biological Science,1323,2018-2024,Biology
+3611,Neuroscience,Miscellaneous Biological Science,1324,2018-2024,Miscellaneous Biological Science
+3699,Miscellaneous Biology,Miscellaneous Biological Science,1325,2018-2024,Miscellaneous Biological Science
+3700,Mathematics,Mathematics,1326,2018-2024,Mathematics
+3701,Applied Mathematics,Mathematics,1327,2018-2024,Mathematics
+3702,Statistics And Decision Science,Mathematics,1328,2018-2024,Mathematics
+3801,Military Technologies,Miscellaneous Technologies,1329,2018-2024,Miscellaneous Technologies
+4000,Multi/Interdisciplinary Studies,Interdisciplinary Studies,1330,2018-2024,Interdisciplinary Studies
+4001,Intercultural And International Studies,Interdisciplinary Studies,1331,2018-2024,International Affairs
+4002,Nutrition Sciences,Nutrition Sciences,1332,2018-2024,Nutrition Sciences
+4003,,Neuroscience,1333,,
+4005,Mathematics And Computer Science,Interdisciplinary Studies,1334,2018-2024,Computer Science
+4006,Cognitive Science And Biopsychology,Interdisciplinary Studies,1335,2018-2024,Interdisciplinary Studies
+4007,Interdisciplinary Social Sciences,Interdisciplinary Studies,1336,2018-2024,Interdisciplinary Studies
+4008,,Multi-disciplinary or General Science,1337,,
+4009,Data Science and Data Analytics,Business Analytics,1338,2023-2024,Business Analytics
+4101,Physical Fitness Parks Recreation And Leisure,Leisure and Hospitality,1339,2018-2024,Leisure and Hospitality
+4801,Philosophy And Religious Studies,Philosophy,1340,2018-2024,Philosophy
+4901,Theology And Religious Vocations,Theology and Religion,1341,2018-2024,Theology and Religion
+5000,Physical Sciences,Miscellaneous Physical Sciences,1342,2018-2024,Miscellaneous Physical Sciences
+5001,Astronomy And Astrophysics,Miscellaneous Physical Sciences,1343,2018-2024,Physics
+5002,Atmospheric Sciences And Meteorology,Miscellaneous Physical Sciences,1344,2018-2024,Earth Sciences
+5003,Chemistry,Chemistry,1345,2018-2024,Chemistry
+5004,Geology And Earth Science,Earth Sciences,1346,2018-2024,Earth Sciences
+5005,Geosciences,Miscellaneous Physical Sciences,1347,2018-2024,Earth Sciences
+5006,Oceanography,Miscellaneous Physical Sciences,1348,2018-2024,Earth Sciences
+5007,Physics,Physics,1349,2018-2024,Physics
+5008,Materials Science,Miscellaneous Physical Sciences,1350,2018-2024,Miscellaneous Physical Sciences
+5098,Multi-Disciplinary Or General Science,Interdisciplinary Studies,1351,2018-2024,Miscellaneous Physical Sciences
+5102,"Nuclear, Industrial Radiology, And Biological Technologies",Miscellaneous Technologies,1352,2018-2024,Medical Technicians
+5200,Psychology,Psychology,1353,2018-2024,Psychology
+5201,Educational Psychology,Psychology,1354,2018-2024,Psychology
+5202,Clinical Psychology,Psychology,1355,2018-2024,Psychology
+5203,Counseling Psychology,Psychology,1356,2018-2024,Psychology
+5205,Industrial And Organizational Psychology,Psychology,1357,2018-2024,Psychology
+5206,Social Psychology,Psychology,1358,2018-2024,Psychology
+5299,Miscellaneous Psychology,Psychology,1359,2018-2024,Psychology
+5301,Criminal Justice And Fire Protection,Criminal Justice,1360,2018-2024,Criminal Justice
+5400,,"Public Affairs, Policy, and Social Work",1361,,
+5401,Public Administration,Public Policy and Law,1362,2018-2024,Public Policy and Law
+5402,Public Policy,Public Policy and Law,1363,2018-2024,Public Policy and Law
+5403,Human Services And Community Organization,Social Services,1364,2018-2024,Social Services
+5404,Social Work,Social Services,1365,2018-2024,Social Services
+5500,General Social Sciences,General Social Sciences,1366,2018-2024,General Social Sciences
+5501,Economics,Economics,1367,2018-2024,Economics
+5502,Anthropology And Archeology,Anthropology,1368,2018-2024,Anthropology
+5503,Criminology,Criminal Justice,1369,2018-2024,Criminal Justice
+5504,Geography,Geography,1370,2018-2024,Geography
+5505,International Relations,International Affairs,1371,2018-2024,International Affairs
+5506,Political Science And Government,Political Science,1372,2018-2024,Political Science
+5507,Sociology,Sociology,1373,2018-2024,Sociology
+5599,Miscellaneous Social Sciences,General Social Sciences,1374,2018-2024,General Social Sciences
+5601,Construction Services,Construction Services,1375,2018-2024,Construction Services
+5701,"Electrical, Mechanical, And Precision Technologies And Production",Miscellaneous Technologies,1376,2018-2024,Miscellaneous Technologies
+5801,,Precision Production and Industrial Arts,1377,,
+5901,Transportation Sciences And Technologies,Miscellaneous Technologies,1378,2018-2024,Miscellaneous Technologies
+6000,Fine Arts,Fine Arts,1379,2018-2024,Fine Arts
+6001,Drama And Theater Arts,Performing Arts,1380,2018-2024,Performing Arts
+6002,Music,Performing Arts,1381,2018-2024,Performing Arts
+6003,Visual And Performing Arts,Fine Arts,1382,2018-2024,Performing Arts
+6004,Commercial Art And Graphic Design,Commercial Art & Graphic Design,1383,2018-2024,Commercial Art & Graphic Design
+6005,Film Video And Photographic Arts,Fine Arts,1384,2018-2024,Fine Arts
+6006,Art History And Criticism,Art History,1385,2018-2024,Art History
+6007,Studio Arts,Fine Arts,1386,2018-2024,Fine Arts
+6099,Miscellaneous Fine Arts,Fine Arts,1387,2018-2024,Fine Arts
+6100,General Medical And Health Services,Health Services,1388,2018-2024,Health Services
+6102,Communication Disorders Sciences And Services,Health Services,1389,2018-2024,Health Services
+6103,Health And Medical Administrative Services,Health Services,1390,2018-2024,Health Services
+6104,Medical Assisting Services,Health Services,1391,2018-2024,Medical Technicians
+6105,Medical Technologies Technicians,Medical Technicians,1392,2018-2024,Medical Technicians
+6106,Health And Medical Preparatory Programs,Health Services,1393,2018-2024,Health Services
+6107,Nursing,Nursing,1394,2018-2024,Nursing
+6108,Pharmacy Pharmaceutical Sciences And Administration,Pharmacy,1395,2018-2024,Pharmacy
+6109,Treatment Therapy Professions,Treatment Therapy,1396,2018-2024,Treatment Therapy
+6110,Community And Public Health,Health Services,1397,2018-2024,Health Services
+6199,Miscellaneous Health Medical Professions,Health Services,1398,2018-2024,Health Services
+6200,General Business,General Business,1399,2018-2024,General Business
+6201,Accounting,Accounting,1400,2018-2024,Accounting
+6202,Actuarial Science,Business Analytics,1401,2018-2024,Finance
+6203,Business Management And Administration,Business Management,1402,2018-2024,Business Management
+6204,Operations Logistics And E-Commerce,Business Analytics,1403,2018-2024,Business Management
+6205,Business Economics,Economics,1404,2018-2024,Economics
+6206,Marketing And Marketing Research,Marketing,1405,2018-2024,Marketing
+6207,Finance,Finance,1406,2018-2024,Finance
+6209,Human Resources And Personnel Management,Business Management,1407,2018-2024,Business Management
+6210,International Business,International Affairs,1408,2018-2024,International Affairs
+6211,Hospitality Management,Business Management,1409,2018-2024,Leisure and Hospitality
+6212,Management Information Systems And Statistics,Business Analytics,1410,2018-2024,Business Analytics
+6299,Miscellaneous Business And Medical Administration,Business Management,1411,2018-2024,General Business
+6402,History,History,1412,2018-2024,History
+6403,United States History,History,1413,2018-2024,History

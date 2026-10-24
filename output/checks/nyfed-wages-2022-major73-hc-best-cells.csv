@@ -1,0 +1,149 @@
+major,age,nyfed,ours,gap,gap_pct
+Agriculture,early,50000.0,50000.0,0.0,0.0
+Agriculture,mid,75000.0,75000.0,0.0,0.0
+Animal and Plant Sciences,early,41000.0,41000.0,0.0,0.0
+Animal and Plant Sciences,mid,70000.0,70000.0,0.0,0.0
+Environmental Studies,early,43900.0,43900.0,0.0,0.0
+Environmental Studies,mid,70000.0,70000.0,0.0,0.0
+Architecture,early,50000.0,50000.0,0.0,0.0
+Architecture,mid,90000.0,90000.0,0.0,0.0
+Ethnic Studies,early,50000.0,50000.0,0.0,0.0
+Ethnic Studies,mid,80000.0,80000.0,0.0,0.0
+Communications,early,47000.0,47000.0,0.0,0.0
+Communications,mid,78000.0,78000.0,0.0,0.0
+Journalism,early,47000.0,47000.0,0.0,0.0
+Journalism,mid,80000.0,80000.0,0.0,0.0
+Mass Media,early,42000.0,42000.0,0.0,0.0
+Mass Media,mid,70000.0,70000.0,0.0,0.0
+Advertising and Public Relations,early,52000.0,52000.0,0.0,0.0
+Advertising and Public Relations,mid,92000.0,92000.0,0.0,0.0
+Information Systems & Management,early,57000.0,57000.0,0.0,0.0
+Information Systems & Management,mid,90000.0,90000.0,0.0,0.0
+Computer Science,early,78000.0,78000.0,0.0,0.0
+Computer Science,mid,110000.0,110000.0,0.0,0.0
+General Education,early,41000.0,41000.0,0.0,0.0
+General Education,mid,52000.0,52000.0,0.0,0.0
+Early Childhood Education,early,40000.0,40000.0,0.0,0.0
+Early Childhood Education,mid,48000.0,48000.0,0.0,0.0
+Elementary Education,early,40000.0,40000.0,0.0,0.0
+Elementary Education,mid,52000.0,52000.0,0.0,0.0
+Secondary Education,early,41000.0,41000.0,0.0,0.0
+Secondary Education,mid,55000.0,55000.0,0.0,0.0
+Special Education,early,43000.0,43000.0,0.0,0.0
+Special Education,mid,57000.0,57000.0,0.0,0.0
+Miscellaneous Education,early,43000.0,43000.0,0.0,0.0
+Miscellaneous Education,mid,56000.0,56000.0,0.0,0.0
+General Engineering,early,68000.0,68000.0,0.0,0.0
+General Engineering,mid,100000.0,100000.0,0.0,0.0
+Aerospace Engineering,early,74000.0,74000.0,0.0,0.0
+Aerospace Engineering,mid,120000.0,120000.0,0.0,0.0
+Chemical Engineering,early,79000.0,79000.0,0.0,0.0
+Chemical Engineering,mid,133000.0,133000.0,0.0,0.0
+Civil Engineering,early,65000.0,65000.0,0.0,0.0
+Civil Engineering,mid,100000.0,100000.0,0.0,0.0
+Computer Engineering,early,80000.0,80000.0,0.0,0.0
+Computer Engineering,mid,125000.0,125000.0,0.0,0.0
+Electrical Engineering,early,72000.0,72000.0,0.0,0.0
+Electrical Engineering,mid,112000.0,112000.0,0.0,0.0
+Industrial Engineering,early,71000.0,71000.0,0.0,0.0
+Industrial Engineering,mid,100000.0,100000.0,0.0,0.0
+Mechanical Engineering,early,70000.0,70000.0,0.0,0.0
+Mechanical Engineering,mid,111000.0,111000.0,0.0,0.0
+Miscellaneous Engineering,early,68000.0,68000.0,0.0,0.0
+Miscellaneous Engineering,mid,100000.0,100000.0,0.0,0.0
+Foreign Language,early,43500.0,43500.0,0.0,0.0
+Foreign Language,mid,66000.0,66000.0,0.0,0.0
+Family and Consumer Sciences,early,40000.0,40000.0,0.0,0.0
+Family and Consumer Sciences,mid,59000.0,59000.0,0.0,0.0
+English Language,early,42000.0,42000.0,0.0,0.0
+English Language,mid,72000.0,72000.0,0.0,0.0
+Liberal Arts,early,38000.0,38000.0,0.0,0.0
+Liberal Arts,mid,65000.0,65000.0,0.0,0.0
+Biology,early,44300.0,44300.0,0.0,0.0
+Biology,mid,76000.0,76000.0,0.0,0.0
+Biochemistry,early,41000.0,41000.0,0.0,0.0
+Biochemistry,mid,86000.0,86000.0,0.0,0.0
+Miscellaneous Biological Science,early,40000.0,40000.0,0.0,0.0
+Miscellaneous Biological Science,mid,68000.0,68000.0,0.0,0.0
+Mathematics,early,65000.0,65000.0,0.0,0.0
+Mathematics,mid,92000.0,92000.0,0.0,0.0
+Interdisciplinary Studies,early,48000.0,48000.0,0.0,0.0
+Interdisciplinary Studies,mid,70000.0,70000.0,0.0,0.0
+Nutrition Sciences,early,40000.0,40000.0,0.0,0.0
+Nutrition Sciences,mid,65000.0,65000.0,0.0,0.0
+Leisure and Hospitality,early,39700.0,39700.0,0.0,0.0
+Leisure and Hospitality,mid,67000.0,67000.0,0.0,0.0
+Philosophy,early,41000.0,41000.0,0.0,0.0
+Philosophy,mid,71000.0,71000.0,0.0,0.0
+Theology and Religion,early,38000.0,38000.0,0.0,0.0
+Theology and Religion,mid,56000.0,56000.0,0.0,0.0
+Chemistry,early,50000.0,50000.0,0.0,0.0
+Chemistry,mid,85000.0,85000.0,0.0,0.0
+Earth Sciences,early,45000.0,45000.0,0.0,0.0
+Earth Sciences,mid,75000.0,75000.0,0.0,0.0
+Physics,early,62000.0,62000.0,0.0,0.0
+Physics,mid,95000.0,95000.0,0.0,0.0
+Miscellaneous Physical Sciences,early,60000.0,60000.0,0.0,0.0
+Miscellaneous Physical Sciences,mid,79000.0,79000.0,0.0,0.0
+Psychology,early,40000.0,40000.0,0.0,0.0
+Psychology,mid,65000.0,65000.0,0.0,0.0
+Criminal Justice,early,41000.0,41000.0,0.0,0.0
+Criminal Justice,mid,70000.0,70000.0,0.0,0.0
+Public Policy and Law,early,53000.0,53000.0,0.0,0.0
+Public Policy and Law,mid,72000.0,72000.0,0.0,0.0
+Social Services,early,40000.0,40000.0,0.0,0.0
+Social Services,mid,56000.0,56000.0,0.0,0.0
+Anthropology,early,40000.0,40000.0,0.0,0.0
+Anthropology,mid,65000.0,65000.0,0.0,0.0
+Economics,early,65000.0,65000.0,0.0,0.0
+Economics,mid,100000.0,100000.0,0.0,0.0
+Geography,early,50000.0,50000.0,0.0,0.0
+Geography,mid,70000.0,70000.0,0.0,0.0
+Political Science,early,50000.0,50000.0,0.0,0.0
+Political Science,mid,89000.0,89000.0,0.0,0.0
+Sociology,early,48000.0,48000.0,0.0,0.0
+Sociology,mid,67000.0,67000.0,0.0,0.0
+General Social Sciences,early,40000.0,40000.0,0.0,0.0
+General Social Sciences,mid,70000.0,70000.0,0.0,0.0
+Construction Services,early,64000.0,64000.0,0.0,0.0
+Construction Services,mid,100000.0,100000.0,0.0,0.0
+Art History,early,41000.0,41000.0,0.0,0.0
+Art History,mid,72000.0,72000.0,0.0,0.0
+Fine Arts,early,40000.0,40000.0,0.0,0.0
+Fine Arts,mid,68000.0,68000.0,0.0,0.0
+Performing Arts,early,38000.0,38000.0,0.0,0.0
+Performing Arts,mid,64000.0,64000.0,0.0,0.0
+Commercial Art & Graphic Design,early,45000.0,45000.0,0.0,0.0
+Commercial Art & Graphic Design,mid,75000.0,75000.0,0.0,0.0
+Health Services,early,45000.0,45000.0,0.0,0.0
+Health Services,mid,65000.0,65000.0,0.0,0.0
+Medical Technicians,early,55000.0,55000.0,0.0,0.0
+Medical Technicians,mid,70000.0,70000.0,0.0,0.0
+Nursing,early,62000.0,62000.0,0.0,0.0
+Nursing,mid,80000.0,80000.0,0.0,0.0
+Pharmacy,early,64000.0,64000.0,0.0,0.0
+Pharmacy,mid,85000.0,85000.0,0.0,0.0
+Treatment Therapy,early,40000.0,40000.0,0.0,0.0
+Treatment Therapy,mid,67000.0,67000.0,0.0,0.0
+General Business,early,50000.0,50000.0,0.0,0.0
+General Business,mid,83000.0,83000.0,0.0,0.0
+Accounting,early,60000.0,60000.0,0.0,0.0
+Accounting,mid,84000.0,84000.0,0.0,0.0
+Business Management,early,50000.0,50000.0,0.0,0.0
+Business Management,mid,78000.0,78000.0,0.0,0.0
+Business Analytics,early,65000.0,65000.0,0.0,0.0
+Business Analytics,mid,100000.0,100000.0,0.0,0.0
+Marketing,early,50000.0,50000.0,0.0,0.0
+Marketing,mid,85000.0,85000.0,0.0,0.0
+Finance,early,66000.0,66000.0,0.0,0.0
+Finance,mid,104000.0,104000.0,0.0,0.0
+International Affairs,early,55000.0,55000.0,0.0,0.0
+International Affairs,mid,85000.0,85000.0,0.0,0.0
+History,early,40000.0,40000.0,0.0,0.0
+History,mid,70000.0,70000.0,0.0,0.0
+Engineering Technologies,early,60000.0,60000.0,0.0,0.0
+Engineering Technologies,mid,95000.0,95000.0,0.0,0.0
+Miscellaneous Technologies,early,50000.0,50000.0,0.0,0.0
+Miscellaneous Technologies,mid,80000.0,80000.0,0.0,0.0
+Overall,early,50000.0,50000.0,0.0,0.0
+Overall,mid,80000.0,80000.0,0.0,0.0

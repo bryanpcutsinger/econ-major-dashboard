@@ -1,0 +1,149 @@
+measure,major,nyfed,ours,gap_pt
+unemployment,Agriculture,3.668,3.668,-0.0
+unemployment,Animal and Plant Sciences,1.626,1.626,-0.0
+unemployment,Environmental Studies,4.521,4.521,0.0
+unemployment,Architecture,3.302,3.302,-0.0
+unemployment,Ethnic Studies,4.623,4.623,0.0
+unemployment,Communications,4.67,4.67,0.0
+unemployment,Journalism,4.666,4.666,-0.0
+unemployment,Mass Media,6.253,6.253,-0.0
+unemployment,Advertising and Public Relations,2.842,2.842,0.0
+unemployment,Information Systems & Management,2.338,2.338,0.0
+unemployment,Computer Science,4.267,4.267,0.0
+unemployment,General Education,1.468,1.468,0.0
+unemployment,Early Childhood Education,1.931,1.931,0.0
+unemployment,Elementary Education,1.47,1.47,-0.0
+unemployment,Secondary Education,1.644,1.644,-0.0
+unemployment,Special Education,3.233,3.233,-0.0
+unemployment,Miscellaneous Education,2.501,2.501,-0.0
+unemployment,General Engineering,3.115,3.115,-0.0
+unemployment,Aerospace Engineering,7.771,7.771,-0.0
+unemployment,Chemical Engineering,1.978,1.978,-0.0
+unemployment,Civil Engineering,1.882,1.882,0.0
+unemployment,Computer Engineering,2.311,2.311,0.0
+unemployment,Electrical Engineering,2.92,2.92,0.0
+unemployment,Industrial Engineering,0.219,0.219,0.0
+unemployment,Mechanical Engineering,1.495,1.495,0.0
+unemployment,Miscellaneous Engineering,2.237,2.237,0.0
+unemployment,Foreign Language,3.438,3.438,0.0
+unemployment,Family and Consumer Sciences,3.057,3.057,-0.0
+unemployment,English Language,6.552,6.552,-0.0
+unemployment,Liberal Arts,7.924,7.924,-0.0
+unemployment,Biology,3.368,3.368,-0.0
+unemployment,Biochemistry,3.199,3.199,0.0
+unemployment,Miscellaneous Biological Science,2.332,2.332,0.0
+unemployment,Mathematics,3.391,3.391,-0.0
+unemployment,Interdisciplinary Studies,3.519,3.519,-0.0
+unemployment,Nutrition Sciences,3.898,3.898,-0.0
+unemployment,Leisure and Hospitality,4.081,4.081,0.0
+unemployment,Philosophy,4.094,4.094,-0.0
+unemployment,Theology and Religion,3.165,3.165,-0.0
+unemployment,Chemistry,2.772,2.772,-0.0
+unemployment,Earth Sciences,1.9,1.9,0.0
+unemployment,Physics,6.159,6.159,0.0
+unemployment,Miscellaneous Physical Sciences,4.455,4.455,0.0
+unemployment,Psychology,5.408,5.408,0.0
+unemployment,Criminal Justice,2.837,2.837,-0.0
+unemployment,Public Policy and Law,2.349,2.349,-0.0
+unemployment,Social Services,4.391,4.391,-0.0
+unemployment,Anthropology,4.525,4.525,-0.0
+unemployment,Economics,4.088,4.088,-0.0
+unemployment,Geography,1.917,1.917,0.0
+unemployment,Political Science,4.795,4.795,-0.0
+unemployment,Sociology,5.511,5.511,0.0
+unemployment,General Social Sciences,0.639,0.639,0.0
+unemployment,Construction Services,0.366,0.366,-0.0
+unemployment,Art History,7.952,7.952,-0.0
+unemployment,Fine Arts,7.85,7.85,-0.0
+unemployment,Performing Arts,5.501,5.501,0.0
+unemployment,Commercial Art & Graphic Design,6.043,6.043,0.0
+unemployment,Health Services,2.203,2.203,0.0
+unemployment,Medical Technicians,0.373,0.373,0.0
+unemployment,Nursing,1.309,1.309,-0.0
+unemployment,Pharmacy,3.355,3.355,-0.0
+unemployment,Treatment Therapy,2.507,2.507,-0.0
+unemployment,General Business,2.821,2.821,0.0
+unemployment,Accounting,1.764,1.764,-0.0
+unemployment,Business Management,3.225,3.225,-0.0
+unemployment,Business Analytics,2.545,2.545,0.0
+unemployment,Marketing,2.96,2.96,0.0
+unemployment,Finance,2.717,2.717,0.0
+unemployment,International Affairs,5.118,5.118,-0.0
+unemployment,History,7.508,7.508,-0.0
+unemployment,Engineering Technologies,2.536,2.536,0.0
+unemployment,Miscellaneous Technologies,6.351,6.351,-0.0
+unemployment,Overall,3.557,3.557,0.0
+grad_share,Agriculture,21.009,21.455,0.446
+grad_share,Animal and Plant Sciences,36.489,35.888,-0.601
+grad_share,Environmental Studies,31.514,31.769,0.255
+grad_share,Architecture,40.663,40.099,-0.564
+grad_share,Ethnic Studies,53.766,53.601,-0.165
+grad_share,Communications,24.262,24.595,0.333
+grad_share,Journalism,25.115,25.781,0.666
+grad_share,Mass Media,20.792,20.799,0.007
+grad_share,Advertising and Public Relations,20.627,20.035,-0.592
+grad_share,Information Systems & Management,26.77,26.547,-0.223
+grad_share,Computer Science,31.784,31.794,0.01
+grad_share,General Education,50.898,49.23,-1.668
+grad_share,Early Childhood Education,41.063,39.086,-1.977
+grad_share,Elementary Education,49.408,47.332,-2.076
+grad_share,Secondary Education,51.553,50.475,-1.078
+grad_share,Special Education,63.673,60.422,-3.251
+grad_share,Miscellaneous Education,56.302,55.477,-0.825
+grad_share,General Engineering,39.545,39.723,0.178
+grad_share,Aerospace Engineering,51.183,50.746,-0.437
+grad_share,Chemical Engineering,48.001,47.518,-0.483
+grad_share,Civil Engineering,36.344,36.495,0.151
+grad_share,Computer Engineering,38.817,39.353,0.536
+grad_share,Electrical Engineering,47.275,46.739,-0.536
+grad_share,Industrial Engineering,42.168,41.489,-0.679
+grad_share,Mechanical Engineering,39.642,39.257,-0.385
+grad_share,Miscellaneous Engineering,47.683,47.494,-0.189
+grad_share,Foreign Language,51.372,51.126,-0.246
+grad_share,Family and Consumer Sciences,34.096,32.133,-1.963
+grad_share,English Language,47.101,46.214,-0.887
+grad_share,Liberal Arts,30.175,29.243,-0.932
+grad_share,Biology,62.54,60.881,-1.659
+grad_share,Biochemistry,69.335,68.482,-0.853
+grad_share,Miscellaneous Biological Science,61.304,59.702,-1.602
+grad_share,Mathematics,52.359,51.456,-0.903
+grad_share,Interdisciplinary Studies,38.552,38.134,-0.418
+grad_share,Nutrition Sciences,46.604,44.849,-1.755
+grad_share,Leisure and Hospitality,35.318,34.155,-1.163
+grad_share,Philosophy,57.346,57.383,0.037
+grad_share,Theology and Religion,43.532,43.173,-0.359
+grad_share,Chemistry,65.277,63.43,-1.847
+grad_share,Earth Sciences,46.584,47.808,1.224
+grad_share,Physics,67.895,67.514,-0.381
+grad_share,Miscellaneous Physical Sciences,55.864,54.963,-0.901
+grad_share,Psychology,50.966,49.296,-1.67
+grad_share,Criminal Justice,23.445,24.133,0.688
+grad_share,Public Policy and Law,43.904,43.723,-0.181
+grad_share,Social Services,51.388,48.664,-2.724
+grad_share,Anthropology,49.038,47.883,-1.155
+grad_share,Economics,41.028,41.395,0.367
+grad_share,Geography,38.222,36.875,-1.347
+grad_share,Political Science,54.035,53.492,-0.543
+grad_share,Sociology,39.454,38.929,-0.525
+grad_share,General Social Sciences,37.897,38.152,0.255
+grad_share,Construction Services,9.194,9.955,0.761
+grad_share,Art History,43.764,44.959,1.195
+grad_share,Fine Arts,22.571,22.739,0.168
+grad_share,Performing Arts,40.597,39.429,-1.168
+grad_share,Commercial Art & Graphic Design,11.293,11.912,0.619
+grad_share,Health Services,51.685,50.547,-1.138
+grad_share,Medical Technicians,23.135,23.329,0.194
+grad_share,Nursing,29.422,28.542,-0.88
+grad_share,Pharmacy,64.543,61.136,-3.407
+grad_share,Treatment Therapy,51.062,48.609,-2.453
+grad_share,General Business,25.018,25.062,0.044
+grad_share,Accounting,33.011,31.507,-1.504
+grad_share,Business Management,24.398,24.132,-0.266
+grad_share,Business Analytics,22.759,23.554,0.795
+grad_share,Marketing,18.059,18.345,0.286
+grad_share,Finance,30.238,30.594,0.356
+grad_share,International Affairs,44.495,44.013,-0.482
+grad_share,History,52.036,51.083,-0.953
+grad_share,Engineering Technologies,25.783,26.207,0.424
+grad_share,Miscellaneous Technologies,18.088,18.079,-0.009
+grad_share,Overall,38.759,37.865,-0.894
