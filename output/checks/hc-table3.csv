@@ -1,0 +1,74 @@
+major,freq_pub,freq,share_pub,share,median_pub,median_t2,median_t1,median_t4,selfemp_pub,selfemp,freq_ok,share_ok,median_exact,median_within_1pct,selfemp_ok
+Chemical engineering,1017,1017,0.5,0.4532,132619,132618.6,132618.6,131841.12,4.2,4.2281,True,True,True,True,True
+Computer engineering,2565,2565,1.1,1.143,126789,126789.13,126789.13,126789.13,3.4,3.4308,True,True,True,True,True
+Aerospace engineering,375,375,0.2,0.1671,123777,123777.36,123777.36,123702.43,6.1,6.1333,True,True,True,True,True
+Electrical engineering,3981,3981,1.8,1.7739,117955,117955.08,117955.08,117955.08,4.7,4.7476,True,True,True,True,True
+Mechanical engineering,3798,3798,1.7,1.6924,114023,114023.24,114023.24,114023.24,6.0,5.9768,True,True,True,True,True
+Computer science,8587,8587,3.8,3.8264,113497,113496.72,113496.72,113496.72,4.7,4.7048,True,True,True,True,True
+Finance,6532,6532,2.9,2.9107,108305,108305.19,108305.19,108305.19,9.8,9.8438,True,True,True,True,True
+Economics,4820,4820,2.1,2.1478,105317,105316.78,105316.78,105316.78,11.1,11.0996,True,True,True,True,True
+Miscellaneous engineering,1533,1533,0.7,0.6831,104990,104989.72,104989.72,104989.72,9.5,9.4586,True,True,True,True,True
+Industrial engineering,871,871,0.4,0.3881,104194,104193.65,104193.65,104041.29,6.4,6.4294,True,True,True,True,True
+Business analytics,2618,2618,1.2,1.1666,103885,103884.57,103884.57,103884.57,6.0,5.9969,True,True,True,True,True
+Civil engineering,2270,2270,1.0,1.0115,103374,103374.04,103374.04,103348.76,7.9,7.9295,True,True,True,True,True
+Construction services,1091,1091,0.5,0.4862,102249,102249.3,102249.3,102249.3,13.7,13.7489,True,True,True,True,True
+General engineering,2295,2295,1.0,1.0227,102249,102249.3,102249.3,102249.3,7.9,7.9303,True,True,True,True,True
+Engineering technologies,2274,2274,1.0,1.0133,98296,98295.9,98295.9,98295.9,5.7,5.6728,True,True,True,True,True
+Miscellaneous physical sciences,331,331,0.1,0.1475,98296,98295.9,98295.9,98269.89,5.7,5.7402,True,True,True,True,True
+Information systems and management,4707,4707,2.1,2.0975,97137,97136.83,97136.83,97136.83,4.7,4.6739,True,True,True,True,True
+Mathematics,2050,2050,0.9,0.9135,94364,94364.06,94364.06,94364.06,5.3,5.2683,True,True,True,True,True
+Physics,464,464,0.2,0.2068,93381,93381.11,93381.11,93261.73,5.2,5.1724,True,True,True,True,True
+International affairs,1370,1370,0.6,0.6105,92024,92024.37,92024.37,92024.37,10.5,10.5109,True,True,True,True,True
+Architecture,1657,1657,0.7,0.7384,88466,88466.31,88466.31,88466.31,12.3,12.3114,True,True,True,True,True
+Biochemistry,422,422,0.2,0.188,88466,88466.31,88466.31,88466.31,2.6,2.6066,True,True,True,True,True
+Marketing,7117,7117,3.2,3.1714,88466,88466.31,88466.31,88466.31,9.5,9.5405,True,True,True,True,True
+Miscellaneous technologies,1847,1847,0.8,0.823,88466,88466.31,88466.31,88466.31,7.4,7.3633,True,True,True,True,True
+Pharmacy,294,294,0.1,0.131,88466,88466.31,88466.31,88466.31,6.1,6.1224,True,True,True,True,True
+Political science,3931,3931,1.8,1.7517,88466,88466.31,88466.31,88466.31,7.7,7.7334,True,True,True,True,True
+Advertising and public relations,1343,1343,0.6,0.5984,88412,88412.4,88412.4,88412.4,8.0,7.9672,True,True,True,True,True
+General business,11749,11749,5.2,5.2354,87934,87934.4,87934.4,87934.4,10.3,10.3158,True,True,True,True,True
+Chemistry,1107,1107,0.5,0.4933,87483,87483.35,87483.35,86930.7,5.9,5.8717,True,True,True,True,True
+Accounting,8310,8310,3.7,3.703,86912,86911.9,86911.9,86911.9,7.2,7.16,True,True,True,True,True
+Journalism,2253,2253,1.0,1.0039,82887,82886.62,82886.62,82886.62,7.8,7.8118,True,True,True,True,True
+Communications,7632,7632,3.4,3.4008,81799,81799.44,81799.44,81799.44,8.8,8.8312,True,True,True,True,True
+Nursing,9410,9410,4.2,4.1931,81799,81799.44,81799.44,81799.44,2.1,2.1467,True,True,True,True,True
+Business management,21146,21146,9.4,9.4227,79754,79754.45,79754.45,79754.45,8.2,8.1623,True,True,True,True,True
+Biology,4858,4858,2.2,2.1647,78637,78636.72,78636.72,78636.72,5.6,5.599,True,True,True,True,True
+Ethnic studies,610,610,0.3,0.2718,78637,78636.72,78636.72,78636.72,7.5,7.541,True,True,True,True,True
+Earth sciences,504,504,0.2,0.2246,77361,77360.85,77360.85,77360.85,7.5,7.5397,True,True,True,True,True
+Mass media,1945,1945,0.9,0.8667,77361,77360.85,77360.85,77360.85,9.3,9.2545,True,True,True,True,True
+Geography,782,782,0.3,0.3485,76687,76686.97,76686.97,76686.97,7.2,7.1611,True,True,True,True,True
+Medical technicians,775,775,0.3,0.3453,76687,76686.97,76686.97,76686.97,2.7,2.7097,True,True,True,True,True
+Public policy and law,796,796,0.4,0.3547,76256,76255.69,76255.69,76138.13,5.8,5.7789,True,True,True,True,True
+History,3805,3805,1.7,1.6955,75664,75664.48,75664.48,75664.48,6.9,6.8594,True,True,True,True,True
+Agriculture,1401,1401,0.6,0.6243,75151,75150.54,75150.54,75150.54,23.0,22.9836,True,True,True,True,True
+Commercial art and graphic design,4062,4062,1.8,1.81,75151,75150.54,75150.54,75150.54,12.0,12.0138,True,True,True,True,True
+Miscellaneous biological sciences,1244,1244,0.6,0.5543,73722,73721.93,73721.93,73721.93,8.0,7.9582,True,True,True,True,True
+Criminal justice,7407,7407,3.3,3.3006,72940,72940.23,72940.23,72940.23,3.8,3.8477,True,True,True,True,True
+Treatment therapy,1074,1074,0.5,0.4786,72940,72940.23,72940.23,72735.19,6.4,6.4246,True,True,True,True,True
+Art history,469,469,0.2,0.209,71835,71835.07,71835.07,71627.18,9.4,9.3817,True,True,True,True,True
+Environmental studies,2014,2014,0.9,0.8974,71835,71835.07,71835.07,71835.07,8.8,8.7885,True,True,True,True,True
+Interdisciplinary studies,3075,3075,1.4,1.3702,71835,71835.07,71835.07,71835.07,7.2,7.1545,True,True,True,True,True
+Philosophy,1077,1077,0.5,0.4799,71756,71756.01,71756.01,71634.37,9.4,9.3779,True,True,True,True,True
+Animal and plant sciences,1354,1354,0.6,0.6033,71575,71574.51,71574.51,71574.51,19.1,19.1285,True,True,True,True,True
+English language,5450,5450,2.4,2.4285,71575,71574.51,71574.51,71574.51,7.6,7.5596,True,True,True,True,True
+General social sciences,587,587,0.3,0.2616,71575,71574.51,71574.51,71574.51,8.3,8.3475,True,True,True,True,True
+Foreign language,1529,1529,0.7,0.6813,70552,70552.02,70552.02,69892.3,8.2,8.1753,True,True,True,True,True
+Anthropology,886,886,0.4,0.3948,68807,68807.13,68807.13,68702.7,7.6,7.5621,True,True,True,True,True
+Fine arts,4991,4991,2.2,2.224,68807,68807.13,68807.13,68807.13,13.6,13.6045,True,True,True,True,True
+Sociology,3203,3203,1.4,1.4273,68807,68807.13,68807.13,68807.13,5.7,5.7446,True,True,True,True,True
+Leisure and hospitality,3419,3419,1.5,1.5235,68507,68507.03,68507.03,68507.03,9.7,9.7104,True,True,True,True,True
+Psychology,8312,8312,3.7,3.7039,68507,68507.03,68507.03,68507.03,6.6,6.5568,True,True,True,True,True
+Liberal arts,3004,3004,1.3,1.3386,66841,66841.21,66841.21,66841.21,8.4,8.3888,True,True,True,True,True
+Performing arts,2460,2460,1.1,1.0962,66645,66644.62,66644.62,66528.66,12.5,12.4797,True,True,True,True,True
+Nutrition sciences,339,339,0.2,0.1511,66462,66462.04,66462.04,66462.04,7.1,7.0796,True,True,True,True,True
+Health services,3270,3270,1.5,1.4571,66309,66309.3,66309.3,66309.3,5.4,5.3823,True,True,True,True,True
+Family and consumer sciences,1573,1573,0.7,0.7009,61350,61349.58,61349.58,61349.58,6.5,6.4844,True,True,True,True,True
+Miscellaneous education,752,752,0.3,0.3351,59305,59304.59,59304.59,59304.59,4.9,4.9202,True,True,True,True,True
+Theology and religion,1066,1066,0.5,0.475,58978,58977.54,58977.54,58977.54,7.7,7.6923,True,True,True,True,True
+Secondary education,3224,3224,1.4,1.4366,56237,56237.11,56237.11,56237.11,5.2,5.2109,True,True,True,True,True
+Social services,1928,1928,0.9,0.8591,56029,56028.66,56028.66,56028.66,4.0,4.0456,True,True,True,True,True
+Special education,429,429,0.2,0.1912,56029,56028.66,56028.66,56028.66,4.4,4.4289,True,True,True,True,True
+General education,4106,4106,1.8,1.8296,55258,55257.75,55257.75,55257.75,4.9,4.944,True,True,True,True,True
+Elementary education,3981,3981,1.8,1.7739,52147,52147.14,52147.14,52124.12,4.1,4.0693,True,True,True,True,True
+Early childhood education,887,887,0.4,0.3952,48627,48626.82,48626.82,48626.82,5.5,5.5242,True,True,True,True,True

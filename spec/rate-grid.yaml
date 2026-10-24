@@ -27,7 +27,7 @@ underemployment:
     nyf24: ["30.0 (Aug 2025)", "30.1 (Dec 2025)", "30.2 (Feb 2026)"]
   occupation_link: [SOCP_to_ONET_SOC_6digit, SOCP_to_ONET_SOC_8digit_mean]
 
-hc_tables:
+hc_tables:   # all items below SETTLED by HC's code, not by a fit (ledger E22, E28 (9)); kept as a record
   weeks: ["> 40", ">= 40"]
   armed_forces: [included, excluded]
   dollars: [cpi_u_ratio_to_2022, adjinc_times_cpi_ratio, ipums_cpi99]
