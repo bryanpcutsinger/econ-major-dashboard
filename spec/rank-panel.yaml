@@ -1,0 +1,51 @@
+# Rank panel ("Where the two majors rank among 73"), build step 5.
+# Written 2026-10-24 BEFORE any rank, standard error, or hidden-cell count was computed.
+# Contract: mockup A2 panel 2/4 (micro-principles spring-2027/planning/econ-major-dashboard-mockup-v2):
+#   four measures ranked among 73 majors; "Change how pay is measured" switches =
+#   "Include people with graduate degrees" and "Full-time workers only"; "Ties and unstable
+#   ranks are marked." Rulings: C3 (90% margin), D2 (one ADJINC rule), D3 ("our definition"),
+#   D5 (hide if n < 100 or MOE / estimate > 0.30).
+
+data: ACS 2024 1-year national person files (raw/acs1-2024/csv_pus.zip)
+majors: spec/major73-hc.csv, first major only (FOD1P); 73 groups; Overall is not ranked
+
+measures:
+  pay_mid:   {label: "Pay, mid-career",   ages: [35, 45], better: higher}
+  pay_early: {label: "Pay, early career", ages: [22, 27], better: higher}
+  pay_rules:            # base = the NY Fed wage rules that reproduce the 2022 posting (ledger E18-E19)
+    sample: "SCH == 1, ESR in [1, 2, 4, 5], WAGP >= 5500"
+    degree: {switch_off: "SCHL == 21", switch_on: "SCHL >= 21"}              # Include people with graduate degrees
+    full_time: {switch_on: "WKHP >= 35 and WKWN >= 40", switch_off: "no hours or weeks rule"}   # Full-time workers only
+    default: {graduate_degrees: off, full_time_only: on}                       # = the NY Fed definition
+    statistic: lower weighted median of WAGP (the NY Fed rule)
+    dollars: WAGP * ADJINC / 1e6, "2024 dollars" (D2); ranks do not depend on it (one ADJINC per file)
+  unemployment:    {label: "Unemployment",    better: lower, rule: "ledger E23 (NY Fed match)", switches: none}
+  underemployment: {label: "Underemployment", better: lower, rule: "ledger E25-E27; O*NET 30.2, 8digit_mean",
+                    switches: none, page_label: "our definition (D3), beside the NY Fed value"}
+
+uncertainty:
+  se: "SDR: sqrt(4/80 * sum_r (theta_r - theta)^2), PWGTP1-80"
+  medians: "test statistic and SE on the interpolated weighted median (replicate medians are lumpy);
+            the page shows the lower median"
+  pairwise: "for majors i, j: d = theta_i - theta_j in the full sample and in each replicate;
+             about the same if |d| <= 1.645 * SE(d)  (C3, 90%)"
+  rank: "point rank = 1 + number of majors with a strictly better estimate (1 = best)"
+  rank_range: "lo = 1 + number of majors significantly better; hi = 73 - number significantly worse"
+  ties: "n_about_same = number of other majors about the same as this one"
+  # unstable flag DROPPED (instructor ruling 2026-10-24: it marked 44-73 of 73 majors).
+  page: "rank only (instructor ruling 2026-10-24: drop the range to avoid confusion);
+         rank_lo / rank_hi / n_about_same stay in the data files as an audit record"
+
+small_cells:          # D5, as ruled; applied to every measure and switch setting
+  hide_if: "unweighted n < 100 or 1.645 * SE / estimate > 0.30"   # pay
+  hide_if_rates: "unweighted n < 100, or fewer than 10 people in the numerator or in its complement"
+  # Rates rule changed 2026-10-24 by instructor ruling (option b): the MOE / estimate rule hid
+  # 56/73 unemployment cells because the rates are small. Pay keeps D5 as ruled.
+  n_counts: "people in the measure's denominator (pay: in the median; rates: in the base)"
+  hidden_major: "keeps its row ('not enough data'); its own rank is not shown; ranks of other
+                 majors are still computed among all 73"
+  report: "count hidden cells per measure and switch setting before any page uses them"
+
+outputs:
+  - output/panels/rank-2024.json   # every measure x switch setting, all 73 majors
+  - output/panels/rank-2024.csv    # same, flat, for review

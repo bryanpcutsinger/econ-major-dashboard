@@ -1,0 +1,731 @@
+setting,major,estimate,se,n,moe_ratio,hidden,rank,rank_lo,rank_hi,n_about_same
+pay_mid|grad=0|fulltime=1,Accounting,96448.75,2719.01,2778,0.046,False,23,15,29,14
+pay_mid|grad=0|fulltime=1,Advertising and Public Relations,93403.0,4020.618,444,0.071,False,24,18,37,19
+pay_mid|grad=0|fulltime=1,Aerospace Engineering,131982.5,6783.472,121,0.085,False,2,1,7,6
+pay_mid|grad=0|fulltime=1,Agriculture,81220.0,3235.915,462,0.066,False,39,29,59,30
+pay_mid|grad=0|fulltime=1,Animal and Plant Sciences,79189.5,4092.216,466,0.085,False,50,31,62,31
+pay_mid|grad=0|fulltime=1,Anthropology,65991.25,2295.179,316,0.057,False,64,60,68,8
+pay_mid|grad=0|fulltime=1,Architecture,91372.5,2174.805,533,0.039,False,26,21,37,16
+pay_mid|grad=0|fulltime=1,Art History,92387.75,8044.794,161,0.143,False,25,12,53,41
+pay_mid|grad=0|fulltime=1,Biochemistry,101525.0,7628.284,130,0.124,False,16,9,35,26
+pay_mid|grad=0|fulltime=1,Biology,84265.75,3417.724,1646,0.067,False,36,26,56,30
+pay_mid|grad=0|fulltime=1,Business Analytics,110662.25,4749.654,872,0.071,False,11,7,17,10
+pay_mid|grad=0|fulltime=1,Business Management,83250.5,1760.682,7258,0.035,False,37,29,54,25
+pay_mid|grad=0|fulltime=1,Chemical Engineering,137058.75,6959.173,360,0.084,False,1,1,4,3
+pay_mid|grad=0|fulltime=1,Chemistry,87311.5,2804.643,357,0.053,False,33,22,46,24
+pay_mid|grad=0|fulltime=1,Civil Engineering,116753.75,3448.852,808,0.049,False,8,4,13,9
+pay_mid|grad=0|fulltime=1,Commercial Art & Graphic Design,81220.0,0.0,1470,0.0,False,39,32,56,24
+pay_mid|grad=0|fulltime=1,Communications,88326.75,3587.941,2675,0.067,False,30,22,46,24
+pay_mid|grad=0|fulltime=1,Computer Engineering,131982.5,4776.539,895,0.06,False,2,1,4,3
+pay_mid|grad=0|fulltime=1,Computer Science,121830.0,1086.107,2945,0.015,False,5,3,9,6
+pay_mid|grad=0|fulltime=1,Construction Services,121830.0,5022.851,387,0.068,False,5,3,11,8
+pay_mid|grad=0|fulltime=1,Criminal Justice,81220.0,1805.758,2745,0.037,False,39,30,57,27
+pay_mid|grad=0|fulltime=1,Early Childhood Education,52793.0,2029.494,311,0.063,False,73,71,73,2
+pay_mid|grad=0|fulltime=1,Earth Sciences,76143.75,3262.506,179,0.07,False,53,37,62,25
+pay_mid|grad=0|fulltime=1,Economics,114723.25,4797.412,1712,0.069,False,9,4,16,12
+pay_mid|grad=0|fulltime=1,Electrical Engineering,124875.75,4216.168,1335,0.056,False,4,1,9,8
+pay_mid|grad=0|fulltime=1,Elementary Education,55838.75,447.214,1311,0.013,False,71,69,73,4
+pay_mid|grad=0|fulltime=1,Engineering Technologies,105586.0,4370.698,791,0.068,False,14,9,24,15
+pay_mid|grad=0|fulltime=1,English Language,76143.75,2905.25,1888,0.063,False,53,39,62,23
+pay_mid|grad=0|fulltime=1,Environmental Studies,81220.0,1731.168,691,0.035,False,39,32,57,25
+pay_mid|grad=0|fulltime=1,Ethnic Studies,91372.5,6369.012,249,0.115,False,26,16,51,35
+pay_mid|grad=0|fulltime=1,Family and Consumer Sciences,64976.0,2710.744,546,0.069,False,66,60,70,10
+pay_mid|grad=0|fulltime=1,Finance,113708.0,3705.593,2296,0.054,False,10,7,16,9
+pay_mid|grad=0|fulltime=1,Fine Arts,73098.0,2323.383,1753,0.052,False,59,46,63,17
+pay_mid|grad=0|fulltime=1,Foreign Language,78174.25,4490.473,542,0.094,False,52,33,62,29
+pay_mid|grad=0|fulltime=1,General Business,91372.5,0.0,3844,0.0,False,26,22,35,13
+pay_mid|grad=0|fulltime=1,General Education,56854.0,1567.275,1412,0.045,False,70,69,72,3
+pay_mid|grad=0|fulltime=1,General Engineering,106601.25,5401.469,805,0.083,False,12,8,24,16
+pay_mid|grad=0|fulltime=1,General Social Sciences,76143.75,7114.071,204,0.154,False,53,30,66,36
+pay_mid|grad=0|fulltime=1,Geography,88326.75,4456.595,269,0.083,False,30,21,52,31
+pay_mid|grad=0|fulltime=1,Health Services,67006.5,1989.988,1182,0.049,False,63,60,66,6
+pay_mid|grad=0|fulltime=1,History,81220.0,1086.187,1328,0.022,False,39,32,56,24
+pay_mid|grad=0|fulltime=1,Industrial Engineering,101525.0,4609.628,299,0.075,False,16,11,26,15
+pay_mid|grad=0|fulltime=1,Information Systems & Management,101525.0,727.609,1652,0.012,False,16,12,24,12
+pay_mid|grad=0|fulltime=1,Interdisciplinary Studies,81220.0,2682.915,1126,0.054,False,39,30,57,27
+pay_mid|grad=0|fulltime=1,International Affairs,91372.5,3158.448,458,0.057,False,26,20,38,18
+pay_mid|grad=0|fulltime=1,Journalism,88326.75,3217.3,767,0.06,False,30,22,44,22
+pay_mid|grad=0|fulltime=1,Leisure and Hospitality,76143.75,3795.181,1253,0.082,False,53,37,63,26
+pay_mid|grad=0|fulltime=1,Liberal Arts,76143.75,2179.472,996,0.047,False,53,45,62,17
+pay_mid|grad=0|fulltime=1,Marketing,101525.0,4085.546,2456,0.066,False,16,12,27,15
+pay_mid|grad=0|fulltime=1,Mass Media,81220.0,4181.658,710,0.085,False,39,28,61,33
+pay_mid|grad=0|fulltime=1,Mathematics,101525.0,3931.815,699,0.064,False,16,12,26,14
+pay_mid|grad=0|fulltime=1,Mechanical Engineering,121830.0,0.0,1418,0.0,False,5,3,9,6
+pay_mid|grad=0|fulltime=1,Medical Technicians,81220.0,2376.514,285,0.048,False,39,30,57,27
+pay_mid|grad=0|fulltime=1,Miscellaneous Biological Science,81220.0,1546.998,435,0.031,False,39,32,57,25
+pay_mid|grad=0|fulltime=1,Miscellaneous Education,60915.0,3089.524,251,0.083,False,68,63,72,9
+pay_mid|grad=0|fulltime=1,Miscellaneous Engineering,106601.25,5802.448,589,0.09,False,12,8,24,16
+pay_mid|grad=0|fulltime=1,Miscellaneous Physical Sciences,82235.25,6888.848,160,0.138,False,38,22,62,40
+pay_mid|grad=0|fulltime=1,Miscellaneous Technologies,97464.0,6012.597,656,0.101,False,22,12,36,24
+pay_mid|grad=0|fulltime=1,Nursing,87311.5,1288.861,3541,0.024,False,33,25,41,16
+pay_mid|grad=0|fulltime=1,Nutrition Sciences,71067.5,7621.05,123,0.176,False,61,36,69,33
+pay_mid|grad=0|fulltime=1,Performing Arts,76143.75,1286.995,929,0.028,False,53,45,62,17
+pay_mid|grad=0|fulltime=1,Pharmacy,86296.25,4046.277,94,0.077,True,35,22,54,32
+pay_mid|grad=0|fulltime=1,Philosophy,81220.0,5702.167,387,0.115,False,39,27,62,35
+pay_mid|grad=0|fulltime=1,Physics,105586.0,3994.451,198,0.062,False,14,9,23,14
+pay_mid|grad=0|fulltime=1,Political Science,101525.0,0.0,1343,0.0,False,16,12,24,12
+pay_mid|grad=0|fulltime=1,Psychology,73098.0,2023.075,2907,0.046,False,59,46,63,17
+pay_mid|grad=0|fulltime=1,Public Policy and Law,81220.0,5817.816,263,0.118,False,39,26,62,36
+pay_mid|grad=0|fulltime=1,Secondary Education,61930.25,2083.822,1095,0.055,False,67,63,70,7
+pay_mid|grad=0|fulltime=1,Social Services,60915.0,1525.213,609,0.041,False,68,64,70,6
+pay_mid|grad=0|fulltime=1,Sociology,79189.5,3344.778,1134,0.069,False,50,32,61,29
+pay_mid|grad=0|fulltime=1,Special Education,55838.75,4610.043,170,0.136,False,71,65,73,8
+pay_mid|grad=0|fulltime=1,Theology and Religion,65991.25,4860.218,365,0.121,False,64,57,70,13
+pay_mid|grad=0|fulltime=1,Treatment Therapy,71067.5,4048.707,328,0.094,False,61,48,66,18
+pay_mid|grad=0|fulltime=0,Accounting,91372.5,803.7,3068,0.014,False,21,17,27,10
+pay_mid|grad=0|fulltime=0,Advertising and Public Relations,88326.75,5326.772,503,0.099,False,24,17,40,23
+pay_mid|grad=0|fulltime=0,Aerospace Engineering,131982.5,7607.49,128,0.095,False,1,1,7,6
+pay_mid|grad=0|fulltime=0,Agriculture,81220.0,2216.828,495,0.045,False,30,23,47,24
+pay_mid|grad=0|fulltime=0,Animal and Plant Sciences,71067.5,2650.489,527,0.061,False,52,40,61,21
+pay_mid|grad=0|fulltime=0,Anthropology,60915.0,3040.942,369,0.082,False,64,57,70,13
+pay_mid|grad=0|fulltime=0,Architecture,84265.75,3687.486,601,0.072,False,28,21,45,24
+pay_mid|grad=0|fulltime=0,Art History,81220.0,4256.342,197,0.086,False,30,23,51,28
+pay_mid|grad=0|fulltime=0,Biochemistry,89342.0,6418.323,146,0.118,False,23,15,40,25
+pay_mid|grad=0|fulltime=0,Biology,81220.0,2459.672,1864,0.05,False,30,24,47,23
+pay_mid|grad=0|fulltime=0,Business Analytics,105586.0,5181.053,922,0.081,False,11,8,20,12
+pay_mid|grad=0|fulltime=0,Business Management,81220.0,1747.47,7974,0.035,False,30,24,47,23
+pay_mid|grad=0|fulltime=0,Chemical Engineering,131982.5,6507.864,380,0.081,False,1,1,7,6
+pay_mid|grad=0|fulltime=0,Chemistry,83250.5,3493.068,397,0.069,False,29,22,47,25
+pay_mid|grad=0|fulltime=0,Civil Engineering,111677.5,3567.783,857,0.053,False,8,7,12,5
+pay_mid|grad=0|fulltime=0,Commercial Art & Graphic Design,76143.75,615.053,1711,0.013,False,42,36,52,16
+pay_mid|grad=0|fulltime=0,Communications,81220.0,969.188,3036,0.02,False,30,24,46,22
+pay_mid|grad=0|fulltime=0,Computer Engineering,126906.25,6122.605,959,0.079,False,3,1,7,6
+pay_mid|grad=0|fulltime=0,Computer Science,121830.0,815.932,3138,0.011,False,4,1,7,6
+pay_mid|grad=0|fulltime=0,Construction Services,121830.0,4931.833,404,0.067,False,4,1,9,8
+pay_mid|grad=0|fulltime=0,Criminal Justice,76143.75,1701.269,2960,0.037,False,42,36,53,17
+pay_mid|grad=0|fulltime=0,Early Childhood Education,50051.825,2358.109,390,0.078,False,73,69,73,4
+pay_mid|grad=0|fulltime=0,Earth Sciences,73098.0,5342.286,200,0.12,False,50,29,62,33
+pay_mid|grad=0|fulltime=0,Economics,106601.25,4242.719,1869,0.065,False,10,8,18,10
+pay_mid|grad=0|fulltime=0,Electrical Engineering,121830.0,2127.477,1412,0.029,False,4,1,7,6
+pay_mid|grad=0|fulltime=0,Elementary Education,51777.75,1399.481,1618,0.044,False,72,69,73,4
+pay_mid|grad=0|fulltime=0,Engineering Technologies,101525.0,1634.923,827,0.026,False,13,9,20,11
+pay_mid|grad=0|fulltime=0,English Language,70052.25,3013.999,2247,0.071,False,54,42,62,20
+pay_mid|grad=0|fulltime=0,Environmental Studies,77159.0,3064.586,771,0.065,False,41,27,55,28
+pay_mid|grad=0|fulltime=0,Ethnic Studies,81220.0,5022.343,297,0.102,False,30,23,51,28
+pay_mid|grad=0|fulltime=0,Family and Consumer Sciences,60915.0,223.607,658,0.006,False,64,60,68,8
+pay_mid|grad=0|fulltime=0,Finance,109647.0,5097.468,2468,0.076,False,9,7,16,9
+pay_mid|grad=0|fulltime=0,Fine Arts,65991.25,1937.909,2160,0.048,False,59,51,65,14
+pay_mid|grad=0|fulltime=0,Foreign Language,68021.75,3374.391,655,0.082,False,56,47,66,19
+pay_mid|grad=0|fulltime=0,General Business,86296.25,2640.039,4223,0.05,False,25,19,35,16
+pay_mid|grad=0|fulltime=0,General Education,52793.0,2628.07,1658,0.082,False,71,68,73,5
+pay_mid|grad=0|fulltime=0,General Engineering,101525.0,3477.013,852,0.056,False,13,9,21,12
+pay_mid|grad=0|fulltime=0,General Social Sciences,67006.5,4828.081,235,0.119,False,58,46,67,21
+pay_mid|grad=0|fulltime=0,Geography,86296.25,4742.688,297,0.09,False,25,18,44,26
+pay_mid|grad=0|fulltime=0,Health Services,62945.5,3009.164,1437,0.079,False,63,55,68,13
+pay_mid|grad=0|fulltime=0,History,76143.75,2874.641,1472,0.062,False,42,30,56,26
+pay_mid|grad=0|fulltime=0,Industrial Engineering,97464.0,6301.387,329,0.106,False,17,9,28,19
+pay_mid|grad=0|fulltime=0,Information Systems & Management,99494.5,3123.066,1766,0.052,False,16,10,21,11
+pay_mid|grad=0|fulltime=0,Interdisciplinary Studies,73098.0,3540.283,1278,0.08,False,50,36,60,24
+pay_mid|grad=0|fulltime=0,International Affairs,86296.25,4441.373,524,0.085,False,25,17,41,24
+pay_mid|grad=0|fulltime=0,Journalism,81220.0,888.427,885,0.018,False,30,24,45,21
+pay_mid|grad=0|fulltime=0,Leisure and Hospitality,69037.0,2384.314,1445,0.057,False,55,48,63,15
+pay_mid|grad=0|fulltime=0,Liberal Arts,71067.5,2415.159,1172,0.056,False,52,41,60,19
+pay_mid|grad=0|fulltime=0,Marketing,91372.5,1412.441,2774,0.025,False,21,17,29,12
+pay_mid|grad=0|fulltime=0,Mass Media,76143.75,4980.405,822,0.108,False,42,26,60,34
+pay_mid|grad=0|fulltime=0,Mathematics,94418.25,4698.94,779,0.082,False,20,12,28,16
+pay_mid|grad=0|fulltime=0,Mechanical Engineering,121830.0,2453.764,1488,0.033,False,4,1,7,6
+pay_mid|grad=0|fulltime=0,Medical Technicians,76143.75,3828.942,338,0.083,False,42,27,59,32
+pay_mid|grad=0|fulltime=0,Miscellaneous Biological Science,79189.5,3544.498,506,0.074,False,40,24,51,27
+pay_mid|grad=0|fulltime=0,Miscellaneous Education,55838.75,2593.087,286,0.076,False,68,64,73,9
+pay_mid|grad=0|fulltime=0,Miscellaneous Engineering,101525.0,1282.814,657,0.021,False,13,9,20,11
+pay_mid|grad=0|fulltime=0,Miscellaneous Physical Sciences,81220.0,6280.75,173,0.127,False,30,20,54,34
+pay_mid|grad=0|fulltime=0,Miscellaneous Technologies,95433.5,6355.61,777,0.11,False,19,10,31,21
+pay_mid|grad=0|fulltime=0,Nursing,81220.0,0.0,4596,0.0,False,30,24,45,21
+pay_mid|grad=0|fulltime=0,Nutrition Sciences,65991.25,6377.741,151,0.159,False,59,42,69,27
+pay_mid|grad=0|fulltime=0,Performing Arts,68021.75,3913.202,1128,0.095,False,56,44,65,21
+pay_mid|grad=0|fulltime=0,Pharmacy,81220.0,5948.013,120,0.12,False,30,20,53,33
+pay_mid|grad=0|fulltime=0,Philosophy,76143.75,2669.639,453,0.058,False,42,32,55,23
+pay_mid|grad=0|fulltime=0,Physics,105586.0,4221.564,218,0.066,False,11,8,19,11
+pay_mid|grad=0|fulltime=0,Political Science,96448.75,4388.565,1479,0.075,False,18,11,25,14
+pay_mid|grad=0|fulltime=0,Psychology,65991.25,632.456,3425,0.016,False,59,52,63,11
+pay_mid|grad=0|fulltime=0,Public Policy and Law,75128.5,5603.278,298,0.123,False,48,26,62,36
+pay_mid|grad=0|fulltime=0,Secondary Education,60915.0,2266.463,1295,0.061,False,64,59,69,10
+pay_mid|grad=0|fulltime=0,Social Services,55838.75,990.242,712,0.029,False,68,66,71,5
+pay_mid|grad=0|fulltime=0,Sociology,75128.5,2191.008,1291,0.048,False,48,36,57,21
+pay_mid|grad=0|fulltime=0,Special Education,53808.25,4421.646,194,0.135,False,70,63,73,10
+pay_mid|grad=0|fulltime=0,Theology and Religion,60915.0,2380.402,423,0.064,False,64,57,69,12
+pay_mid|grad=0|fulltime=0,Treatment Therapy,65991.25,4512.39,399,0.112,False,59,47,67,20
+pay_mid|grad=1|fulltime=1,Accounting,101525.0,2334.137,4582,0.038,False,24,23,34,11
+pay_mid|grad=1|fulltime=1,Advertising and Public Relations,96448.75,4103.095,613,0.07,False,32,23,47,24
+pay_mid|grad=1|fulltime=1,Aerospace Engineering,149241.75,6758.017,299,0.074,False,2,1,5,4
+pay_mid|grad=1|fulltime=1,Agriculture,81220.0,6084.1,588,0.123,False,58,39,68,29
+pay_mid|grad=1|fulltime=1,Animal and Plant Sciences,86296.25,4870.126,738,0.093,False,46,34,63,29
+pay_mid|grad=1|fulltime=1,Anthropology,85281.0,3009.761,687,0.058,False,51,39,63,24
+pay_mid|grad=1|fulltime=1,Architecture,101525.0,3169.868,1062,0.051,False,24,23,35,12
+pay_mid|grad=1|fulltime=1,Art History,91372.5,5295.743,339,0.095,False,36,29,59,30
+pay_mid|grad=1|fulltime=1,Biochemistry,142135.0,5578.319,690,0.065,False,3,1,6,5
+pay_mid|grad=1|fulltime=1,Biology,111677.5,696.526,5613,0.01,False,20,15,24,9
+pay_mid|grad=1|fulltime=1,Business Analytics,114723.25,3420.428,1231,0.049,False,17,13,23,10
+pay_mid|grad=1|fulltime=1,Business Management,91372.5,1421.384,10079,0.026,False,36,33,49,16
+pay_mid|grad=1|fulltime=1,Chemical Engineering,142135.0,2650.543,783,0.031,False,3,2,5,3
+pay_mid|grad=1|fulltime=1,Chemistry,112692.75,4475.283,1361,0.065,False,19,13,24,11
+pay_mid|grad=1|fulltime=1,Civil Engineering,121830.0,1850.586,1353,0.025,False,12,9,17,8
+pay_mid|grad=1|fulltime=1,Commercial Art & Graphic Design,83250.5,2278.364,1699,0.045,False,55,43,63,20
+pay_mid|grad=1|fulltime=1,Communications,91372.5,387.298,3736,0.007,False,36,33,49,16
+pay_mid|grad=1|fulltime=1,Computer Engineering,150257.0,4044.692,1632,0.044,False,1,1,4,3
+pay_mid|grad=1|fulltime=1,Computer Science,131982.5,1910.665,4771,0.024,False,6,6,10,4
+pay_mid|grad=1|fulltime=1,Construction Services,121830.0,6213.085,434,0.084,False,12,7,22,15
+pay_mid|grad=1|fulltime=1,Criminal Justice,82235.25,2343.584,3720,0.047,False,56,43,63,20
+pay_mid|grad=1|fulltime=1,Early Childhood Education,60915.0,1186.309,670,0.032,False,73,73,73,0
+pay_mid|grad=1|fulltime=1,Earth Sciences,86296.25,4128.017,386,0.079,False,46,34,63,29
+pay_mid|grad=1|fulltime=1,Economics,131982.5,4045.411,3239,0.05,False,6,5,13,8
+pay_mid|grad=1|fulltime=1,Electrical Engineering,142135.0,2846.449,2795,0.033,False,3,1,5,4
+pay_mid|grad=1|fulltime=1,Elementary Education,63960.75,1407.327,3024,0.036,False,72,70,72,2
+pay_mid|grad=1|fulltime=1,Engineering Technologies,111677.5,3828.328,1118,0.056,False,20,14,24,10
+pay_mid|grad=1|fulltime=1,English Language,84265.75,2384.472,3877,0.047,False,53,41,63,22
+pay_mid|grad=1|fulltime=1,Environmental Studies,86296.25,2269.449,1086,0.043,False,46,40,60,20
+pay_mid|grad=1|fulltime=1,Ethnic Studies,96448.75,2461.364,549,0.042,False,32,26,39,13
+pay_mid|grad=1|fulltime=1,Family and Consumer Sciences,71067.5,1442.238,929,0.033,False,65,64,70,6
+pay_mid|grad=1|fulltime=1,Finance,123860.5,4233.791,3667,0.056,False,10,8,17,9
+pay_mid|grad=1|fulltime=1,Fine Arts,76143.75,1264.911,2373,0.027,False,64,60,64,4
+pay_mid|grad=1|fulltime=1,Foreign Language,91372.5,1041.957,1302,0.019,False,36,33,49,16
+pay_mid|grad=1|fulltime=1,General Business,101525.0,1658.312,5390,0.027,False,24,23,33,10
+pay_mid|grad=1|fulltime=1,General Education,69037.0,1501.368,3396,0.036,False,69,65,71,6
+pay_mid|grad=1|fulltime=1,General Engineering,113708.0,5431.046,1383,0.079,False,18,9,24,15
+pay_mid|grad=1|fulltime=1,General Social Sciences,87311.5,5525.145,363,0.104,False,45,32,63,31
+pay_mid|grad=1|fulltime=1,Geography,91372.5,1060.205,459,0.019,False,36,33,48,15
+pay_mid|grad=1|fulltime=1,Health Services,85281.0,2780.718,2676,0.054,False,51,40,63,23
+pay_mid|grad=1|fulltime=1,History,91372.5,1359.027,2932,0.024,False,36,33,50,17
+pay_mid|grad=1|fulltime=1,Industrial Engineering,126906.25,6150.141,593,0.08,False,9,6,17,11
+pay_mid|grad=1|fulltime=1,Information Systems & Management,101525.0,3302.602,2323,0.054,False,24,23,36,13
+pay_mid|grad=1|fulltime=1,Interdisciplinary Studies,88326.75,3156.933,2096,0.059,False,44,33,60,27
+pay_mid|grad=1|fulltime=1,International Affairs,105586.0,5846.385,994,0.091,False,23,16,35,19
+pay_mid|grad=1|fulltime=1,Journalism,91372.5,3926.918,1129,0.071,False,36,31,56,25
+pay_mid|grad=1|fulltime=1,Leisure and Hospitality,81220.0,223.607,2131,0.005,False,58,47,63,16
+pay_mid|grad=1|fulltime=1,Liberal Arts,81220.0,493.568,1490,0.01,False,58,47,63,16
+pay_mid|grad=1|fulltime=1,Marketing,101525.0,0.0,3192,0.0,False,24,23,33,10
+pay_mid|grad=1|fulltime=1,Mass Media,84265.75,2594.353,914,0.051,False,53,41,63,22
+pay_mid|grad=1|fulltime=1,Mathematics,111677.5,3503.944,1774,0.052,False,20,14,24,10
+pay_mid|grad=1|fulltime=1,Mechanical Engineering,131982.5,891.129,2561,0.011,False,6,6,11,5
+pay_mid|grad=1|fulltime=1,Medical Technicians,86296.25,4617.122,397,0.088,False,46,34,63,29
+pay_mid|grad=1|fulltime=1,Miscellaneous Biological Science,101525.0,0.0,1367,0.0,False,24,23,33,10
+pay_mid|grad=1|fulltime=1,Miscellaneous Education,71067.5,2278.749,756,0.053,False,65,64,70,6
+pay_mid|grad=1|fulltime=1,Miscellaneous Engineering,123860.5,4015.222,1302,0.053,False,10,8,17,9
+pay_mid|grad=1|fulltime=1,Miscellaneous Physical Sciences,101525.0,7375.736,383,0.12,False,24,18,45,27
+pay_mid|grad=1|fulltime=1,Miscellaneous Technologies,99494.5,3353.994,853,0.055,False,31,23,38,15
+pay_mid|grad=1|fulltime=1,Nursing,96448.75,1183.288,5637,0.02,False,32,27,38,11
+pay_mid|grad=1|fulltime=1,Nutrition Sciences,81220.0,4839.438,261,0.098,False,58,41,64,23
+pay_mid|grad=1|fulltime=1,Performing Arts,81220.0,3656.321,1617,0.074,False,58,43,64,21
+pay_mid|grad=1|fulltime=1,Pharmacy,121830.0,9214.087,500,0.124,False,12,6,23,17
+pay_mid|grad=1|fulltime=1,Philosophy,91372.5,3492.249,965,0.063,False,36,30,55,25
+pay_mid|grad=1|fulltime=1,Physics,121830.0,3047.381,766,0.041,False,12,9,18,9
+pay_mid|grad=1|fulltime=1,Political Science,116753.75,2774.4,3398,0.039,False,16,10,21,11
+pay_mid|grad=1|fulltime=1,Psychology,81220.0,0.0,6828,0.0,False,58,47,63,16
+pay_mid|grad=1|fulltime=1,Public Policy and Law,94418.25,5011.24,559,0.087,False,35,23,52,29
+pay_mid|grad=1|fulltime=1,Secondary Education,71067.5,893.963,2850,0.021,False,65,64,70,6
+pay_mid|grad=1|fulltime=1,Social Services,68021.75,2287.321,1424,0.055,False,70,65,72,7
+pay_mid|grad=1|fulltime=1,Sociology,86296.25,1366.199,1992,0.026,False,46,40,60,20
+pay_mid|grad=1|fulltime=1,Special Education,65991.25,1548.041,499,0.039,False,71,69,72,3
+pay_mid|grad=1|fulltime=1,Theology and Religion,71067.5,2222.655,734,0.051,False,65,64,70,6
+pay_mid|grad=1|fulltime=1,Treatment Therapy,82235.25,4381.855,858,0.088,False,56,43,64,21
+pay_mid|grad=1|fulltime=0,Accounting,101525.0,0.0,5018,0.0,False,23,19,28,9
+pay_mid|grad=1|fulltime=0,Advertising and Public Relations,91372.5,3841.153,698,0.069,False,31,28,42,14
+pay_mid|grad=1|fulltime=0,Aerospace Engineering,146196.0,7364.477,317,0.083,False,1,1,5,4
+pay_mid|grad=1|fulltime=0,Agriculture,81220.0,1975.716,639,0.04,False,44,40,58,18
+pay_mid|grad=1|fulltime=0,Animal and Plant Sciences,81220.0,1264.638,829,0.026,False,44,40,58,18
+pay_mid|grad=1|fulltime=0,Anthropology,79189.5,3812.83,788,0.079,False,53,39,62,23
+pay_mid|grad=1|fulltime=0,Architecture,93403.0,2834.403,1178,0.05,False,29,27,37,10
+pay_mid|grad=1|fulltime=0,Art History,77159.0,4627.172,421,0.099,False,55,39,63,24
+pay_mid|grad=1|fulltime=0,Biochemistry,137058.75,7504.611,774,0.09,False,5,1,8,7
+pay_mid|grad=1|fulltime=0,Biology,106601.25,1405.525,6388,0.022,False,19,16,24,8
+pay_mid|grad=1|fulltime=0,Business Analytics,110662.25,3365.756,1307,0.05,False,18,14,22,8
+pay_mid|grad=1|fulltime=0,Business Management,86296.25,2269.361,11028,0.043,False,37,31,50,19
+pay_mid|grad=1|fulltime=0,Chemical Engineering,142135.0,5556.194,829,0.064,False,3,1,5,4
+pay_mid|grad=1|fulltime=0,Chemistry,105586.0,5153.796,1508,0.08,False,21,15,28,13
+pay_mid|grad=1|fulltime=0,Civil Engineering,116753.75,4781.858,1435,0.067,False,14,8,19,11
+pay_mid|grad=1|fulltime=0,Commercial Art & Graphic Design,78174.25,3036.19,1978,0.064,False,54,41,63,22
+pay_mid|grad=1|fulltime=0,Communications,84265.75,2126.183,4239,0.042,False,41,34,55,21
+pay_mid|grad=1|fulltime=0,Computer Engineering,146196.0,3112.564,1736,0.035,False,1,1,4,3
+pay_mid|grad=1|fulltime=0,Computer Science,128936.75,3749.979,5076,0.048,False,6,5,12,7
+pay_mid|grad=1|fulltime=0,Construction Services,121830.0,4100.632,452,0.055,False,9,6,15,9
+pay_mid|grad=1|fulltime=0,Criminal Justice,81220.0,908.502,4017,0.018,False,44,40,57,17
+pay_mid|grad=1|fulltime=0,Early Childhood Education,60915.0,2262.337,807,0.061,False,72,70,73,3
+pay_mid|grad=1|fulltime=0,Earth Sciences,81220.0,4318.558,423,0.087,False,44,33,62,29
+pay_mid|grad=1|fulltime=0,Economics,122845.25,5053.386,3538,0.068,False,8,6,15,9
+pay_mid|grad=1|fulltime=0,Electrical Engineering,138074.0,3425.117,2945,0.041,False,4,2,5,3
+pay_mid|grad=1|fulltime=0,Elementary Education,60915.0,0.0,3551,0.0,False,72,72,73,1
+pay_mid|grad=1|fulltime=0,Engineering Technologies,106601.25,3872.564,1181,0.06,False,19,14,27,13
+pay_mid|grad=1|fulltime=0,English Language,76143.75,1871.754,4503,0.04,False,57,49,63,14
+pay_mid|grad=1|fulltime=0,Environmental Studies,81220.0,1718.039,1205,0.035,False,44,39,58,19
+pay_mid|grad=1|fulltime=0,Ethnic Studies,89342.0,3772.464,641,0.069,False,35,28,47,19
+pay_mid|grad=1|fulltime=0,Family and Consumer Sciences,65991.25,2343.177,1116,0.058,False,66,64,72,8
+pay_mid|grad=1|fulltime=0,Finance,121830.0,1118.034,3931,0.015,False,9,8,15,7
+pay_mid|grad=1|fulltime=0,Fine Arts,68021.75,2469.759,2920,0.06,False,64,63,71,8
+pay_mid|grad=1|fulltime=0,Foreign Language,83250.5,3420.879,1534,0.068,False,42,33,58,25
+pay_mid|grad=1|fulltime=0,General Business,91372.5,2263.773,5928,0.041,False,31,28,38,10
+pay_mid|grad=1|fulltime=0,General Education,65991.25,1000.0,3874,0.025,False,66,64,71,7
+pay_mid|grad=1|fulltime=0,General Engineering,111677.5,2660.471,1468,0.039,False,16,14,21,7
+pay_mid|grad=1|fulltime=0,General Social Sciences,81220.0,3249.369,412,0.066,False,44,35,62,27
+pay_mid|grad=1|fulltime=0,Geography,89342.0,3464.501,510,0.064,False,35,28,47,19
+pay_mid|grad=1|fulltime=0,Health Services,77159.0,2524.859,3284,0.054,False,55,43,63,20
+pay_mid|grad=1|fulltime=0,History,86296.25,1392.286,3237,0.027,False,37,32,47,15
+pay_mid|grad=1|fulltime=0,Industrial Engineering,121830.0,4390.598,642,0.059,False,9,5,15,10
+pay_mid|grad=1|fulltime=0,Information Systems & Management,101525.0,0.0,2476,0.0,False,23,19,28,9
+pay_mid|grad=1|fulltime=0,Interdisciplinary Studies,83250.5,2540.374,2370,0.05,False,42,34,55,21
+pay_mid|grad=1|fulltime=0,International Affairs,101525.0,2719.475,1109,0.044,False,23,18,28,10
+pay_mid|grad=1|fulltime=0,Journalism,86296.25,1510.663,1290,0.029,False,37,32,47,15
+pay_mid|grad=1|fulltime=0,Leisure and Hospitality,76143.75,2181.141,2448,0.047,False,57,49,63,14
+pay_mid|grad=1|fulltime=0,Liberal Arts,76143.75,1743.718,1751,0.038,False,57,49,63,14
+pay_mid|grad=1|fulltime=0,Marketing,93403.0,3617.413,3593,0.064,False,29,27,40,13
+pay_mid|grad=1|fulltime=0,Mass Media,81220.0,5214.731,1058,0.106,False,44,34,63,29
+pay_mid|grad=1|fulltime=0,Mathematics,103555.5,4139.139,1950,0.066,False,22,15,28,13
+pay_mid|grad=1|fulltime=0,Mechanical Engineering,127921.5,3799.545,2679,0.049,False,7,5,12,7
+pay_mid|grad=1|fulltime=0,Medical Technicians,81220.0,3763.104,463,0.076,False,44,35,62,27
+pay_mid|grad=1|fulltime=0,Miscellaneous Biological Science,99494.5,3367.577,1554,0.056,False,27,19,31,12
+pay_mid|grad=1|fulltime=0,Miscellaneous Education,67006.5,1971.183,844,0.048,False,65,63,71,8
+pay_mid|grad=1|fulltime=0,Miscellaneous Engineering,121830.0,3285.07,1429,0.044,False,9,6,15,9
+pay_mid|grad=1|fulltime=0,Miscellaneous Physical Sciences,101525.0,3280.0,414,0.053,False,23,18,28,10
+pay_mid|grad=1|fulltime=0,Miscellaneous Technologies,97464.0,4673.392,995,0.079,False,28,21,36,15
+pay_mid|grad=1|fulltime=0,Nursing,91372.5,223.607,7103,0.004,False,31,28,37,9
+pay_mid|grad=1|fulltime=0,Nutrition Sciences,76143.75,2711.9,332,0.059,False,57,45,63,18
+pay_mid|grad=1|fulltime=0,Performing Arts,72082.75,2275.788,1957,0.052,False,63,54,65,11
+pay_mid|grad=1|fulltime=0,Pharmacy,114723.25,8281.906,589,0.119,False,15,6,27,21
+pay_mid|grad=1|fulltime=0,Philosophy,86296.25,3129.035,1116,0.06,False,37,29,54,25
+pay_mid|grad=1|fulltime=0,Physics,121830.0,0.0,828,0.0,False,9,8,15,7
+pay_mid|grad=1|fulltime=0,Political Science,111677.5,2229.375,3704,0.033,False,16,14,22,8
+pay_mid|grad=1|fulltime=0,Psychology,76143.75,0.0,8044,0.0,False,57,49,62,13
+pay_mid|grad=1|fulltime=0,Public Policy and Law,91372.5,4535.935,621,0.082,False,31,27,45,18
+pay_mid|grad=1|fulltime=0,Secondary Education,65991.25,1727.857,3252,0.043,False,66,64,72,8
+pay_mid|grad=1|fulltime=0,Social Services,65991.25,1024.695,1656,0.026,False,66,64,71,7
+pay_mid|grad=1|fulltime=0,Sociology,81220.0,0.0,2267,0.0,False,44,40,57,17
+pay_mid|grad=1|fulltime=0,Special Education,65991.25,967.081,581,0.024,False,66,64,71,7
+pay_mid|grad=1|fulltime=0,Theology and Religion,65991.25,2259.026,829,0.056,False,66,64,71,7
+pay_mid|grad=1|fulltime=0,Treatment Therapy,76143.75,3846.863,1060,0.083,False,57,43,63,20
+pay_early|grad=0|fulltime=1,Accounting,69037.0,2293.164,805,0.055,False,17,10,23,13
+pay_early|grad=0|fulltime=1,Advertising and Public Relations,60915.0,1941.834,226,0.052,False,23,20,33,13
+pay_early|grad=0|fulltime=1,Aerospace Engineering,86296.25,4001.706,117,0.076,False,3,1,8,7
+pay_early|grad=0|fulltime=1,Agriculture,55838.75,3680.533,249,0.108,False,28,20,53,33
+pay_early|grad=0|fulltime=1,Animal and Plant Sciences,47310.65,3110.741,241,0.108,False,54,32,72,40
+pay_early|grad=0|fulltime=1,Anthropology,43655.75,2487.576,139,0.094,False,69,43,73,30
+pay_early|grad=0|fulltime=1,Architecture,60915.0,1635.34,203,0.044,False,23,20,32,12
+pay_early|grad=0|fulltime=1,Art History,45686.25,2753.897,33,0.099,True,58,37,73,36
+pay_early|grad=0|fulltime=1,Biochemistry,52793.0,1548.107,179,0.048,False,32,28,54,26
+pay_early|grad=0|fulltime=1,Biology,45686.25,345.563,1205,0.012,False,58,43,72,29
+pay_early|grad=0|fulltime=1,Business Analytics,73098.0,1975.402,418,0.044,False,11,8,19,11
+pay_early|grad=0|fulltime=1,Business Management,55838.75,632.471,2137,0.019,False,28,26,38,12
+pay_early|grad=0|fulltime=1,Chemical Engineering,86296.25,3122.515,252,0.06,False,3,1,7,6
+pay_early|grad=0|fulltime=1,Chemistry,50762.5,1856.902,193,0.06,False,36,29,60,31
+pay_early|grad=0|fulltime=1,Civil Engineering,75128.5,2183.155,393,0.048,False,10,8,15,7
+pay_early|grad=0|fulltime=1,Commercial Art & Graphic Design,50762.5,865.796,523,0.028,False,36,29,58,29
+pay_early|grad=0|fulltime=1,Communications,50762.5,2499.74,986,0.081,False,36,29,60,31
+pay_early|grad=0|fulltime=1,Computer Engineering,91372.5,3366.134,378,0.061,False,1,1,5,4
+pay_early|grad=0|fulltime=1,Computer Science,87311.5,2210.331,1768,0.042,False,2,1,5,4
+pay_early|grad=0|fulltime=1,Construction Services,76143.75,4444.486,155,0.096,False,8,5,18,13
+pay_early|grad=0|fulltime=1,Criminal Justice,50762.5,895.203,1021,0.029,False,36,29,58,29
+pay_early|grad=0|fulltime=1,Early Childhood Education,45686.25,2527.049,133,0.091,False,58,39,73,34
+pay_early|grad=0|fulltime=1,Earth Sciences,50762.5,4289.886,70,0.139,True,36,27,71,44
+pay_early|grad=0|fulltime=1,Economics,73098.0,2575.544,806,0.058,False,11,8,19,11
+pay_early|grad=0|fulltime=1,Electrical Engineering,82235.25,1976.135,390,0.04,False,6,3,8,5
+pay_early|grad=0|fulltime=1,Elementary Education,45686.25,958.4,556,0.035,False,58,43,72,29
+pay_early|grad=0|fulltime=1,Engineering Technologies,65991.25,1764.081,235,0.044,False,19,16,24,8
+pay_early|grad=0|fulltime=1,English Language,48732.0,2089.932,602,0.071,False,49,31,71,40
+pay_early|grad=0|fulltime=1,Environmental Studies,50762.5,616.007,489,0.02,False,36,29,58,29
+pay_early|grad=0|fulltime=1,Ethnic Studies,50762.5,7422.97,80,0.241,True,36,20,73,53
+pay_early|grad=0|fulltime=1,Family and Consumer Sciences,48732.0,3439.385,249,0.116,False,49,29,72,43
+pay_early|grad=0|fulltime=1,Finance,71067.5,0.0,1224,0.0,False,14,10,20,10
+pay_early|grad=0|fulltime=1,Fine Arts,44671.0,1896.651,601,0.07,False,68,43,73,30
+pay_early|grad=0|fulltime=1,Foreign Language,48630.475,2696.619,173,0.091,False,52,30,71,41
+pay_early|grad=0|fulltime=1,General Business,60915.0,3363.03,1183,0.091,False,23,17,34,17
+pay_early|grad=0|fulltime=1,General Education,45686.25,251.876,449,0.009,False,58,43,72,29
+pay_early|grad=0|fulltime=1,General Engineering,73098.0,3804.302,268,0.086,False,11,7,20,13
+pay_early|grad=0|fulltime=1,General Social Sciences,45686.25,3065.47,47,0.11,True,58,34,73,39
+pay_early|grad=0|fulltime=1,Geography,50762.5,6520.061,74,0.211,True,36,21,73,52
+pay_early|grad=0|fulltime=1,Health Services,49747.25,1869.849,793,0.062,False,48,30,62,32
+pay_early|grad=0|fulltime=1,History,47919.8,3003.584,346,0.103,False,53,31,72,41
+pay_early|grad=0|fulltime=1,Industrial Engineering,84265.75,4816.808,152,0.094,False,5,1,7,6
+pay_early|grad=0|fulltime=1,Information Systems & Management,67006.5,2415.131,542,0.059,False,18,14,24,10
+pay_early|grad=0|fulltime=1,Interdisciplinary Studies,52793.0,1625.607,462,0.051,False,32,28,54,26
+pay_early|grad=0|fulltime=1,International Affairs,64976.0,4764.184,197,0.121,False,21,11,31,20
+pay_early|grad=0|fulltime=1,Journalism,48732.0,2155.384,273,0.073,False,49,30,71,41
+pay_early|grad=0|fulltime=1,Leisure and Hospitality,45686.25,1288.306,661,0.046,False,58,42,72,30
+pay_early|grad=0|fulltime=1,Liberal Arts,45686.25,3172.65,229,0.114,False,58,34,73,39
+pay_early|grad=0|fulltime=1,Marketing,60915.0,0.0,1286,0.0,False,23,20,31,11
+pay_early|grad=0|fulltime=1,Mass Media,50762.5,1743.45,300,0.056,False,36,28,60,32
+pay_early|grad=0|fulltime=1,Mathematics,71067.5,4271.146,463,0.099,False,14,8,24,16
+pay_early|grad=0|fulltime=1,Mechanical Engineering,80204.75,2035.786,1020,0.042,False,7,3,10,7
+pay_early|grad=0|fulltime=1,Medical Technicians,62945.5,2956.735,116,0.077,False,22,16,31,15
+pay_early|grad=0|fulltime=1,Miscellaneous Biological Science,45889.3,2353.029,451,0.084,False,57,40,73,33
+pay_early|grad=0|fulltime=1,Miscellaneous Education,47310.65,4055.478,93,0.141,True,54,30,73,43
+pay_early|grad=0|fulltime=1,Miscellaneous Engineering,76143.75,2413.827,461,0.052,False,8,7,15,8
+pay_early|grad=0|fulltime=1,Miscellaneous Physical Sciences,60915.0,6159.337,89,0.166,True,23,14,47,33
+pay_early|grad=0|fulltime=1,Miscellaneous Technologies,54823.5,4738.28,258,0.142,False,31,20,61,41
+pay_early|grad=0|fulltime=1,Nursing,71067.5,659.603,1829,0.015,False,14,10,21,11
+pay_early|grad=0|fulltime=1,Nutrition Sciences,50762.5,5525.428,59,0.179,True,36,25,72,47
+pay_early|grad=0|fulltime=1,Performing Arts,43655.75,2589.726,433,0.098,False,69,44,73,29
+pay_early|grad=0|fulltime=1,Pharmacy,40610.0,2532.78,22,0.103,True,72,59,73,14
+pay_early|grad=0|fulltime=1,Philosophy,51777.75,2538.194,108,0.081,False,35,27,59,32
+pay_early|grad=0|fulltime=1,Physics,65991.25,5965.73,127,0.149,False,19,8,30,22
+pay_early|grad=0|fulltime=1,Political Science,52793.0,2033.201,652,0.063,False,32,27,55,28
+pay_early|grad=0|fulltime=1,Psychology,45686.25,223.607,1509,0.008,False,58,43,72,29
+pay_early|grad=0|fulltime=1,Public Policy and Law,55838.75,2670.687,123,0.079,False,28,24,43,19
+pay_early|grad=0|fulltime=1,Secondary Education,45686.25,1561.874,465,0.056,False,58,43,71,28
+pay_early|grad=0|fulltime=1,Social Services,43655.75,3145.091,238,0.119,False,69,43,73,30
+pay_early|grad=0|fulltime=1,Sociology,50660.975,2878.852,358,0.093,False,47,28,70,42
+pay_early|grad=0|fulltime=1,Special Education,46701.5,2486.808,78,0.088,True,56,34,73,39
+pay_early|grad=0|fulltime=1,Theology and Religion,40610.0,3211.732,115,0.13,False,72,50,73,23
+pay_early|grad=0|fulltime=1,Treatment Therapy,50762.5,3737.836,106,0.121,False,36,27,71,44
+pay_early|grad=0|fulltime=0,Accounting,65991.25,1134.705,912,0.028,False,14,12,20,8
+pay_early|grad=0|fulltime=0,Advertising and Public Relations,56854.0,2495.023,269,0.072,False,23,18,33,15
+pay_early|grad=0|fulltime=0,Aerospace Engineering,85281.0,2055.067,136,0.04,False,1,1,4,3
+pay_early|grad=0|fulltime=0,Agriculture,50762.5,3477.58,281,0.113,False,28,22,53,31
+pay_early|grad=0|fulltime=0,Animal and Plant Sciences,44671.0,3151.445,284,0.116,False,50,27,70,43
+pay_early|grad=0|fulltime=0,Anthropology,35533.75,2917.717,177,0.135,False,72,59,73,14
+pay_early|grad=0|fulltime=0,Architecture,58884.5,3406.896,237,0.095,False,22,16,30,14
+pay_early|grad=0|fulltime=0,Art History,40610.0,6412.757,46,0.26,True,60,27,73,46
+pay_early|grad=0|fulltime=0,Biochemistry,48732.0,4438.2,229,0.15,False,31,23,63,40
+pay_early|grad=0|fulltime=0,Biology,40610.0,0.0,1565,0.0,False,60,48,71,23
+pay_early|grad=0|fulltime=0,Business Analytics,71067.5,2093.717,471,0.048,False,8,8,14,6
+pay_early|grad=0|fulltime=0,Business Management,50762.5,1670.13,2489,0.054,False,28,25,45,20
+pay_early|grad=0|fulltime=0,Chemical Engineering,81220.0,3242.66,302,0.066,False,3,1,8,7
+pay_early|grad=0|fulltime=0,Chemistry,46701.5,2864.471,242,0.101,False,35,27,61,34
+pay_early|grad=0|fulltime=0,Civil Engineering,71067.5,834.084,440,0.019,False,8,8,13,5
+pay_early|grad=0|fulltime=0,Commercial Art & Graphic Design,45686.25,2785.302,678,0.1,False,38,27,64,37
+pay_early|grad=0|fulltime=0,Communications,48732.0,2138.838,1228,0.072,False,31,26,55,29
+pay_early|grad=0|fulltime=0,Computer Engineering,84265.75,3827.858,432,0.075,False,2,1,6,5
+pay_early|grad=0|fulltime=0,Computer Science,81220.0,0.0,2089,0.0,False,3,2,6,4
+pay_early|grad=0|fulltime=0,Construction Services,71067.5,4549.241,168,0.105,False,8,5,19,14
+pay_early|grad=0|fulltime=0,Criminal Justice,45686.25,0.0,1238,0.0,False,38,29,58,29
+pay_early|grad=0|fulltime=0,Early Childhood Education,43655.75,3121.958,167,0.118,False,52,29,70,41
+pay_early|grad=0|fulltime=0,Earth Sciences,45686.25,3838.022,94,0.138,True,38,27,70,43
+pay_early|grad=0|fulltime=0,Economics,65991.25,2729.201,962,0.068,False,14,11,23,12
+pay_early|grad=0|fulltime=0,Electrical Engineering,79189.5,2052.314,456,0.043,False,6,2,8,6
+pay_early|grad=0|fulltime=0,Elementary Education,42640.5,416.4,711,0.016,False,55,38,66,28
+pay_early|grad=0|fulltime=0,Engineering Technologies,63960.75,2804.5,276,0.072,False,17,12,24,12
+pay_early|grad=0|fulltime=0,English Language,42640.5,1624.515,811,0.063,False,55,34,70,36
+pay_early|grad=0|fulltime=0,Environmental Studies,45686.25,1781.843,594,0.064,False,38,29,61,32
+pay_early|grad=0|fulltime=0,Ethnic Studies,40610.0,5124.86,118,0.208,False,60,30,73,43
+pay_early|grad=0|fulltime=0,Family and Consumer Sciences,43655.75,2367.495,314,0.089,False,52,30,70,40
+pay_early|grad=0|fulltime=0,Finance,69037.0,2414.331,1397,0.058,False,13,8,19,11
+pay_early|grad=0|fulltime=0,Fine Arts,37767.3,1282.661,876,0.056,False,70,60,73,13
+pay_early|grad=0|fulltime=0,Foreign Language,45686.25,2394.82,224,0.086,False,38,27,64,37
+pay_early|grad=0|fulltime=0,General Business,50762.5,2143.325,1429,0.069,False,28,24,47,23
+pay_early|grad=0|fulltime=0,General Education,42640.5,1639.249,545,0.063,False,55,35,70,35
+pay_early|grad=0|fulltime=0,General Engineering,71067.5,1586.56,321,0.037,False,8,8,13,5
+pay_early|grad=0|fulltime=0,General Social Sciences,45686.25,7177.126,63,0.258,True,38,23,73,50
+pay_early|grad=0|fulltime=0,Geography,45787.775,6891.581,98,0.248,True,37,22,73,51
+pay_early|grad=0|fulltime=0,Health Services,45686.25,2267.244,1015,0.082,False,38,27,64,37
+pay_early|grad=0|fulltime=0,History,40610.0,1959.306,442,0.079,False,60,40,73,33
+pay_early|grad=0|fulltime=0,Industrial Engineering,81220.0,2737.864,169,0.055,False,3,1,6,5
+pay_early|grad=0|fulltime=0,Information Systems & Management,60915.0,1821.388,646,0.049,False,18,16,26,10
+pay_early|grad=0|fulltime=0,Interdisciplinary Studies,45686.25,1672.573,594,0.06,False,38,29,60,31
+pay_early|grad=0|fulltime=0,International Affairs,56854.0,3856.806,239,0.112,False,23,17,34,17
+pay_early|grad=0|fulltime=0,Journalism,45686.25,1945.238,330,0.07,False,38,29,61,32
+pay_early|grad=0|fulltime=0,Leisure and Hospitality,40610.0,428.871,866,0.017,False,60,48,71,23
+pay_early|grad=0|fulltime=0,Liberal Arts,38579.5,3713.704,285,0.158,False,69,40,73,33
+pay_early|grad=0|fulltime=0,Marketing,55838.75,2390.544,1511,0.07,False,26,20,32,12
+pay_early|grad=0|fulltime=0,Mass Media,40914.575,2787.168,407,0.112,False,59,34,73,39
+pay_early|grad=0|fulltime=0,Mathematics,60915.0,3087.716,573,0.083,False,18,14,27,13
+pay_early|grad=0|fulltime=0,Mechanical Engineering,76143.75,316.228,1157,0.007,False,7,5,8,3
+pay_early|grad=0|fulltime=0,Medical Technicians,60915.0,1784.98,140,0.048,False,18,16,26,10
+pay_early|grad=0|fulltime=0,Miscellaneous Biological Science,40610.0,1178.711,596,0.048,False,60,45,72,27
+pay_early|grad=0|fulltime=0,Miscellaneous Education,44671.0,3238.563,110,0.119,False,50,28,70,42
+pay_early|grad=0|fulltime=0,Miscellaneous Engineering,71067.5,0.0,528,0.0,False,8,8,13,5
+pay_early|grad=0|fulltime=0,Miscellaneous Physical Sciences,56854.0,7394.964,111,0.214,False,23,12,55,43
+pay_early|grad=0|fulltime=0,Miscellaneous Technologies,47818.275,2855.035,349,0.098,False,34,26,58,32
+pay_early|grad=0|fulltime=0,Nursing,65991.25,0.0,2234,0.0,False,14,12,20,8
+pay_early|grad=0|fulltime=0,Nutrition Sciences,46701.5,7293.251,70,0.257,True,35,21,73,52
+pay_early|grad=0|fulltime=0,Performing Arts,36549.0,2518.741,634,0.113,False,71,55,73,18
+pay_early|grad=0|fulltime=0,Pharmacy,35533.75,5755.726,29,0.266,True,72,40,73,33
+pay_early|grad=0|fulltime=0,Philosophy,45686.25,2837.671,149,0.102,False,38,27,66,39
+pay_early|grad=0|fulltime=0,Physics,60915.0,4770.263,149,0.129,False,18,12,28,16
+pay_early|grad=0|fulltime=0,Political Science,48732.0,2573.267,810,0.087,False,31,26,56,30
+pay_early|grad=0|fulltime=0,Psychology,40610.0,0.0,1980,0.0,False,60,48,71,23
+pay_early|grad=0|fulltime=0,Public Policy and Law,54823.5,3616.731,143,0.109,False,27,18,37,19
+pay_early|grad=0|fulltime=0,Secondary Education,43655.75,1335.41,581,0.05,False,52,33,66,33
+pay_early|grad=0|fulltime=0,Social Services,40610.0,707.107,287,0.029,False,60,48,71,23
+pay_early|grad=0|fulltime=0,Sociology,45686.25,1958.993,446,0.071,False,38,28,64,36
+pay_early|grad=0|fulltime=0,Special Education,45686.25,1410.985,103,0.051,False,38,29,60,31
+pay_early|grad=0|fulltime=0,Theology and Religion,40610.0,1470.596,148,0.06,False,60,45,73,28
+pay_early|grad=0|fulltime=0,Treatment Therapy,42234.4,3026.376,138,0.118,False,58,32,73,41
+pay_early|grad=1|fulltime=1,Accounting,71067.5,0.0,1220,0.0,False,15,10,23,13
+pay_early|grad=1|fulltime=1,Advertising and Public Relations,60915.0,1498.83,250,0.04,False,24,21,36,15
+pay_early|grad=1|fulltime=1,Aerospace Engineering,89342.0,3718.492,144,0.068,False,3,1,6,5
+pay_early|grad=1|fulltime=1,Agriculture,56854.0,3711.763,264,0.107,False,31,24,62,38
+pay_early|grad=1|fulltime=1,Animal and Plant Sciences,50762.5,654.235,293,0.021,False,44,35,66,31
+pay_early|grad=1|fulltime=1,Anthropology,45686.25,3476.91,165,0.125,False,69,41,73,32
+pay_early|grad=1|fulltime=1,Architecture,60915.0,2385.236,287,0.064,False,24,20,38,18
+pay_early|grad=1|fulltime=1,Art History,45686.25,2388.109,45,0.086,True,69,53,73,20
+pay_early|grad=1|fulltime=1,Biochemistry,55838.75,3388.796,231,0.1,False,34,23,56,33
+pay_early|grad=1|fulltime=1,Biology,48732.0,1341.26,1566,0.045,False,60,40,71,31
+pay_early|grad=1|fulltime=1,Business Analytics,75128.5,2975.28,475,0.065,False,11,8,21,13
+pay_early|grad=1|fulltime=1,Business Management,56854.0,1622.175,2398,0.047,False,31,27,44,17
+pay_early|grad=1|fulltime=1,Chemical Engineering,86296.25,1580.458,299,0.03,False,4,3,6,3
+pay_early|grad=1|fulltime=1,Chemistry,52793.0,2984.782,264,0.093,False,41,28,68,40
+pay_early|grad=1|fulltime=1,Civil Engineering,76143.75,615.398,480,0.013,False,8,8,15,7
+pay_early|grad=1|fulltime=1,Commercial Art & Graphic Design,50762.5,1778.139,550,0.058,False,44,33,69,36
+pay_early|grad=1|fulltime=1,Communications,52793.0,1775.637,1079,0.055,False,41,29,63,34
+pay_early|grad=1|fulltime=1,Computer Engineering,91372.5,2693.776,477,0.048,False,1,1,4,3
+pay_early|grad=1|fulltime=1,Computer Science,91372.5,2143.249,2021,0.039,False,1,1,4,3
+pay_early|grad=1|fulltime=1,Construction Services,76143.75,4542.239,157,0.098,False,8,6,20,14
+pay_early|grad=1|fulltime=1,Criminal Justice,50762.5,204.843,1144,0.007,False,44,37,65,28
+pay_early|grad=1|fulltime=1,Early Childhood Education,48732.0,1749.851,179,0.059,False,60,38,72,34
+pay_early|grad=1|fulltime=1,Earth Sciences,53808.25,3658.427,89,0.112,True,39,27,68,41
+pay_early|grad=1|fulltime=1,Economics,73098.0,2462.93,963,0.055,False,12,8,22,14
+pay_early|grad=1|fulltime=1,Electrical Engineering,84265.75,2363.631,512,0.046,False,6,3,8,5
+pay_early|grad=1|fulltime=1,Elementary Education,46701.5,999.489,696,0.035,False,68,57,73,16
+pay_early|grad=1|fulltime=1,Engineering Technologies,69037.0,3517.825,266,0.084,False,19,10,25,15
+pay_early|grad=1|fulltime=1,English Language,50762.5,816.57,758,0.026,False,44,35,66,31
+pay_early|grad=1|fulltime=1,Environmental Studies,50762.5,0.0,558,0.0,False,44,37,65,28
+pay_early|grad=1|fulltime=1,Ethnic Studies,50762.5,6965.609,96,0.226,True,44,24,73,49
+pay_early|grad=1|fulltime=1,Family and Consumer Sciences,50762.5,1014.673,317,0.033,False,44,35,67,32
+pay_early|grad=1|fulltime=1,Finance,71067.5,1636.474,1361,0.038,False,15,10,23,13
+pay_early|grad=1|fulltime=1,Fine Arts,45686.25,1071.292,637,0.039,False,69,60,73,13
+pay_early|grad=1|fulltime=1,Foreign Language,50762.5,1645.232,226,0.053,False,44,34,68,34
+pay_early|grad=1|fulltime=1,General Business,60915.0,1218.828,1315,0.033,False,24,21,36,15
+pay_early|grad=1|fulltime=1,General Education,47716.75,1630.206,598,0.056,False,67,43,73,30
+pay_early|grad=1|fulltime=1,General Engineering,73098.0,3813.969,321,0.086,False,12,8,23,15
+pay_early|grad=1|fulltime=1,General Social Sciences,49747.25,3039.87,60,0.101,True,57,34,73,39
+pay_early|grad=1|fulltime=1,Geography,60915.0,8685.269,90,0.235,True,24,10,70,60
+pay_early|grad=1|fulltime=1,Health Services,54823.5,1611.586,1231,0.048,False,38,28,47,19
+pay_early|grad=1|fulltime=1,History,50762.5,1719.055,456,0.056,False,44,33,69,36
+pay_early|grad=1|fulltime=1,Industrial Engineering,86296.25,4910.148,185,0.094,False,4,1,7,6
+pay_early|grad=1|fulltime=1,Information Systems & Management,69037.0,3028.475,630,0.072,False,19,10,25,15
+pay_early|grad=1|fulltime=1,Interdisciplinary Studies,53808.25,1634.878,570,0.05,False,39,28,57,29
+pay_early|grad=1|fulltime=1,International Affairs,65991.25,3141.027,258,0.078,False,21,12,30,18
+pay_early|grad=1|fulltime=1,Journalism,50762.5,2049.366,302,0.066,False,44,33,69,36
+pay_early|grad=1|fulltime=1,Leisure and Hospitality,48732.0,2008.106,867,0.068,False,60,37,72,35
+pay_early|grad=1|fulltime=1,Liberal Arts,48528.95,3069.369,263,0.104,False,65,34,73,39
+pay_early|grad=1|fulltime=1,Marketing,60915.0,0.0,1385,0.0,False,24,21,35,14
+pay_early|grad=1|fulltime=1,Mass Media,50762.5,1301.878,328,0.042,False,44,34,68,34
+pay_early|grad=1|fulltime=1,Mathematics,73098.0,3285.652,609,0.074,False,12,8,23,15
+pay_early|grad=1|fulltime=1,Mechanical Engineering,81220.0,500.0,1185,0.01,False,7,5,8,3
+pay_early|grad=1|fulltime=1,Medical Technicians,63960.75,2916.217,124,0.075,False,23,18,30,12
+pay_early|grad=1|fulltime=1,Miscellaneous Biological Science,50762.5,1428.047,577,0.046,False,44,35,68,33
+pay_early|grad=1|fulltime=1,Miscellaneous Education,50762.5,1431.731,129,0.046,False,44,34,68,34
+pay_early|grad=1|fulltime=1,Miscellaneous Engineering,76143.75,1162.367,593,0.025,False,8,8,16,8
+pay_early|grad=1|fulltime=1,Miscellaneous Physical Sciences,60915.0,5397.736,118,0.146,False,24,18,44,26
+pay_early|grad=1|fulltime=1,Miscellaneous Technologies,55838.75,4310.167,275,0.127,False,34,23,65,42
+pay_early|grad=1|fulltime=1,Nursing,71067.5,0.0,1935,0.0,False,15,10,23,13
+pay_early|grad=1|fulltime=1,Nutrition Sciences,55838.75,2888.708,87,0.085,True,34,25,54,29
+pay_early|grad=1|fulltime=1,Performing Arts,45686.25,2021.097,507,0.073,False,69,55,73,18
+pay_early|grad=1|fulltime=1,Pharmacy,71067.5,5518.96,85,0.128,True,15,8,26,18
+pay_early|grad=1|fulltime=1,Philosophy,52793.0,2037.829,148,0.063,False,41,28,63,35
+pay_early|grad=1|fulltime=1,Physics,64976.0,4124.772,169,0.104,False,22,13,33,20
+pay_early|grad=1|fulltime=1,Political Science,55838.75,855.166,817,0.025,False,34,28,44,16
+pay_early|grad=1|fulltime=1,Psychology,48732.0,719.837,1969,0.024,False,60,44,70,26
+pay_early|grad=1|fulltime=1,Public Policy and Law,56854.0,2867.032,149,0.083,False,31,23,44,21
+pay_early|grad=1|fulltime=1,Secondary Education,48325.9,928.988,588,0.032,False,66,46,71,25
+pay_early|grad=1|fulltime=1,Social Services,49747.25,1526.747,432,0.05,False,57,37,70,33
+pay_early|grad=1|fulltime=1,Sociology,49747.25,2729.665,415,0.09,False,57,34,72,38
+pay_early|grad=1|fulltime=1,Special Education,48732.0,2079.169,118,0.07,False,60,37,72,35
+pay_early|grad=1|fulltime=1,Theology and Religion,43148.125,2538.606,141,0.097,False,73,64,73,9
+pay_early|grad=1|fulltime=1,Treatment Therapy,58884.5,3228.187,233,0.09,False,30,21,43,22
+pay_early|grad=1|fulltime=0,Accounting,68021.75,1904.271,1374,0.046,False,14,8,19,11
+pay_early|grad=1|fulltime=0,Advertising and Public Relations,56854.0,1900.306,297,0.055,False,25,19,33,14
+pay_early|grad=1|fulltime=0,Aerospace Engineering,86296.25,2204.665,166,0.042,False,2,1,4,3
+pay_early|grad=1|fulltime=0,Agriculture,50762.5,4211.503,297,0.136,False,33,23,64,41
+pay_early|grad=1|fulltime=0,Animal and Plant Sciences,47310.65,2381.471,345,0.083,False,44,30,67,37
+pay_early|grad=1|fulltime=0,Anthropology,37564.25,4031.308,210,0.177,False,72,61,73,12
+pay_early|grad=1|fulltime=0,Architecture,60915.0,1161.371,331,0.031,False,20,17,27,10
+pay_early|grad=1|fulltime=0,Art History,41929.825,4353.22,61,0.171,True,65,36,73,37
+pay_early|grad=1|fulltime=0,Biochemistry,51777.75,1735.375,296,0.055,False,32,26,46,20
+pay_early|grad=1|fulltime=0,Biology,43351.175,1089.484,2037,0.041,False,63,41,69,28
+pay_early|grad=1|fulltime=0,Business Analytics,71067.5,2350.606,533,0.054,False,9,8,17,9
+pay_early|grad=1|fulltime=0,Business Management,52793.0,1623.763,2800,0.051,False,30,25,45,20
+pay_early|grad=1|fulltime=0,Chemical Engineering,81220.0,1979.378,354,0.04,False,4,2,6,4
+pay_early|grad=1|fulltime=0,Chemistry,50762.5,1973.295,325,0.064,False,33,26,53,27
+pay_early|grad=1|fulltime=0,Civil Engineering,72082.75,2681.756,539,0.061,False,8,7,16,9
+pay_early|grad=1|fulltime=0,Commercial Art & Graphic Design,45686.25,1694.571,706,0.061,False,49,34,68,34
+pay_early|grad=1|fulltime=0,Communications,49747.25,1929.011,1336,0.064,False,39,26,56,30
+pay_early|grad=1|fulltime=0,Computer Engineering,87311.5,4284.679,546,0.081,False,1,1,6,5
+pay_early|grad=1|fulltime=0,Computer Science,82235.25,2091.139,2383,0.042,False,3,1,6,5
+pay_early|grad=1|fulltime=0,Construction Services,71067.5,4467.382,170,0.103,False,9,6,20,14
+pay_early|grad=1|fulltime=0,Criminal Justice,45686.25,1324.512,1386,0.048,False,49,35,68,33
+pay_early|grad=1|fulltime=0,Early Childhood Education,45686.25,2376.696,217,0.086,False,49,33,68,35
+pay_early|grad=1|fulltime=0,Earth Sciences,47513.7,3165.22,114,0.11,False,43,26,68,42
+pay_early|grad=1|fulltime=0,Economics,68021.75,3205.113,1155,0.078,False,14,8,22,14
+pay_early|grad=1|fulltime=0,Electrical Engineering,79189.5,2263.36,600,0.047,False,6,2,7,5
+pay_early|grad=1|fulltime=0,Elementary Education,44671.0,1045.72,877,0.039,False,60,36,68,32
+pay_early|grad=1|fulltime=0,Engineering Technologies,65991.25,2496.271,314,0.062,False,16,10,25,15
+pay_early|grad=1|fulltime=0,English Language,45686.25,1539.663,1015,0.055,False,49,35,67,32
+pay_early|grad=1|fulltime=0,Environmental Studies,45686.25,1707.889,679,0.061,False,49,33,68,35
+pay_early|grad=1|fulltime=0,Ethnic Studies,40610.0,4069.419,143,0.165,False,67,42,73,31
+pay_early|grad=1|fulltime=0,Family and Consumer Sciences,45686.25,2368.227,397,0.085,False,49,33,68,35
+pay_early|grad=1|fulltime=0,Finance,71067.5,2202.796,1561,0.051,False,9,8,16,8
+pay_early|grad=1|fulltime=0,Fine Arts,39087.125,1528.979,924,0.064,False,71,64,73,9
+pay_early|grad=1|fulltime=0,Foreign Language,46701.5,2674.102,294,0.094,False,46,28,68,40
+pay_early|grad=1|fulltime=0,General Business,53808.25,2728.26,1589,0.083,False,29,22,44,22
+pay_early|grad=1|fulltime=0,General Education,45686.25,547.723,722,0.02,False,49,36,66,30
+pay_early|grad=1|fulltime=0,General Engineering,71067.5,1815.255,382,0.042,False,9,8,17,9
+pay_early|grad=1|fulltime=0,General Social Sciences,45686.25,2484.999,78,0.089,True,49,33,68,35
+pay_early|grad=1|fulltime=0,Geography,50762.5,5774.045,116,0.187,False,33,22,67,45
+pay_early|grad=1|fulltime=0,Health Services,50762.5,901.731,1560,0.029,False,33,26,47,21
+pay_early|grad=1|fulltime=0,History,43655.75,2593.186,579,0.098,False,61,36,72,36
+pay_early|grad=1|fulltime=0,Industrial Engineering,81220.0,3770.826,204,0.076,False,4,1,8,7
+pay_early|grad=1|fulltime=0,Information Systems & Management,60915.0,2292.281,744,0.062,False,20,17,29,12
+pay_early|grad=1|fulltime=0,Interdisciplinary Studies,48732.0,2575.715,735,0.087,False,40,26,65,39
+pay_early|grad=1|fulltime=0,International Affairs,60915.0,3730.986,312,0.101,False,20,14,32,18
+pay_early|grad=1|fulltime=0,Journalism,46701.5,2238.815,370,0.079,False,46,33,68,35
+pay_early|grad=1|fulltime=0,Leisure and Hospitality,40610.0,1014.759,1125,0.041,False,67,62,73,11
+pay_early|grad=1|fulltime=0,Liberal Arts,40610.0,3991.496,326,0.162,False,67,41,73,32
+pay_early|grad=1|fulltime=0,Marketing,56854.0,2744.995,1633,0.079,False,25,18,35,17
+pay_early|grad=1|fulltime=0,Mass Media,40914.575,2676.167,444,0.108,False,66,41,73,32
+pay_early|grad=1|fulltime=0,Mathematics,62945.5,3431.869,751,0.09,False,18,13,28,15
+pay_early|grad=1|fulltime=0,Mechanical Engineering,76143.75,1532.971,1338,0.033,False,7,5,9,4
+pay_early|grad=1|fulltime=0,Medical Technicians,61930.25,2459.296,149,0.065,False,19,15,28,13
+pay_early|grad=1|fulltime=0,Miscellaneous Biological Science,43655.75,2470.77,757,0.093,False,61,35,71,36
+pay_early|grad=1|fulltime=0,Miscellaneous Education,47310.65,4111.888,152,0.143,False,44,25,68,43
+pay_early|grad=1|fulltime=0,Miscellaneous Engineering,71067.5,2636.556,675,0.061,False,9,8,17,9
+pay_early|grad=1|fulltime=0,Miscellaneous Physical Sciences,55838.75,6035.216,147,0.178,False,27,17,57,40
+pay_early|grad=1|fulltime=0,Miscellaneous Technologies,48732.0,4097.947,371,0.138,False,40,26,66,40
+pay_early|grad=1|fulltime=0,Nursing,65991.25,0.0,2370,0.0,False,16,13,22,9
+pay_early|grad=1|fulltime=0,Nutrition Sciences,50762.5,5405.943,102,0.175,False,33,19,64,45
+pay_early|grad=1|fulltime=0,Performing Arts,37564.25,2521.935,741,0.11,False,72,65,73,8
+pay_early|grad=1|fulltime=0,Pharmacy,58884.5,9146.332,105,0.256,False,24,8,62,54
+pay_early|grad=1|fulltime=0,Philosophy,48732.0,2540.98,195,0.086,False,40,26,63,37
+pay_early|grad=1|fulltime=0,Physics,60915.0,3211.325,202,0.087,False,20,15,31,16
+pay_early|grad=1|fulltime=0,Political Science,50762.5,0.0,1021,0.0,False,33,26,47,21
+pay_early|grad=1|fulltime=0,Psychology,42640.5,1275.733,2560,0.049,False,64,46,71,25
+pay_early|grad=1|fulltime=0,Public Policy and Law,54823.5,3619.255,174,0.109,False,28,20,46,26
+pay_early|grad=1|fulltime=0,Secondary Education,45686.25,596.071,726,0.021,False,49,35,66,31
+pay_early|grad=1|fulltime=0,Social Services,45686.25,2253.05,517,0.081,False,49,33,68,35
+pay_early|grad=1|fulltime=0,Sociology,45686.25,1313.212,516,0.047,False,49,36,67,31
+pay_early|grad=1|fulltime=0,Special Education,46701.5,2872.928,147,0.101,False,46,27,68,41
+pay_early|grad=1|fulltime=0,Theology and Religion,40610.0,751.443,181,0.03,False,67,62,73,11
+pay_early|grad=1|fulltime=0,Treatment Therapy,52793.0,2813.217,300,0.088,False,30,24,47,23
+unemployment,Accounting,2.553,0.497,1460,0.32,False,19,4,46,42
+unemployment,Advertising and Public Relations,5.677,1.614,335,0.468,False,57,20,73,53
+unemployment,Aerospace Engineering,2.176,0.938,178,0.709,True,11,1,48,47
+unemployment,Agriculture,1.395,0.546,325,0.644,True,4,1,28,27
+unemployment,Animal and Plant Sciences,2.539,1.31,376,0.849,False,18,1,60,59
+unemployment,Anthropology,7.922,1.689,240,0.351,False,73,45,73,28
+unemployment,Architecture,6.844,1.57,369,0.377,False,68,33,73,40
+unemployment,Art History,6.688,3.372,71,0.829,True,67,3,73,70
+unemployment,Biochemistry,2.685,1.283,318,0.786,True,22,1,61,60
+unemployment,Biology,4.292,0.509,2249,0.195,False,39,20,67,47
+unemployment,Business Analytics,5.034,1.111,580,0.363,False,53,20,72,52
+unemployment,Business Management,3.786,0.365,3068,0.158,False,31,15,61,46
+unemployment,Chemical Engineering,4.711,1.249,383,0.436,False,50,13,72,59
+unemployment,Chemistry,4.326,1.694,362,0.644,False,42,5,71,66
+unemployment,Civil Engineering,2.256,0.694,563,0.506,True,14,1,46,45
+unemployment,Commercial Art & Graphic Design,5.743,0.966,806,0.277,False,58,31,73,42
+unemployment,Communications,3.856,0.598,1477,0.255,False,35,14,63,49
+unemployment,Computer Engineering,7.783,1.372,616,0.29,False,72,49,73,24
+unemployment,Computer Science,6.992,0.661,2665,0.156,False,70,46,73,27
+unemployment,Construction Services,2.184,1.13,179,0.851,True,12,1,51,50
+unemployment,Criminal Justice,3.557,0.521,1520,0.241,False,28,11,60,49
+unemployment,Early Childhood Education,6.593,2.457,240,0.613,False,65,14,73,59
+unemployment,Earth Sciences,3.836,2.284,121,0.979,True,34,1,73,72
+unemployment,Economics,3.524,0.692,1245,0.323,False,27,8,62,54
+unemployment,Electrical Engineering,3.159,0.758,637,0.395,False,26,5,59,54
+unemployment,Elementary Education,1.18,0.451,922,0.628,False,3,1,25,24
+unemployment,Engineering Technologies,1.74,0.76,332,0.719,True,7,1,35,34
+unemployment,English Language,6.14,0.914,1144,0.245,False,62,38,73,35
+unemployment,Environmental Studies,6.307,1.343,753,0.35,False,64,34,73,39
+unemployment,Ethnic Studies,4.856,1.741,163,0.59,False,51,7,73,66
+unemployment,Family and Consumer Sciences,4.29,1.229,429,0.471,False,38,9,69,60
+unemployment,Finance,2.758,0.41,1660,0.244,False,24,5,48,43
+unemployment,Fine Arts,7.655,1.127,1113,0.242,False,71,49,73,24
+unemployment,Foreign Language,1.579,0.716,329,0.746,True,5,1,33,32
+unemployment,General Business,4.314,0.573,1767,0.219,False,41,20,67,47
+unemployment,General Education,2.63,0.744,774,0.465,False,21,3,52,49
+unemployment,General Engineering,4.536,1.381,416,0.501,False,48,8,71,63
+unemployment,General Social Sciences,2.256,1.693,88,1.234,True,15,1,61,60
+unemployment,Geography,1.6,1.034,126,1.063,True,6,1,41,40
+unemployment,Health Services,3.819,0.654,1700,0.282,False,32,11,64,53
+unemployment,History,4.311,0.82,647,0.313,False,40,16,68,52
+unemployment,Industrial Engineering,4.151,1.878,220,0.744,True,37,2,72,70
+unemployment,Information Systems & Management,5.979,0.922,825,0.254,False,60,35,73,38
+unemployment,Interdisciplinary Studies,3.94,0.854,804,0.357,False,36,11,66,55
+unemployment,International Affairs,6.105,1.44,341,0.388,False,61,27,73,46
+unemployment,Journalism,2.319,0.78,409,0.554,False,16,2,46,44
+unemployment,Leisure and Hospitality,2.734,0.609,1240,0.367,False,23,5,51,46
+unemployment,Liberal Arts,3.836,1.032,362,0.442,False,33,8,68,60
+unemployment,Marketing,4.399,0.586,1782,0.219,False,44,20,67,47
+unemployment,Mass Media,5.158,0.957,523,0.305,False,55,22,73,51
+unemployment,Mathematics,5.767,1.073,826,0.306,False,59,28,73,45
+unemployment,Mechanical Engineering,4.364,0.706,1425,0.266,False,43,17,68,51
+unemployment,Medical Technicians,6.236,2.749,159,0.725,True,63,6,73,67
+unemployment,Miscellaneous Biological Science,4.404,0.818,839,0.306,False,45,17,68,51
+unemployment,Miscellaneous Education,1.089,0.697,159,1.052,True,2,1,25,24
+unemployment,Miscellaneous Engineering,3.686,0.888,718,0.396,False,30,7,64,57
+unemployment,Miscellaneous Physical Sciences,2.522,1.558,153,1.016,True,17,1,62,61
+unemployment,Miscellaneous Technologies,3.597,0.818,418,0.374,False,29,8,63,55
+unemployment,Nursing,2.147,0.429,2467,0.329,False,10,2,40,38
+unemployment,Nutrition Sciences,4.536,1.942,117,0.704,True,47,2,73,71
+unemployment,Performing Arts,6.95,1.286,862,0.304,False,69,43,73,30
+unemployment,Pharmacy,5.616,2.537,118,0.743,True,56,4,73,69
+unemployment,Philosophy,5.123,2.008,223,0.645,False,54,5,73,68
+unemployment,Physics,6.631,2.129,225,0.528,False,66,21,73,52
+unemployment,Political Science,4.482,0.718,1126,0.264,False,46,20,68,48
+unemployment,Psychology,4.985,0.548,2873,0.181,False,52,25,70,45
+unemployment,Public Policy and Law,2.237,1.067,185,0.784,True,13,1,53,52
+unemployment,Secondary Education,2.115,0.621,771,0.483,False,9,1,41,40
+unemployment,Social Services,1.943,0.557,550,0.472,False,8,1,35,34
+unemployment,Sociology,4.589,1.3,561,0.466,False,49,11,70,59
+unemployment,Special Education,0.739,0.585,156,1.302,True,1,1,20,19
+unemployment,Theology and Religion,3.116,1.43,207,0.755,True,25,1,65,64
+unemployment,Treatment Therapy,2.616,0.976,325,0.613,True,20,1,56,55
+underemployment,Accounting,24.927,1.447,1419,0.095,False,14,11,25,14
+underemployment,Advertising and Public Relations,39.644,3.944,317,0.164,False,34,25,51,26
+underemployment,Aerospace Engineering,16.582,3.244,168,0.322,False,5,1,12,11
+underemployment,Agriculture,59.758,3.923,318,0.108,False,68,57,72,15
+underemployment,Animal and Plant Sciences,54.269,3.768,365,0.114,False,63,47,69,22
+underemployment,Anthropology,50.807,3.975,219,0.129,False,56,37,67,30
+underemployment,Architecture,25.232,2.7,343,0.176,False,15,9,26,17
+underemployment,Art History,52.336,8.463,66,0.266,True,60,32,71,39
+underemployment,Biochemistry,45.5,3.469,308,0.125,False,46,31,60,29
+underemployment,Biology,48.869,1.306,2126,0.044,False,51,40,61,21
+underemployment,Business Analytics,35.209,2.854,545,0.133,False,30,22,38,16
+underemployment,Business Management,57.78,1.034,2914,0.029,False,66,60,69,9
+underemployment,Chemical Engineering,20.759,2.741,361,0.217,False,10,5,19,14
+underemployment,Chemistry,43.479,3.266,348,0.124,False,40,30,58,28
+underemployment,Civil Engineering,19.678,2.083,552,0.174,False,7,4,16,12
+underemployment,Commercial Art & Graphic Design,44.486,2.534,758,0.094,False,45,32,56,24
+underemployment,Communications,56.045,1.521,1402,0.045,False,64,56,69,13
+underemployment,Computer Engineering,15.615,1.939,565,0.204,False,4,1,8,7
+underemployment,Computer Science,20.549,1.06,2450,0.085,False,9,5,15,10
+underemployment,Construction Services,66.644,4.973,175,0.123,False,71,66,73,7
+underemployment,Criminal Justice,62.722,1.742,1418,0.046,False,70,66,72,6
+underemployment,Early Childhood Education,17.935,3.431,230,0.315,False,6,1,15,14
+underemployment,Earth Sciences,38.127,4.944,118,0.213,False,32,23,51,28
+underemployment,Economics,37.502,1.829,1191,0.08,False,31,25,41,16
+underemployment,Electrical Engineering,21.056,2.401,606,0.188,False,12,5,19,14
+underemployment,Elementary Education,12.921,1.664,910,0.212,False,3,1,6,5
+underemployment,Engineering Technologies,47.323,3.343,319,0.116,False,50,33,63,30
+underemployment,English Language,53.374,1.97,1074,0.061,False,62,51,67,16
+underemployment,Environmental Studies,49.591,2.609,709,0.087,False,54,37,63,26
+underemployment,Ethnic Studies,42.933,5.676,148,0.217,False,38,26,61,35
+underemployment,Family and Consumer Sciences,38.26,2.778,412,0.119,False,33,25,46,21
+underemployment,Finance,31.467,1.377,1599,0.072,False,24,19,31,12
+underemployment,Fine Arts,67.398,1.743,1029,0.043,False,72,71,73,2
+underemployment,Foreign Language,51.352,3.046,317,0.098,False,57,42,67,25
+underemployment,General Business,52.844,1.59,1668,0.049,False,61,51,64,13
+underemployment,General Education,25.531,2.07,753,0.133,False,16,11,26,15
+underemployment,General Engineering,31.687,3.381,393,0.176,False,25,15,34,19
+underemployment,General Social Sciences,32.918,5.415,84,0.271,True,27,13,39,26
+underemployment,Geography,42.913,5.338,122,0.205,False,37,26,60,34
+underemployment,Health Services,43.12,1.589,1637,0.061,False,39,31,53,22
+underemployment,History,45.81,2.395,595,0.086,False,47,33,59,26
+underemployment,Industrial Engineering,35.171,4.907,212,0.23,False,29,18,43,25
+underemployment,Information Systems & Management,26.279,1.993,768,0.125,False,19,13,27,14
+underemployment,Interdisciplinary Studies,43.698,2.214,763,0.083,False,41,32,56,24
+underemployment,International Affairs,44.241,3.488,313,0.13,False,42,30,58,28
+underemployment,Journalism,40.947,3.326,396,0.134,False,35,26,52,26
+underemployment,Leisure and Hospitality,57.139,1.93,1196,0.056,False,65,57,69,12
+underemployment,Liberal Arts,51.799,3.643,342,0.116,False,58,41,68,27
+underemployment,Marketing,52.171,1.558,1698,0.049,False,59,47,63,16
+underemployment,Mass Media,58.088,2.877,492,0.081,False,67,57,71,14
+underemployment,Mathematics,24.614,1.784,770,0.119,False,13,10,23,13
+underemployment,Mechanical Engineering,20.805,1.377,1347,0.109,False,11,5,17,12
+underemployment,Medical Technicians,44.431,4.635,152,0.172,False,44,29,61,32
+underemployment,Miscellaneous Biological Science,46.812,2.162,795,0.076,False,49,34,59,25
+underemployment,Miscellaneous Education,25.573,3.952,156,0.254,False,17,6,29,23
+underemployment,Miscellaneous Engineering,27.598,1.525,681,0.091,False,21,13,28,15
+underemployment,Miscellaneous Physical Sciences,26.466,4.276,149,0.266,False,20,6,30,24
+underemployment,Miscellaneous Technologies,67.576,3.389,381,0.083,False,73,69,73,4
+underemployment,Nursing,12.294,0.999,2423,0.134,False,2,1,6,5
+underemployment,Nutrition Sciences,50.613,6.165,107,0.2,False,55,33,69,36
+underemployment,Performing Arts,59.878,2.282,814,0.063,False,69,61,71,10
+underemployment,Pharmacy,32.838,5.25,111,0.263,False,26,13,38,25
+underemployment,Philosophy,49.487,3.631,210,0.121,False,53,36,63,27
+underemployment,Physics,25.951,3.792,205,0.24,False,18,6,29,23
+underemployment,Political Science,44.343,1.828,1041,0.068,False,43,33,56,23
+underemployment,Psychology,46.347,1.313,2723,0.047,False,48,34,59,25
+underemployment,Public Policy and Law,33.975,4.538,177,0.22,False,28,17,38,21
+underemployment,Secondary Education,19.78,1.745,754,0.145,False,8,4,15,11
+underemployment,Social Services,28.791,1.999,536,0.114,False,22,14,29,15
+underemployment,Sociology,49.244,2.846,539,0.095,False,52,37,63,26
+underemployment,Special Education,11.324,2.657,154,0.386,False,1,1,6,5
+underemployment,Theology and Religion,42.41,4.827,199,0.187,False,36,26,58,32
+underemployment,Treatment Therapy,29.886,2.853,316,0.157,False,23,14,31,17
