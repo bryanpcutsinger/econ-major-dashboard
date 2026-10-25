@@ -1,0 +1,3068 @@
+{
+ "table1": {
+  "economics_n": 7781,
+  "rows": [
+   {
+    "frequency": 595,
+    "group": "Other managers",
+    "median": {
+     "hidden": false,
+     "median": 149155.12,
+     "moe": 6454.89,
+     "n": 595,
+     "reason": "",
+     "se": 3923.94
+    },
+    "share_unweighted": 7.6468,
+    "share_weighted": {
+     "moe": 0.006331,
+     "se": 0.003849,
+     "share": 0.071151
+    }
+   },
+   {
+    "frequency": 486,
+    "group": "Financial managers",
+    "median": {
+     "hidden": false,
+     "median": 161992.99,
+     "moe": 17508.51,
+     "n": 486,
+     "reason": "",
+     "se": 10643.47
+    },
+    "share_unweighted": 6.246,
+    "share_weighted": {
+     "moe": 0.006972,
+     "se": 0.004238,
+     "share": 0.060378
+    }
+   },
+   {
+    "frequency": 343,
+    "group": "Chief executives and legislators",
+    "median": {
+     "hidden": false,
+     "median": 213852.97,
+     "moe": 16697.46,
+     "n": 343,
+     "reason": "",
+     "se": 10150.43
+    },
+    "share_unweighted": 4.4082,
+    "share_weighted": {
+     "moe": 0.00459,
+     "se": 0.00279,
+     "share": 0.037844
+    }
+   },
+   {
+    "frequency": 295,
+    "group": "Accountants and auditors",
+    "median": {
+     "hidden": false,
+     "median": 119324.1,
+     "moe": 10295.1,
+     "n": 295,
+     "reason": "",
+     "se": 6258.42
+    },
+    "share_unweighted": 3.7913,
+    "share_weighted": {
+     "moe": 0.004157,
+     "se": 0.002527,
+     "share": 0.03399
+    }
+   },
+   {
+    "frequency": 241,
+    "group": "Personal financial advisors",
+    "median": {
+     "hidden": false,
+     "median": 202850.97,
+     "moe": 48255.25,
+     "n": 241,
+     "reason": "",
+     "se": 29334.5
+    },
+    "share_unweighted": 3.0973,
+    "share_weighted": {
+     "moe": 0.004036,
+     "se": 0.002454,
+     "share": 0.028974
+    }
+   },
+   {
+    "frequency": 187,
+    "group": "Management analysts",
+    "median": {
+     "hidden": false,
+     "median": 131256.51,
+     "moe": 19097.49,
+     "n": 187,
+     "reason": "",
+     "se": 11609.42
+    },
+    "share_unweighted": 2.4033,
+    "share_weighted": {
+     "moe": 0.003423,
+     "se": 0.002081,
+     "share": 0.022124
+    }
+   },
+   {
+    "frequency": 174,
+    "group": "Securities, commodities, and financial services sales agents",
+    "median": {
+     "hidden": false,
+     "median": 343653.41,
+     "moe": 85768.74,
+     "n": 174,
+     "reason": "",
+     "se": 52139.05
+    },
+    "share_unweighted": 2.2362,
+    "share_weighted": {
+     "moe": 0.003465,
+     "se": 0.002107,
+     "share": 0.022078
+    }
+   },
+   {
+    "frequency": 172,
+    "group": "General and operations managers",
+    "median": {
+     "hidden": false,
+     "median": 108631.75,
+     "moe": 13254.46,
+     "n": 172,
+     "reason": "",
+     "se": 8057.43
+    },
+    "share_unweighted": 2.2105,
+    "share_weighted": {
+     "moe": 0.003822,
+     "se": 0.002323,
+     "share": 0.022413
+    }
+   },
+   {
+    "frequency": 170,
+    "group": "Financial and investment analysts",
+    "median": {
+     "hidden": false,
+     "median": 137058.75,
+     "moe": 40863.45,
+     "n": 170,
+     "reason": "",
+     "se": 24841.0
+    },
+    "share_unweighted": 2.1848,
+    "share_weighted": {
+     "moe": 0.004689,
+     "se": 0.002851,
+     "share": 0.022558
+    }
+   },
+   {
+    "frequency": 164,
+    "group": "Software developers",
+    "median": {
+     "hidden": false,
+     "median": 139649.12,
+     "moe": 13002.93,
+     "n": 164,
+     "reason": "",
+     "se": 7904.51
+    },
+    "share_unweighted": 2.1077,
+    "share_weighted": {
+     "moe": 0.003467,
+     "se": 0.002107,
+     "share": 0.020064
+    }
+   },
+   {
+    "frequency": 155,
+    "group": "First-line supervisors of retail sales workers",
+    "median": {
+     "hidden": false,
+     "median": 84265.75,
+     "moe": 14191.75,
+     "n": 155,
+     "reason": "",
+     "se": 8627.2
+    },
+    "share_unweighted": 1.992,
+    "share_weighted": {
+     "moe": 0.003818,
+     "se": 0.002321,
+     "share": 0.021418
+    }
+   },
+   {
+    "frequency": 137,
+    "group": "Sales representatives, wholesale and manufacturing",
+    "median": {
+     "hidden": false,
+     "median": 136431.1,
+     "moe": 19333.02,
+     "n": 137,
+     "reason": "",
+     "se": 11752.59
+    },
+    "share_unweighted": 1.7607,
+    "share_weighted": {
+     "moe": 0.003325,
+     "se": 0.002022,
+     "share": 0.017235
+    }
+   },
+   {
+    "frequency": 132,
+    "group": "Real estate brokers and sales agents",
+    "median": {
+     "hidden": false,
+     "median": 178986.15,
+     "moe": 30296.89,
+     "n": 132,
+     "reason": "",
+     "se": 18417.56
+    },
+    "share_unweighted": 1.6964,
+    "share_weighted": {
+     "moe": 0.002589,
+     "se": 0.001574,
+     "share": 0.014296
+    }
+   },
+   {
+    "frequency": 131,
+    "group": "First-line supervisors of non-retail sales workers",
+    "median": {
+     "hidden": false,
+     "median": 131256.51,
+     "moe": 12361.62,
+     "n": 131,
+     "reason": "",
+     "se": 7514.67
+    },
+    "share_unweighted": 1.6836,
+    "share_weighted": {
+     "moe": 0.002449,
+     "se": 0.001489,
+     "share": 0.014053
+    }
+   },
+   {
+    "frequency": 125,
+    "group": "Sales managers",
+    "median": {
+     "hidden": false,
+     "median": 190918.56,
+     "moe": 28627.55,
+     "n": 125,
+     "reason": "",
+     "se": 17402.77
+    },
+    "share_unweighted": 1.6065,
+    "share_weighted": {
+     "moe": 0.003324,
+     "se": 0.002021,
+     "share": 0.017073
+    }
+   },
+   {
+    "frequency": 115,
+    "group": "Customer service representatives",
+    "median": {
+     "hidden": false,
+     "median": 90686.32,
+     "moe": 22139.02,
+     "n": 115,
+     "reason": "",
+     "se": 13458.37
+    },
+    "share_unweighted": 1.478,
+    "share_weighted": {
+     "moe": 0.002615,
+     "se": 0.00159,
+     "share": 0.014562
+    }
+   },
+   {
+    "frequency": 109,
+    "group": "Project management specialists",
+    "median": {
+     "hidden": false,
+     "median": 136431.1,
+     "moe": 14504.0,
+     "n": 109,
+     "reason": "",
+     "se": 8817.02
+    },
+    "share_unweighted": 1.4008,
+    "share_weighted": {
+     "moe": 0.003019,
+     "se": 0.001835,
+     "share": 0.014383
+    }
+   },
+   {
+    "frequency": 103,
+    "group": "Marketing managers",
+    "median": {
+     "hidden": false,
+     "median": 167578.95,
+     "moe": 48971.06,
+     "n": 103,
+     "reason": "",
+     "se": 29769.64
+    },
+    "share_unweighted": 1.3237,
+    "share_weighted": {
+     "moe": 0.002234,
+     "se": 0.001358,
+     "share": 0.010819
+    }
+   },
+   {
+    "frequency": 101,
+    "group": "Computer systems analysts",
+    "median": {
+     "hidden": false,
+     "median": 99699.65,
+     "moe": 20893.25,
+     "n": 101,
+     "reason": "",
+     "se": 12701.06
+    },
+    "share_unweighted": 1.298,
+    "share_weighted": {
+     "moe": 0.002409,
+     "se": 0.001465,
+     "share": 0.011751
+    }
+   },
+   {
+    "frequency": 101,
+    "group": "Credit counselors and loan officers",
+    "median": {
+     "hidden": false,
+     "median": 117769.0,
+     "moe": 25693.99,
+     "n": 101,
+     "reason": "",
+     "se": 15619.44
+    },
+    "share_unweighted": 1.298,
+    "share_weighted": {
+     "moe": 0.003572,
+     "se": 0.002172,
+     "share": 0.013313
+    }
+   },
+   {
+    "frequency": 96,
+    "group": "Sales representatives of services, except advertising, insurance, financial services, and travel",
+    "median": {
+     "hidden": true,
+     "median": 131183.75,
+     "moe": 16221.72,
+     "n": 96,
+     "reason": "n < 100",
+     "se": 9861.22
+    },
+    "share_unweighted": 1.2338,
+    "share_weighted": {
+     "moe": 0.002943,
+     "se": 0.001789,
+     "share": 0.011907
+    }
+   },
+   {
+    "frequency": 90,
+    "group": "Computer and information systems managers",
+    "median": {
+     "hidden": true,
+     "median": 157507.81,
+     "moe": 31610.18,
+     "n": 90,
+     "reason": "n < 100",
+     "se": 19215.91
+    },
+    "share_unweighted": 1.1567,
+    "share_weighted": {
+     "moe": 0.002956,
+     "se": 0.001797,
+     "share": 0.011681
+    }
+   },
+   {
+    "frequency": 90,
+    "group": "Other mathematical science occupations",
+    "median": {
+     "hidden": true,
+     "median": 121830.0,
+     "moe": 27702.77,
+     "n": 90,
+     "reason": "n < 100",
+     "se": 16840.59
+    },
+    "share_unweighted": 1.1567,
+    "share_weighted": {
+     "moe": 0.002331,
+     "se": 0.001417,
+     "share": 0.010767
+    }
+   },
+   {
+    "frequency": 81,
+    "group": "Human resources workers",
+    "median": {
+     "hidden": true,
+     "median": 129594.39,
+     "moe": 24501.36,
+     "n": 81,
+     "reason": "n < 100",
+     "se": 14894.44
+    },
+    "share_unweighted": 1.041,
+    "share_weighted": {
+     "moe": 0.002315,
+     "se": 0.001407,
+     "share": 0.010518
+    }
+   },
+   {
+    "frequency": 80,
+    "group": "Retail salespersons",
+    "median": {
+     "hidden": true,
+     "median": 59662.05,
+     "moe": 20124.09,
+     "n": 80,
+     "reason": "n < 100",
+     "se": 12233.49
+    },
+    "share_unweighted": 1.0281,
+    "share_weighted": {
+     "moe": 0.003348,
+     "se": 0.002035,
+     "share": 0.012329
+    }
+   },
+   {
+    "frequency": 70,
+    "group": "Computer occupations, all other",
+    "median": {
+     "hidden": true,
+     "median": 109647.0,
+     "moe": 14759.35,
+     "n": 70,
+     "reason": "n < 100",
+     "se": 8972.25
+    },
+    "share_unweighted": 0.8996,
+    "share_weighted": {
+     "moe": 0.002439,
+     "se": 0.001483,
+     "share": 0.010426
+    }
+   },
+   {
+    "frequency": 70,
+    "group": "Construction managers",
+    "median": {
+     "hidden": true,
+     "median": 131982.5,
+     "moe": 24284.25,
+     "n": 70,
+     "reason": "n < 100",
+     "se": 14762.46
+    },
+    "share_unweighted": 0.8996,
+    "share_weighted": {
+     "moe": 0.002547,
+     "se": 0.001548,
+     "share": 0.010275
+    }
+   },
+   {
+    "frequency": 70,
+    "group": "First-line supervisors of office and administrative support workers",
+    "median": {
+     "hidden": true,
+     "median": 86296.25,
+     "moe": 24361.67,
+     "n": 70,
+     "reason": "n < 100",
+     "se": 14809.52
+    },
+    "share_unweighted": 0.8996,
+    "share_weighted": {
+     "moe": 0.002012,
+     "se": 0.001223,
+     "share": 0.008042
+    }
+   },
+   {
+    "frequency": 70,
+    "group": "Insurance sales agents",
+    "median": {
+     "hidden": true,
+     "median": 96539.34,
+     "moe": 14506.2,
+     "n": 70,
+     "reason": "n < 100",
+     "se": 8818.36
+    },
+    "share_unweighted": 0.8996,
+    "share_weighted": {
+     "moe": 0.002601,
+     "se": 0.001581,
+     "share": 0.011357
+    }
+   },
+   {
+    "frequency": 64,
+    "group": "Property, real estate, and community association managers",
+    "median": {
+     "hidden": true,
+     "median": 111719.3,
+     "moe": 11718.29,
+     "n": 64,
+     "reason": "n < 100",
+     "se": 7123.58
+    },
+    "share_unweighted": 0.8225,
+    "share_weighted": {
+     "moe": 0.002526,
+     "se": 0.001535,
+     "share": 0.008945
+    }
+   },
+   {
+    "frequency": 63,
+    "group": "Elementary and middle school teachers",
+    "median": {
+     "hidden": true,
+     "median": 71067.5,
+     "moe": 2783.91,
+     "n": 63,
+     "reason": "n < 100",
+     "se": 1692.35
+    },
+    "share_unweighted": 0.8097,
+    "share_weighted": {
+     "moe": 0.0024,
+     "se": 0.001459,
+     "share": 0.009014
+    }
+   },
+   {
+    "frequency": 61,
+    "group": "Market research analysts and marketing specialists",
+    "median": {
+     "hidden": true,
+     "median": 130063.27,
+     "moe": 22773.35,
+     "n": 61,
+     "reason": "n < 100",
+     "se": 13843.98
+    },
+    "share_unweighted": 0.784,
+    "share_weighted": {
+     "moe": 0.002045,
+     "se": 0.001243,
+     "share": 0.008204
+    }
+   },
+   {
+    "frequency": 56,
+    "group": "Claims adjusters, appraisers, examiners, and investigators",
+    "median": {
+     "hidden": true,
+     "median": 83526.87,
+     "moe": 10606.02,
+     "n": 56,
+     "reason": "n < 100",
+     "se": 6447.43
+    },
+    "share_unweighted": 0.7197,
+    "share_weighted": {
+     "moe": 0.002281,
+     "se": 0.001387,
+     "share": 0.008325
+    }
+   },
+   {
+    "frequency": 56,
+    "group": "Farmers, ranchers, and other agricultural managers",
+    "median": {
+     "hidden": true,
+     "median": 53625.26,
+     "moe": 35582.62,
+     "n": 56,
+     "reason": "n < 100",
+     "se": 21630.77
+    },
+    "share_unweighted": 0.7197,
+    "share_weighted": {
+     "moe": 0.001266,
+     "se": 0.000769,
+     "share": 0.004276
+    }
+   },
+   {
+    "frequency": 55,
+    "group": "Food service managers",
+    "median": {
+     "hidden": true,
+     "median": 79431.1,
+     "moe": 14921.67,
+     "n": 55,
+     "reason": "n < 100",
+     "se": 9070.92
+    },
+    "share_unweighted": 0.7069,
+    "share_weighted": {
+     "moe": 0.002148,
+     "se": 0.001306,
+     "share": 0.008169
+    }
+   },
+   {
+    "frequency": 51,
+    "group": "Business operations specialists, all other",
+    "median": {
+     "hidden": true,
+     "median": 183302.55,
+     "moe": 90207.3,
+     "n": 51,
+     "reason": "n < 100",
+     "se": 54837.27
+    },
+    "share_unweighted": 0.6554,
+    "share_weighted": {
+     "moe": 0.003367,
+     "se": 0.002047,
+     "share": 0.008898
+    }
+   },
+   {
+    "frequency": 50,
+    "group": "Driver/sales workers and truck drivers",
+    "median": {
+     "hidden": true,
+     "median": 63544.88,
+     "moe": 8735.94,
+     "n": 50,
+     "reason": "n < 100",
+     "se": 5310.6
+    },
+    "share_unweighted": 0.6426,
+    "share_weighted": {
+     "moe": 0.002631,
+     "se": 0.001599,
+     "share": 0.008817
+    }
+   },
+   {
+    "frequency": 50,
+    "group": "Registered nurses",
+    "median": {
+     "hidden": true,
+     "median": 95459.28,
+     "moe": 14635.57,
+     "n": 50,
+     "reason": "n < 100",
+     "se": 8897.0
+    },
+    "share_unweighted": 0.6426,
+    "share_weighted": {
+     "moe": 0.001927,
+     "se": 0.001172,
+     "share": 0.005519
+    }
+   },
+   {
+    "frequency": 48,
+    "group": "Secondary school teachers",
+    "median": {
+     "hidden": true,
+     "median": 70876.99,
+     "moe": 5910.02,
+     "n": 48,
+     "reason": "n < 100",
+     "se": 3592.72
+    },
+    "share_unweighted": 0.6169,
+    "share_weighted": {
+     "moe": 0.002177,
+     "se": 0.001324,
+     "share": 0.007087
+    }
+   },
+   {
+    "frequency": 44,
+    "group": "Insurance underwriters",
+    "median": {
+     "hidden": true,
+     "median": 99699.65,
+     "moe": 39026.17,
+     "n": 44,
+     "reason": "n < 100",
+     "se": 23724.11
+    },
+    "share_unweighted": 0.5655,
+    "share_weighted": {
+     "moe": 0.001733,
+     "se": 0.001054,
+     "share": 0.005948
+    }
+   }
+  ]
+ },
+ "table2": {
+  "economics_n": 7781,
+  "rows": [
+   {
+    "frequency": 1889,
+    "group": "Finance and Insurance",
+    "median": {
+     "hidden": false,
+     "median": 149155.12,
+     "moe": 7984.47,
+     "n": 1889,
+     "reason": "",
+     "se": 4853.78
+    },
+    "share_unweighted": 24.2771,
+    "share_weighted": {
+     "moe": 0.010317,
+     "se": 0.006272,
+     "share": 0.239304
+    }
+   },
+   {
+    "frequency": 1310,
+    "group": "Professional, Scientific, and Technical Services",
+    "median": {
+     "hidden": false,
+     "median": 140531.95,
+     "moe": 8220.79,
+     "n": 1310,
+     "reason": "",
+     "se": 4997.44
+    },
+    "share_unweighted": 16.8359,
+    "share_weighted": {
+     "moe": 0.008363,
+     "se": 0.005084,
+     "share": 0.158751
+    }
+   },
+   {
+    "frequency": 625,
+    "group": "Manufacturing",
+    "median": {
+     "hidden": false,
+     "median": 111677.5,
+     "moe": 6154.99,
+     "n": 625,
+     "reason": "",
+     "se": 3741.63
+    },
+    "share_unweighted": 8.0324,
+    "share_weighted": {
+     "moe": 0.007138,
+     "se": 0.004339,
+     "share": 0.082254
+    }
+   },
+   {
+    "frequency": 544,
+    "group": "Retail Trade",
+    "median": {
+     "hidden": false,
+     "median": 84265.75,
+     "moe": 10508.59,
+     "n": 544,
+     "reason": "",
+     "se": 6388.2
+    },
+    "share_unweighted": 6.9914,
+    "share_weighted": {
+     "moe": 0.00724,
+     "se": 0.004401,
+     "share": 0.077128
+    }
+   },
+   {
+    "frequency": 400,
+    "group": "Public Administration",
+    "median": {
+     "hidden": false,
+     "median": 101525.0,
+     "moe": 5858.41,
+     "n": 400,
+     "reason": "",
+     "se": 3561.34
+    },
+    "share_unweighted": 5.1407,
+    "share_weighted": {
+     "moe": 0.005221,
+     "se": 0.003174,
+     "share": 0.048813
+    }
+   },
+   {
+    "frequency": 382,
+    "group": "Educational Services",
+    "median": {
+     "hidden": false,
+     "median": 72710.01,
+     "moe": 3321.34,
+     "n": 382,
+     "reason": "",
+     "se": 2019.05
+    },
+    "share_unweighted": 4.9094,
+    "share_weighted": {
+     "moe": 0.005741,
+     "se": 0.00349,
+     "share": 0.052215
+    }
+   },
+   {
+    "frequency": 382,
+    "group": "Health Care and Social Assistance",
+    "median": {
+     "hidden": false,
+     "median": 91372.5,
+     "moe": 8645.66,
+     "n": 382,
+     "reason": "",
+     "se": 5255.72
+    },
+    "share_unweighted": 4.9094,
+    "share_weighted": {
+     "moe": 0.005757,
+     "se": 0.0035,
+     "share": 0.058018
+    }
+   },
+   {
+    "frequency": 298,
+    "group": "Real Estate and Rental and Leasing",
+    "median": {
+     "hidden": false,
+     "median": 121830.0,
+     "moe": 13058.78,
+     "n": 298,
+     "reason": "",
+     "se": 7938.47
+    },
+    "share_unweighted": 3.8298,
+    "share_weighted": {
+     "moe": 0.003932,
+     "se": 0.00239,
+     "share": 0.034147
+    }
+   },
+   {
+    "frequency": 271,
+    "group": "Information",
+    "median": {
+     "hidden": false,
+     "median": 155289.83,
+     "moe": 18038.3,
+     "n": 271,
+     "reason": "",
+     "se": 10965.53
+    },
+    "share_unweighted": 3.4828,
+    "share_weighted": {
+     "moe": 0.003914,
+     "se": 0.002379,
+     "share": 0.032266
+    }
+   },
+   {
+    "frequency": 270,
+    "group": "Wholesale Trade",
+    "median": {
+     "hidden": false,
+     "median": 122903.82,
+     "moe": 3696.41,
+     "n": 270,
+     "reason": "",
+     "se": 2247.06
+    },
+    "share_unweighted": 3.47,
+    "share_weighted": {
+     "moe": 0.004235,
+     "se": 0.002574,
+     "share": 0.032723
+    }
+   },
+   {
+    "frequency": 261,
+    "group": "Construction",
+    "median": {
+     "hidden": false,
+     "median": 104947.0,
+     "moe": 10482.83,
+     "n": 261,
+     "reason": "",
+     "se": 6372.54
+    },
+    "share_unweighted": 3.3543,
+    "share_weighted": {
+     "moe": 0.004085,
+     "se": 0.002483,
+     "share": 0.032538
+    }
+   },
+   {
+    "frequency": 244,
+    "group": "Transportation and Warehousing",
+    "median": {
+     "hidden": false,
+     "median": 77660.78,
+     "moe": 14204.51,
+     "n": 244,
+     "reason": "",
+     "se": 8634.96
+    },
+    "share_unweighted": 3.1358,
+    "share_weighted": {
+     "moe": 0.005009,
+     "se": 0.003045,
+     "share": 0.034586
+    }
+   },
+   {
+    "frequency": 209,
+    "group": "Administrative and support and waste management services",
+    "median": {
+     "hidden": false,
+     "median": 110662.25,
+     "moe": 27461.15,
+     "n": 209,
+     "reason": "",
+     "se": 16693.71
+    },
+    "share_unweighted": 2.686,
+    "share_weighted": {
+     "moe": 0.004511,
+     "se": 0.002743,
+     "share": 0.027661
+    }
+   },
+   {
+    "frequency": 166,
+    "group": "Accommodation and Food Services",
+    "median": {
+     "hidden": false,
+     "median": 71067.5,
+     "moe": 15057.98,
+     "n": 166,
+     "reason": "",
+     "se": 9153.79
+    },
+    "share_unweighted": 2.1334,
+    "share_weighted": {
+     "moe": 0.003606,
+     "se": 0.002192,
+     "share": 0.025081
+    }
+   },
+   {
+    "frequency": 159,
+    "group": "Other Services, Except Public Administration",
+    "median": {
+     "hidden": true,
+     "median": 73980.94,
+     "moe": 22295.48,
+     "n": 159,
+     "reason": "MOE / estimate > 0.30",
+     "se": 13553.48
+    },
+    "share_unweighted": 2.0434,
+    "share_weighted": {
+     "moe": 0.003602,
+     "se": 0.00219,
+     "share": 0.021337
+    }
+   },
+   {
+    "frequency": 106,
+    "group": "Arts, Entertainment, and Recreation",
+    "median": {
+     "hidden": false,
+     "median": 97761.36,
+     "moe": 25650.5,
+     "n": 106,
+     "reason": "",
+     "se": 15593.01
+    },
+    "share_unweighted": 1.3623,
+    "share_weighted": {
+     "moe": 0.002989,
+     "se": 0.001817,
+     "share": 0.014458
+    }
+   },
+   {
+    "frequency": 102,
+    "group": "Utilities",
+    "median": {
+     "hidden": false,
+     "median": 125867.75,
+     "moe": 19989.67,
+     "n": 102,
+     "reason": "",
+     "se": 12151.77
+    },
+    "share_unweighted": 1.3109,
+    "share_weighted": {
+     "moe": 0.00221,
+     "se": 0.001344,
+     "share": 0.011918
+    }
+   },
+   {
+    "frequency": 86,
+    "group": "Agriculture, Forestry, Fishing, and Hunting",
+    "median": {
+     "hidden": true,
+     "median": 77560.66,
+     "moe": 22097.86,
+     "n": 86,
+     "reason": "n < 100",
+     "se": 13433.35
+    },
+    "share_unweighted": 1.1053,
+    "share_weighted": {
+     "moe": 0.001736,
+     "se": 0.001055,
+     "share": 0.007805
+    }
+   },
+   {
+    "frequency": 31,
+    "group": "Management of companies and enterprises",
+    "median": {
+     "hidden": true,
+     "median": 155121.33,
+     "moe": 35262.78,
+     "n": 31,
+     "reason": "n < 100",
+     "se": 21436.34
+    },
+    "share_unweighted": 0.3984,
+    "share_weighted": {
+     "moe": 0.001236,
+     "se": 0.000752,
+     "share": 0.003471
+    }
+   },
+   {
+    "frequency": 24,
+    "group": "Military",
+    "median": {
+     "hidden": true,
+     "median": 109647.0,
+     "moe": 11312.23,
+     "n": 24,
+     "reason": "n < 100",
+     "se": 6876.74
+    },
+    "share_unweighted": 0.3084,
+    "share_weighted": {
+     "moe": 0.000974,
+     "se": 0.000592,
+     "share": 0.002372
+    }
+   }
+  ]
+ },
+ "table3": {
+  "rows": [
+   {
+    "frequency": 13338,
+    "major": "Accounting",
+    "median": {
+     "hidden": false,
+     "median": 94452.3,
+     "moe": 1455.3,
+     "n": 13338,
+     "reason": "",
+     "se": 884.68
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.19,
+     "weighted": {
+      "moe": 0.005367,
+      "se": 0.003263,
+      "share": 0.073015
+     }
+    },
+    "share_unweighted": 3.7032,
+    "share_weighted": {
+     "moe": 0.000683,
+     "se": 0.000415,
+     "share": 0.037044
+    }
+   },
+   {
+    "frequency": 2111,
+    "major": "Advertising and Public Relations",
+    "median": {
+     "hidden": false,
+     "median": 95459.28,
+     "moe": 3719.7,
+     "n": 2111,
+     "reason": "",
+     "se": 2261.22
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.7215,
+     "weighted": {
+      "moe": 0.011542,
+      "se": 0.007017,
+      "share": 0.078857
+     }
+    },
+    "share_unweighted": 0.5861,
+    "share_weighted": {
+     "moe": 0.000281,
+     "se": 0.000171,
+     "share": 0.005726
+    }
+   },
+   {
+    "frequency": 573,
+    "major": "Aerospace Engineering",
+    "median": {
+     "hidden": false,
+     "median": 131183.75,
+     "moe": 8496.42,
+     "n": 573,
+     "reason": "",
+     "se": 5165.0
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.9337,
+     "weighted": {
+      "moe": 0.020999,
+      "se": 0.012765,
+      "share": 0.068444
+     }
+    },
+    "share_unweighted": 0.1591,
+    "share_weighted": {
+     "moe": 0.000134,
+     "se": 8.1e-05,
+     "share": 0.001534
+    }
+   },
+   {
+    "frequency": 2335,
+    "major": "Agriculture",
+    "median": {
+     "hidden": false,
+     "median": 81875.14,
+     "moe": 3325.98,
+     "n": 2335,
+     "reason": "",
+     "se": 2021.87
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 23.212,
+     "weighted": {
+      "moe": 0.020054,
+      "se": 0.012191,
+      "share": 0.209083
+     }
+    },
+    "share_unweighted": 0.6483,
+    "share_weighted": {
+     "moe": 0.000231,
+     "se": 0.00014,
+     "share": 0.00532
+    }
+   },
+   {
+    "frequency": 2252,
+    "major": "Animal and Plant Sciences",
+    "median": {
+     "hidden": false,
+     "median": 77560.66,
+     "moe": 2432.6,
+     "n": 2252,
+     "reason": "",
+     "se": 1478.79
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 19.0497,
+     "weighted": {
+      "moe": 0.014581,
+      "se": 0.008864,
+      "share": 0.156568
+     }
+    },
+    "share_unweighted": 0.6253,
+    "share_weighted": {
+     "moe": 0.000262,
+     "se": 0.000159,
+     "share": 0.005125
+    }
+   },
+   {
+    "frequency": 1430,
+    "major": "Anthropology",
+    "median": {
+     "hidden": false,
+     "median": 72617.55,
+     "moe": 3621.11,
+     "n": 1430,
+     "reason": "",
+     "se": 2201.29
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.5524,
+     "weighted": {
+      "moe": 0.016452,
+      "se": 0.010001,
+      "share": 0.081535
+     }
+    },
+    "share_unweighted": 0.397,
+    "share_weighted": {
+     "moe": 0.000224,
+     "se": 0.000136,
+     "share": 0.003686
+    }
+   },
+   {
+    "frequency": 2626,
+    "major": "Architecture",
+    "median": {
+     "hidden": false,
+     "median": 96448.75,
+     "moe": 2880.29,
+     "n": 2626,
+     "reason": "",
+     "se": 1750.94
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 13.1379,
+     "weighted": {
+      "moe": 0.013008,
+      "se": 0.007907,
+      "share": 0.126027
+     }
+    },
+    "share_unweighted": 0.7291,
+    "share_weighted": {
+     "moe": 0.000326,
+     "se": 0.000198,
+     "share": 0.007058
+    }
+   },
+   {
+    "frequency": 750,
+    "major": "Art History",
+    "median": {
+     "hidden": false,
+     "median": 89204.95,
+     "moe": 8194.96,
+     "n": 750,
+     "reason": "",
+     "se": 4981.74
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 9.0667,
+     "weighted": {
+      "moe": 0.025492,
+      "se": 0.015497,
+      "share": 0.092992
+     }
+    },
+    "share_unweighted": 0.2082,
+    "share_weighted": {
+     "moe": 0.000186,
+     "se": 0.000113,
+     "share": 0.00203
+    }
+   },
+   {
+    "frequency": 651,
+    "major": "Biochemistry",
+    "median": {
+     "hidden": false,
+     "median": 99699.65,
+     "moe": 4007.97,
+     "n": 651,
+     "reason": "",
+     "se": 2436.46
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.9155,
+     "weighted": {
+      "moe": 0.021334,
+      "se": 0.012969,
+      "share": 0.05436
+     }
+    },
+    "share_unweighted": 0.1807,
+    "share_weighted": {
+     "moe": 0.000156,
+     "se": 9.5e-05,
+     "share": 0.001738
+    }
+   },
+   {
+    "frequency": 7794,
+    "major": "Biology",
+    "median": {
+     "hidden": false,
+     "median": 84720.11,
+     "moe": 1827.04,
+     "n": 7794,
+     "reason": "",
+     "se": 1110.66
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.7608,
+     "weighted": {
+      "moe": 0.005545,
+      "se": 0.003371,
+      "share": 0.055709
+     }
+    },
+    "share_unweighted": 2.164,
+    "share_weighted": {
+     "moe": 0.000423,
+     "se": 0.000257,
+     "share": 0.020872
+    }
+   },
+   {
+    "frequency": 4146,
+    "major": "Business Analytics",
+    "median": {
+     "hidden": false,
+     "median": 112293.29,
+     "moe": 1685.21,
+     "n": 4146,
+     "reason": "",
+     "se": 1024.45
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.3787,
+     "weighted": {
+      "moe": 0.009218,
+      "se": 0.005603,
+      "share": 0.05514
+     }
+    },
+    "share_unweighted": 1.1511,
+    "share_weighted": {
+     "moe": 0.000368,
+     "se": 0.000224,
+     "share": 0.01116
+    }
+   },
+   {
+    "frequency": 33824,
+    "major": "Business Management",
+    "median": {
+     "hidden": false,
+     "median": 85913.35,
+     "moe": 857.49,
+     "n": 33824,
+     "reason": "",
+     "se": 521.27
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 8.018,
+     "weighted": {
+      "moe": 0.003547,
+      "se": 0.002156,
+      "share": 0.079105
+     }
+    },
+    "share_unweighted": 9.391,
+    "share_weighted": {
+     "moe": 0.000958,
+     "se": 0.000582,
+     "share": 0.095096
+    }
+   },
+   {
+    "frequency": 1656,
+    "major": "Chemical Engineering",
+    "median": {
+     "hidden": false,
+     "median": 140531.95,
+     "moe": 5614.65,
+     "n": 1656,
+     "reason": "",
+     "se": 3413.16
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.529,
+     "weighted": {
+      "moe": 0.011394,
+      "se": 0.006927,
+      "share": 0.05398
+     }
+    },
+    "share_unweighted": 0.4598,
+    "share_weighted": {
+     "moe": 0.000279,
+     "se": 0.00017,
+     "share": 0.004626
+    }
+   },
+   {
+    "frequency": 1733,
+    "major": "Chemistry",
+    "median": {
+     "hidden": false,
+     "median": 94452.3,
+     "moe": 3476.36,
+     "n": 1733,
+     "reason": "",
+     "se": 2113.29
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.6549,
+     "weighted": {
+      "moe": 0.016635,
+      "se": 0.010112,
+      "share": 0.068498
+     }
+    },
+    "share_unweighted": 0.4812,
+    "share_weighted": {
+     "moe": 0.000249,
+     "se": 0.000151,
+     "share": 0.004594
+    }
+   },
+   {
+    "frequency": 3717,
+    "major": "Civil Engineering",
+    "median": {
+     "hidden": false,
+     "median": 116091.61,
+     "moe": 1694.82,
+     "n": 3717,
+     "reason": "",
+     "se": 1030.28
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.9365,
+     "weighted": {
+      "moe": 0.010106,
+      "se": 0.006143,
+      "share": 0.083671
+     }
+    },
+    "share_unweighted": 1.032,
+    "share_weighted": {
+     "moe": 0.000312,
+     "se": 0.00019,
+     "share": 0.00982
+    }
+   },
+   {
+    "frequency": 6488,
+    "major": "Commercial Art & Graphic Design",
+    "median": {
+     "hidden": false,
+     "median": 81875.14,
+     "moe": 2273.11,
+     "n": 6488,
+     "reason": "",
+     "se": 1381.83
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 11.6677,
+     "weighted": {
+      "moe": 0.008302,
+      "se": 0.005047,
+      "share": 0.116739
+     }
+    },
+    "share_unweighted": 1.8014,
+    "share_weighted": {
+     "moe": 0.000427,
+     "se": 0.000259,
+     "share": 0.017357
+    }
+   },
+   {
+    "frequency": 12248,
+    "major": "Communications",
+    "median": {
+     "hidden": false,
+     "median": 89375.44,
+     "moe": 735.64,
+     "n": 12248,
+     "reason": "",
+     "se": 447.2
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 8.6708,
+     "weighted": {
+      "moe": 0.004845,
+      "se": 0.002945,
+      "share": 0.090295
+     }
+    },
+    "share_unweighted": 3.4006,
+    "share_weighted": {
+     "moe": 0.00071,
+     "se": 0.000432,
+     "share": 0.033742
+    }
+   },
+   {
+    "frequency": 4011,
+    "major": "Computer Engineering",
+    "median": {
+     "hidden": false,
+     "median": 134421.87,
+     "moe": 4421.11,
+     "n": 4011,
+     "reason": "",
+     "se": 2687.6
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 3.9392,
+     "weighted": {
+      "moe": 0.006064,
+      "se": 0.003686,
+      "share": 0.03749
+     }
+    },
+    "share_unweighted": 1.1136,
+    "share_weighted": {
+     "moe": 0.000403,
+     "se": 0.000245,
+     "share": 0.011293
+    }
+   },
+   {
+    "frequency": 13836,
+    "major": "Computer Science",
+    "median": {
+     "hidden": false,
+     "median": 122201.7,
+     "moe": 639.25,
+     "n": 13836,
+     "reason": "",
+     "se": 388.6
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.0231,
+     "weighted": {
+      "moe": 0.00425,
+      "se": 0.002584,
+      "share": 0.052963
+     }
+    },
+    "share_unweighted": 3.8415,
+    "share_weighted": {
+     "moe": 0.000628,
+     "se": 0.000382,
+     "share": 0.039116
+    }
+   },
+   {
+    "frequency": 1736,
+    "major": "Construction Services",
+    "median": {
+     "hidden": false,
+     "median": 113357.9,
+     "moe": 5381.31,
+     "n": 1736,
+     "reason": "",
+     "se": 3271.31
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 14.1129,
+     "weighted": {
+      "moe": 0.018026,
+      "se": 0.010958,
+      "share": 0.140241
+     }
+    },
+    "share_unweighted": 0.482,
+    "share_weighted": {
+     "moe": 0.000245,
+     "se": 0.000149,
+     "share": 0.00463
+    }
+   },
+   {
+    "frequency": 11965,
+    "major": "Criminal Justice",
+    "median": {
+     "hidden": false,
+     "median": 79431.1,
+     "moe": 1080.01,
+     "n": 11965,
+     "reason": "",
+     "se": 656.54
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.1036,
+     "weighted": {
+      "moe": 0.004309,
+      "se": 0.002619,
+      "share": 0.04199
+     }
+    },
+    "share_unweighted": 3.322,
+    "share_weighted": {
+     "moe": 0.000569,
+     "se": 0.000346,
+     "share": 0.034277
+    }
+   },
+   {
+    "frequency": 1425,
+    "major": "Early Childhood Education",
+    "median": {
+     "hidden": false,
+     "median": 52508.07,
+     "moe": 1477.42,
+     "n": 1425,
+     "reason": "",
+     "se": 898.13
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.6842,
+     "weighted": {
+      "moe": 0.009957,
+      "se": 0.006053,
+      "share": 0.048366
+     }
+    },
+    "share_unweighted": 0.3956,
+    "share_weighted": {
+     "moe": 0.000209,
+     "se": 0.000127,
+     "share": 0.003696
+    }
+   },
+   {
+    "frequency": 807,
+    "major": "Earth Sciences",
+    "median": {
+     "hidden": false,
+     "median": 83526.87,
+     "moe": 3659.44,
+     "n": 807,
+     "reason": "",
+     "se": 2224.58
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 6.8154,
+     "weighted": {
+      "moe": 0.019779,
+      "se": 0.012024,
+      "share": 0.063189
+     }
+    },
+    "share_unweighted": 0.2241,
+    "share_weighted": {
+     "moe": 0.00016,
+     "se": 9.7e-05,
+     "share": 0.002204
+    }
+   },
+   {
+    "frequency": 7781,
+    "major": "Economics",
+    "median": {
+     "hidden": false,
+     "median": 113953.69,
+     "moe": 4540.8,
+     "n": 7781,
+     "reason": "",
+     "se": 2760.37
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 11.3096,
+     "weighted": {
+      "moe": 0.008039,
+      "se": 0.004887,
+      "share": 0.107959
+     }
+    },
+    "share_unweighted": 2.1603,
+    "share_weighted": {
+     "moe": 0.000564,
+     "se": 0.000343,
+     "share": 0.021548
+    }
+   },
+   {
+    "frequency": 6335,
+    "major": "Electrical Engineering",
+    "median": {
+     "hidden": false,
+     "median": 127089.77,
+     "moe": 2721.02,
+     "n": 6335,
+     "reason": "",
+     "se": 1654.11
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.5777,
+     "weighted": {
+      "moe": 0.00673,
+      "se": 0.004091,
+      "share": 0.044934
+     }
+    },
+    "share_unweighted": 1.7589,
+    "share_weighted": {
+     "moe": 0.000502,
+     "se": 0.000305,
+     "share": 0.017595
+    }
+   },
+   {
+    "frequency": 6312,
+    "major": "Elementary Education",
+    "median": {
+     "hidden": false,
+     "median": 56212.78,
+     "moe": 1177.93,
+     "n": 6312,
+     "reason": "",
+     "se": 716.07
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.135,
+     "weighted": {
+      "moe": 0.004999,
+      "se": 0.003039,
+      "share": 0.039303
+     }
+    },
+    "share_unweighted": 1.7525,
+    "share_weighted": {
+     "moe": 0.000439,
+     "se": 0.000267,
+     "share": 0.015321
+    }
+   },
+   {
+    "frequency": 3658,
+    "major": "Engineering Technologies",
+    "median": {
+     "hidden": false,
+     "median": 104947.0,
+     "moe": 1016.95,
+     "n": 3658,
+     "reason": "",
+     "se": 618.21
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.7408,
+     "weighted": {
+      "moe": 0.007635,
+      "se": 0.004641,
+      "share": 0.05366
+     }
+    },
+    "share_unweighted": 1.0156,
+    "share_weighted": {
+     "moe": 0.000406,
+     "se": 0.000247,
+     "share": 0.010167
+    }
+   },
+   {
+    "frequency": 8714,
+    "major": "English Language",
+    "median": {
+     "hidden": false,
+     "median": 78203.51,
+     "moe": 1264.76,
+     "n": 8714,
+     "reason": "",
+     "se": 768.85
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.6429,
+     "weighted": {
+      "moe": 0.006577,
+      "se": 0.003998,
+      "share": 0.077159
+     }
+    },
+    "share_unweighted": 2.4194,
+    "share_weighted": {
+     "moe": 0.000514,
+     "se": 0.000313,
+     "share": 0.023032
+    }
+   },
+   {
+    "frequency": 3243,
+    "major": "Environmental Studies",
+    "median": {
+     "hidden": false,
+     "median": 81220.0,
+     "moe": 2967.98,
+     "n": 3243,
+     "reason": "",
+     "se": 1804.24
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 8.6957,
+     "weighted": {
+      "moe": 0.009853,
+      "se": 0.005989,
+      "share": 0.080061
+     }
+    },
+    "share_unweighted": 0.9004,
+    "share_weighted": {
+     "moe": 0.000289,
+     "se": 0.000175,
+     "share": 0.007889
+    }
+   },
+   {
+    "frequency": 1047,
+    "major": "Ethnic Studies",
+    "median": {
+     "hidden": false,
+     "median": 86296.25,
+     "moe": 5893.35,
+     "n": 1047,
+     "reason": "",
+     "se": 3582.58
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.6409,
+     "weighted": {
+      "moe": 0.017398,
+      "se": 0.010576,
+      "share": 0.075931
+     }
+    },
+    "share_unweighted": 0.2907,
+    "share_weighted": {
+     "moe": 0.000162,
+     "se": 9.8e-05,
+     "share": 0.002678
+    }
+   },
+   {
+    "frequency": 2526,
+    "major": "Family and Consumer Sciences",
+    "median": {
+     "hidden": false,
+     "median": 63680.0,
+     "moe": 3116.46,
+     "n": 2526,
+     "reason": "",
+     "se": 1894.5
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 6.3341,
+     "weighted": {
+      "moe": 0.011474,
+      "se": 0.006975,
+      "share": 0.061765
+     }
+    },
+    "share_unweighted": 0.7013,
+    "share_weighted": {
+     "moe": 0.000261,
+     "se": 0.000158,
+     "share": 0.006643
+    }
+   },
+   {
+    "frequency": 10464,
+    "major": "Finance",
+    "median": {
+     "hidden": false,
+     "median": 115441.7,
+     "moe": 3272.33,
+     "n": 10464,
+     "reason": "",
+     "se": 1989.26
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 9.8433,
+     "weighted": {
+      "moe": 0.006589,
+      "se": 0.004005,
+      "share": 0.097872
+     }
+    },
+    "share_unweighted": 2.9053,
+    "share_weighted": {
+     "moe": 0.000626,
+     "se": 0.00038,
+     "share": 0.029484
+    }
+   },
+   {
+    "frequency": 7973,
+    "major": "Fine Arts",
+    "median": {
+     "hidden": false,
+     "median": 73462.9,
+     "moe": 2205.6,
+     "n": 7973,
+     "reason": "",
+     "se": 1340.79
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 13.9094,
+     "weighted": {
+      "moe": 0.007777,
+      "se": 0.004728,
+      "share": 0.140882
+     }
+    },
+    "share_unweighted": 2.2137,
+    "share_weighted": {
+     "moe": 0.000546,
+     "se": 0.000332,
+     "share": 0.021291
+    }
+   },
+   {
+    "frequency": 2473,
+    "major": "Foreign Language",
+    "median": {
+     "hidden": false,
+     "median": 78203.51,
+     "moe": 2895.81,
+     "n": 2473,
+     "reason": "",
+     "se": 1760.37
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 8.2491,
+     "weighted": {
+      "moe": 0.010716,
+      "se": 0.006514,
+      "share": 0.078532
+     }
+    },
+    "share_unweighted": 0.6866,
+    "share_weighted": {
+     "moe": 0.000308,
+     "se": 0.000187,
+     "share": 0.006605
+    }
+   },
+   {
+    "frequency": 18546,
+    "major": "General Business",
+    "median": {
+     "hidden": false,
+     "median": 93072.8,
+     "moe": 3007.36,
+     "n": 18546,
+     "reason": "",
+     "se": 1828.18
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 10.6977,
+     "weighted": {
+      "moe": 0.004891,
+      "se": 0.002973,
+      "share": 0.102967
+     }
+    },
+    "share_unweighted": 5.1492,
+    "share_weighted": {
+     "moe": 0.000863,
+     "se": 0.000525,
+     "share": 0.055787
+    }
+   },
+   {
+    "frequency": 6529,
+    "major": "General Education",
+    "median": {
+     "hidden": false,
+     "median": 59662.05,
+     "moe": 1329.3,
+     "n": 6529,
+     "reason": "",
+     "se": 808.08
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.131,
+     "weighted": {
+      "moe": 0.006648,
+      "se": 0.004041,
+      "share": 0.050312
+     }
+    },
+    "share_unweighted": 1.8127,
+    "share_weighted": {
+     "moe": 0.000553,
+     "se": 0.000336,
+     "share": 0.02068
+    }
+   },
+   {
+    "frequency": 3693,
+    "major": "General Engineering",
+    "median": {
+     "hidden": false,
+     "median": 109778.17,
+     "moe": 4097.99,
+     "n": 3693,
+     "reason": "",
+     "se": 2491.18
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.9339,
+     "weighted": {
+      "moe": 0.008471,
+      "se": 0.00515,
+      "share": 0.077986
+     }
+    },
+    "share_unweighted": 1.0253,
+    "share_weighted": {
+     "moe": 0.000439,
+     "se": 0.000267,
+     "share": 0.012578
+    }
+   },
+   {
+    "frequency": 954,
+    "major": "General Social Sciences",
+    "median": {
+     "hidden": false,
+     "median": 78203.51,
+     "moe": 2271.55,
+     "n": 954,
+     "reason": "",
+     "se": 1380.88
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.652,
+     "weighted": {
+      "moe": 0.020063,
+      "se": 0.012196,
+      "share": 0.080328
+     }
+    },
+    "share_unweighted": 0.2649,
+    "share_weighted": {
+     "moe": 0.00019,
+     "se": 0.000115,
+     "share": 0.002634
+    }
+   },
+   {
+    "frequency": 1265,
+    "major": "Geography",
+    "median": {
+     "hidden": false,
+     "median": 83957.6,
+     "moe": 3124.82,
+     "n": 1265,
+     "reason": "",
+     "se": 1899.58
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.0356,
+     "weighted": {
+      "moe": 0.019025,
+      "se": 0.011565,
+      "share": 0.08071
+     }
+    },
+    "share_unweighted": 0.3512,
+    "share_weighted": {
+     "moe": 0.000212,
+     "se": 0.000129,
+     "share": 0.003244
+    }
+   },
+   {
+    "frequency": 5194,
+    "major": "Health Services",
+    "median": {
+     "hidden": false,
+     "median": 71067.5,
+     "moe": 1158.43,
+     "n": 5194,
+     "reason": "",
+     "se": 704.21
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.0443,
+     "weighted": {
+      "moe": 0.00791,
+      "se": 0.004809,
+      "share": 0.053129
+     }
+    },
+    "share_unweighted": 1.4421,
+    "share_weighted": {
+     "moe": 0.00044,
+     "se": 0.000267,
+     "share": 0.014724
+    }
+   },
+   {
+    "frequency": 6070,
+    "major": "History",
+    "median": {
+     "hidden": false,
+     "median": 81220.0,
+     "moe": 2346.07,
+     "n": 6070,
+     "reason": "",
+     "se": 1426.18
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.117,
+     "weighted": {
+      "moe": 0.008393,
+      "se": 0.005102,
+      "share": 0.074783
+     }
+    },
+    "share_unweighted": 1.6853,
+    "share_weighted": {
+     "moe": 0.000489,
+     "se": 0.000297,
+     "share": 0.016509
+    }
+   },
+   {
+    "frequency": 1386,
+    "major": "Industrial Engineering",
+    "median": {
+     "hidden": false,
+     "median": 111677.5,
+     "moe": 2892.65,
+     "n": 1386,
+     "reason": "",
+     "se": 1758.45
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 6.8543,
+     "weighted": {
+      "moe": 0.013355,
+      "se": 0.008118,
+      "share": 0.068602
+     }
+    },
+    "share_unweighted": 0.3848,
+    "share_weighted": {
+     "moe": 0.000207,
+     "se": 0.000126,
+     "share": 0.003607
+    }
+   },
+   {
+    "frequency": 7500,
+    "major": "Information Systems & Management",
+    "median": {
+     "hidden": false,
+     "median": 101525.0,
+     "moe": 2822.75,
+     "n": 7500,
+     "reason": "",
+     "se": 1715.96
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.96,
+     "weighted": {
+      "moe": 0.005193,
+      "se": 0.003157,
+      "share": 0.051535
+     }
+    },
+    "share_unweighted": 2.0823,
+    "share_weighted": {
+     "moe": 0.00045,
+     "se": 0.000273,
+     "share": 0.02129
+    }
+   },
+   {
+    "frequency": 5081,
+    "major": "Interdisciplinary Studies",
+    "median": {
+     "hidden": false,
+     "median": 79320.7,
+     "moe": 2314.98,
+     "n": 5081,
+     "reason": "",
+     "se": 1407.28
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.1246,
+     "weighted": {
+      "moe": 0.007971,
+      "se": 0.004846,
+      "share": 0.071527
+     }
+    },
+    "share_unweighted": 1.4107,
+    "share_weighted": {
+     "moe": 0.000482,
+     "se": 0.000293,
+     "share": 0.01523
+    }
+   },
+   {
+    "frequency": 2142,
+    "major": "International Affairs",
+    "median": {
+     "hidden": false,
+     "median": 95433.5,
+     "moe": 3857.84,
+     "n": 2142,
+     "reason": "",
+     "se": 2345.19
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 9.4771,
+     "weighted": {
+      "moe": 0.013251,
+      "se": 0.008056,
+      "share": 0.098565
+     }
+    },
+    "share_unweighted": 0.5947,
+    "share_weighted": {
+     "moe": 0.00029,
+     "se": 0.000176,
+     "share": 0.005909
+    }
+   },
+   {
+    "frequency": 3619,
+    "major": "Journalism",
+    "median": {
+     "hidden": false,
+     "median": 88299.83,
+     "moe": 3908.55,
+     "n": 3619,
+     "reason": "",
+     "se": 2376.02
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 8.3448,
+     "weighted": {
+      "moe": 0.010208,
+      "se": 0.006206,
+      "share": 0.085006
+     }
+    },
+    "share_unweighted": 1.0048,
+    "share_weighted": {
+     "moe": 0.000353,
+     "se": 0.000215,
+     "share": 0.009855
+    }
+   },
+   {
+    "frequency": 5464,
+    "major": "Leisure and Hospitality",
+    "median": {
+     "hidden": false,
+     "median": 73980.94,
+     "moe": 2431.29,
+     "n": 5464,
+     "reason": "",
+     "se": 1477.99
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 9.3338,
+     "weighted": {
+      "moe": 0.007958,
+      "se": 0.004838,
+      "share": 0.091165
+     }
+    },
+    "share_unweighted": 1.517,
+    "share_weighted": {
+     "moe": 0.000386,
+     "se": 0.000235,
+     "share": 0.015074
+    }
+   },
+   {
+    "frequency": 4812,
+    "major": "Liberal Arts",
+    "median": {
+     "hidden": false,
+     "median": 73462.9,
+     "moe": 2119.88,
+     "n": 4812,
+     "reason": "",
+     "se": 1288.68
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.8554,
+     "weighted": {
+      "moe": 0.009256,
+      "se": 0.005627,
+      "share": 0.080842
+     }
+    },
+    "share_unweighted": 1.336,
+    "share_weighted": {
+     "moe": 0.000371,
+     "se": 0.000225,
+     "share": 0.013743
+    }
+   },
+   {
+    "frequency": 11415,
+    "major": "Marketing",
+    "median": {
+     "hidden": false,
+     "median": 97761.36,
+     "moe": 1360.01,
+     "n": 11415,
+     "reason": "",
+     "se": 826.75
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 9.7766,
+     "weighted": {
+      "moe": 0.006051,
+      "se": 0.003679,
+      "share": 0.097851
+     }
+    },
+    "share_unweighted": 3.1693,
+    "share_weighted": {
+     "moe": 0.000715,
+     "se": 0.000435,
+     "share": 0.031977
+    }
+   },
+   {
+    "frequency": 3144,
+    "major": "Mass Media",
+    "median": {
+     "hidden": false,
+     "median": 83526.87,
+     "moe": 1456.82,
+     "n": 3144,
+     "reason": "",
+     "se": 885.61
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 9.7328,
+     "weighted": {
+      "moe": 0.011705,
+      "se": 0.007116,
+      "share": 0.093942
+     }
+    },
+    "share_unweighted": 0.8729,
+    "share_weighted": {
+     "moe": 0.000266,
+     "se": 0.000162,
+     "share": 0.008642
+    }
+   },
+   {
+    "frequency": 3292,
+    "major": "Mathematics",
+    "median": {
+     "hidden": false,
+     "median": 102618.73,
+     "moe": 2602.2,
+     "n": 3292,
+     "reason": "",
+     "se": 1581.89
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.3159,
+     "weighted": {
+      "moe": 0.009148,
+      "se": 0.005561,
+      "share": 0.051511
+     }
+    },
+    "share_unweighted": 0.914,
+    "share_weighted": {
+     "moe": 0.00036,
+     "se": 0.000219,
+     "share": 0.008751
+    }
+   },
+   {
+    "frequency": 6224,
+    "major": "Mechanical Engineering",
+    "median": {
+     "hidden": false,
+     "median": 122891.23,
+     "moe": 2053.92,
+     "n": 6224,
+     "reason": "",
+     "se": 1248.59
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.4467,
+     "weighted": {
+      "moe": 0.005822,
+      "se": 0.003539,
+      "share": 0.050161
+     }
+    },
+    "share_unweighted": 1.7281,
+    "share_weighted": {
+     "moe": 0.000391,
+     "se": 0.000238,
+     "share": 0.016232
+    }
+   },
+   {
+    "frequency": 1275,
+    "major": "Medical Technicians",
+    "median": {
+     "hidden": false,
+     "median": 82672.28,
+     "moe": 3138.29,
+     "n": 1275,
+     "reason": "",
+     "se": 1907.77
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 2.5098,
+     "weighted": {
+      "moe": 0.0093,
+      "se": 0.005654,
+      "share": 0.024263
+     }
+    },
+    "share_unweighted": 0.354,
+    "share_weighted": {
+     "moe": 0.00019,
+     "se": 0.000115,
+     "share": 0.003443
+    }
+   },
+   {
+    "frequency": 2019,
+    "major": "Miscellaneous Biological Science",
+    "median": {
+     "hidden": false,
+     "median": 81140.39,
+     "moe": 3257.81,
+     "n": 2019,
+     "reason": "",
+     "se": 1980.43
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.6771,
+     "weighted": {
+      "moe": 0.013369,
+      "se": 0.008127,
+      "share": 0.06979
+     }
+    },
+    "share_unweighted": 0.5606,
+    "share_weighted": {
+     "moe": 0.000239,
+     "se": 0.000145,
+     "share": 0.005141
+    }
+   },
+   {
+    "frequency": 1199,
+    "major": "Miscellaneous Education",
+    "median": {
+     "hidden": false,
+     "median": 62968.2,
+     "moe": 2035.62,
+     "n": 1199,
+     "reason": "",
+     "se": 1237.46
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.588,
+     "weighted": {
+      "moe": 0.01759,
+      "se": 0.010693,
+      "share": 0.058287
+     }
+    },
+    "share_unweighted": 0.3329,
+    "share_weighted": {
+     "moe": 0.000212,
+     "se": 0.000129,
+     "share": 0.002941
+    }
+   },
+   {
+    "frequency": 2520,
+    "major": "Miscellaneous Engineering",
+    "median": {
+     "hidden": false,
+     "median": 111719.3,
+     "moe": 3694.29,
+     "n": 2520,
+     "reason": "",
+     "se": 2245.77
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 9.0873,
+     "weighted": {
+      "moe": 0.013112,
+      "se": 0.007971,
+      "share": 0.094728
+     }
+    },
+    "share_unweighted": 0.6997,
+    "share_weighted": {
+     "moe": 0.000304,
+     "se": 0.000185,
+     "share": 0.006742
+    }
+   },
+   {
+    "frequency": 580,
+    "major": "Miscellaneous Physical Sciences",
+    "median": {
+     "hidden": false,
+     "median": 100205.39,
+     "moe": 8768.86,
+     "n": 580,
+     "reason": "",
+     "se": 5330.61
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 6.0345,
+     "weighted": {
+      "moe": 0.016563,
+      "se": 0.010069,
+      "share": 0.048978
+     }
+    },
+    "share_unweighted": 0.161,
+    "share_weighted": {
+     "moe": 0.000128,
+     "se": 7.8e-05,
+     "share": 0.001512
+    }
+   },
+   {
+    "frequency": 2983,
+    "major": "Miscellaneous Technologies",
+    "median": {
+     "hidden": false,
+     "median": 94961.41,
+     "moe": 3199.62,
+     "n": 2983,
+     "reason": "",
+     "se": 1945.06
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.3416,
+     "weighted": {
+      "moe": 0.010963,
+      "se": 0.006664,
+      "share": 0.075709
+     }
+    },
+    "share_unweighted": 0.8282,
+    "share_weighted": {
+     "moe": 0.000329,
+     "se": 0.0002,
+     "share": 0.008082
+    }
+   },
+   {
+    "frequency": 15161,
+    "major": "Nursing",
+    "median": {
+     "hidden": false,
+     "median": 87985.22,
+     "moe": 1349.1,
+     "n": 15161,
+     "reason": "",
+     "se": 820.12
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 2.2624,
+     "weighted": {
+      "moe": 0.003042,
+      "se": 0.001849,
+      "share": 0.024038
+     }
+    },
+    "share_unweighted": 4.2094,
+    "share_weighted": {
+     "moe": 0.000842,
+     "se": 0.000512,
+     "share": 0.044528
+    }
+   },
+   {
+    "frequency": 538,
+    "major": "Nutrition Sciences",
+    "median": {
+     "hidden": false,
+     "median": 73321.02,
+     "moe": 2481.36,
+     "n": 538,
+     "reason": "",
+     "se": 1508.43
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.4349,
+     "weighted": {
+      "moe": 0.025598,
+      "se": 0.015561,
+      "share": 0.07265
+     }
+    },
+    "share_unweighted": 0.1494,
+    "share_weighted": {
+     "moe": 0.000118,
+     "se": 7.2e-05,
+     "share": 0.001407
+    }
+   },
+   {
+    "frequency": 4061,
+    "major": "Performing Arts",
+    "median": {
+     "hidden": false,
+     "median": 73462.9,
+     "moe": 420.21,
+     "n": 4061,
+     "reason": "",
+     "se": 255.45
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 12.7801,
+     "weighted": {
+      "moe": 0.010424,
+      "se": 0.006337,
+      "share": 0.1291
+     }
+    },
+    "share_unweighted": 1.1275,
+    "share_weighted": {
+     "moe": 0.000337,
+     "se": 0.000205,
+     "share": 0.010795
+    }
+   },
+   {
+    "frequency": 497,
+    "major": "Pharmacy",
+    "median": {
+     "hidden": false,
+     "median": 99699.65,
+     "moe": 10613.64,
+     "n": 497,
+     "reason": "",
+     "se": 6452.06
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 6.2374,
+     "weighted": {
+      "moe": 0.018569,
+      "se": 0.011288,
+      "share": 0.047265
+     }
+    },
+    "share_unweighted": 0.138,
+    "share_weighted": {
+     "moe": 0.000178,
+     "se": 0.000108,
+     "share": 0.001625
+    }
+   },
+   {
+    "frequency": 1728,
+    "major": "Philosophy",
+    "median": {
+     "hidden": false,
+     "median": 81858.66,
+     "moe": 3533.5,
+     "n": 1728,
+     "reason": "",
+     "se": 2148.02
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 9.375,
+     "weighted": {
+      "moe": 0.013342,
+      "se": 0.008111,
+      "share": 0.090439
+     }
+    },
+    "share_unweighted": 0.4798,
+    "share_weighted": {
+     "moe": 0.000258,
+     "se": 0.000157,
+     "share": 0.004796
+    }
+   },
+   {
+    "frequency": 787,
+    "major": "Physics",
+    "median": {
+     "hidden": false,
+     "median": 103555.5,
+     "moe": 5009.57,
+     "n": 787,
+     "reason": "",
+     "se": 3045.33
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.8285,
+     "weighted": {
+      "moe": 0.012413,
+      "se": 0.007546,
+      "share": 0.042361
+     }
+    },
+    "share_unweighted": 0.2185,
+    "share_weighted": {
+     "moe": 0.00017,
+     "se": 0.000104,
+     "share": 0.002042
+    }
+   },
+   {
+    "frequency": 6297,
+    "major": "Political Science",
+    "median": {
+     "hidden": false,
+     "median": 97761.36,
+     "moe": 2736.5,
+     "n": 6297,
+     "reason": "",
+     "se": 1663.52
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 7.5592,
+     "weighted": {
+      "moe": 0.008867,
+      "se": 0.00539,
+      "share": 0.077398
+     }
+    },
+    "share_unweighted": 1.7483,
+    "share_weighted": {
+     "moe": 0.000429,
+     "se": 0.000261,
+     "share": 0.017533
+    }
+   },
+   {
+    "frequency": 13402,
+    "major": "Psychology",
+    "median": {
+     "hidden": false,
+     "median": 73321.02,
+     "moe": 158.89,
+     "n": 13402,
+     "reason": "",
+     "se": 96.59
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 6.4692,
+     "weighted": {
+      "moe": 0.005131,
+      "se": 0.003119,
+      "share": 0.063764
+     }
+    },
+    "share_unweighted": 3.721,
+    "share_weighted": {
+     "moe": 0.000684,
+     "se": 0.000416,
+     "share": 0.037652
+    }
+   },
+   {
+    "frequency": 1258,
+    "major": "Public Policy and Law",
+    "median": {
+     "hidden": false,
+     "median": 81220.0,
+     "moe": 4091.22,
+     "n": 1258,
+     "reason": "",
+     "se": 2487.06
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 6.6773,
+     "weighted": {
+      "moe": 0.014013,
+      "se": 0.008519,
+      "share": 0.060019
+     }
+    },
+    "share_unweighted": 0.3493,
+    "share_weighted": {
+     "moe": 0.00022,
+     "se": 0.000134,
+     "share": 0.003608
+    }
+   },
+   {
+    "frequency": 5187,
+    "major": "Secondary Education",
+    "median": {
+     "hidden": false,
+     "median": 61445.62,
+     "moe": 916.27,
+     "n": 5187,
+     "reason": "",
+     "se": 557.01
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.5909,
+     "weighted": {
+      "moe": 0.00773,
+      "se": 0.004699,
+      "share": 0.056587
+     }
+    },
+    "share_unweighted": 1.4401,
+    "share_weighted": {
+     "moe": 0.000465,
+     "se": 0.000283,
+     "share": 0.013642
+    }
+   },
+   {
+    "frequency": 3049,
+    "major": "Social Services",
+    "median": {
+     "hidden": false,
+     "median": 60915.0,
+     "moe": 453.82,
+     "n": 3049,
+     "reason": "",
+     "se": 275.88
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.1653,
+     "weighted": {
+      "moe": 0.006015,
+      "se": 0.003657,
+      "share": 0.037213
+     }
+    },
+    "share_unweighted": 0.8465,
+    "share_weighted": {
+     "moe": 0.000338,
+     "se": 0.000206,
+     "share": 0.008677
+    }
+   },
+   {
+    "frequency": 5157,
+    "major": "Sociology",
+    "median": {
+     "hidden": false,
+     "median": 76143.75,
+     "moe": 1772.06,
+     "n": 5157,
+     "reason": "",
+     "se": 1077.24
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 5.7592,
+     "weighted": {
+      "moe": 0.005602,
+      "se": 0.003406,
+      "share": 0.056484
+     }
+    },
+    "share_unweighted": 1.4318,
+    "share_weighted": {
+     "moe": 0.000433,
+     "se": 0.000263,
+     "share": 0.014289
+    }
+   },
+   {
+    "frequency": 709,
+    "major": "Special Education",
+    "median": {
+     "hidden": false,
+     "median": 61445.62,
+     "moe": 1850.69,
+     "n": 709,
+     "reason": "",
+     "se": 1125.04
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 4.2313,
+     "weighted": {
+      "moe": 0.018904,
+      "se": 0.011492,
+      "share": 0.040371
+     }
+    },
+    "share_unweighted": 0.1968,
+    "share_weighted": {
+     "moe": 0.000137,
+     "se": 8.3e-05,
+     "share": 0.001856
+    }
+   },
+   {
+    "frequency": 1753,
+    "major": "Theology and Religion",
+    "median": {
+     "hidden": false,
+     "median": 65991.25,
+     "moe": 2592.11,
+     "n": 1753,
+     "reason": "",
+     "se": 1575.75
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 8.4997,
+     "weighted": {
+      "moe": 0.015944,
+      "se": 0.009693,
+      "share": 0.103063
+     }
+    },
+    "share_unweighted": 0.4867,
+    "share_weighted": {
+     "moe": 0.000206,
+     "se": 0.000125,
+     "share": 0.004477
+    }
+   },
+   {
+    "frequency": 1706,
+    "major": "Treatment Therapy",
+    "median": {
+     "hidden": false,
+     "median": 78203.51,
+     "moe": 4019.78,
+     "n": 1706,
+     "reason": "",
+     "se": 2443.64
+    },
+    "self_employment": {
+     "hidden": false,
+     "unweighted": 6.3306,
+     "weighted": {
+      "moe": 0.010864,
+      "se": 0.006604,
+      "share": 0.057497
+     }
+    },
+    "share_unweighted": 0.4737,
+    "share_weighted": {
+     "moe": 0.000293,
+     "se": 0.000178,
+     "share": 0.004755
+    }
+   }
+  ],
+  "total_n": 360174
+ }
+}
