@@ -114,6 +114,8 @@ done_check:
   4: "two builds give the same bundle bytes"
 
 instructor_calls:              # built with the default; the variant is computed and reported
+  # RULED 2026-10-25 (ledger E38): G1 = A (52 PUMAs, 08625 out); L1 = A (25-54); P1 = A (wages);
+  # R1 = C (data unchanged; the page lists shown rows first and folds hidden rows into one line)
   G1: "South Florida. PUMA 08625 = all of Monroe County (29 tracts) + 10 Miami-Dade tracts. Plan rule:
        'each PUMA lies 100% inside the three counties; if the counties cannot be identified exactly,
        suppress'. Read per PUMA, the 52 PUMAs pass (the 10 tracts are left out, not split): default,
