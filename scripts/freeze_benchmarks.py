@@ -42,6 +42,12 @@ for v in ["ESR", "SCH", "SCHL", "COW", "WKWN", "WKHP", "WAGP", "PERNP", "SEMP", 
 for y in [2022, 2024]:
     SOURCES.append(("census-codelists", f"SOCP-{y}.json", CENSUS_API.format(y=y, v="SOCP")))
 
+# HC Tables 1-2 (step 7): 2018 weeks intervals, and occupation / industry codes at both ends of 2018-23.
+SOURCES.append(("census-codelists", "WKW-2018.json", CENSUS_API.format(y=2018, v="WKW")))
+for y in [2018, 2023]:
+    for v in ["OCCP", "INDP"]:
+        SOURCES.append(("census-codelists", f"{v}-{y}.json", CENSUS_API.format(y=y, v=v)))
+
 # Census "PUMS estimates for user verification": official estimates + MOEs, the
 # fixture for the replicate-weight standard-error test; and the record counts.
 EST = "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/"

@@ -1,0 +1,41 @@
+label,matched,freq_pub,freq,share_pub,share,median_pub,median,freq_ok,share_ok,median_exact,median_within_1pct
+Other managers,Other managers,640,640,7.3,7.2934,132619,132618.6,True,True,True,True
+Financial managers,Financial managers,559,559,6.4,6.3704,153374,153373.95,True,True,True,True
+Chief executives and legislators,Chief executives and legislators,377,377,4.3,4.2963,202522,202521.9,True,True,True,True
+Accountants and auditors,Accountants and auditors,347,347,4.0,3.9544,105448,105447.96,True,True,True,True
+Personal financial advisors,Personal financial advisors,289,289,3.3,3.2934,187463,187463.04,True,True,True,True
+Management analysts,Management analysts,215,215,2.5,2.4501,132699,132699.46,True,True,True,True
+"Securities, commodities, and financial services sales agents","Securities, commodities, and financial services sales agents",208,208,2.4,2.3704,297853,297852.75,True,True,True,True
+General and operations managers,General and operations managers,196,196,2.2,2.2336,99590,99589.74,True,True,True,True
+Software developers,Software developers,179,179,2.0,2.0399,127812,127811.62,True,True,True,True
+Financial and investment analysts,Financial and investment analysts,172,172,2.0,1.9601,122870,122869.88,True,True,True,True
+"Sales representatives, wholesale and manufacturing","Sales representatives, wholesale and manufacturing",167,167,1.9,1.9031,117587,117586.69,True,True,True,True
+First-line supervisors of retail sales workers,First-line supervisors of retail sales workers,165,165,1.9,1.8803,83399,83398.77,True,True,True,True
+First-line supervisors of non-retail sales workers,First-line supervisors of non-retail sales workers,163,163,1.9,1.8575,119199,119198.6,True,True,True,True
+Real estate brokers and sales agents,Real estate brokers and sales agents,139,139,1.6,1.584,165773,165773.25,True,True,True,True
+Customer service representatives,Customer service representatives,131,131,1.5,1.4929,83399,83398.77,True,True,True,True
+Sales managers,Sales managers,130,130,1.5,1.4815,173590,173590.2,True,True,True,True
+Credit counselors and loan officers,Credit counselors and loan officers,129,129,1.5,1.4701,111495,111494.86,True,True,True,True
+Project management specialists,Project management specialists,129,129,1.5,1.4701,131055,131055.21,True,True,True,True
+Marketing managers,Marketing managers,117,117,1.3,1.3333,152359,152358.64,True,True,True,True
+Computer systems analysts,Computer systems analysts,113,113,1.3,1.2877,104294,104294.29,True,True,True,True
+Sales representatives of servicesa,"Sales representatives of services, except advertising, insurance, financial services, and travel",112,112,1.3,1.2764,122870,122869.88,True,True,True,True
+Computer and information systems managers,Computer and information systems managers,105,105,1.2,1.1966,140355,140354.68,True,True,True,True
+First-line supervisors of office and admin. support workers,First-line supervisors of office and administrative support workers,95,95,1.1,1.0826,95313,95312.88,True,True,True,True
+Human resources workers,Human resources workers,89,89,1.0,1.0142,118609,118609.19,True,True,True,True
+Insurance sales agents,Insurance sales agents,88,88,1.0,1.0028,104154,104154.12,True,True,True,True
+Other mathematical science occupations,Other mathematical science occupations,88,88,1.0,1.0028,107791,107791.25,True,True,True,True
+"Computer occupations, all other","Computer occupations, all other",84,84,1.0,0.9573,119141,119141.1,True,True,True,True
+Elementary and middle school teachers,Elementary and middle school teachers,77,77,0.9,0.8775,63269,63268.78,True,True,True,True
+Retail salespersons,Retail salespersons,75,75,0.9,0.8547,63650,63649.74,True,True,True,True
+Construction managers,Construction managers,74,74,0.8,0.8433,120462,120461.89,True,True,True,True
+"Business operations specialists, all other","Business operations specialists, all other",71,71,0.8,0.8091,121567,121567.05,True,True,True,True
+"Property, real estate, and community association managers","Property, real estate, and community association managers",71,71,0.8,0.8091,108125,108125.49,True,True,True,True
+Food service managers,Food service managers,69,69,0.8,0.7863,71575,71574.51,True,True,True,True
+Market research analysts and marketing specialists,Market research analysts and marketing specialists,65,65,0.7,0.7407,120462,120461.89,True,True,True,True
+"Claims adjusters, appraisers, examiners, and investigators","Claims adjusters, appraisers, examiners, and investigators",59,59,0.7,0.6724,82887,82886.62,True,True,True,True
+Registered nurses,Registered nurses,58,58,0.7,0.661,85395,85394.81,True,True,True,True
+"Farmers, ranchers, and other agricultural managers","Farmers, ranchers, and other agricultural managers",56,56,0.6,0.6382,58582,58582.2,True,True,True,True
+Secretaries and administrative assistantsb,"Secretaries and administrative assistants, except legal, medical, and executive",54,54,0.6,0.6154,43937,43936.65,True,True,True,True
+Compliance officers,Compliance officers,51,51,0.6,0.5812,141182,141182.2,True,True,True,True
+Police officers,Police officers,51,51,0.6,0.5812,96075,96074.81,True,True,True,True

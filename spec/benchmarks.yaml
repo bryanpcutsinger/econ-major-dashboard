@@ -71,6 +71,7 @@ hc_tables_1_2:                     # done check 2
   industry: INDP as coded, grouped to sectors        # INDP code set changes in 2023
   shares: unweighted (table notes); medians: weighted
   tolerance: {frequency: exact, share: "+-0.05 pt", median: ">=90% exact, all within 1%"}
+  result: "2026-10-24 Table 1 PASS (40/40 exact); Table 2 frequency + median 20/20, share 19/20, set test fails: both from HC's unlisted 2023 INDP codes (ledger E30-E32)"
 
 hc_table_3:
   source: HC Table 3 (raw/benchmarks/hc-2026/table3.csv), 73 majors, N = 224,415

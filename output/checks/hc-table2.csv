@@ -1,0 +1,21 @@
+label,matched,freq_pub,freq,share_pub,share,median_pub,median,freq_ok,share_ok,median_exact,median_within_1pct
+Finance and insurance,Finance and Insurance,2111,2111,25.2,24.057,142969,142969.32,True,False,True,True
+"Professional, scientific, and technical services","Professional, Scientific, and Technical Services",1414,1414,16.1,16.114,128881,128880.84,True,True,True,True
+Manufacturing,Manufacturing,677,677,7.7,7.7151,102249,102249.3,True,True,True,True
+Retail trade,Retail Trade,494,494,5.6,5.6296,79754,79754.45,True,True,True,True
+Public administration,Public Administration,460,460,5.2,5.2422,96148,96148.49,True,True,True,True
+Educational services,Educational Services,419,419,4.8,4.7749,70299,70298.64,True,True,True,True
+Health care and social assistance,Health Care and Social Assistance,415,415,4.7,4.7293,81009,81008.76,True,True,True,True
+Real estate and rental and leasing,Real Estate and Rental and Leasing,341,341,3.9,3.886,112478,112477.82,True,True,True,True
+Wholesale trade,Wholesale Trade,330,330,3.8,3.7607,110516,110515.5,True,True,True,True
+Construction,Construction,293,293,3.3,3.339,102228,102227.74,True,True,True,True
+Information,Information,282,282,3.2,3.2137,132924,132924.09,True,True,True,True
+Transportation and warehousing,Transportation and Warehousing,264,264,3.0,3.0085,70299,70298.64,True,True,True,True
+Administrative and support and waste management services,Administrative and support and waste management services,239,239,2.7,2.7236,96053,96053.24,True,True,True,True
+Accommodation and food services,Accommodation and Food Services,212,212,2.4,2.416,65528,65527.6,True,True,True,True
+"Other services, except public administration","Other Services, Except Public Administration",183,183,2.1,2.0855,66309,66309.3,True,True,True,True
+"Arts, entertainment, and recreation","Arts, Entertainment, and Recreation",127,127,1.4,1.4473,99464,99463.95,True,True,True,True
+"Agriculture, forestry, fishing, and hunting","Agriculture, Forestry, Fishing, and Hunting",102,102,1.2,1.1624,71835,71835.07,True,True,True,True
+Utilities,Utilities,98,98,1.1,1.1168,117587,117586.69,True,True,True,True
+"Mining, quarrying, and oil and gas extraction","Mining, Quarrying, and Oil and Gas Extraction",32,32,0.4,0.3647,112726,112725.81,True,True,True,True
+Management of companies and enterprises,Management of companies and enterprises,31,31,0.4,0.3533,143670,143670.15,True,True,True,True
