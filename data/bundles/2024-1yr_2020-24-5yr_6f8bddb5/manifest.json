@@ -26,13 +26,13 @@
   },
   "south_florida_pumas": 52
  },
- "git_commit": "4b128121f433827833de3b63441cabb44208612a",
+ "git_commit": "c4ad521b72b00580dc04e6a99c7e0cf56378b5b3",
  "sources": {
   "raw/acs1-2024/csv_pus.zip": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
   "raw/acs5-2020-2024/csv_pus.zip": "7e8f4f189d850fef9dd79de0ae0c6a6398471df27631e5a6613479b739e06d27"
  },
  "spec": {
-  "spec/acs5-panels.yaml": "da080850aebf916c72169ee561209ac33b19389e06a7cd8b2789ced9119b818c",
+  "spec/acs5-panels.yaml": "5e32f7bd85824da3da886be49863ce60ffec396a2c3d1a6880324b4f454ee4b2",
   "spec/major73-hc.csv": "432460a4dc64e231eccdb77bd61f9593489acc26edc474cc214e31a2fedcf191",
   "spec/rank-panel.yaml": "ee8219cbf86a4100c970c906ffdd962fbab39a7c44dce9d160be418516190603"
  },
