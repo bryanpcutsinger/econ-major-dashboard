@@ -1,0 +1,130 @@
+# Step 8: the 2020-24 5-year panels and bundle v1 (data plan section 3, row 8).
+# Written 2026-10-25 BEFORE any step-8 estimate, hidden-cell count, or label was computed.
+# Read from the file first (no estimates; output/checks/acs5-profile.json, ledger E33):
+#   ADJINC by survey year, one PUMA column, one code set for all five years, negative replicate
+#   weights, and the South Florida PUMA test on the frozen tract file.
+# Contract: mockup A2 (micro-principles spring-2027/planning/econ-major-dashboard-mockup-v2/
+#   Explorer-v2.dc.html) panel 3 "In the same occupation, who earns more?" and panel 5 "Here in
+#   South Florida". Rulings: C3 (90% margin), D2 (one ADJINC rule), D4 (ages 25-54 with age
+#   reweighting; 35-45 = the check), D5 (n >= 100 and MOE / estimate <= 0.30).
+
+data:
+  file: raw/acs5-2020-2024/csv_pus.zip            # sha256 7e8f4f18..., PROVENANCE.txt
+  extract: cache/acs5-2020-2024-ba.parquet        # scripts/extract_acs5.py; SCHL >= 21, ages 22-65
+  survey_year: first 4 characters of SERIALNO
+  adjinc: {2020: 1.222017, 2021: 1.193241, 2022: 1.117193, 2023: 1.049470, 2024: 1.015250}
+  geography: "one 2020-based PUMA column; Census crosswalked the 2020-21 records (User Guide VIII.C). No second crosswalk"
+  codes: "every year on one list: INDP = 2023 PUMS list (265 codes), OCCP = 2018 list (530 codes)"
+  majors: spec/major73-hc.csv on FOD1P (first major); economics = the Economics group = FOD1P 1102, 5501, 6205
+
+common:
+  sample: "SCH == 1 and ESR in [1, 2, 4, 5]"
+  full_time: "WKHP >= 35 and WKWN >= 40"
+  degree: {default: "SCHL == 21", graduate_switch: "SCHL >= 21"}
+  pay: "WAGP * ADJINC / 1e6, '2024 dollars' (D2); kept if pay >= 5500 (threshold base year 2024)"   # call P1
+  median:
+    shown: "lower weighted median with PWGTP (the rank-panel rule)"
+    test_and_se: "interpolated median, function medians() in scripts/build_rank_panel.py"
+    negative_replicate_weights: "set to 0 inside median computations only; totals and shares use
+                                 them as given. Report how many cells hold such a record"
+  se: "SDR: sqrt(4/80 * sum_r (theta_r - theta)^2), PWGTP1-80; MOE = 1.645 * SE"
+  difference: "d = economics - other, in the full sample and in each replicate (covariance-aware)"
+  label: "better if d > 1.645 * SE(d); worse if d < -1.645 * SE(d); else about the same (C3)"
+  hide_cell: "unweighted n < 100 or MOE / estimate > 0.30 (D5)"
+  hide_rate: "unweighted n < 100, or fewer than 10 people in the numerator or its complement"   # self-employment (hc_tables_5yr)
+  hidden_row: "keeps its row ('not enough data'); a difference gets a label only if both cells show;
+               hidden rows are left out of the better / same / worse counts"
+
+same_occupation:               # panel 3
+  ages: [25, 54]
+  age_reweighting: "inside each occupation, weight economics and the chosen major to the age mix of
+                    all bachelor's holders in that occupation (same sample and switch), bins 25-29,
+                    30-34, ..., 50-54; factor = target bin share / group bin share, computed once from
+                    the full-sample weight PWGTP and applied to all 81 weight columns (plan section 5:
+                    'same weights in all 80 replicates'). A bin the group lacks while the target has it:
+                    merge to 25-34, 35-44, 45-54; still lacking: hide the cell ('age mix')"
+  full_time: always on
+  switches: [graduate]
+  rows: "each of the 73 majors: its top 10 OCCP codes by weighted count in its own sample (full-sample
+         weight; ties -> lower OCCP code); toggle 'top jobs for economics majors' = the economics top 10.
+         Rows are never chosen by the size or sign of a gap"
+  groups: {economics: "Economics group", major: "chosen major", all: "everyone in the occupation (all 73 groups)"}
+  comparisons: ["economics - major", "economics - all (all contains economics)"]
+  chosen_economics_or_none: "rows = economics top 10; comparison = economics - all"
+  occupation_labels: "Census OCCP list (frozen census-codelists/OCCP-2018.json, -2023.json); page wording later"
+  headline: "counts over shown rows: more / about the same / less"
+  check_variant: "ages 35-45, no reweighting (D4 check); computed, not shown; report label agreement"
+
+local:                         # panel 5
+  areas:
+    florida: "STATE == 12"
+    south_florida: "STATE == 12 and PUMA in the 52 PUMAs that lie fully inside Miami-Dade (086),
+                    Broward (011), and Palm Beach (099) (frozen 2020 tract -> PUMA file; 24 + 17 + 11)"   # call G1
+  groups: {economics: "Economics group", major: "chosen major", all: "all majors in the area"}
+  ages: [25, 54]                # call L1; variant ages 35-45 computed and reported
+  age_reweighting: "as same_occupation, target = all majors in the area"
+  switches: [graduate, full_time]      # as the rank panel; default graduate off, full-time on
+  comparisons: ["economics - major", "economics - all"]
+
+hc_tables_5yr:                 # HC Tables 1-3 rolled forward; production record (no benchmark)
+  sample: "HC rules (ledger E22, E28, E30): ages 35-45, SCHL == 21, SCH == 1, ESR in [1, 2, 4, 5],
+           WKHP >= 35, WKWN >= 40, all five survey years"
+  dollars: "PERNP * ADJINC / 1e6 (HC's earnings measure), '2024 dollars'; kept if > 5499 (2024 dollars).
+            Not comparable with HC's 2022 dollars"
+  table1: "economics majors; OCCP -> HC occupation2 labels (R lines 121-652); top 40 by unweighted count"
+  table2: "economics majors; INDP -> HC industry_category (R lines 937-1209) plus the 33 new codes mapped
+           through the Census 2017 -> 2022 code changes (ledger E34); top 20 by unweighted count"
+  table3: "all 73 majors: frequency, share, median, self-employment (COW in 6, 7)"
+  report: "HC's unweighted frequency and share; weighted share, lower median, and weighted self-employment
+           rate, each with SE and MOE. Hide rules apply to the weighted numbers only"
+
+fixture:                       # tests our weights and SE code on this file (done check 1)
+  source: raw/benchmarks/census-verification/pums_estimates_20_24.csv
+  rows: "every person row for all 51 states + US (added 2026-10-25, ledger E37): total population, housing-unit and GQ populations,
+         sex, the 13 age bands"
+  how: "state x row sums of PWGTP and PWGTP1-80 over ALL person records, accumulated in the same pass
+        as the extract (scripts/extract_acs5.py -> output/checks/acs5-fixture-sums.csv)"
+  pass: "estimate exact; SE within 1 of the published SE (Census rounds SEs to whole people)"
+
+gates:                         # hard gates (plan section 4) on this vintage
+  - "every FOD1P in the extract maps to one of the 73 groups (code 0 / N/A excepted, count reported)"
+  - "every OCCP has an HC occupation2 label; every INDP maps to one HC industry group"
+  - "all 73 majors present in the national samples (same occupation, HC Table 3); the local areas
+     report how many are present (an absent major = a hidden row), not a gate"
+  - "South Florida PUMA rule as ruled (G1)"
+
+cross_check:                   # warning only, not pass / fail
+  - "national economics mid-career pay (ages 35-45, rank-panel rules, 5-year) vs the 2024 1-year
+     rank-panel value: report both with SEs"
+
+bundle_v1:
+  path: "data/bundles/<1y>_<5y>_<codehash>/ ; data/current.json names it (plan section 4)"
+  codehash: "first 8 hex of sha256 over the sorted FOD1P, OCCP, INDP, and PUMA code lists used"
+  files: [rank.json, same_occupation.json, local.json, hc_tables_5yr.json, manifest.json]
+  rank: "rank.json = a byte copy of output/panels/rank-2024.json (1-year build, step 5); step 8 does not rebuild it"
+  manifest: "sha256 of each source zip (the 2024 1-year AND the 2020-24 5-year), spec file, and code
+             file; git commit; no clock time"
+  no_microdata: "aggregates only; every cell has n, estimate, SE, MOE, hidden flag and reason"
+
+done_check:
+  1: "fixture passes"
+  2: "gates pass"
+  3: "every shown number has an SE and MOE; every hidden cell has a reason; hidden counts per panel and
+      switch setting reported before any page uses them"
+  4: "two builds give the same bundle bytes"
+
+instructor_calls:              # built with the default; the variant is computed and reported
+  G1: "South Florida. PUMA 08625 = all of Monroe County (29 tracts) + 10 Miami-Dade tracts. Plan rule:
+       'each PUMA lies 100% inside the three counties; if the counties cannot be identified exactly,
+       suppress'. Read per PUMA, the 52 PUMAs pass (the 10 tracts are left out, not split): default,
+       labeled as leaving out one Miami-Dade area that Census groups with Monroe County. Read as
+       'the whole three-county area exactly', it fails and the row is suppressed. Third option: add
+       08625 and name Monroe County"
+  L1: "Local panel ages. Default 25-54 with age reweighting (the same sample as panel 3); variant 35-45
+       (the mid-career band of panels 1-2)"
+  P1: "Pay on panels 3 and 5. Default wages (WAGP), the meaning of 'pay' on panels 1-2; variant
+       earnings incl. self-employment (PERNP), HC's measure. Report how many labels change"
+  R1: "Panel 3 rows (posed after the build, ledger E37; not built). At the default, 350 of 730 own-top-10
+       rows are hidden, mostly n < 100 in the economics cell. The plan forbids choosing rows by the
+       gap, not by data: option = each major's top 10 among jobs where the economics cell shows.
+       Default stays: the major's top 10, hidden rows listed"

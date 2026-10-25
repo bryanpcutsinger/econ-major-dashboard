@@ -48,10 +48,27 @@ for y in [2018, 2023]:
     for v in ["OCCP", "INDP"]:
         SOURCES.append(("census-codelists", f"{v}-{y}.json", CENSUS_API.format(y=y, v=v)))
 
+# Step 8 (2020-24 5-year file): its user guide and data dictionary, and the 2020 tract -> PUMA
+# relationship file (a tract GEOID starts with state + county FIPS) for the South Florida PUMAs.
+PUMS_DOCS = "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/"
+SOURCES += [
+    ("census-5yr", "2020_2024ACS_PUMS_User_Guide.pdf", PUMS_DOCS + "2020_2024ACS_PUMS_User_Guide.pdf"),
+    ("census-5yr", "PUMS_Data_Dictionary_2020-2024.csv", PUMS_DOCS + "data_dict/PUMS_Data_Dictionary_2020-2024.csv"),
+    ("census-geo", "2020_Census_Tract_to_2020_PUMA.txt",
+     "https://www2.census.gov/geo/docs/maps-data/data/rel2020/2020_Census_Tract_to_2020_PUMA.txt"),
+]
+# The 5-year file codes every year on the 2023 INDP list; these map its codes back to the
+# 2017-based codes HC's industry block lists (linked from census.gov industry-occupation code lists).
+IO = "https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/"
+for f in ["2022-Census-Industry-Code-List-with-Crosswalk.xlsx",
+          "2023-ACS-PUMS-and-2024-SIPP-Public-Use-Industry-Code-List.xlsx"]:
+    SOURCES.append(("census-codelists", f, IO + f))
+
 # Census "PUMS estimates for user verification": official estimates + MOEs, the
 # fixture for the replicate-weight standard-error test; and the record counts.
 EST = "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/"
-for f in ["pums_estimates_24.csv", "pums_record_count_24.csv"]:
+for f in ["pums_estimates_24.csv", "pums_record_count_24.csv",
+          "pums_estimates_20_24.csv", "pums_record_count_20_24.csv"]:   # 5-year: step 8 fixture
     SOURCES.append(("census-verification", f, EST + f))
 
 # O*NET database releases (text files) for underemployment: the candidates listed in
