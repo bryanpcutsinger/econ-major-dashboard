@@ -465,6 +465,31 @@
     });
   }
 
+  // ---------- frame height (Canvas) ----------
+  // In a frame, tell the parent page the content height after every change, so Canvas can fit the frame to the
+  // panel (Canvas's 'lti.frameResize' message; ledger E45). Outside a frame, or if the parent ignores the message,
+  // nothing changes: the frame keeps its fixed height.
+  var lastHeight = 0, heightQueued = false;
+  function postHeight() {
+    heightQueued = false;
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (!h || h === lastHeight) { return; }
+    lastHeight = h;
+    try { window.parent.postMessage(JSON.stringify({ subject: 'lti.frameResize', height: h }), '*'); } catch (e) { /* no parent */ }
+  }
+  function queueHeight() {
+    if (window.parent === window || heightQueued) { return; }
+    heightQueued = true;
+    (window.requestAnimationFrame || setTimeout)(postHeight);
+  }
+  function watchHeight() {
+    if (window.parent === window) { return; }
+    if (window.ResizeObserver) { new ResizeObserver(queueHeight).observe(document.body); }
+    document.addEventListener('toggle', queueHeight, true);       // <details> open / close
+    window.addEventListener('resize', queueHeight);
+    queueHeight();
+  }
+
   // ---------- start ----------
   function getJSON(url) {
     return fetch(url, { cache: 'no-cache' }).then(function (r) {
@@ -499,6 +524,7 @@
       }
       shell();
       listen();
+      watchHeight();
       render();
       if (bc) { bc.postMessage({ type: 'hello' }); }
       document.documentElement.setAttribute('data-ready', 'true');
