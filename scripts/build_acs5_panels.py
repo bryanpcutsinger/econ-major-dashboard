@@ -367,13 +367,22 @@ def main():
                       "fod1p_unmapped_persons": gates["fod1p_unmapped_persons"],
                       "lifetime_negative_pernp": life_negative}}
     dicts = {"acs1": sha(V.dict1), "acs5": sha(V.dict5)}
+    # 11.2: each source's url, bytes, Last-Modified, sha256 (raw/<sid>/PROVENANCE.txt) and its dictionary (spec/inputs.json),
+    # so H9 and the probe compare against the live bundle itself, not a file the bot would have to rewrite
+    inputs = json.loads((ROOT / "spec" / "inputs.json").read_text())
+    def record(zip_path, dict_path):
+        prov = dict(line.split(": ", 1) for line in (zip_path.parent / "PROVENANCE.txt").read_text().splitlines() if ": " in line)
+        d = inputs[str(dict_path.relative_to(ROOT))]
+        return {"url": prov["source"], "bytes": int(prov["bytes"]), "last_modified": prov["last_modified_header"],
+                "sha256": prov["sha256"], "dictionary": {"url": d["url"], "bytes": d["bytes"], "sha256": d["sha256"]}}
+    source_records = {V.acs1_id: record(V.acs1_zip, V.dict1), V.acs5_id: record(V.acs5_zip, V.dict5)}
     git = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     dirty = bool(subprocess.run(["git", "status", "--porcelain", "scripts", "spec"], cwd=ROOT,
                                 capture_output=True, text=True).stdout.strip())
     manifest = {"bundle": bid, "git_commit": git, "worktree_dirty": dirty, "gates": gates,
                 "stats": stats, "dictionaries": dicts,
                 "dollars": f"{V.dollar_year} dollars (ADJINC)", "years": V.years,
-                "sources": {str(z.relative_to(ROOT)): sha(z) for z in V.pums},
+                "sources": {str(z.relative_to(ROOT)): sha(z) for z in V.pums}, "source_records": source_records,
                 "spec": {p: sha(ROOT / p) for p in ["spec/acs5-panels.yaml", "spec/rank-panel.yaml", "spec/major73.csv",
                                                      "spec/front-end.yaml", "spec/vintage.json",
                                                      "spec/lifetime-panel.yaml"]},

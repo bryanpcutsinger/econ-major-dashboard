@@ -16,6 +16,7 @@ import os
 import sys
 import tempfile
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,9 +44,19 @@ def download(url, dest):
     fd, tmp = tempfile.mkstemp(dir=dest.parent, prefix=".part-")
     req = urllib.request.Request(url, headers={"User-Agent": "econ-major-dashboard (github.com/bryanpcutsinger)"})
     with os.fdopen(fd, "wb") as out, urllib.request.urlopen(req, timeout=120) as r:
+        headers = {k.lower(): v for k, v in r.headers.items()}
         for b in iter(lambda: r.read(1 << 20), b""):
             out.write(b)
-    return Path(tmp)
+    return Path(tmp), headers
+
+
+def write_provenance(dest, url, headers, digest):
+    """raw/<source>/PROVENANCE.txt, the format of the hand downloads (the build copies it into source_records)."""
+    accessed = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    (dest.parent / "PROVENANCE.txt").write_text(
+        f"source: {url}\nproduct: ACS PUMS national person files (CSV)\naccessed: {accessed}\n"
+        f"bytes: {dest.stat().st_size}\nlast_modified_header: {headers.get('last-modified', '')}\n"
+        f"sha256: {digest}\nmethod: scripts/fetch_inputs.py --pums\n")
 
 
 def fetch(pums=False, into=ROOT):
@@ -62,7 +73,7 @@ def fetch(pums=False, into=ROOT):
         if dest.exists() and sha(dest) == r["sha256"]:
             print(f"ok         {key}")
             continue
-        tmp = download(r["url"], dest)
+        tmp, headers = download(r["url"], dest)
         got = sha(tmp)
         if got != r["sha256"]:
             tmp.unlink()
@@ -70,6 +81,8 @@ def fetch(pums=False, into=ROOT):
             status = max(status, 2)
             continue
         tmp.replace(dest)
+        if p in V.pums:
+            write_provenance(dest, r["url"], headers, got)
         print(f"fetched    {key} ({dest.stat().st_size:,} bytes)")
     return status
 

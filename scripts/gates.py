@@ -361,13 +361,14 @@ def h9_source_revision(probe, live):
     if live is None:
         return [], ["first bundle: no published source to compare"]
     stored = json.loads((ROOT / "spec" / "sources.json").read_text())
+    records = live["manifest"].get("source_records") or {}    # 11.2: the live manifest's own record wins
     got = json.loads(Path(probe).read_text()).get("sources", {})
     bad = []
     for path in live["manifest"].get("sources", {}):
         sid = Path(path).parent.name                     # raw/acs5-2020-2024/csv_pus.zip -> acs5-2020-2024
-        s, p = stored.get(sid), got.get(sid)
+        s, p = records.get(sid) or stored.get(sid), got.get(sid)
         if s is None:
-            bad.append(f"{sid}: not in spec/sources.json")
+            bad.append(f"{sid}: no record in the live manifest or spec/sources.json")
         elif p is None:
             bad.append(f"{sid}: the probe did not check it")
         elif p.get("sha256") and p["sha256"] != s["sha256"]:

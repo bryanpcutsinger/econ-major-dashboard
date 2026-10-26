@@ -13,9 +13,11 @@ CENSUS = "https://www2.census.gov/programs-surveys/acs"
 
 
 class Vintage:
-    def __init__(self, path=None):
-        path = Path(path or os.environ.get("DASHBOARD_VINTAGE") or ROOT / "spec" / "vintage.json")
-        c = json.loads(Path(path).read_text())
+    def __init__(self, path=None, config=None):
+        if config is None:
+            path = Path(path or os.environ.get("DASHBOARD_VINTAGE") or ROOT / "spec" / "vintage.json")
+            config = json.loads(Path(path).read_text())
+        c = self.config = config
         self.source = path
         self.y1 = int(c["acs1"])
         self.a5, self.b5 = (int(x) for x in c["acs5"])
@@ -53,6 +55,12 @@ class Vintage:
             self.tract_puma: f"https://www2.census.gov/geo/docs/maps-data/data/rel{p}/{p}_Census_Tract_to_{p}_PUMA.txt",
         }
         self.pums = [self.acs1_zip, self.acs5_zip]
+
+
+    def shifted(self, years=1):
+        """The vintage `years` on (the probe's 'next'): both files move together (pairing rule)."""
+        c = dict(self.config, acs1=self.y1 + years, acs5=[self.a5 + years, self.b5 + years])
+        return Vintage(config=c)
 
 
 V = Vintage()

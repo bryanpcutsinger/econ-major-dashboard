@@ -52,7 +52,7 @@ class Fetch(unittest.TestCase):
             dest.parent.mkdir(parents=True, exist_ok=True)
             t = dest.parent / ".part-test"
             t.write_bytes(self.body)
-            return t
+            return t, {}
         fetch_inputs.download = stub
 
     def tearDown(self):

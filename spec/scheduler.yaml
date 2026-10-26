@@ -46,6 +46,36 @@ done_check_11_1: "with the tracked spec/vintage.json, a rebuild from the clean t
                   (DASHBOARD_VINTAGE with acs1 = 2022) runs on the local 2022 file"
 
 # ---------- 11.2-11.9 (from the plan; detail added when each starts) ----------
+probe_11_2:                    # detail written 2026-10-26 before the probe code
+  script: "scripts/probe.py [--out probe.json] [--fixture <json>]; stdlib only, no key; exit 0 for every decision
+           except error (exit 1), so the workflow branches on the JSON, not on the exit code"
+  live: "for each source in the live bundle's manifest: HEAD the zip (Content-Length, Last-Modified); GET its data
+         dictionary (~330 KB) and hash it. The record to compare: the live manifest's source_records if present,
+         else spec/sources.json (bundles built before 11.2 have no source_records)"
+  next: "the vintage one year on (1-year Y+1; 5-year A+1..B+1): HEAD both zips and both dictionaries; GET the Census
+         API pums.json for Y+1 (acs1, acs5) as a second signal (recorded, not decisive)"
+  present: "a zip counts as present only with status 200 and Content-Length > 10 MB; a dictionary with status 200; 404 =
+            not out yet (normal)"
+  error: "any timeout, connection error, 403, 429, 5xx, or a live HEAD without Content-Length or Last-Modified; never
+          read as 'nothing'. Each request: 2 retries with a short pause"
+  decision_order: "error > revision_suspect > new_vintage > pending > nothing; every reason listed"
+  revision_suspect: "a live zip's bytes or Last-Modified differ from the record, or a live dictionary's sha256 differs.
+                     If the zip's bytes and Last-Modified equal a confirmed fingerprint in data/last-checked.json
+                     (confirmed: {sid: {bytes, last_modified, sha256}}, written after a same-sha download in 11.5/11.7),
+                     it is not a suspect and the probe emits that sha256, so H9 takes its sha branch"
+  new_vintage: "both next zips present and both next dictionaries present (pairing rule)"
+  pending: "some but not all of the next files present"
+  output: "{version: 1, probed_at, vintage, live_bundle, sources: {sid: {url, bytes, last_modified, sha256 | null,
+           dictionary_sha256, dictionary_changed}}, next: {name: {url, status, bytes, last_modified}}, api: {...},
+           decision, reasons, errors}; the sources keys are the raw folder ids H9 reads"
+  provenance: "fetch_inputs.py --pums writes raw/<sid>/PROVENANCE.txt (url, bytes, Last-Modified, sha256, accessed) for
+               each zip it downloads, so a runner build can record source_records in its manifest"
+  fixtures: "a fixture maps url -> {status, headers, body} (body as text, or a sha256 to fake a dictionary); a missing
+             url raises a connection error. Tests: nothing, pending, new_vintage, revision_suspect (zip), dictionary
+             changed, confirmed re-upload, live 5xx, next 5xx, missing header; H9 passes the unchanged probe and
+             holds the revised one"
+  done_check: "the tests above pass; one live probe (network: HEAD + about 1.3 MB of dictionaries) gives a decision with
+               no error, and H9 run with its output passes against the live bundle"
 probe: "scripts/probe.py, stdlib only, no key: HEAD the live zips and the next vintage's zips; GET both dictionaries;
         Census API pums.json as a second signal. Decision: error / nothing / pending / new_vintage / revision_suspect.
         A transport error is 'error', never 'nothing'. Output keys = raw folder ids (H9 input). A suspect is settled by
