@@ -19,8 +19,8 @@
     local: 'Here in South Florida'
   };
   var MEASURES = [
+    { key: 'pay_early', name: 'Pay, early career', note: 'ages 22–27' },   // early before mid (instructor 2026-10-26)
     { key: 'pay_mid', name: 'Pay, mid-career', note: 'ages 35–45' },
-    { key: 'pay_early', name: 'Pay, early career', note: 'ages 22–27' },
     { key: 'unemployment', name: 'Unemployment', note: 'lower is better' },
     { key: 'underemployment', name: 'Underemployment', note: 'lower is better' }
   ];
