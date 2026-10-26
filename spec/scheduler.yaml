@@ -130,7 +130,10 @@ workflow_11_5:                 # detail written 2026-10-26 before the workflow (
               github-actions[bot]; push with one rebase retry; then PUT the workflow's enable endpoint (whether this
               resets the 60-day timer: UNCERTAIN, logged only)"
   pages: "after the push: poll GET /pages/builds/latest for the pushed commit for 90 s; if no build for it, POST
-          /pages/builds and poll again (up to 4 min); the job summary and the ledger record which case held"
+          /pages/builds and poll again (up to 4 min); the job summary and the ledger record which case held.
+          AMENDED 2026-10-26 (E52): in all three test runs the bot's push started the legacy Pages build by itself
+          (the Codex-cited claim that a GITHUB_TOKEN push does not was wrong for this repo); the check now waits for
+          status 'built' and keeps the POST request as the fallback"
   limits: "concurrency group data, no cancel; timeouts probe 10 min, keepalive 10 min; ubuntu-24.04"
   done_check: "keepalive.py unit tests (success, error keeps last_success, bad probe output, confirmed carried); a
                dispatch run goes green; main gets one bot commit with data/last-checked.json; the live site serves it
