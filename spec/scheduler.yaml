@@ -1,0 +1,71 @@
+# Step 11: scheduler, probe, keep-alive, alarm, runner build (data plan section 3, row 11; section 4).
+# Written 2026-10-26 BEFORE any step-11 code, from the private plan step11-plan.md (two blind legs + synthesis)
+# and the instructor's rulings of 2026-10-26. Lines marked AMENDED change after the first code or runs.
+# Done check (plan): a forced "new vintage" dry run goes probe -> build -> publish -> issue on the runner,
+# without harming the live page.
+
+rulings_2026_10_26:
+  pairing: "a new vintage = the 1-year Y+1 AND the 5-year (Y-3)..(Y+1) both out; one alone = 'pending' (one dollar year)"
+  term_freeze: "1/12-4/29: the bot builds and holds with a 'ready' issue; the instructor publishes by dispatch. Outside the
+                term: auto-publish (C2)"
+  revisions: "a changed source for a published vintage holds; publish by dispatch after review"
+  publish_path: "direct bot commit to main"
+  onet: "release 30.2 and the 8digit_mean link stay fixed"
+  fix_rebuilds: "by dispatch only; 'no new Census data' wording; no announcement draft"
+  alarm: "D7: a Claude routine reads the public data/last-checked.json, weekly (was monthly)"
+  start: "D8: arm the cron after the 1/12/2027 lecture"
+
+# ---------- 11.1: one vintage config; inputs the runner can fetch ----------
+vintage:
+  file: "spec/vintage.json: {acs1: Y, acs5: [Y-4, Y], onet_release, onet_link, puma_vintage}"
+  override: "env DASHBOARD_VINTAGE=<path> (the runner's dry run and rehearsals); the tracked file = the published vintage"
+  derived: "scripts/vintage.py derives every path, file name, URL, bundle prefix, and manifest label from it: raw/acs1-{Y},
+            raw/acs5-{A}-{B}, the two data dictionaries, SOCP-{Y}.json, cache/acs5-{A}-{B}-ba.parquet,
+            output/panels/rank-{Y}*.json, compare-{Y}.json, bundle prefix {Y}-1yr_{A}-{BB}-5yr_, years and dollars labels"
+  read_from_data: "ADJINC (one per 1-year file, asserted; per survey year in the 5-year file)"
+  fixed: "every spec rule (ages, SCHL, ESR, D-rulings, D5 and the count rule, 1.645, SDR 80), spec/major73.csv,
+          South Florida (H4 holds a change), O*NET 30.2 + 8digit_mean, the H8 dictionary baseline (no auto-rebaseline).
+          The $5,500 pay floor stays as each spec states it: nominal WAGP in the rank build (NY Fed replication),
+          2024-dollar pay in the 5-year build (spec/acs5-panels.yaml); parameterizing must not 'harmonize' it"
+inputs:
+  file: "spec/inputs.json: for each vintage, every input the build reads: path under raw/, url, bytes, sha256"
+  fetch: "scripts/fetch_inputs.py: present with the right sha -> skip; missing -> download, then check the sha; a
+          mismatch -> exit 2, no file kept (11.3 maps it to a gate-hold issue). --pums adds the two PUMS zips (sha from
+          spec/sources.json for a published vintage)"
+  record: "scripts/fetch_inputs.py --record writes the entries for the current vintage from local files (a human step,
+           when a new vintage is accepted)"
+  list: ["PUMS 1-year and 5-year national person zips (--pums)", "PUMS data dictionaries (1-year, 5-year)",
+         "SOCP code list (Census API metadata, no key)", "O*NET db_{release}_text.zip", "2020 tract-to-PUMA file"]
+  not_needed: "the NY Fed CSV (E45: names from spec/major73.csv); the HC package (E45: Census labels); benchmarks for the
+               replication checks (audit only, not run on the runner)"
+  packages: "requirements.txt adds pyarrow (the build reads and writes Parquet). A hashed lockfile comes with the
+             workflow (11.5), pinned to the runner's Python"
+done_check_11_1: "with the tracked spec/vintage.json, a rebuild from the clean tree gives the live bundle id
+                  (2024-1yr_2020-24-5yr_6f8bddb5-27bdb9) with byte-identical data files; tests pass; fetch_inputs.py into
+                  an empty raw/ copy downloads every non-PUMS input and every sha matches; a 2022 rank rehearsal
+                  (DASHBOARD_VINTAGE with acs1 = 2022) runs on the local 2022 file"
+
+# ---------- 11.2-11.9 (from the plan; detail added when each starts) ----------
+probe: "scripts/probe.py, stdlib only, no key: HEAD the live zips and the next vintage's zips; GET both dictionaries;
+        Census API pums.json as a second signal. Decision: error / nothing / pending / new_vintage / revision_suspect.
+        A transport error is 'error', never 'nothing'. Output keys = raw folder ids (H9 input). A suspect is settled by
+        sha after download: same sha = re-upload (no rebuild, no issue); new sha = revision (hold)"
+h9_baseline: "each bundle manifest records url, bytes, Last-Modified, sha256 per source; H9 compares the probe with the
+              live manifest; bundles without the fields fall back to spec/sources.json. The bot never rewrites spec/"
+issues: "kinds from the manifests: new vintage (with announcement draft) / rebuild with the same data ('no new Census
+         data', no announcement) / revision / gate hold / ready (term freeze) / stale / dry run; a hidden key per body
+         for de-duplication; gh issue create with GITHUB_TOKEN"
+stale_note: "the page computes days since last_success in data/last-checked.json; over 45 days, or if the file cannot
+             be read, it shows when it last checked. This is the layer that must hold if the others fail"
+workflow: "one workflow (a GITHUB_TOKEN push starts no new run): probe (contents: read), keepalive (contents: write),
+           build (contents: read, no secrets), publish (contents: write, issues: write). Actions pinned by SHA;
+           ubuntu-24.04; concurrency without cancel; timeouts 10 / 5 / 180 / 15 min. Cron '17 13 3 * *' + dispatch
+           (mode: normal | probe-only | dry-run; fixture: none | new-vintage | revision | hold)"
+pages: "every bot push (keep-alive and publish) is followed by POST /pages/builds and a check of the deployed commit,
+        unless 11.5 shows a GITHUB_TOKEN push rebuilds legacy Pages by itself; both jobs then need pages: write"
+dry_run: "fixture new-vintage names the real 2024 files as new; the runner rebuilds from zero; publish runs on a scratch
+          data copy whose current.json names bundle v1, so the gates and the flip really run; push to dryrun/<run id>;
+          one [DRY RUN] issue posted and closed; live current.json unchanged; a second dispatch proves de-dup; a hold
+          fixture proves the hold issue. It cannot prove the real 2025 layout, codes, or timing"
+asks: "push and contents: write (granted for this work 2026-10-26); the D7 routine (create: ask); ~2.9 GB CI download per
+       build (ask at 11.7); issue posting (ask at 11.8)"

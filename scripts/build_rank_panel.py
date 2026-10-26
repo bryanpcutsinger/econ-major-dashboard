@@ -27,14 +27,15 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from nyfed_underemployment_check import onet_scores, soc6_scores, socp_flags  # noqa: E402  (one job rule)
+from vintage import V  # noqa: E402  (spec/vintage.json; spec/scheduler.yaml 11.1)
 
-YEAR = 2024
+YEAR = V.y1
 REPS = [f"PWGTP{r}" for r in range(1, 81)]
 WCOLS = ["PWGTP"] + REPS                      # column 0 = full-sample weight
 COLS = ["SERIALNO", "SPORDER", "AGEP", "SCHL", "SCH", "ESR", "WKHP", "WKWN", "WAGP", "ADJINC",
         "FOD1P", "SOCP"] + WCOLS
 Z90 = 1.645
-ONET_RELEASE, LINK = "30_2", "8digit_mean"    # E27 production default
+ONET_RELEASE, LINK = V.onet_release, V.onet_link    # E27 production default (fixed: scheduler.yaml)
 
 MAJOR_MAP = ROOT / "spec" / "major73.csv"     # our map (E45: replaces the authors' map in every page build)
 
@@ -48,7 +49,7 @@ def major_map():
 
 
 def load():
-    z = zipfile.ZipFile(ROOT / "raw" / f"acs1-{YEAR}" / "csv_pus.zip")
+    z = zipfile.ZipFile(V.acs1_zip)
     parts = []
     for name in sorted(n for n in z.namelist() if n.startswith("psam_pus") and n.endswith(".csv")):
         with z.open(name) as fh:
@@ -199,7 +200,7 @@ def main():
     cmp["unemployment"] = compare_measure(majors, "rate", "lower", "ages 22-27, bachelor's or higher, not enrolled",
                                           rate, rate[:, 0], cnt, ar, ar[0], an, cnum, anum)
 
-    labels = json.loads((ROOT / "raw/benchmarks/census-codelists" / f"SOCP-{YEAR}.json").read_text())["values"]["item"]
+    labels = json.loads(V.socp_codes.read_text())["values"]["item"]
     flags = socp_flags([c for c in labels if c.strip() and not c.startswith("b")],
                        soc6_scores(onet_scores(ONET_RELEASE), LINK))
     score = df.SOCP.map(lambda c: flags.get(c, (np.nan, 0, ""))[0]).to_numpy(float)

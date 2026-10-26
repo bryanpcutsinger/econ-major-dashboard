@@ -13,6 +13,7 @@ Reads raw/acs5-2020-2024/csv_pus.zip (read-only); writes cache/acs5-2020-2024-ba
 """
 import csv
 import json
+import sys
 import time
 import zipfile
 from pathlib import Path
@@ -20,8 +21,11 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-ZIP = ROOT / "raw" / "acs5-2020-2024" / "csv_pus.zip"
-OUT = ROOT / "cache" / "acs5-2020-2024-ba.parquet"
+sys.path.insert(0, str(ROOT / "scripts"))
+from vintage import V  # noqa: E402  (spec/vintage.json; spec/scheduler.yaml 11.1)
+
+ZIP = V.acs5_zip
+OUT = V.cache
 REPS = [f"PWGTP{i}" for i in range(1, 81)]
 COLS = ["SERIALNO", "SPORDER", "STATE", "PUMA", "ADJINC", "AGEP", "SCHL", "SCH", "ESR", "WKHP",
         "WKWN", "WAGP", "PERNP", "COW", "FOD1P", "FOD2P", "OCCP", "INDP", "MIL", "SEX", "RELSHIPP",

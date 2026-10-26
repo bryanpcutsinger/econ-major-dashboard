@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_rank_panel import major_map, medians  # noqa: E402  (one map rule and one median rule for the page)
 from occp_labels import census_occp_labels  # noqa: E402
+from vintage import V  # noqa: E402  (spec/vintage.json; spec/scheduler.yaml 11.1)
 
 REPS = [f"PWGTP{r}" for r in range(1, 81)]
 WCOLS = ["PWGTP"] + REPS                      # column 0 = full-sample weight
@@ -108,7 +109,7 @@ def age_cell(d, idx, tgt_idx, reweight_on):
 # ---------- data ----------
 
 def load():
-    df = pd.read_parquet(ROOT / "cache" / "acs5-2020-2024-ba.parquet")
+    df = pd.read_parquet(V.cache)
     m73, majors = major_map()
     df["g"] = df.FOD1P.map(lambda c: m73.get(int(c)))
     adj = df.ADJINC.to_numpy(float) / 1e6
@@ -228,13 +229,13 @@ def dump(obj):
 def main():
     t0 = time.time()
     df, majors = load()
-    occ_label = census_occp_labels(ROOT / "raw/benchmarks/census-5yr/PUMS_Data_Dictionary_2020-2024.csv")   # E45: Census labels
+    occ_label = census_occp_labels(V.dict5)   # E45: Census labels
 
     # Gates (spec: gates)
     fod_unmapped = df.g.isna() & (df.FOD1P != 0)
     gates = {"fod1p_unmapped_persons": int(fod_unmapped.sum()),
              "occp_without_label": sorted({int(c) for c in df.OCCP.dropna()} - set(occ_label))}
-    tract = pd.read_csv(ROOT / "raw/benchmarks/census-geo/2020_Census_Tract_to_2020_PUMA.txt", dtype=str,
+    tract = pd.read_csv(V.tract_puma, dtype=str,
                         encoding="utf-8-sig")
     fl = tract[tract.STATEFP == "12"]
     inside = sorted(p for p, cs in fl.groupby("PUMA5CE").COUNTYFP.apply(set).items() if cs <= SF_COUNTIES)
@@ -278,9 +279,9 @@ def main():
     # Cross-check (warning only): national economics mid-career pay, rank-panel rules, 5-year vs 1-year
     s = df[base_mask(df, False, True, (35, 45), "pay_wagp") & (df.g == ECON).to_numpy()]
     c5 = cell(s.pay_wagp.to_numpy(float), s[WCOLS].to_numpy(float))[0]
-    rank = json.loads((ROOT / "output/panels/rank-2024.json").read_text())
+    rank = json.loads(V.rank_json.read_text())
     r1 = next(r for r in rank["measures"]["pay_mid|grad=0|fulltime=1"] if r["major"] == ECON)
-    variants["cross_check_econ_mid_pay"] = {"acs5_2020_24": c5, "acs1_2024_rank_panel": {"estimate": r1["estimate"], "se": r1["se"], "n": r1["n"]}}
+    variants["cross_check_econ_mid_pay"] = {f"acs5_{V.a5}_{str(V.b5)[2:]}": c5, f"acs1_{V.y1}_rank_panel": {"estimate": r1["estimate"], "se": r1["se"], "n": r1["n"]}}
     gates["negative_weight_cells"] = STATS["neg_weight_cells"]
 
     # Bundle v1 (spec: bundle_v1). INDP stays in the code list (a bundle id input), though no panel uses it (E40)
@@ -289,10 +290,10 @@ def main():
              "PUMA": sorted(set(df.STATE + df.PUMA))}
     codehash = hashlib.sha256(json.dumps(codes, sort_keys=True).encode()).hexdigest()[:8]
     # Step 9 (spec/gates.yaml bundle_additions): code lists and counts the gates compare, no microdata
-    prof1 = json.loads((ROOT / "output/panels/rank-2024-profile.json").read_text())
-    files = {"rank.json": (ROOT / "output/panels/rank-2024.json").read_bytes(),
+    prof1 = json.loads(V.rank_profile.read_text())
+    files = {"rank.json": V.rank_json.read_bytes(),
              # Step 10 (spec/front-end.yaml panel_1_addition): the side-by-side panel, from the same 1-year build
-             "compare.json": (ROOT / "output/panels/compare-2024.json").read_bytes(),
+             "compare.json": V.compare_json.read_bytes(),
              "codes.json": dump({"acs5": codes, "acs1": {"FOD1P": prof1["FOD1P"], "SOCP": prof1["SOCP"]},
                                  "south_florida_pumas": inside}).encode(),
              "same_occupation.json": dump(bundle["same_occupation"]).encode(),
@@ -302,7 +303,7 @@ def main():
     # Bundle v1 (2024-1yr_2020-24-5yr_6f8bddb5) predates the data hash.
     datahash = hashlib.sha256("".join(f"{k}:{hashlib.sha256(v).hexdigest()}\n" for k, v in sorted(files.items()))
                               .encode()).hexdigest()[:6]
-    bid = f"2024-1yr_2020-24-5yr_{codehash}-{datahash}"
+    bid = f"{V.bundle_prefix}{codehash}-{datahash}"
     out = ROOT / "data" / "bundles" / bid
     out.mkdir(parents=True, exist_ok=True)
     for name, data in files.items():
@@ -310,19 +311,19 @@ def main():
     stats = {"acs1": {k: v for k, v in prof1.items() if k not in ("FOD1P", "SOCP")},
              "acs5": {"records_kept": len(df), "pwgtp_sum": int(df.PWGTP.sum()),
                       "fod1p_unmapped_persons": gates["fod1p_unmapped_persons"]}}
-    dicts = {"acs1": sha(ROOT / "raw/benchmarks/census-1yr/PUMS_Data_Dictionary_2024.csv"),
-             "acs5": sha(ROOT / "raw/benchmarks/census-5yr/PUMS_Data_Dictionary_2020-2024.csv")}
+    dicts = {"acs1": sha(V.dict1), "acs5": sha(V.dict5)}
     git = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     dirty = bool(subprocess.run(["git", "status", "--porcelain", "scripts", "spec"], cwd=ROOT,
                                 capture_output=True, text=True).stdout.strip())
     manifest = {"bundle": bid, "git_commit": git, "worktree_dirty": dirty, "gates": gates,
                 "stats": stats, "dictionaries": dicts,
-                "dollars": "2024 dollars (ADJINC)", "years": {"rank": "ACS 2024 1-year", "other": "ACS 2020-24 5-year"},
-                "sources": {p: sha(ROOT / p) for p in ["raw/acs1-2024/csv_pus.zip", "raw/acs5-2020-2024/csv_pus.zip"]},
+                "dollars": f"{V.dollar_year} dollars (ADJINC)", "years": V.years,
+                "sources": {str(z.relative_to(ROOT)): sha(z) for z in V.pums},
                 "spec": {p: sha(ROOT / p) for p in ["spec/acs5-panels.yaml", "spec/rank-panel.yaml", "spec/major73.csv",
-                                                     "spec/front-end.yaml"]},
+                                                     "spec/front-end.yaml", "spec/vintage.json"]},
                 "code": {p: sha(ROOT / p) for p in ["scripts/build_acs5_panels.py", "scripts/build_rank_panel.py",
-                                                     "scripts/occp_labels.py", "scripts/extract_acs5.py"]},
+                                                     "scripts/occp_labels.py", "scripts/extract_acs5.py",
+                                                     "scripts/vintage.py"]},
                 "files": {f.name: sha(f) for f in sorted(out.glob("*.json")) if f.name != "manifest.json"}}
     (out / "manifest.json").write_text(dump(manifest))
     (ROOT / "output" / "checks" / "acs5-variants.json").write_text(dump(variants))
