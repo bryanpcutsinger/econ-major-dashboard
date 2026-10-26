@@ -6,8 +6,9 @@ American Community Survey (ACS) microdata. "Our calculations from the ACS, follo
 [source]'s method": the NY Fed's *Labor Market for Recent College Graduates* and
 Holian and Chiu (2026).
 
-**Status:** session 1 (October 2026). Benchmarks frozen, spec written, Florida pilot passes.
-Not yet built or published.
+**Status (October 2026):** data bundle v1 built and gated; the page (`site/`) is built and in testing.
+Not yet in the course. The page reads `data/current.json` and the bundle it names; `spec/` holds every
+rule, `spec/exception-ledger.md` every judgment call. Only aggregate numbers are published.
 
 ## Layout
 
@@ -16,6 +17,8 @@ Not yet built or published.
   `build_major73.py` (degree codes → the NY Fed's 73 majors), `pilot_florida.py`.
 - `spec/` — `benchmarks.yaml` (every sample rule with its source), `rate-grid.yaml`
   (variants declared before any national data), `exception-ledger.md`, `major73.csv`.
+- `site/` — the page (`index.html`, `#panel=compare|samejob|cause|rank|local`).
+- `data/` — published bundles and `current.json`.
 - `output/` — aggregate results only.
 - `raw/` — downloaded files. **Gitignored: no microdata is ever committed or published.**
 
