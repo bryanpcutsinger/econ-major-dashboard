@@ -1,0 +1,99 @@
+# Step 10: the front end (data plan section 3, row 10; mockup A2, ruled 2026-10-23 C1-C7; R1 = C).
+# Written 2026-10-25 BEFORE any page code and before the panel-1 data addition.
+# Lines marked AMENDED change after the first runs; each says why (ledger E41+).
+#
+# Scope: the panel-1 data addition (compare.json), the page (site/), its test harness. NOT: enabling
+# GitHub Pages, any push, the Canvas page text and its "Show more" <details> (step 12), the workflow
+# (step 11), the E35-E36 rank fixes (say-so).
+
+panel_1_addition:              # the plan's C3 rule ("every difference inside each replicate, including
+                               # economics vs all majors") needs numbers the bundle lacks
+  why: "panel 1 shows economics, the chosen major, and all majors on four NY Fed measures with a
+        better / about the same / worse label (C3); the rank file has no all-majors row and no
+        differences. Labels from SE(a) and SE(b) alone would ignore that economics is inside all majors"
+  where: "scripts/build_rank_panel.py, same pass, same sample rules, same medians(); writes
+          output/panels/compare-2024.json. rank-2024.json, rank-2024.csv, rank-2024-profile.json stay
+          byte-identical (checked by diff after the run)"
+  measures: {pay_mid: "grad=0|fulltime=1, ages 35-45", pay_early: "grad=0|fulltime=1, ages 22-27",
+             unemployment: "as the rank panel", underemployment: "as the rank panel"}
+  all_majors: "all people in the 73 groups, once each (= NY Fed Overall: 0 FOD1P unmapped, E39)"
+  cells: "pay: n, median (lower median x ADJINC, shown), se and moe (interpolated median x ADJINC,
+          SDR), hidden + reason by D5. rate: n, n_num, rate, se, moe, hidden + reason by the count rule
+          (n < 100, or < 10 people in the numerator or its complement)"
+  differences: "econ_vs_major (each of the 72 others) and econ_vs_all, inside each replicate on the
+                SE statistic; d is ORIENTED: positive = economics better (pay: econ - other; rates:
+                other - econ); label by C3 (d > moe better, d < -moe worse); label null if a side is
+                hidden. So gates.expected_label applies unchanged"
+  dollars: "2024 dollars. The rank file's pay SEs are in pre-ADJINC dollars (a defect found here: about
+            1.5% low; ranks unaffected); compare.json uses ADJINC on both. Not fixed in rank.json
+            (rank rebuild = say-so, with E35-E36); hide flags that differ are counted and reported"
+  bundle: "build_acs5_panels.py copies it into the bundle as compare.json. Bundle id unchanged (vintage +
+           code lists), the third content change under 6f8bddb5 before any publish (E40, this)"
+  gates: "FILES + compare.json; H3: 73 majors per measure; H5: cell rules for pay and rate cells, and
+          estimate + n equal the rank file's for the same major and setting; H6: labels; change list:
+          compare cells (W1 for economics pay, W2/W3 for majors) and labels (W5)"
+  test: "flip one compare label (H6 holds); test count 25 -> 26"
+
+hosting:
+  where: "GitHub Pages from the repo root (raw/ and cache/ are gitignored, so never served). The page is
+          site/index.html; it fetches ../data/current.json, then ../data/bundles/<id>/*.json. Relative
+          URLs only (project path under the custom domain). Enabling Pages and the push = say-so"
+  no_site_build: "the page reads the bundle files as published: one source of truth, so the lecture
+                  numbers (step 12) and the page cannot disagree. same_occupation.json is 2.6 MB
+                  (210 KB gzip); check Pages gzip once live"
+  stamp: "years and dollars from the manifest; 'Last checked' from data/last-checked.json if present
+          (step 11), else data years only"
+
+page:
+  files: "site/index.html, site/app.js, site/style.css; no framework, no build tool, no outside script.
+          Fonts: Lato from Google Fonts with system fallbacks"
+  routes: "#panel=compare | samejob | cause | rank | local renders one panel (one iframe each);
+           no hash = the full explorer (all five, for the 'Open full explorer' link)"
+  style: "Spring tokens (FAU navy #003366 = economics, teal #1F6F78 = chosen major, gray #4A5763 =
+          all majors; Georgia headings, Lato body, Helvetica in charts); A2 layout"
+  shared_major: "the picker in every panel; the choice goes to the other frames by BroadcastChannel and
+                 by a localStorage 'storage' event; a new frame asks for the current choice on load;
+                 every storage call in try/catch (Canvas and private windows can block it). Start with
+                 no major chosen; Economics and Undecided listed (C6). AMENDED: each choice carries a time
+                 stamp and a frame keeps the newest (the harness caught a late reply undoing a new pick)"
+  panels:
+    compare: "economics, the chosen major (if any), all majors; four bars with values; label per measure
+              vs the chosen major, or vs all majors if none / Undecided / Economics (C6); headline counts
+              all three outcomes (C3); hidden cell = 'not enough data', out of the counts"
+    samejob: "toggle: top jobs for the chosen major / for economics majors; graduate switch; dot = median,
+              band = margin of error, dashed line = everyone in the job; R1 C: rows with a label first,
+              then one line for the rest ('In 6 of ... top 10 jobs, too few ... to compare'); headline =
+              the file's headline counts. Job links: see open_calls"
+    cause: "three objections as <details>; the first two from the page's own numbers (median rule; the
+            chosen major's same-job headline); the third = Bleemer and Mehta, see open_calls"
+    rank: "rank only, no range (ruled 2026-10-24): economics and the chosen major on the four measures;
+           switches graduate degrees / full-time for pay; hidden = 'not enough data'"
+    local: "Florida and South Florida: economics, the chosen major, all majors; switches as the file;
+            the G1 footnote on PUMA 08625"
+  table: "every chart has a <details> data table (caption, th scope) with the same numbers"
+  heights: "fixed iframe height per panel at 320 / 380 / 640 px, measured by the harness and written to
+            site/heights.json; samejob sized for its tallest state (10 rows shown). AMENDED: one Canvas
+            height serves every screen width, so the narrow-screen height leaves blank space on a laptop
+            (samejob 2,815 px at 320 vs 1,962 at 640); the choice (that height, or a shorter frame that
+            scrolls) moves to step 12 with the embed"
+
+open_calls:                    # for the instructor; the page ships with the slot, not a guess
+  cause_citation: "Bleemer and Mehta (2022) is not in Zotero; the rule is Zotero + instructor approval.
+                   The page shows a bracketed placeholder for the result sentence. The A2 bracket
+                   '[trimmed-mean check]' is dropped (a new statistic; the median point stands alone)"
+  job_links: "A2 approved BLS OOH + Indeed. The OOH paths were never verified (bls.gov blocks scripts).
+              The link slot is data-driven (spec/job-links.json) and hidden until ruled. AMENDED: no slot
+              and no spec/job-links.json are shipped; both wait for the ruling"
+
+done_check:                    # plan row 10, minus the Canvas part (say-so; needs the push)
+  1: "compare.json built; rank files byte-identical; gates 10/10 on the rebuilt bundle; tests pass"
+  2: "every panel renders from the real bundle at 320, 380, 640 px with no horizontal scroll"
+  3: "keyboard: every control reachable by Tab and works with Enter / Space / arrows; focus visible"
+  4: "200% zoom: no clipped text or lost control. AMENDED: checked as reflow at 320 CSS px (a 640 px frame at
+      200% lays out at 320 CSS px); no separate zoom run"
+  5: "each chart has a data table with the same numbers (the harness compares them)"
+  6: "sync: a choice in one frame reaches the other four (harness page with five iframes)"
+  7: "no number typed into the page: every figure comes from the bundle (grep site/ for digits in text).
+      AMENDED: definitions (age bands, from the specs, in one DEFS block) and citation years are typed;
+      no pay, rate, rank, or count is"
+  later: "inside Canvas (course 207798, unpublished) on iOS Safari and the Canvas app: say-so"

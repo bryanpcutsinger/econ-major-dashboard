@@ -44,6 +44,13 @@ def flatten(b):
                     for lk in ("econ_vs_major", "econ_vs_all"):
                         if lk in r:
                             labels[f"{base}|{lk}"] = r[lk].get("label")
+    for k, v in (b.get("compare") or {"measures": {}})["measures"].items():
+        # economics and each major are the rank file's own cells (H5 checks it): only the all-majors cell is new
+        num(f"compare|{k}|all", dict(v["all"], median=v["all"].get("median", v["all"].get("rate"))),
+            v["kind"], False, f"compare|{k}")
+        labels[f"compare|{k}|econ_vs_all"] = v["econ_vs_all"].get("label")
+        for m, r in v["by_major"].items():
+            labels[f"compare|{k}|{m}|econ_vs_major"] = r["econ_vs_major"].get("label")
     for k, areas in b["local"].items():
         for area, a in areas.items():
             base = f"local|{k}|{area}"

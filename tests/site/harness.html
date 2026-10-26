@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Step 10 harness</title>
+<style>body{font:13px monospace;margin:8px} iframe{border:1px solid #999;display:block;margin:4px 0}</style>
+</head>
+<body>
+<!-- Step 10 done checks 2, 3, 5, 6 (spec/front-end.yaml). Serve the repo root, open
+     /tests/site/harness.html; results land in #out as JSON and the title becomes DONE.
+     Each panel loads at 320 / 380 / 640 px; every major and switch state is rendered and measured. -->
+<div id="frames"></div>
+<pre id="out">running</pre>
+<script>
+(function () {
+  'use strict';
+  var PANELS = ['compare', 'samejob', 'cause', 'rank', 'local'];
+  var WIDTHS = [320, 380, 640];
+  var SWITCHES = {                     // switch states per panel: [checkbox id, ...] combinations, plus the list toggle
+    compare: [[]], cause: [[]],
+    samejob: [[], ['job-grad']],
+    rank: [[], ['rank-grad'], ['rank-full'], ['rank-grad', 'rank-full']],
+    local: [[], ['local-grad'], ['local-full'], ['local-grad', 'local-full']]
+  };
+  var out = { heights: {}, overflow: [], mismatch: [], keyboard: [], sync: null, errors: [] };
+  var host = document.getElementById('frames');
+
+  function frame(src, w, h) {
+    return new Promise(function (resolve) {
+      var f = document.createElement('iframe');
+      f.style.width = w + 'px'; f.style.height = (h || 60) + 'px';
+      f.src = src;
+      host.appendChild(f);
+      var t0 = Date.now();
+      (function wait() {
+        var d = f.contentDocument;
+        if (d && d.documentElement && d.documentElement.getAttribute('data-ready')) { resolve(f); return; }
+        if (Date.now() - t0 > 20000) { out.errors.push('timeout ' + src + ' ' + w); resolve(f); return; }
+        setTimeout(wait, 50);
+      }());
+    });
+  }
+  function setChecks(d, ids, all) {        // all = every checkbox id this panel has; turn on exactly ids
+    all.forEach(function (id) {
+      var el = d.getElementById(id);
+      if (el && el.checked !== (ids.indexOf(id) >= 0)) { el.click(); }
+    });
+  }
+  function textOf(el) { return el.textContent.trim(); }
+
+  function measure(p, w, f) {
+    var d = f.contentDocument, win = f.contentWindow, sel = d.querySelector('.major-pick');
+    var options = [].map.call(sel.options, function (o) { return o.value; });
+    var ids = []; SWITCHES[p].forEach(function (s) { s.forEach(function (x) { if (ids.indexOf(x) < 0) { ids.push(x); } }); });
+    var maxH = 0, maxAt = '';
+    options.forEach(function (m) {
+      sel.value = m; sel.dispatchEvent(new win.Event('change', { bubbles: true }));
+      var lists = d.getElementById('job-mine') ? ['job-mine', 'job-econ'] : [null];
+      lists.forEach(function (lb) {
+        if (lb) { d.getElementById(lb).click(); }
+        SWITCHES[p].forEach(function (s) {
+          setChecks(d, s, ids);
+          var de = d.documentElement;
+          var h = de.scrollHeight;
+          if (h > maxH) { maxH = h; maxAt = m + ' ' + (lb || '') + ' ' + s.join('+'); }
+          if (de.scrollWidth > de.clientWidth + 1) { out.overflow.push([p, w, m, lb, s.join('+'), de.scrollWidth]); }
+          // every number shown twice (chart and table) must read the same
+          var seen = {};
+          [].forEach.call(d.querySelectorAll('[data-v]'), function (el) {
+            var k = el.getAttribute('data-v'), v = textOf(el);
+            if (k in seen && seen[k] !== v && out.mismatch.length < 50) { out.mismatch.push([p, m, k, seen[k], v]); }
+            seen[k] = v;
+          });
+        });
+        setChecks(d, SWITCHES[p][0], ids);
+      });
+    });
+    out.heights[p] = out.heights[p] || {};
+    out.heights[p][w] = { max: maxH, at: maxAt.trim() };
+    if (w === 380) { keyboard(p, d, win); }
+  }
+
+  // Done check 3: every control is a native, focusable element with a visible focus ring
+  function keyboard(p, d, win) {
+    var sel = d.querySelector('.major-pick');
+    sel.value = 'Nursing'; sel.dispatchEvent(new win.Event('change', { bubbles: true }));
+    var ctl = d.querySelectorAll('select, button, input, summary, a[href]');
+    var bad = [];
+    [].forEach.call(ctl, function (el) {
+      if (el.tabIndex < 0) { bad.push('tabindex<0 ' + el.outerHTML.slice(0, 60)); }
+      el.focus();
+      if (d.activeElement !== el) { bad.push('no focus ' + el.outerHTML.slice(0, 60)); return; }
+      var cs = win.getComputedStyle(el);
+      if (cs.outlineStyle === 'none' || parseFloat(cs.outlineWidth) < 2) { bad.push('no ring ' + el.outerHTML.slice(0, 60)); }
+    });
+    var clickables = d.querySelectorAll('[onclick], div[data-list], span[data-list]');
+    if (clickables.length) { bad.push(clickables.length + ' non-native clickables'); }
+    out.keyboard.push({ panel: p, controls: ctl.length, problems: bad.slice(0, 10) });
+  }
+
+  // Done check 6: a choice in one frame reaches the other four
+  function sync() {
+    host.innerHTML = '';
+    // Clearing storage does not give a clean start: a frame removed a moment ago can still answer the new frames'
+    // hello with the last pick of the measure loop (sync_start shows it). So the test starts from an old choice
+    // and checks the harder case: a new pick must win over those replies.
+    try { localStorage.removeItem('econ-major-dashboard:major'); } catch (e) {}
+    return Promise.all(PANELS.map(function (p) { return frame('../../site/index.html#panel=' + p, 380, 200); })).then(function (fs) {
+      var first = fs[0], s = first.contentDocument.querySelector('.major-pick');
+      out.sync_start = fs.map(function (f) { return f.contentDocument.querySelector('.major-pick').value; });
+      return new Promise(function (r) { setTimeout(r, 300); }).then(function () {
+        s.value = 'History'; s.dispatchEvent(new first.contentWindow.Event('change', { bubbles: true }));
+        return new Promise(function (r) { setTimeout(r, 600); });
+      }).then(function () {
+        var got = fs.map(function (f) { return f.contentDocument.querySelector('.major-pick').value; });
+        // a frame opened later asks for the current choice (BroadcastChannel hello) or reads storage
+        return frame('../../site/index.html#panel=rank', 380, 200).then(function (late) {
+          return new Promise(function (r) { setTimeout(r, 600); }).then(function () {
+            out.sync = { after_pick: got, late_frame: late.contentDocument.querySelector('.major-pick').value };
+          });
+        });
+      });
+    });
+  }
+
+  var jobs = [];
+  PANELS.forEach(function (p) { WIDTHS.forEach(function (w) { jobs.push([p, w]); }); });
+  jobs.reduce(function (chain, j) {
+    return chain.then(function () {
+      host.innerHTML = '';
+      return frame('../../site/index.html#panel=' + j[0], j[1]).then(function (f) {
+        try { measure(j[0], j[1], f); } catch (e) { out.errors.push(j.join(' ') + ': ' + e.message); }
+      });
+    });
+  }, Promise.resolve()).then(sync).then(function () {
+    return frame('../../site/index.html', 1040).then(function (f) {
+      var de = f.contentDocument.documentElement;
+      out.full = { ready: de.getAttribute('data-ready'), panels: f.contentDocument.querySelectorAll('section.panel').length };
+    });
+  }).then(function () {
+    document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+    document.title = 'DONE';
+  });
+}());
+</script>
+</body>
+</html>

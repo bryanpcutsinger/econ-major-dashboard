@@ -49,3 +49,8 @@ small_cells:          # D5, as ruled; applied to every measure and switch settin
 outputs:
   - output/panels/rank-2024.json   # every measure x switch setting, all 73 majors
   - output/panels/rank-2024.csv    # same, flat, for review
+  - output/panels/compare-2024.json  # AMENDED 2026-10-25 (step 10, ledger E41): the side-by-side panel,
+                                     # spec/front-end.yaml panel_1_addition; rank files byte-identical
+# AMENDED 2026-10-25 (E41), a defect found, not fixed: pay SEs and moe_ratio in rank-2024.json use
+# pre-ADJINC dollars (about 1.5% low; ranks and ranges unaffected). compare-2024.json adjusts both.
+# Fix at the next rank rebuild with E35-E36, on say-so.

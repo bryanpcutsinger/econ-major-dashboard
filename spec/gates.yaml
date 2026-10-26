@@ -109,6 +109,12 @@ hard_gates:                    # any fail -> no publish; live bundle unchanged; 
     template: gate-hold
     test: "worktree_dirty = true (re-signed)"
 
+  AMENDED_E41: "2026-10-25 (step 10): compare.json joins the bundle (spec/front-end.yaml panel_1_addition).
+                H1: its four measures present; H3: 73 majors per measure; H5: pay cells by D5, rate cells
+                by the count rule, hidden iff a reason, and each economics / major value and n equal the
+                rank file's for the same setting; H6: its labels; change list: its all-majors cells and its
+                labels (economics and major values are the rank file's, so not listed twice)"
+
 warnings:                      # publish anyway (C2); listed in the new-data issue
   dollars: "values are compared as published: the candidate's dollar year vs the live one's, both
             printed. No extra deflator (D2: one ADJINC rule)"

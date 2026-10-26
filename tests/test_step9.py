@@ -82,6 +82,18 @@ class Step9(unittest.TestCase):
         self.assertEqual((code, name), (0, "new-data"), body)
         return body
 
+    def mirror(self, setting, major, change):
+        """A real rebuild changes the side-by-side panel with the rank panel (H5 checks they agree):
+        apply change(cell) to compare.json's cell for the same major and setting, if it has one."""
+        c = self.get("compare")
+        k = next((k for k, s in gates.COMPARE.items() if s == setting), None)
+        if k is not None:
+            v = c["measures"][k]
+            cell = v["economics"] if major == "Economics" else v["by_major"][major]["major"]
+            if change(cell):                                   # True = a side is now hidden: no label
+                v["by_major"][major]["econ_vs_major"] = {"label": None}
+            self.put("compare", c)
+
     def warnings(self):
         return change_list.build(self.data, CAND, V1)["warnings"]
 
@@ -156,6 +168,14 @@ class Step9(unittest.TestCase):
         self.put("same_occupation", so)
         self.assert_held("H6_labels")
 
+    def test_H6_compare_label(self):
+        c = self.get("compare")
+        r = next(x for x in c["measures"]["pay_mid"]["by_major"].values()
+                 if x["econ_vs_major"].get("label") == "better" and x["econ_vs_major"]["d"] > x["econ_vs_major"]["moe"] + 1)
+        r["econ_vs_major"]["label"] = "worse"
+        self.put("compare", c)
+        self.assert_held("H6_labels")
+
     def test_H7_sample_size(self):
         m = self.get("manifest")
         m["stats"]["acs5"]["records_kept"] = int(m["stats"]["acs5"]["records_kept"] * 1.10)
@@ -214,6 +234,7 @@ class Step9(unittest.TestCase):
         row = next(x for x in r["measures"]["pay_mid|grad=0|fulltime=1"] if x["major"] == "Accounting")
         row["estimate"] *= 1.3
         self.put("rank", r)
+        self.mirror("pay_mid|grad=0|fulltime=1", "Accounting", lambda c: c.update(median=row["estimate"]))
         self.assertEqual(len(self.warnings()["W2"]), 1)
         self.publish_ok()
 
@@ -222,6 +243,7 @@ class Step9(unittest.TestCase):
         row = next(x for x in r["measures"]["unemployment"] if x["major"] == "Accounting")
         row["estimate"] += 3
         self.put("rank", r)
+        self.mirror("unemployment", "Accounting", lambda c: c.update(rate=row["estimate"]))
         self.assertEqual(len(self.warnings()["W3"]), 1)
         self.publish_ok()
 
@@ -250,6 +272,8 @@ class Step9(unittest.TestCase):
         rows = [x for x in r["measures"]["pay_mid|grad=0|fulltime=1"] if x["major"] != "Economics" and not x["hidden"]]
         for x in rows[:20]:
             x["n"], x["hidden"] = 50, True                    # consistent with D5, so H5 passes
+            self.mirror("pay_mid|grad=0|fulltime=1", x["major"],
+                        lambda c: c.update(n=50, hidden=True, reason="n < 100") or True)
         self.put("rank", r)
         self.assertEqual(self.failed(), set())
         self.assertEqual([w["panel"] for w in self.warnings()["W6"]], ["rank|pay_mid|grad=0|fulltime=1"])

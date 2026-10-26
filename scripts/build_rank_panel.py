@@ -6,9 +6,12 @@ PWGTP1-80, the unweighted n, the hide flag (D5 for pay, a count rule for rates),
 point rank (the page shows this). Audit only: a 90% rank range from pairwise tests and the
 number of majors "about the same".
 
+Also (step 10, spec/front-end.yaml panel_1_addition): the side-by-side panel's numbers for the default
+settings: economics, each major, and all majors, with every difference taken inside each replicate.
+
 Run from the repo root:  python3 scripts/build_rank_panel.py
-Reads raw/ (read-only); writes output/panels/rank-2024.{json,csv} and rank-2024-profile.json
-(counts and code lists for the step-9 gates).
+Reads raw/ (read-only); writes output/panels/rank-2024.{json,csv}, rank-2024-profile.json (counts and
+code lists for the step-9 gates), and compare-2024.json.
 """
 import csv
 import itertools
@@ -86,6 +89,47 @@ def summarize(majors, test, shown, n, better, n_num=None):
     return rows
 
 
+def sdr(t):
+    return float(np.sqrt(4 / 80 * ((t[1:] - t[0]) ** 2).sum()))
+
+
+def cmp_cell(kind, test, shown, n, n_num=None):
+    """One panel-1 cell. Pay: shown = lower median, SE from the interpolated median (both 2024 dollars).
+    Rates: the rate and the rank panel's count hide rule."""
+    se = round(sdr(test), 4)
+    out = {"n": int(n), "se": se, "moe": round(Z90 * se, 6)}
+    if kind == "pay":
+        reason = "n < 100" if n < 100 else ("MOE / estimate > 0.30" if Z90 * se / shown > 0.30 else "")
+        out["median"] = round(float(shown), 2)
+    else:
+        reason = "n < 100" if n < 100 else (
+            "fewer than 10 people in the numerator or its complement" if min(n_num, n - n_num) < 10 else "")
+        out.update(rate=round(float(test[0]), 4), n_num=int(n_num))
+    return dict(out, hidden=bool(reason), reason=reason)
+
+
+def cmp_diff(better, ta, tb, ca, cb):
+    """Economics (a) vs other (b) inside each replicate. d is oriented: positive = economics better."""
+    if ca["hidden"] or cb["hidden"]:
+        return {"label": None}
+    d = (ta - tb) if better == "higher" else (tb - ta)
+    se = round(sdr(d), 4)
+    moe = round(Z90 * se, 6)
+    lab = "better" if d[0] > moe else ("worse" if d[0] < -moe else "about the same")
+    return {"d": round(float(d[0]), 4), "se": se, "moe": moe, "label": lab}
+
+
+def compare_measure(majors, kind, better, setting, test, shown, n, all_test, all_shown, all_n,
+                    n_num=None, all_num=None):
+    cells = [cmp_cell(kind, test[i], shown[i], n[i], None if n_num is None else n_num[i]) for i in range(73)]
+    e = majors.index("Economics")
+    allc = cmp_cell(kind, all_test, all_shown, all_n, all_num)
+    by = {m: {"major": cells[i], "econ_vs_major": cmp_diff(better, test[e], test[i], cells[e], cells[i])}
+          for i, m in enumerate(majors) if i != e}
+    return {"kind": kind, "better": better, "setting": setting, "economics": cells[e], "all": allc,
+            "econ_vs_all": cmp_diff(better, test[e], all_test, cells[e], allc), "by_major": by}
+
+
 def main():
     t0 = time.time()
     m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "spec" / "major73-hc.csv"))
@@ -109,7 +153,7 @@ def main():
     adj = float(adj[0]) / 1e6
     print(f"  {len(df):,} persons aged 22-45 with a BA or more in the 73 groups; ADJINC {adj}")
 
-    out, flat = {}, []
+    out, flat, cmp = {}, [], {}
     # Pay: 2 ages x 2 switches
     base = ((df.SCH == 1) & df.ESR.isin([1, 2, 4, 5]) & (df.WAGP >= 5500)).to_numpy()
     for key, (lo_age, hi_age) in {"pay_mid": (35, 45), "pay_early": (22, 27)}.items():
@@ -123,6 +167,10 @@ def main():
                 lower, interp = medians(df.WAGP.to_numpy(float)[s], W[s])
                 test[i], shown[i], n[i] = interp, lower[0] * adj, s.sum()
             out[f"{key}|grad={int(grad)}|fulltime={int(ft)}"] = summarize(majors, test, shown, n, "higher")
+            if not grad and ft:                                   # panel 1 = the NY Fed wage definition
+                lower, interp = medians(df.WAGP.to_numpy(float)[m], W[m])
+                cmp[key] = compare_measure(majors, "pay", "higher", f"grad=0|fulltime=1, ages {lo_age}-{hi_age}",
+                                           test * adj, shown, n, interp * adj, lower[0] * adj, m.sum())
 
     # Rates: shares by major, every weight column at once
     def shares(num, den):
@@ -133,17 +181,28 @@ def main():
         return 100 * N / D, cnt, np.bincount(gi, weights=num, minlength=73)
 
     young = (df.AGEP.between(22, 27) & (df.SCH == 1)).to_numpy()
-    rate, cnt, cnum = shares((young & (df.ESR == 3).to_numpy()).astype(float),
-                       (young & df.ESR.isin([1, 2, 3, 4, 5]).to_numpy()).astype(float))
+    def all_rate(num, den):
+        """All 73 groups pooled, every weight column; unweighted counts."""
+        return 100 * (num[:, None] * W).sum(axis=0) / (den[:, None] * W).sum(axis=0), den.sum(), num.sum()
+
+    num, den = (young & (df.ESR == 3).to_numpy()).astype(float), (young & df.ESR.isin([1, 2, 3, 4, 5]).to_numpy()).astype(float)
+    rate, cnt, cnum = shares(num, den)
     out["unemployment"] = summarize(majors, rate, rate[:, 0], cnt, "lower", cnum)
+    ar, an, anum = all_rate(num, den)
+    cmp["unemployment"] = compare_measure(majors, "rate", "lower", "ages 22-27, bachelor's or higher, not enrolled",
+                                          rate, rate[:, 0], cnt, ar, ar[0], an, cnum, anum)
 
     labels = json.loads((ROOT / "raw/benchmarks/census-codelists" / f"SOCP-{YEAR}.json").read_text())["values"]["item"]
     flags = socp_flags([c for c in labels if c.strip() and not c.startswith("b")],
                        soc6_scores(onet_scores(ONET_RELEASE), LINK))
     score = df.SOCP.map(lambda c: flags.get(c, (np.nan, 0, ""))[0]).to_numpy(float)
     emp = young & df.ESR.isin([1, 2, 4, 5]).to_numpy() & ~np.isnan(score)
-    rate, cnt, cnum = shares((emp & (score < 50)).astype(float), emp.astype(float))
+    num, den = (emp & (score < 50)).astype(float), emp.astype(float)
+    rate, cnt, cnum = shares(num, den)
     out["underemployment"] = summarize(majors, rate, rate[:, 0], cnt, "lower", cnum)
+    ar, an, anum = all_rate(num, den)
+    cmp["underemployment"] = compare_measure(majors, "rate", "lower", "ages 22-27, bachelor's or higher, employed, not enrolled",
+                                             rate, rate[:, 0], cnt, ar, ar[0], an, cnum, anum)
     employed = young & df.ESR.isin([1, 2]).to_numpy()            # civilian jobs (E27 coverage rule)
     profile["SOCP"] = sorted({c.strip() for c in df.SOCP.dropna() if c.strip()})
     profile["civilian_employed_recent_grads"] = int(employed.sum())
@@ -156,6 +215,10 @@ def main():
                 underemployment=f"our definition: O*NET {ONET_RELEASE.replace('_', '.')}, {LINK}")
     (dest / f"rank-{YEAR}.json").write_text(json.dumps(dict(meta=meta, measures=out), indent=1))
     (dest / f"rank-{YEAR}-profile.json").write_text(json.dumps(profile, indent=1, sort_keys=True) + "\n")
+    cmeta = dict(meta, spec="spec/front-end.yaml panel_1_addition", majors=73,
+                 d="oriented: positive = economics better (pay: economics - other; rates: other - economics)",
+                 dollars=f"{YEAR} dollars (WAGP x ADJINC {adj}; medians and SEs both adjusted)")
+    (dest / f"compare-{YEAR}.json").write_text(json.dumps(dict(meta=cmeta, measures=cmp), indent=1, sort_keys=True) + "\n")
     with (dest / f"rank-{YEAR}.csv").open("w", newline="") as fh:
         wr = None
         for setting, rows in out.items():

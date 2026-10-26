@@ -20,7 +20,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 Z90 = 1.645
 ECON = "Economics"
-FILES = ["codes.json", "local.json", "rank.json", "same_occupation.json"]      # HC 5-year tables dropped (E40)
+FILES = ["codes.json", "compare.json", "local.json", "rank.json", "same_occupation.json"]   # E40: HC dropped; E41: compare added
+COMPARE = {"pay_mid": "pay_mid|grad=0|fulltime=1", "pay_early": "pay_early|grad=0|fulltime=1",   # compare measure -> rank setting
+           "unemployment": "unemployment", "underemployment": "underemployment"}
 MAX_BYTES = 10 * 1024 * 1024
 MICRODATA_KEY = re.compile(r"^(SERIALNO|SPORDER|PWGTP\d*)$")
 RANK_MEASURES = 10
@@ -141,6 +143,9 @@ def h1_outputs(data, bid, b):
         ms = r.get("measures", {})
         if len(ms) != RANK_MEASURES or any(len(v) != 73 for v in ms.values()):
             bad.append(f"rank: {len(ms)} measures, rows {sorted({len(v) for v in ms.values()})} (want 10 x 73)")
+    c = b["compare"]
+    if c is not None and sorted(c.get("measures", {})) != sorted(COMPARE):
+        bad.append(f"compare: measures {sorted(c.get('measures', {}))}, want {sorted(COMPARE)}")
     return bad
 
 
@@ -168,6 +173,9 @@ def h3_majors_present(b):
     for k, rows in ((b["rank"] or {}).get("measures", {})).items():
         if len({r["major"] for r in rows}) != 73:
             bad.append(f"rank {k}: {len({r['major'] for r in rows})} majors")
+    for k, v in ((b["compare"] or {}).get("measures", {})).items():
+        if len(set(v["by_major"]) - {ECON}) != 72:
+            bad.append(f"compare {k}: {len(set(v['by_major']) - {ECON}) + 1} majors")
     return bad
 
 
@@ -213,6 +221,37 @@ def h5_cell_rules(b):
                     bad.append(f"{where}: n {r['n']} < 100 but shown")
             elif r["hidden"] != (r["n"] < 100 or r["moe_ratio"] > 0.30):
                 bad.append(f"{where}: hidden = {r['hidden']} but n {r['n']}, moe_ratio {r['moe_ratio']}")
+    rank = {k: {r["major"]: r for r in rows} for k, rows in ((b["rank"] or {}).get("measures", {})).items()}
+    for k, v in ((b["compare"] or {}).get("measures", {})).items():
+        cells = {m: x["major"] for m, x in v["by_major"].items()}
+        cells[ECON] = v["economics"]
+        for m, c in list(cells.items()) + [("all majors", v["all"])]:
+            bad += compare_cell_rules(f"compare {k} {m}", c, v["kind"])
+            r = rank.get(COMPARE.get(k), {}).get(m)
+            if m != "all majors" and r is not None:              # one number, two panels
+                val, tol = (c.get("median"), 0.01) if v["kind"] == "pay" else (c.get("rate"), 0.001)
+                if val is None or abs(val - r["estimate"]) > tol or c["n"] != r["n"]:
+                    bad.append(f"compare {k} {m}: {val} / n {c['n']} vs rank {r['estimate']} / n {r['n']}")
+        for path, d in walk(v):
+            if "d" in d and not moe_ok(d):
+                bad.append(f"compare {k}{path}: se/moe invalid")
+    return bad
+
+
+def compare_cell_rules(where, c, kind):
+    """Panel-1 cells: pay by D5, rates by the count rule (spec/front-end.yaml panel_1_addition)."""
+    bad = []
+    if not moe_ok(c):
+        return [f"{where}: se/moe invalid"]
+    if kind == "pay":
+        est = c.get("median")
+        rule = c["n"] < 100 or not finite(est) or est <= 0 or c["moe"] / est > 0.30
+    else:
+        rule = c["n"] < 100 or min(c["n_num"], c["n"] - c["n_num"]) < 10
+    if c["hidden"] != rule:
+        bad.append(f"{where}: hidden = {c['hidden']}, rule gives {rule}")
+    if c["hidden"] != bool(c.get("reason")):
+        bad.append(f"{where}: hidden = {c['hidden']} with reason {c.get('reason')!r}")
     return bad
 
 
@@ -249,6 +288,10 @@ def h6_labels(b):
                 if t["headline"] != counts or t["hidden_rows"] != hidden_rows:
                     bad.append(f"same_occupation {k} {m} {which}: headline {t['headline']} / hidden "
                                f"{t['hidden_rows']}, rows give {counts} / {hidden_rows}")
+    for k, v in ((b["compare"] or {}).get("measures", {})).items():
+        check_label(f"compare {k} econ_vs_all", v["econ_vs_all"], [v["economics"], v["all"]], bad)
+        for m, r in v["by_major"].items():
+            check_label(f"compare {k} {m}", r["econ_vs_major"], [v["economics"], r["major"]], bad)
     for k, areas in (b["local"] or {}).items():
         for area, a in areas.items():
             check_label(f"local {k} {area} econ_vs_all", a["econ_vs_all"], [a["economics"], a["all"]], bad)

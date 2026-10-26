@@ -296,6 +296,8 @@ def main():
     out = ROOT / "data" / "bundles" / bid
     out.mkdir(parents=True, exist_ok=True)
     (out / "rank.json").write_bytes((ROOT / "output/panels/rank-2024.json").read_bytes())
+    # Step 10 (spec/front-end.yaml panel_1_addition): the side-by-side panel, from the same 1-year build
+    (out / "compare.json").write_bytes((ROOT / "output/panels/compare-2024.json").read_bytes())
     # Step 9 (spec/gates.yaml bundle_additions): code lists and counts the gates compare, no microdata
     prof1 = json.loads((ROOT / "output/panels/rank-2024-profile.json").read_text())
     (out / "codes.json").write_text(dump({"acs5": codes, "acs1": {"FOD1P": prof1["FOD1P"], "SOCP": prof1["SOCP"]},
@@ -314,7 +316,8 @@ def main():
                 "stats": stats, "dictionaries": dicts,
                 "dollars": "2024 dollars (ADJINC)", "years": {"rank": "ACS 2024 1-year", "other": "ACS 2020-24 5-year"},
                 "sources": {p: sha(ROOT / p) for p in ["raw/acs1-2024/csv_pus.zip", "raw/acs5-2020-2024/csv_pus.zip"]},
-                "spec": {p: sha(ROOT / p) for p in ["spec/acs5-panels.yaml", "spec/rank-panel.yaml", "spec/major73-hc.csv"]},
+                "spec": {p: sha(ROOT / p) for p in ["spec/acs5-panels.yaml", "spec/rank-panel.yaml", "spec/major73-hc.csv",
+                                                     "spec/front-end.yaml"]},
                 "code": {p: sha(ROOT / p) for p in ["scripts/build_acs5_panels.py", "scripts/build_rank_panel.py",
                                                      "scripts/hc_tables12_check.py", "scripts/extract_acs5.py"]},
                 "files": {f.name: sha(f) for f in sorted(out.glob("*.json")) if f.name != "manifest.json"}}
