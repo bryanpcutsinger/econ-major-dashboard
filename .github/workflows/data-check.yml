@@ -101,8 +101,16 @@ jobs:
           SHA: ${{ steps.push.outputs.sha }}
         run: |
           latest() { gh api "repos/${{ github.repository }}/pages/builds/latest" --jq '.commit + " " + .status' 2>/dev/null; }
-          for i in $(seq 1 9); do
-            set -- $(latest); if [ "$1" = "$SHA" ]; then echo "Pages built $SHA by itself ($2)" | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          for i in $(seq 1 9); do                       # 2026-10-26: a bot push did start the legacy build by itself
+            set -- $(latest)
+            if [ "$1" = "$SHA" ]; then
+              for j in $(seq 1 24); do
+                set -- $(latest); [ "$2" = "built" ] && { echo "Pages built $SHA by itself" | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; }
+                [ "$2" = "errored" ] && { echo "Pages build of $SHA errored" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1; }
+                sleep 10
+              done
+              echo "Pages started $SHA but did not finish within 4 min" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1
+            fi
             sleep 10
           done
           echo "No Pages build for $SHA after 90 s: requesting one" | tee -a "$GITHUB_STEP_SUMMARY"
