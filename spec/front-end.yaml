@@ -100,6 +100,9 @@ rulings_2026_10_26:            # instructor, ledger E43
   heights: "phone height (ruled): each panel's Canvas frame = its 320 px max height from site/heights.json; no
             scroll box inside the page (step 12)"
   shared_major: "reset per tab (sessionStorage; see shared_major)"
+  canvas_embed: "AMENDED 2026-10-26 (instructor: the per-panel test page repeated the section headers; ledger E55): Canvas
+                embeds the whole dashboard in ONE frame (index.html, no hash), fallback height 7000; the frame resizes
+                to the content (lti.frameResize, E45). The #panel= routes stay for direct links"
   panel_order: "compare, samejob, rank, local, then cause: every chart and figure first, the question-and-answer
                 panel last (instructor 2026-10-26). The single-panel footer goes with the last panel. Step 12
                 embeds the Canvas frames in this order"
