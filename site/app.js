@@ -15,8 +15,8 @@
     lifetime: 'Earnings over a working life',
     samejob: 'In the same job, who earns more?',
     cause: 'Is it the major, or the students who choose it?',
-    rank: 'Where the two majors rank',
-    local: 'Here in South Florida'
+    rank: 'How the majors rank',
+    local: 'Pay in Florida and South Florida'
   };
   var MEASURES = [
     { key: 'pay_early', name: 'Pay, early career', note: 'ages 22–27' },   // early before mid (instructor 2026-10-26)
@@ -28,18 +28,19 @@
   var DEFS = {
     compare: 'Pay: median wages of full-time workers with a bachelor’s degree only, ages 22–27 (early career) ' +
              'and 35–45 (mid-career). Unemployment and underemployment: ages 22–27, bachelor’s degree or higher, ' +
-             'not in school. Underemployed = working in a job that usually does not need a bachelor’s degree ' +
-             '(our definition, from the O*NET survey of workers).',
-    samejob: 'Same rules for all three groups: full-time workers, ages 25–54, wages. Economics majors and your ' +
-             'major are weighted to the age mix of everyone in the job. Bachelor’s degree only unless the box ' +
-             'above is checked.',
+             'not enrolled in school. Underemployment means working in a job that usually does not require a bachelor’s degree ' +
+             '(based on our definition using the O*NET survey of workers).',
+    samejob: 'Pay means median wages for full-time workers ages 25–54. We adjust the results for economics majors and your ' +
+             'chosen major so each group has the same age distribution as everyone in the job. Only people whose highest degree ' +
+             'is a bachelor’s are included unless you check the box above.',
     rank: 'Pay: median wages, ages 35–45 (mid-career) and 22–27 (early career). Unemployment and ' +
-          'underemployment: ages 22–27, bachelor’s degree or higher, not in school.',
-    lifetime: 'Lifetime earnings: the median yearly earnings (wages and self-employment) of full-time, year-round ' +
-              'workers (35+ hours a week, 50+ weeks a year) in eight age groups, 25–29 to 60–64, each times five, added up. ' +
-              'Bachelor’s degree only unless the box above is checked.',
-    local: 'Median wages of people who live in the area, ages 25–54, weighted to the age mix of all majors ' +
-           'in the area.'
+          'underemployment: ages 22–27, bachelor’s degree or higher, not enrolled in school.',
+    lifetime: 'To estimate lifetime earnings, we take median annual earnings (wages and self-employment income) for eight ' +
+              'five-year age groups, from 25–29 through 60–64. We multiply each median by five and add the results. ' +
+              'This includes people who work at least 35 hours a week and 50 weeks a year. Only people whose highest degree ' +
+              'is a bachelor’s are included unless you check the box above.',
+    local: 'Pay means median wages for residents ages 25–54. We adjust each major’s results to match the age distribution ' +
+           'of residents across all majors.'
   };
   var NYFED = 'https://www.newyorkfed.org/research/college-labor-market';
   var JK = 'https://www.census.gov/library/publications/2011/acs/acs-14.html';   // Julian and Kominski (2011), instructor-confirmed
@@ -182,15 +183,15 @@
         : 'Pick a major to compare it with economics.';
     }
     sub = midLine(mid, otherName);
-    if (!pick && state.major !== ECON) { sub = 'Until then, the charts compare economics with all majors: economics does ' + line + '. ' + sub; }
+    if (!pick && state.major !== ECON) { sub = 'These charts compare economics with all majors: economics does ' + line + '. ' + sub; }
     var y = yearsText(D.manifest.years.rank);
     return '<div class="headline"><strong>' + head + '</strong><span>' + sub + '</span></div>' +
       '<div class="metrics">' + figs.join('') + '</div>' +
-      '<p class="notes">“About the same” means the data cannot tell the two apart: the gap is inside the margin of error (90%).</p>' +
+      '<p class="notes">“About the same” means the difference falls within the 90% margin of error. The data do not show a clear difference between the groups.</p>' +
       table('table-compare', 'Economics, ' + esc(pick || 'all majors') + ', and all majors, with 90% margins of error',
             ['Measure', 'Economics'].concat(pick ? [esc(pick)] : []).concat(['All majors', 'Economics vs ' + esc(otherName)]), trows) +
       '<div class="notes"><p>' + DEFS.compare + '</p><p>Data: U.S. Census Bureau, American Community Survey ' + y +
-      '. Our calculations, following the <a href="' + NYFED + '">New York Fed’s</a> method; majors are our grouping, close to its 73. Pay in ' + dollarYear() + ' dollars.</p></div>';
+      '. Our calculations, following the <a href="' + NYFED + '">New York Fed’s</a> method. Our major categories closely match its 73 categories. Pay in ' + dollarYear() + ' dollars.</p></div>';
   }
 
   function midLine(mid, otherName) {
@@ -239,7 +240,7 @@
     }
     h += '<div class="controls"><label class="check"><input type="checkbox" id="job-grad" data-act="jobGrad"' +
       (state.jobGrad ? ' checked' : '') + '> Include people with graduate degrees</label></div>';
-    h += '<div class="headline"><strong>' + jobHeadline(L) + '</strong><span>Jobs where economics majors earn less stay in the list.' +
+    h += '<div class="headline"><strong>' + jobHeadline(L) + '</strong><span>Jobs are included regardless of whether economics majors earn more or less.' +
       (pick ? '' : ' Pick a major to compare it with economics in each job.') + '</span></div>';
     h += '<div class="legend" aria-hidden="true"><span><i class="dot-key" style="background:var(--navy)"></i>Economics majors</span>' +
       (pick ? '<span><i class="dot-key" style="background:var(--teal)"></i>' + esc(pick) + ' majors</span>' : '') +
@@ -281,20 +282,20 @@
       var majH = pick && folded.every(function (r) { return r.major && r.major.hidden && !r.economics.hidden; });
       var who = majH ? esc(pick) + ' majors' : (econH || !pick ? 'economics majors' : 'economics majors or ' + esc(pick) + ' majors');
       h += '<div class="fold" role="listitem">In ' + (folded.length === rows.length ? 'all ' : '') + folded.length + ' of these ' +
-        rows.length + ' jobs, too few ' + who + ' work there to compare: ' +
+        rows.length + ' jobs, the data include too few ' + who + ' to compare pay: ' +
         folded.map(function (r) { return esc(r.label); }).join('; ') + '.</div>';
     }
     h += '</div>';
     var share = pick ? esc(pick) + ' majors' : 'economics majors';
     h += table('table-samejob', title + ': median pay with 90% margins of error',
-      ['Job', 'Share of ' + share + ' in it', 'Economics'].concat(pick ? [esc(pick)] : []).concat(['Everyone in the job', 'Economics vs ' + (pick ? esc(pick) : 'everyone')]),
+      ['Job', 'Share of ' + share + ' in this job', 'Economics'].concat(pick ? [esc(pick)] : []).concat(['Everyone in the job', 'Economics vs ' + (pick ? esc(pick) : 'everyone')]),
       rows.map(function (r) {
         return [esc(r.label), (100 * r.major_share.share).toFixed(1) + '%', withMoe('pay', r.economics, 'job|' + r.occp + '|econ')]
           .concat(pick ? [withMoe('pay', r.major, 'job|' + r.occp + '|major')] : [])
           .concat([withMoe('pay', r.all, 'job|' + r.occp + '|all'), r[L.dk].label || 'not enough data']);
       }));
-    h += '<div class="notes"><p>This panel compares people in the same job, under the same rules. That removes one reason for a gap. ' +
-      'People in one job still differ in experience, employer, and hours, so the panel does not show that the major causes the gap.</p>' +
+    h += '<div class="notes"><p>Comparing people in the same job helps account for differences in the jobs graduates choose. ' +
+      'People in the same job can still differ in experience, employer, and hours worked. A pay gap here does not show that the major caused it.</p>' +
       '<p>' + DEFS.samejob + '</p><p>Data: U.S. Census Bureau, American Community Survey ' + yearsText(D.manifest.years.other) +
       '. Our calculations, adapted from Bartsch (2026), who used broader job groups and averages. Pay in ' + dollarYear() + ' dollars.</p></div>';
     return h;
@@ -308,23 +309,23 @@
     var than = L.pick ? esc(L.pick) + ' majors' : 'everyone';
     var p2 = line ? 'Look at ' + whose + '. Compared with ' + than + ' in the same job, economics majors earn ' + line +
       (L.t.hidden_rows ? '; the rest have too few people to compare' : '') + '. ' +
-      (c.better ? 'So a gap remains even inside the same job.' : 'Inside these jobs, the data do not show a gap in favor of economics.')
+      (c.better ? 'Some pay differences remain when we compare people in the same job.' : 'In these jobs, the data do not show a clear pay advantage for economics majors.')
       : 'In ' + whose + ', there are too few people to compare.';
     function obj(id, q, a) {
       return '<details class="objection" id="' + id + '"><summary>' + q + '</summary><p>' + a + '</p></details>';
     }
-    return '<p class="lede">A skeptic says economics majors would earn more with any degree. Open each objection to see the answer.</p>' +
-      obj('obj-1', '“It is only a few very high earners.”',
-          'The pay numbers on this page are medians: the person in the middle. A few very high earners cannot move a median.') +
-      obj('obj-2', '“Economics majors just pick high-paying jobs.”', 'Partly. The same-job panel compares people in the same job. ' + p2) +
-      obj('obj-3', '“More able students, or students from top schools, choose economics.”',
-          'The census does not record ability or which college a person attended, so it cannot test this. A natural experiment can. ' +
+    return '<p class="lede">How much of a pay gap comes from the major itself, and how much comes from the people who choose it? Open each question to explore what the evidence can tell us.</p>' +
+      obj('obj-1', 'Could a few very high earners explain the pay gaps?',
+          'The pay comparisons use medians: the middle value when earnings are ordered from lowest to highest. Unlike an average, a median is not pulled upward by how much the highest earners make.') +
+      obj('obj-2', 'Do economics majors earn more because of the jobs they choose?', 'Job choice explains part of the difference. The same-job comparison helps us look more closely. ' + p2) +
+      obj('obj-3', 'What if students who choose economics would earn more with any major?',
+          'The Census data do not record ability or which college a person attended, so these comparisons cannot answer that question. One study used a university’s admissions rule to examine it. ' +
           'At the University of California, Santa Cruz, students needed a 2.8 grade average in the first two economics courses to ' +
-          'declare the major; students below it generally could not. Students just above and just below the cutoff were almost the same. ' +
+          'declare the major; students below it generally could not. Students just above and below the cutoff were otherwise similar, allowing researchers to estimate the effect of the major. ' +
           '<a href="' + BLEEMER + '">Bleemer and Mehta (2022)</a> found that students who just made the cutoff and majored in economics ' +
           'earned about $22,000 a year more at ages 23 to 28 than they would have in their second-choice majors: over $59,000 instead ' +
           'of about $37,000 (2018 dollars). About half of the gain came from jobs in higher-paying industries, such as finance and ' +
-          'accounting. The result holds for those students at that university. It is evidence, not a promise for every student.');
+          'accounting. This finding applies to the students studied at that university; it does not tell us how much every student would gain from choosing economics.');
   }
 
   // ---------- panel: lifetime earnings (spec/lifetime-panel.yaml) ----------
@@ -395,13 +396,13 @@
     if (L.economics.hidden) {
       head = 'There is not enough data on economics majors for this setting.';
     } else if (pick && L.by_major[pick].major.hidden) {
-      head = 'There are too few ' + esc(pick) + ' majors in the data to add up a working life.';
+      head = 'There are too few ' + esc(pick) + ' majors in the data to estimate lifetime earnings.';
     } else {
-      head = 'Over a working life, economics majors earn about ' + millions(L.economics.total) + '; ' + esc(other) + ', about ' +
-        millions((pick ? L.by_major[pick].major : L.all_bachelors).total) + '.';
+      head = 'Estimated lifetime earnings are about ' + millions(L.economics.total) + ' for economics majors and about ' +
+        millions((pick ? L.by_major[pick].major : L.all_bachelors).total) + ' for ' + esc(other) + '.';
     }
     var verdict = vs.label ? 'Economics vs ' + esc(other) + ': ' + vs.label : 'Not enough data to compare';
-    var sub = !vs.label ? '' : vs.label === 'about the same' ? 'The data cannot tell the two apart: the gap is inside the margin of error.'
+    var sub = !vs.label ? '' : vs.label === 'about the same' ? 'The difference falls within the margin of error, so the data do not show a clear gap.'
       : 'That is a gap of about ' + millions(Math.abs(vs.d)) + ' over a working life.';
     var trows = groups.map(function (g) {
       return [esc(g.name), g.cell.hidden ? 'not enough data' : '<span data-v="life|' + g.tag + '">' + millions(g.cell.total) + '</span> (' + lifeMoe(g.cell) + ')']
@@ -417,9 +418,9 @@
       ageChart(groups) + '</div>' +
       table('table-lifetime', 'Lifetime earnings with 90% margins of error, and the median yearly earnings in each age group',
             ['Group', 'Lifetime'].concat(bandHead), trows) +
-      '<div class="notes"><p>' + DEFS.lifetime + '</p><p>This is a snapshot of today’s workers at each age, added up. It is not one ' +
-      'person’s future earnings, and it is not adjusted for interest, future inflation, or taxes. A gap does not prove that the ' +
-      'major causes it: see the questions at the end.</p><p>Data: U.S. Census Bureau, American Community Survey ' +
+      '<div class="notes"><p>' + DEFS.lifetime + '</p><p>This estimate combines earnings for different people at different ages. It does not ' +
+      'predict any one person’s future earnings or adjust for interest, future inflation, or taxes. A gap does not establish that the ' +
+      'major caused it. The questions in the final section explore why.</p><p>Data: U.S. Census Bureau, American Community Survey ' +
       yearsText(D.manifest.years.other) + '. Our calculations, following the Census Bureau’s method (<a href="' + JK +
       '">Julian and Kominski 2011</a>). Pay in ' + dollarYear() + ' dollars.</p></div>';
   }
@@ -443,7 +444,7 @@
         '<span class="big">Economics: ' + rk(e) + '</span>' +
         (pick ? '<span class="line major"><b>' + esc(pick) + ': ' + rk(p) + '</b></span>' : '') +
         (ms.key === 'unemployment' ? '<span class="small">Most majors’ unemployment rates are too close together to rank with ' +
-          'confidence, so treat a rank on this measure as rough.</span>' : '') + '</div>');
+          'confidence. Treat these ranks as approximate.</span>' : '') + '</div>');
       var v = function (r) { return r && !r.hidden ? fmt(kind, r.estimate) : 'not enough data'; };
       trows.push([ms.name, rk(e), v(e)].concat(pick ? [rk(p), v(p)] : []));
     });
@@ -456,7 +457,7 @@
       table('table-rank', 'Ranks among all majors', ['Measure', 'Economics rank', 'Economics'].concat(pick ? [esc(pick) + ' rank', esc(pick)] : []), trows) +
       '<div class="notes"><p>' + DEFS.rank + ' Majors with too few people in the data show “not enough data”.</p>' +
       '<p>Data: U.S. Census Bureau, American Community Survey ' + yearsText(D.manifest.years.rank) +
-      '. Our calculations, following the <a href="' + NYFED + '">New York Fed’s</a> method; majors are our grouping, close to its 73.</p></div>';
+      '. Our calculations, following the <a href="' + NYFED + '">New York Fed’s</a> method. Our major categories closely match its 73 categories.</p></div>';
   }
 
   // ---------- panel 5: local ----------
@@ -479,9 +480,9 @@
       '<label class="check"><input type="checkbox" id="local-full" data-act="localFull"' + (state.localFull ? ' checked' : '') +
       '> Full-time workers only</label></div>' +
       '<div class="cards">' + cards.join('') + '</div>' +
-      '<div class="notes"><p>' + DEFS.local + '</p><p>South Florida = Miami-Dade, Broward, and Palm Beach counties: the ' +
-      D.codes.south_florida_pumas.length + ' Census areas (PUMAs) that lie fully inside them. One area that joins Monroe County ' +
-      'with part of Miami-Dade is left out.</p><p>Data: U.S. Census Bureau, American Community Survey ' +
+      '<div class="notes"><p>' + DEFS.local + '</p><p>South Florida includes Miami-Dade, Broward, and Palm Beach counties. We use the ' +
+      D.codes.south_florida_pumas.length + ' Census areas (PUMAs) entirely within those counties. One area that combines Monroe County ' +
+      'with part of Miami-Dade is excluded.</p><p>Data: U.S. Census Bureau, American Community Survey ' +
       yearsText(D.manifest.years.other) + '. Our calculations. Pay in ' + dollarYear() + ' dollars.</p></div>';
   }
 
@@ -495,7 +496,7 @@
       }).join('');
     return '<div class="picker"><label for="pick-' + id + '">I plan to major in</label><select id="pick-' + id +
       '" class="major-pick">' + opts + '</select><span class="hint">All ' + (majors.length + 1) +
-      ' majors. The choice carries to every panel.</span></div>';
+      ' majors available. Your selection applies throughout the page.</span></div>';
   }
   // ---------- stale-data note (spec/scheduler.yaml stale_note_11_4) ----------
   // lc: 'missing' (404: the scheduler is not armed yet), 'unreadable', or the parsed data/last-checked.json
@@ -524,7 +525,7 @@
   function footer() {
     var s = staleNote(D.lastChecked, new Date());
     var lc = s.footer ? ' Last checked for new data: ' + esc(s.footer) + '.' : '';
-    return '<div class="footer"><p><strong>Updates itself.</strong> Data: U.S. Census Bureau, American Community Survey ' +
+    return '<div class="footer"><p><strong>The data update automatically.</strong> Data: U.S. Census Bureau, American Community Survey ' +
       yearsText(D.manifest.years.rank) + ' and ' + yearsText(D.manifest.years.other) + '.' + lc + '</p>' +
       '<p>Our calculations, following the methods of the New York Fed and Holian and Chiu (2026), and adapted from Bartsch (2026). ' +
       'Majors are our own grouping of Census degree codes into the New York Fed’s 73 majors; job names are the Census Bureau’s.</p>' +
@@ -535,8 +536,8 @@
     if (full) {
       document.body.className = 'full';
       h += '<div class="intro"><span class="rule"></span><span class="kicker">Choosing a major</span>' +
-        '<h1>Explore your major, next to economics</h1><p class="lede">Pick the major you plan to study. The panels compare it ' +
-        'with economics and with all majors: pay, unemployment, the jobs graduates hold, and why the gaps exist.</p>' +
+        '<h1>How does your major compare with economics?</h1><p class="lede">Choose a major to compare pay, employment, and common jobs ' +
+        'with economics and with graduates across all majors. Then explore what might explain the differences.</p>' +
         picker('top') + '</div>';
     }
     panels.forEach(function (p) {
