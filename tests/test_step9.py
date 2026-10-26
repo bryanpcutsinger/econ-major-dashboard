@@ -44,8 +44,12 @@ class Step9(unittest.TestCase):
             m.update(git_commit="a" * 40, worktree_dirty=False, bundle=bid)
             self.put("manifest", m, bid)
         (self.data / "current.json").write_text(json.dumps({"bundle": V1}))
+        self.saved_terms = publish.TERMS                         # no term freeze inside these tests (11.3)
+        publish.TERMS = self.tmp / "no-terms.json"
+        publish.TERMS.write_text('{"terms": []}')
 
     def tearDown(self):
+        publish.TERMS = self.saved_terms
         shutil.rmtree(self.tmp)
 
     # ---------- helpers ----------
@@ -79,7 +83,7 @@ class Step9(unittest.TestCase):
 
     def publish_ok(self):
         code, name, body = publish.publish(self.data, CAND, str(D1), str(D5))
-        self.assertEqual((code, name), (0, "new-data"), body)
+        self.assertEqual((code, name), (0, "rebuild"), body)      # the candidate is a copy of live: same data (11.3)
         return body
 
     def mirror(self, setting, major, change):
@@ -114,7 +118,8 @@ class Step9(unittest.TestCase):
         rep = gates.run(self.data, CAND, None, str(D1), str(D5))
         self.assertTrue(rep["passed"])
         self.assertIn("first bundle with stats", rep["gates"]["H7_sample_size"]["notes"])
-        body = self.publish_ok()
+        code, name, body = publish.publish(self.data, CAND, str(D1), str(D5))
+        self.assertEqual((code, name), (0, "new-data"))          # no live bundle: new data (11.3)
         self.assertIn("First bundle", body)
         self.assertEqual(self.current(), {"bundle": CAND, "previous": None})
 

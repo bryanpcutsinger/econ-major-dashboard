@@ -354,8 +354,9 @@ def h8_dictionary(d1, d5):
     return bad
 
 
-def h9_source_revision(probe, live):
-    """Notes are returned in a second list; problems hold the publish."""
+def h9_source_revision(probe, live, accept=None, cand=None):
+    """Notes are returned in a second list; problems hold the publish. accept = {sid: sha256} accepted by the instructor
+    (11.3, publish.py --accept-revision): a source passes if the candidate was built from exactly that file."""
     if not probe:
         return [], ["no probe file: not run (local build)"]
     if live is None:
@@ -363,10 +364,18 @@ def h9_source_revision(probe, live):
     stored = json.loads((ROOT / "spec" / "sources.json").read_text())
     records = live["manifest"].get("source_records") or {}    # 11.2: the live manifest's own record wins
     got = json.loads(Path(probe).read_text()).get("sources", {})
-    bad = []
+    bad, notes = [], []
+    cand_sha = {Path(k).parent.name: v for k, v in ((cand or {}).get("manifest") or {}).get("sources", {}).items()}
     for path in live["manifest"].get("sources", {}):
         sid = Path(path).parent.name                     # raw/acs5-2020-2024/csv_pus.zip -> acs5-2020-2024
         s, p = records.get(sid) or stored.get(sid), got.get(sid)
+        if accept and sid in accept:
+            if cand_sha.get(sid) == accept[sid]:
+                notes.append(f"{sid}: revision accepted (sha256 {accept[sid][:12]})")
+            else:
+                bad.append(f"{sid}: accepted sha256 {accept[sid][:12]} but the candidate was built from "
+                           f"{str(cand_sha.get(sid))[:12]}")
+            continue
         if s is None:
             bad.append(f"{sid}: no record in the live manifest or spec/sources.json")
         elif p is None:
@@ -376,7 +385,7 @@ def h9_source_revision(probe, live):
         elif not p.get("sha256") and (p.get("bytes") != s["bytes"] or p.get("last_modified") != s["last_modified"]):
             bad.append(f"{sid}: bytes / Last-Modified {s['bytes']} {s['last_modified']!r} -> "
                        f"{p.get('bytes')} {p.get('last_modified')!r}")
-    return bad, []
+    return bad, notes
 
 
 def h10_provenance(b):
@@ -388,7 +397,7 @@ def h10_provenance(b):
     return bad
 
 
-def run(data, bid, live_bid=None, dictionary_1y=None, dictionary_5y=None, probe=None):
+def run(data, bid, live_bid=None, dictionary_1y=None, dictionary_5y=None, probe=None, accept=None):
     """All hard gates. Returns {candidate, live, passed, gates: {id: {ok, problems, notes}}}."""
     b = load_bundle(data, bid)
     live_bid = live_bid if live_bid is not None else live_id(data)
@@ -409,7 +418,7 @@ def run(data, bid, live_bid=None, dictionary_1y=None, dictionary_5y=None, probe=
         res["H6_labels"] = (h6_labels(b), [])
         res["H7_sample_size"] = (h7_sample_size(b, live), notes7)
         res["H8_dictionary"] = (h8_dictionary(dictionary_1y, dictionary_5y), [])
-        res["H9_source_revision"] = h9_source_revision(probe, live)
+        res["H9_source_revision"] = h9_source_revision(probe, live, accept, b)
         res["H10_provenance"] = (h10_provenance(b), [])
     gates = {g: {"ok": not res[g][0], "problems": res[g][0], "notes": res[g][1]} for g in GATES}
     return {"candidate": bid, "live": live_bid, "passed": all(v["ok"] for v in gates.values()), "gates": gates}

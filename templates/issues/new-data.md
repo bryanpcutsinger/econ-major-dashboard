@@ -1,6 +1,6 @@
-# New data published: $candidate
+# New Census data published: $candidate
 
-The page now uses bundle `$candidate`. Every hard gate passed. The previous bundle was
+Census released new survey data, and every hard gate passed. The page now uses bundle `$candidate`. The previous bundle was
 `$live`. To go back, run `python3 scripts/publish.py --rollback`.
 
 ## Change list

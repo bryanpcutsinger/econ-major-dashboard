@@ -80,6 +80,26 @@ probe: "scripts/probe.py, stdlib only, no key: HEAD the live zips and the next v
         Census API pums.json as a second signal. Decision: error / nothing / pending / new_vintage / revision_suspect.
         A transport error is 'error', never 'nothing'. Output keys = raw folder ids (H9 input). A suspect is settled by
         sha after download: same sha = re-upload (no rebuild, no issue); new sha = revision (hold)"
+issues_11_3:                   # detail written 2026-10-26 before the issue code
+  kinds: "from the candidate and live manifests, never a flag: years differ (or no live bundle) -> new-data (with the
+          announcement draft); same years, a source sha differs -> revision-published (announcement: 'Census revised');
+          same years and sources -> rebuild ('No new Census data'; no announcement). Holds: gate-hold, revision (H9 alone
+          failed), ready (term freeze). Others: stale, failure (the probe said error, or a run step failed)"
+  term_freeze: "spec/term.json lists teaching terms {name, start, end}; inside one, gates that pass do NOT flip
+                current.json: publish renders 'ready' (change list + how to publish) and exits 0. A dispatch with
+                publish-in-term (publish.py --publish-in-term) flips it. Spring 2027 = 2027-01-12 .. 2027-04-29"
+  accept_revision: "publish.py --accept-revision SID=SHA256 (a dispatch input, after review): H9 accepts that sha for that
+                    source; the issue kind is then revision-published"
+  keys: "each body ends with <!-- dashboard-key: KEY -->. publish:<bundle> (new-data, rebuild, revision-published);
+         hold:<candidate>:<failed gates>; revision:<sid>:<bytes>:<Last-Modified> (from the probe, before any download);
+         ready:<candidate>; stale:<live>; failure:<YYYY-MM>:<step>"
+  post: "scripts/issues.py: title, body, key, labels (data-bot + the kind; [DRY RUN] title prefix and a dry-run label in a
+         dry run). Before posting: gh issue list --label data-bot --state all --json number,title,body --limit 200; a
+         matching key -> post nothing. gh issue create --title --body-file --label (GH_TOKEN). The gh call is injectable;
+         11.3 tests use a stub. Real posting starts at 11.8, on the instructor's yes"
+  done_check: "tests: each kind's title and wording (rebuild has no announcement; new-data has one); term freeze holds
+               the flip and a publish-in-term run flips it; accept-revision publishes a revised source; a repeat key
+               posts nothing; a new key calls gh issue create once; existing step-9 tests still pass"
 h9_baseline: "each bundle manifest records url, bytes, Last-Modified, sha256 per source; H9 compares the probe with the
               live manifest; bundles without the fields fall back to spec/sources.json. The bot never rewrites spec/"
 issues: "kinds from the manifests: new vintage (with announcement draft) / rebuild with the same data ('no new Census
