@@ -14,6 +14,7 @@ scripts/publish.py runs the step-9 gates, then writes data/current.json (spec/ga
 """
 import csv
 import hashlib
+import math
 import json
 import subprocess
 import sys
@@ -218,8 +219,9 @@ BANDS = [(a, a + 4) for a in range(25, 65, 5)]            # 25-29 ... 60-64
 
 
 def worklife(band_medians):
-    """J&K synthetic work-life earnings: each 5-year band's median x 5, summed (pp. 1, 4-5, 13)."""
-    return 5 * sum(band_medians)
+    """J&K synthetic work-life earnings: each 5-year band's median x 5, summed (pp. 1, 4-5, 13). math.fsum, not sum:
+    Python 3.12's sum() of floats differs from 3.9's in the last bits, which moved 12 totals by a cent (E53)."""
+    return 5 * math.fsum(band_medians)
 
 
 def lifetime_mask(df):
