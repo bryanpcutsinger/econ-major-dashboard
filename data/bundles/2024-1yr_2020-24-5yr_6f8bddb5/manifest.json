@@ -1,8 +1,8 @@
 {
  "bundle": "2024-1yr_2020-24-5yr_6f8bddb5",
  "code": {
-  "scripts/build_acs5_panels.py": "57ce08689e18e106f230f473a349451a490052a08598c85862df31a8b1c08dfe",
-  "scripts/build_rank_panel.py": "c2f0d5c71abae6eccb432273524f6376e0596dcc42b48086bfec42cec9f2edbb",
+  "scripts/build_acs5_panels.py": "bbff2814d927a31943051447da1abc7f8d8883b7ff8f3f347432efb23c5fb61a",
+  "scripts/build_rank_panel.py": "cf53e8c003b4aa4621a9b5380b2fc44375de5c98f3990278ccffbea45eef9aab",
   "scripts/extract_acs5.py": "f0ce491d6d52f53a4ce8b4741dbdd6ff080768a9ceda5ed1a043285e415abf4d",
   "scripts/hc_tables12_check.py": "29b3942987436d0e8d83e7c440b0f335691c13a7306a5e068bc481a6c4b53172"
  },
@@ -13,6 +13,7 @@
  "dollars": "2024 dollars (ADJINC)",
  "files": {
   "codes.json": "cefb1e931e4cd6a262c93e1a38b3b67ac6c2c07712e01d1ff7cddca6fa69ff62",
+  "compare.json": "d3d302729c6a7599451aa36276c7132092b33c3f03a2e16b9ca1f96ed2d7d55f",
   "local.json": "327b2d8fcbefa515ba85c6a320e3ca120d2587d43909bee2a313f6bf9f38a683",
   "rank.json": "c9add360d22014ed39ccf63df1b957617a0cae6581d53199e0d7307f49d1da21",
   "same_occupation.json": "1314b9a13497e7825d92a886f9a5592604f273b7551a199376d5df84e8c3cf2b"
@@ -27,15 +28,16 @@
   },
   "south_florida_pumas": 52
  },
- "git_commit": "7fec1a20a444d6edc6274eb613c55cf183c0a20a",
+ "git_commit": "5a734aa029557e0e8aff86976d71299f3cadb909",
  "sources": {
   "raw/acs1-2024/csv_pus.zip": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
   "raw/acs5-2020-2024/csv_pus.zip": "7e8f4f189d850fef9dd79de0ae0c6a6398471df27631e5a6613479b739e06d27"
  },
  "spec": {
   "spec/acs5-panels.yaml": "c3b39d9875501b3b4defdcfac031d21d4dd43a48a43af89946f759518224d457",
+  "spec/front-end.yaml": "befc2d2b2653c8b68ef58e3cefc5e270fa91e4f3a92f6186c470c0a4d8755dfb",
   "spec/major73-hc.csv": "432460a4dc64e231eccdb77bd61f9593489acc26edc474cc214e31a2fedcf191",
-  "spec/rank-panel.yaml": "ee8219cbf86a4100c970c906ffdd962fbab39a7c44dce9d160be418516190603"
+  "spec/rank-panel.yaml": "703dc6acc80512e8ad02ae515c43085b10efb17a8dec254d78889e5ade74956c"
  },
  "stats": {
   "acs1": {
