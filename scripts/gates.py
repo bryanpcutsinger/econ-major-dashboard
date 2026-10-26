@@ -217,8 +217,11 @@ def h5_cell_rules(b):
             if not finite(r.get("se")):
                 bad.append(f"{where}: se invalid")
             elif k in RATES:
-                if r["n"] < 100 and not r["hidden"]:
-                    bad.append(f"{where}: n {r['n']} < 100 but shown")
+                if "n_num" not in r:                             # bundles built before 2026-10-26 store no counts
+                    if r["n"] < 100 and not r["hidden"]:
+                        bad.append(f"{where}: n {r['n']} < 100 but shown")
+                elif r["hidden"] != (r["n"] < 100 or min(r["n_num"], r["n"] - r["n_num"]) < 10):
+                    bad.append(f"{where}: hidden = {r['hidden']} but n {r['n']}, n_num {r['n_num']}")
             elif r["hidden"] != (r["n"] < 100 or r["moe_ratio"] > 0.30):
                 bad.append(f"{where}: hidden = {r['hidden']} but n {r['n']}, moe_ratio {r['moe_ratio']}")
     rank = {k: {r["major"]: r for r in rows} for k, rows in ((b["rank"] or {}).get("measures", {})).items()}

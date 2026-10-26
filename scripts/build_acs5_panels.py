@@ -292,23 +292,30 @@ def main():
              "INDP": sorted({int(c) for c in df.INDP.dropna()}),
              "PUMA": sorted(set(df.STATE + df.PUMA))}
     codehash = hashlib.sha256(json.dumps(codes, sort_keys=True).encode()).hexdigest()[:8]
-    bid = f"2024-1yr_2020-24-5yr_{codehash}"
-    out = ROOT / "data" / "bundles" / bid
-    out.mkdir(parents=True, exist_ok=True)
-    (out / "rank.json").write_bytes((ROOT / "output/panels/rank-2024.json").read_bytes())
-    # Step 10 (spec/front-end.yaml panel_1_addition): the side-by-side panel, from the same 1-year build
-    (out / "compare.json").write_bytes((ROOT / "output/panels/compare-2024.json").read_bytes())
     # Step 9 (spec/gates.yaml bundle_additions): code lists and counts the gates compare, no microdata
     prof1 = json.loads((ROOT / "output/panels/rank-2024-profile.json").read_text())
-    (out / "codes.json").write_text(dump({"acs5": codes, "acs1": {"FOD1P": prof1["FOD1P"], "SOCP": prof1["SOCP"]},
-                                          "south_florida_pumas": inside}))
+    files = {"rank.json": (ROOT / "output/panels/rank-2024.json").read_bytes(),
+             # Step 10 (spec/front-end.yaml panel_1_addition): the side-by-side panel, from the same 1-year build
+             "compare.json": (ROOT / "output/panels/compare-2024.json").read_bytes(),
+             "codes.json": dump({"acs5": codes, "acs1": {"FOD1P": prof1["FOD1P"], "SOCP": prof1["SOCP"]},
+                                 "south_florida_pumas": inside}).encode(),
+             "same_occupation.json": dump(bundle["same_occupation"]).encode(),
+             "local.json": dump(bundle["local"]).encode()}
+    # Bundle id = years + code-list hash + data hash (2026-10-26, ledger E43): a rebuild with new numbers
+    # gets a new folder, so a published bundle is never overwritten and rollback keeps its target.
+    # Bundle v1 (2024-1yr_2020-24-5yr_6f8bddb5) predates the data hash.
+    datahash = hashlib.sha256("".join(f"{k}:{hashlib.sha256(v).hexdigest()}\n" for k, v in sorted(files.items()))
+                              .encode()).hexdigest()[:6]
+    bid = f"2024-1yr_2020-24-5yr_{codehash}-{datahash}"
+    out = ROOT / "data" / "bundles" / bid
+    out.mkdir(parents=True, exist_ok=True)
+    for name, data in files.items():
+        (out / name).write_bytes(data)
     stats = {"acs1": {k: v for k, v in prof1.items() if k not in ("FOD1P", "SOCP")},
              "acs5": {"records_kept": len(df), "pwgtp_sum": int(df.PWGTP.sum()),
                       "fod1p_unmapped_persons": gates["fod1p_unmapped_persons"]}}
     dicts = {"acs1": sha(ROOT / "raw/benchmarks/census-1yr/PUMS_Data_Dictionary_2024.csv"),
              "acs5": sha(ROOT / "raw/benchmarks/census-5yr/PUMS_Data_Dictionary_2020-2024.csv")}
-    for name in ("same_occupation", "local"):
-        (out / f"{name}.json").write_text(dump(bundle[name]))
     git = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     dirty = bool(subprocess.run(["git", "status", "--porcelain", "scripts", "spec"], cwd=ROOT,
                                 capture_output=True, text=True).stdout.strip())

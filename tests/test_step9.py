@@ -156,6 +156,15 @@ class Step9(unittest.TestCase):
         self.put("local", lo)
         self.assert_held("H5_cell_rules")
 
+    def test_H5_rank_rate_count_rule(self):
+        """E43: a rank rate row with n_num must follow the full count rule (fewer than 10 -> hidden)."""
+        r = self.get("rank")
+        row = next(x for x in r["measures"]["unemployment"] if x["major"] == "Accounting")
+        self.assertFalse(row["hidden"])
+        row["n_num"] = 5
+        self.put("rank", r)
+        self.assert_held("H5_cell_rules")
+
     def test_H6_label(self):
         so = self.get("same_occupation")
         for r in so["grad=0"]["Nursing"]["major_top"]["rows"]:

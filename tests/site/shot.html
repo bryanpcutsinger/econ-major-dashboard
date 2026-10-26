@@ -4,7 +4,7 @@
 <body><script>
 // Screenshot wrapper: ?w=380&h=1700&panel=compare&major=Nursing (panel empty = full explorer)
 var q = new URLSearchParams(location.search);
-try { localStorage.setItem('econ-major-dashboard:major', JSON.stringify({ major: q.get('major') || '', t: 1 })); } catch (e) {}
+try { sessionStorage.setItem('econ-major-dashboard:major', JSON.stringify({ major: q.get('major') || '', t: 1 })); } catch (e) {}
 var f = document.createElement('iframe');
 f.style.width = (q.get('w') || 380) + 'px'; f.style.height = (q.get('h') || 1700) + 'px';
 f.src = '../../site/index.html' + (q.get('panel') ? '#panel=' + q.get('panel') : '');

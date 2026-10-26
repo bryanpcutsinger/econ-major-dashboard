@@ -54,3 +54,7 @@ outputs:
 # AMENDED 2026-10-25 (E41), a defect found, not fixed: pay SEs and moe_ratio in rank-2024.json use
 # pre-ADJINC dollars (about 1.5% low; ranks and ranges unaffected). compare-2024.json adjusts both.
 # Fix at the next rank rebuild with E35-E36, on say-so.
+# FIXED 2026-10-26 (instructor say-so, ledger E43), one rebuild: (1) E35: negative replicate weights = 0
+# inside medians only (the step-8 rule; rates keep the raw replicate weights); (2) E36/E41: replicate
+# medians x ADJINC, so SEs, moe_ratio, and the D5 hide flag are in 2024 dollars; (3) every row stores
+# n_num (people in the rate's numerator; null for pay) so gate H5 can test the rate count rule.

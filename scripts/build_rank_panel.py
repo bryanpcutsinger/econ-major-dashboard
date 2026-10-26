@@ -82,7 +82,7 @@ def summarize(majors, test, shown, n, better, n_num=None):
         hi = len(majors) - int(sig_worse[i].sum())
         rows.append(dict(
             major=m, estimate=round(float(est), 3), se=round(float(se[i]), 3), n=int(n[i]),
-            moe_ratio=round(float(moe_ratio), 3),
+            moe_ratio=round(float(moe_ratio), 3), n_num=None if n_num is None else int(n_num[i]),
             hidden=bool(n[i] < 100 or (moe_ratio > 0.30 if n_num is None else min(n_num[i], n[i] - n_num[i]) < 10)),
             rank=1 + int((sign * (shown - est) > 0).sum()), rank_lo=lo, rank_hi=hi,
             n_about_same=len(majors) - 1 - int(sig_better[i].sum()) - int(sig_worse[i].sum())))
@@ -148,6 +148,7 @@ def main():
     df = df[df.g.isin(majors)].reset_index(drop=True)
     gi = df.g.map({m: i for i, m in enumerate(majors)}).to_numpy()
     W = df[WCOLS].to_numpy(float)
+    W0 = np.maximum(W, 0)                         # E35: negative replicate weights = 0 inside medians only
     adj = df.ADJINC.unique()
     assert len(adj) == 1, "ADJINC varies within the file"
     adj = float(adj[0]) / 1e6
@@ -164,13 +165,13 @@ def main():
             test, shown, n = np.zeros((73, 81)), np.zeros(73), np.zeros(73)
             for i in range(73):
                 s = m & (gi == i)
-                lower, interp = medians(df.WAGP.to_numpy(float)[s], W[s])
-                test[i], shown[i], n[i] = interp, lower[0] * adj, s.sum()
+                lower, interp = medians(df.WAGP.to_numpy(float)[s], W0[s])
+                test[i], shown[i], n[i] = interp * adj, lower[0] * adj, s.sum()   # E36: SEs in 2024 dollars
             out[f"{key}|grad={int(grad)}|fulltime={int(ft)}"] = summarize(majors, test, shown, n, "higher")
             if not grad and ft:                                   # panel 1 = the NY Fed wage definition
-                lower, interp = medians(df.WAGP.to_numpy(float)[m], W[m])
+                lower, interp = medians(df.WAGP.to_numpy(float)[m], W0[m])
                 cmp[key] = compare_measure(majors, "pay", "higher", f"grad=0|fulltime=1, ages {lo_age}-{hi_age}",
-                                           test * adj, shown, n, interp * adj, lower[0] * adj, m.sum())
+                                           test, shown, n, interp * adj, lower[0] * adj, m.sum())
 
     # Rates: shares by major, every weight column at once
     def shares(num, den):
@@ -211,7 +212,7 @@ def main():
     dest = ROOT / "output" / "panels"
     dest.mkdir(parents=True, exist_ok=True)
     meta = dict(data=f"ACS {YEAR} 1-year PUMS, national", spec="spec/rank-panel.yaml", majors=73,
-                dollars=f"{YEAR} dollars (WAGP x ADJINC {adj})", margin="90% (1.645 x SE), SDR 80 replicates",
+                dollars=f"{YEAR} dollars (WAGP x ADJINC {adj}; medians and SEs both adjusted)", margin="90% (1.645 x SE), SDR 80 replicates",
                 underemployment=f"our definition: O*NET {ONET_RELEASE.replace('_', '.')}, {LINK}")
     (dest / f"rank-{YEAR}.json").write_text(json.dumps(dict(meta=meta, measures=out), indent=1))
     (dest / f"rank-{YEAR}-profile.json").write_text(json.dumps(profile, indent=1, sort_keys=True) + "\n")

@@ -88,10 +88,16 @@
     var bad = [];
     [].forEach.call(ctl, function (el) {
       if (el.tabIndex < 0) { bad.push('tabindex<0 ' + el.outerHTML.slice(0, 60)); }
+      // a link inside a closed <details> is reached by opening it first (as a keyboard user does)
+      var box = el.closest('details'), shut = box && !box.open && el.tagName !== 'SUMMARY';
+      if (shut) { box.open = true; }
       el.focus();
-      if (d.activeElement !== el) { bad.push('no focus ' + el.outerHTML.slice(0, 60)); return; }
-      var cs = win.getComputedStyle(el);
-      if (cs.outlineStyle === 'none' || parseFloat(cs.outlineWidth) < 2) { bad.push('no ring ' + el.outerHTML.slice(0, 60)); }
+      if (d.activeElement !== el) { bad.push('no focus ' + el.outerHTML.slice(0, 60)); }
+      else {
+        var cs = win.getComputedStyle(el);
+        if (cs.outlineStyle === 'none' || parseFloat(cs.outlineWidth) < 2) { bad.push('no ring ' + el.outerHTML.slice(0, 60)); }
+      }
+      if (shut) { box.open = false; }
     });
     var clickables = d.querySelectorAll('[onclick], div[data-list], span[data-list]');
     if (clickables.length) { bad.push(clickables.length + ' non-native clickables'); }
@@ -104,7 +110,7 @@
     // Clearing storage does not give a clean start: a frame removed a moment ago can still answer the new frames'
     // hello with the last pick of the measure loop (sync_start shows it). So the test starts from an old choice
     // and checks the harder case: a new pick must win over those replies.
-    try { localStorage.removeItem('econ-major-dashboard:major'); } catch (e) {}
+    try { sessionStorage.removeItem('econ-major-dashboard:major'); } catch (e) {}
     return Promise.all(PANELS.map(function (p) { return frame('../../site/index.html#panel=' + p, 380, 200); })).then(function (fs) {
       var first = fs[0], s = first.contentDocument.querySelector('.major-pick');
       out.sync_start = fs.map(function (f) { return f.contentDocument.querySelector('.major-pick').value; });

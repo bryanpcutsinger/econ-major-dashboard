@@ -55,7 +55,10 @@ page:
                  by a localStorage 'storage' event; a new frame asks for the current choice on load;
                  every storage call in try/catch (Canvas and private windows can block it). Start with
                  no major chosen; Economics and Undecided listed (C6). AMENDED: each choice carries a time
-                 stamp and a frame keeps the newest (the harness caught a late reply undoing a new pick)"
+                 stamp and a frame keeps the newest (the harness caught a late reply undoing a new pick).
+                 AMENDED 2026-10-26 (instructor ruling, ledger E43): sessionStorage, not localStorage, so the
+                 pick lasts only while the tab is open (C6; the next student on a shared computer starts
+                 blank); the page also removes any pick the 2026-10-25 page kept in localStorage"
   panels:
     compare: "economics, the chosen major (if any), all majors; four bars with values; label per measure
               vs the chosen major, or vs all majors if none / Undecided / Economics (C6); headline counts
@@ -84,6 +87,18 @@ open_calls:                    # for the instructor; the page ships with the slo
   job_links: "A2 approved BLS OOH + Indeed. The OOH paths were never verified (bls.gov blocks scripts).
               The link slot is data-driven (spec/job-links.json) and hidden until ruled. AMENDED: no slot
               and no spec/job-links.json are shipped; both wait for the ruling"
+
+rulings_2026_10_26:            # instructor, ledger E43
+  cause_citation: "Bleemer and Mehta (2022) now in Zotero (XTC9VCJ5, DOI 10.1257/app.20200447); the result text
+                   (pp. 1-2, Section IV: $22,000, ages 23-28, $37,000 -> over $59,000, 2018 dollars, about half via
+                   industry) approved as written; the placeholder is gone"
+  job_links: "no links (ruled): nothing ships, so nothing needs a yearly link check"
+  rank_sentence: "approved: under the unemployment card, 'Most majors' unemployment rates are too close together
+                  to rank with confidence, so treat a rank on this measure as rough.' Basis: all 52 shown rates
+                  have a 90% rank range of 20 places or more (rank file, 2026-10-26 rebuild). No numbers in the text"
+  heights: "phone height (ruled): each panel's Canvas frame = its 320 px max height from site/heights.json; no
+            scroll box inside the page (step 12)"
+  shared_major: "reset per tab (sessionStorage; see shared_major)"
 
 done_check:                    # plan row 10, minus the Canvas part (say-so; needs the push)
   1: "compare.json built; rank files byte-identical; gates 10/10 on the rebuilt bundle; tests pass"

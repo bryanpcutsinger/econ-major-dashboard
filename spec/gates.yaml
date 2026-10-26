@@ -71,7 +71,9 @@ hard_gates:                    # any fail -> no publish; live bundle unchanged; 
            AMENDED: |moe - 1.645 se| <= 0.001 x moe + 1e-6, because shares are stored to 6 decimals); shown pay cell -> n >= 100 and moe / estimate <= 0.30 (D5); hidden cell ->
            non-empty reason (5-year files: AMENDED, same_occupation and local, E40). Rank rows: pay hidden == (n < 100 or moe_ratio > 0.30);
            rate rows: n < 100 -> hidden (the count part of the rate rule needs numerator counts the
-           rank file does not store: a known gap, fixed at the next rank rebuild on say-so)"
+           rank file does not store: a known gap, fixed at the next rank rebuild on say-so).
+           AMENDED 2026-10-26 (ledger E43): rank rows now store n_num, so rate rows must have hidden ==
+           (n < 100 or min(n_num, n - n_num) < 10); a bundle without n_num keeps the old n < 100 check"
     template: gate-hold
     test: "set one shown economics cell's n to 50 (re-signed)"
   H6_labels:

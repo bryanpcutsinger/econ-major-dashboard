@@ -1,7 +1,7 @@
 /* Explore your major, next to economics (spec/front-end.yaml).
    #panel=compare|samejob|cause|rank|local renders one panel (one Canvas iframe each); no hash = the full
    explorer. Every number comes from the live bundle (../data/current.json). The chosen major is shared
-   across frames by BroadcastChannel and localStorage; each panel also has its own picker. Plain ES5. */
+   across frames by BroadcastChannel and sessionStorage (this tab only); each panel also has its own picker. Plain ES5. */
 (function () {
   'use strict';
 
@@ -38,6 +38,7 @@
            'in the area.'
   };
   var NYFED = 'https://www.newyorkfed.org/research/college-labor-market';
+  var BLEEMER = 'https://doi.org/10.1257/app.20200447';   // Bleemer and Mehta (2022), AEJ: Applied; Zotero XTC9VCJ5; text approved 2026-10-26
 
   var state = { major: '', t: 0, jobList: 'mine', jobGrad: false, rankGrad: false, rankFull: true,
                 localGrad: false, localFull: true };
@@ -306,10 +307,12 @@
       obj('obj-2', '“Economics majors just pick high-paying jobs.”', 'Partly. The same-job panel compares people in the same job. ' + p2) +
       obj('obj-3', '“More able students, or students from top schools, choose economics.”',
           'The census does not record ability or which college a person attended, so it cannot test this. A natural experiment can. ' +
-          'At one university, students just above and just below a grade cutoff for the economics major were almost the same, but only ' +
-          'those above the cutoff could major in it. <span class="placeholder">[Result and its size: Bleemer and Mehta (2022), after ' +
-          'the Zotero check and instructor approval.]</span> The result holds for those students at that university. It is evidence, ' +
-          'not a promise for every student.');
+          'At the University of California, Santa Cruz, students needed a 2.8 grade average in the first two economics courses to ' +
+          'declare the major; students below it generally could not. Students just above and just below the cutoff were almost the same. ' +
+          '<a href="' + BLEEMER + '">Bleemer and Mehta (2022)</a> found that students who just made the cutoff and majored in economics ' +
+          'earned about $22,000 a year more at ages 23 to 28 than they would have in their second-choice majors: over $59,000 instead ' +
+          'of about $37,000 (2018 dollars). About half of the gain came from jobs in higher-paying industries, such as finance and ' +
+          'accounting. The result holds for those students at that university. It is evidence, not a promise for every student.');
   }
 
   // ---------- panel 4: rank ----------
@@ -329,7 +332,9 @@
       var e = find(ECON), p = pick ? find(pick) : null;
       cards.push('<div class="card"><span class="what">' + ms.name + ' · 1 = ' + (kind === 'pay' ? 'highest pay' : 'lowest rate') + '</span>' +
         '<span class="big">Economics: ' + rk(e) + '</span>' +
-        (pick ? '<span class="line major"><b>' + esc(pick) + ': ' + rk(p) + '</b></span>' : '') + '</div>');
+        (pick ? '<span class="line major"><b>' + esc(pick) + ': ' + rk(p) + '</b></span>' : '') +
+        (ms.key === 'unemployment' ? '<span class="small">Most majors’ unemployment rates are too close together to rank with ' +
+          'confidence, so treat a rank on this measure as rough.</span>' : '') + '</div>');
       var v = function (r) { return r && !r.hidden ? fmt(kind, r.estimate) : 'not enough data'; };
       trows.push([ms.name, rk(e), v(e)].concat(pick ? [rk(p), v(p)] : []));
     });
@@ -429,7 +434,7 @@
     var changed = m !== state.major;
     state.major = m; state.t = t;
     if (from !== 'storage') {
-      try { localStorage.setItem(KEY, JSON.stringify({ major: m, t: t })); } catch (e) { /* storage blocked: pickers still work */ }
+      try { sessionStorage.setItem(KEY, JSON.stringify({ major: m, t: t })); } catch (e) { /* storage blocked: pickers still work */ }
     }
     if (from === 'user' && bc) { bc.postMessage({ type: 'major', major: m, t: t }); }
     if (changed) { render(); }
@@ -487,7 +492,8 @@
         : Object.keys(D.local['grad=0|fulltime=1'].florida.by_major);
       majors = src.filter(function (x) { return x !== ECON; }).sort();
       var o = null;
-      try { o = stored(localStorage.getItem(KEY)); } catch (e) { o = null; }
+      try { localStorage.removeItem(KEY); } catch (e) { /* drop a pick kept by the 2026-10-25 page */ }
+      try { o = stored(sessionStorage.getItem(KEY)); } catch (e) { o = null; }
       if (o && (o.major === '' || o.major === ECON || o.major === UNDECIDED || majors.indexOf(o.major) >= 0)) {
         state.major = o.major; state.t = Number(o.t) || 0;
       }
