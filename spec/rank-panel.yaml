@@ -7,7 +7,9 @@
 #   D5 (hide if n < 100 or MOE / estimate > 0.30).
 
 data: ACS 2024 1-year national person files (raw/acs1-2024/csv_pus.zip)
-majors: spec/major73-hc.csv, first major only (FOD1P); 73 groups; Overall is not ranked
+majors: spec/major73.csv (ours), first major only (FOD1P); 73 groups; Overall is not ranked
+# AMENDED 2026-10-26 (instructor ruling, ledger E45): was spec/major73-hc.csv (the authors' map). Its terms (ICPSR License = "Other", no text)
+# do not clear publication, so every page build uses our pre-code map; the 73 names come from it too (no NY Fed file)
 
 measures:
   pay_mid:   {label: "Pay, mid-career",   ages: [35, 45], better: higher}

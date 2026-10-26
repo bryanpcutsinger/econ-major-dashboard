@@ -2,7 +2,7 @@
 
 Calibration, not replication: no published code covers the rates (HC code = wages only).
 Runs the variants declared in spec/rate-grid.yaml (nyfed_rates) and logs every one to
-output/checks/nyfed-rates-<year>.csv. Majors use spec/major73-hc.csv (ledger E17).
+output/checks/nyfed-rates-<year>.csv. Majors use raw/benchmarks/hc-2026-openicpsr/derived/major73-hc.csv (ledger E17).
 
   unemployment: ages 22-27, SCHL >= 21, not enrolled (SCH == 1); unemployed (ESR 3) / labor force
   graduate share: ages 25-65, SCHL 22-24 among SCHL >= 21
@@ -92,7 +92,7 @@ def score(ours, bench, measure):
 def main(year):
     t0 = time.time()
     bench = benchmark(year)
-    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "spec" / "major73-hc.csv"))
+    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "raw/benchmarks/hc-2026-openicpsr/derived/major73-hc.csv"))
            if r["nyfed_major"]}
     print(f"loading ACS {year} 1-year ...", flush=True)
     df = load(year)

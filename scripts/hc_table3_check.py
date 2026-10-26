@@ -77,7 +77,7 @@ def main():
         print(f"  {y}: ours {ours}  HC {HC_ECON[y]}  {'EXACT' if ours == HC_ECON[y] else 'MISS'}")
 
     # Table 3 sample (subset1c3) and the 73-group map
-    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "spec" / "major73-hc.csv"))
+    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "raw/benchmarks/hc-2026-openicpsr/derived/major73-hc.csv"))
            if r["nyfed_major"]}
     s = df[core & (df.INCEARNadj > 5499).to_numpy()].copy()
     s["g"] = s.FOD1P.map(lambda c: m73.get(int(c)) if pd.notna(c) else None)

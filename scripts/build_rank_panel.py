@@ -36,6 +36,16 @@ COLS = ["SERIALNO", "SPORDER", "AGEP", "SCHL", "SCH", "ESR", "WKHP", "WKWN", "WA
 Z90 = 1.645
 ONET_RELEASE, LINK = "30_2", "8digit_mean"    # E27 production default
 
+MAJOR_MAP = ROOT / "spec" / "major73.csv"     # our map (E45: replaces the authors' map in every page build)
+
+
+def major_map():
+    """{FOD1P: major} and the 73 major names, both from spec/major73.csv (no NY Fed file needed on the runner)."""
+    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(MAJOR_MAP)) if r["nyfed_major"]}
+    majors = sorted(set(m73.values()))
+    assert len(majors) == 73, f"{len(majors)} majors in {MAJOR_MAP.name}"
+    return m73, majors
+
 
 def load():
     z = zipfile.ZipFile(ROOT / "raw" / f"acs1-{YEAR}" / "csv_pus.zip")
@@ -132,11 +142,7 @@ def compare_measure(majors, kind, better, setting, test, shown, n, all_test, all
 
 def main():
     t0 = time.time()
-    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "spec" / "major73-hc.csv"))
-           if r["nyfed_major"]}
-    nyfed = [r["Major"] for r in csv.DictReader(
-        open(ROOT / "raw/benchmarks/nyfed-2024/college-labor-outcomes-by-major-data.csv", encoding="utf-8-sig"))]
-    majors = sorted(m for m in nyfed if m != "Overall")
+    m73, majors = major_map()
     print(f"loading ACS {YEAR} 1-year with 80 replicate weights ...", flush=True)
     df = load()
     df["g"] = df.FOD1P.map(lambda c: m73.get(int(c)) if pd.notna(c) else None)
@@ -211,7 +217,7 @@ def main():
 
     dest = ROOT / "output" / "panels"
     dest.mkdir(parents=True, exist_ok=True)
-    meta = dict(data=f"ACS {YEAR} 1-year PUMS, national", spec="spec/rank-panel.yaml", majors=73,
+    meta = dict(data=f"ACS {YEAR} 1-year PUMS, national", spec="spec/rank-panel.yaml", majors=73, major_map="spec/major73.csv (ours)",
                 dollars=f"{YEAR} dollars (WAGP x ADJINC {adj}; medians and SEs both adjusted)", margin="90% (1.645 x SE), SDR 80 replicates",
                 underemployment=f"our definition: O*NET {ONET_RELEASE.replace('_', '.')}, {LINK}")
     (dest / f"rank-{YEAR}.json").write_text(json.dumps(dict(meta=meta, measures=out), indent=1))

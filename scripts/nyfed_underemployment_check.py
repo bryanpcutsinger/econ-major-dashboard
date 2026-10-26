@@ -108,7 +108,7 @@ def main(year):
     bench = benchmark(year)
     labels = json.loads((RAW / "census-codelists" / f"SOCP-{year}.json").read_text())["values"]["item"]
     socp_codes = [c for c in labels if c.strip() and not c.startswith("b")]
-    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "spec" / "major73-hc.csv"))
+    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "raw/benchmarks/hc-2026-openicpsr/derived/major73-hc.csv"))
            if r["nyfed_major"]}
     print(f"loading ACS {year} 1-year ...", flush=True)
     df = load(year)

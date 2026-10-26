@@ -180,7 +180,7 @@
       table('table-compare', 'Economics, ' + esc(pick || 'all majors') + ', and all majors, with 90% margins of error',
             ['Measure', 'Economics'].concat(pick ? [esc(pick)] : []).concat(['All majors', 'Economics vs ' + esc(otherName)]), trows) +
       '<div class="notes"><p>' + DEFS.compare + '</p><p>Data: U.S. Census Bureau, American Community Survey ' + y +
-      '. Our calculations, following the <a href="' + NYFED + '">New York Fed’s</a> method. Pay in ' + dollarYear() + ' dollars.</p></div>';
+      '. Our calculations, following the <a href="' + NYFED + '">New York Fed’s</a> method; majors are our grouping, close to its 73. Pay in ' + dollarYear() + ' dollars.</p></div>';
   }
 
   function midLine(mid, otherName) {
@@ -347,7 +347,7 @@
       table('table-rank', 'Ranks among all majors', ['Measure', 'Economics rank', 'Economics'].concat(pick ? [esc(pick) + ' rank', esc(pick)] : []), trows) +
       '<div class="notes"><p>' + DEFS.rank + ' Majors with too few people in the data show “not enough data”.</p>' +
       '<p>Data: U.S. Census Bureau, American Community Survey ' + yearsText(D.manifest.years.rank) +
-      '. Our calculations, following the <a href="' + NYFED + '">New York Fed’s</a> method.</p></div>';
+      '. Our calculations, following the <a href="' + NYFED + '">New York Fed’s</a> method; majors are our grouping, close to its 73.</p></div>';
   }
 
   // ---------- panel 5: local ----------
@@ -392,7 +392,8 @@
     var lc = D.lastChecked && D.lastChecked.date ? ' Last checked for new data: ' + esc(D.lastChecked.date) + '.' : '';
     return '<div class="footer"><p><strong>Updates itself.</strong> Data: U.S. Census Bureau, American Community Survey ' +
       yearsText(D.manifest.years.rank) + ' and ' + yearsText(D.manifest.years.other) + '.' + lc + '</p>' +
-      '<p>Our calculations, following the methods of the New York Fed and Holian and Chiu (2026), and adapted from Bartsch (2026).</p>' +
+      '<p>Our calculations, following the methods of the New York Fed and Holian and Chiu (2026), and adapted from Bartsch (2026). ' +
+      'Majors are our own grouping of Census degree codes into the New York Fed’s 73 majors; job names are the Census Bureau’s.</p>' +
       '<p class="links"><a href="' + NYFED + '">New York Fed: The Labor Market for Recent College Graduates</a></p></div>';
   }
   function shell() {
@@ -443,7 +444,15 @@
     try { var o = JSON.parse(s); return o && typeof o.major === 'string' ? o : null; } catch (e) { return null; }
   }
   function listen() {
-    try { bc = new BroadcastChannel('econ-major-dashboard'); } catch (e) { bc = null; }
+    // One channel per browser tab (E45): a BroadcastChannel reaches every tab, so a dashboard open in another tab
+    // would answer this tab's 'hello' with its own pick. The tab id lives in sessionStorage, which the frames of one
+    // tab share; if storage is blocked, all tabs share one channel (the old behavior).
+    var tab = '';
+    try {
+      tab = sessionStorage.getItem(KEY + ':tab') || '';
+      if (!tab) { tab = String(Date.now()) + Math.random().toString(36).slice(2, 8); sessionStorage.setItem(KEY + ':tab', tab); }
+    } catch (e) { tab = ''; }
+    try { bc = new BroadcastChannel('econ-major-dashboard' + (tab ? ':' + tab : '')); } catch (e) { bc = null; }
     if (bc) {
       bc.onmessage = function (e) {
         var d = e.data || {};

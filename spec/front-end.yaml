@@ -95,7 +95,8 @@ rulings_2026_10_26:            # instructor, ledger E43
   job_links: "no links (ruled): nothing ships, so nothing needs a yearly link check"
   rank_sentence: "approved: under the unemployment card, 'Most majors' unemployment rates are too close together
                   to rank with confidence, so treat a rank on this measure as rough.' Basis: all 52 shown rates
-                  have a 90% rank range of 20 places or more (rank file, 2026-10-26 rebuild). No numbers in the text"
+                  have a 90% rank range of 20 places or more (rank file, 2026-10-26 rebuild). No numbers in the text.
+                  Rechecked on our map (E45): 51 of 52 have 20+ places, the smallest 18; 'most' holds"
   heights: "phone height (ruled): each panel's Canvas frame = its 320 px max height from site/heights.json; no
             scroll box inside the page (step 12)"
   shared_major: "reset per tab (sessionStorage; see shared_major)"

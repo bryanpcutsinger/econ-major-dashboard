@@ -8,7 +8,7 @@ FOD1P directly. car::recode leaves an unlisted code as its own number, so an
 unlisted code never joins one of the 73 groups.
 
 Run from the repo root:  python3 scripts/extract_hc_major_map.py
-Reads raw/benchmarks/ (read-only); writes spec/major73-hc.csv and prints a
+Reads raw/benchmarks/ (read-only); writes raw/benchmarks/hc-2026-openicpsr/derived/major73-hc.csv and prints a
 comparison with spec/major73.csv (our pre-code map), the NY Fed names, and the
 Census code lists.
 """
@@ -63,7 +63,7 @@ def main():
     nyfed = {r["Major"] for r in csv.DictReader(
         open(RAW / "nyfed-2024" / "college-labor-outcomes-by-major-data.csv", encoding="utf-8-sig"))} - {"Overall"}
 
-    with (ROOT / "spec" / "major73-hc.csv").open("w", newline="") as fh:
+    with (ROOT / "raw/benchmarks/hc-2026-openicpsr/derived/major73-hc.csv").open("w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["fod1p", "census_label", "nyfed_major", "r_line", "in_census_lists", "ours_before"])
         for code in sorted(set(hc) | set(census)):

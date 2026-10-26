@@ -12,7 +12,8 @@
 
 common:
   population: persons in the 50 states + DC (Puerto Rico file not used)        # UNCERTAIN; NY Fed silent
-  major: first field of degree (FOD1P) mapped by spec/major73-hc.csv (was major73.csv; ledger E17)
+  major: first field of degree (FOD1P) mapped by the authors' map, now kept locally at
+         raw/benchmarks/hc-2026-openicpsr/derived/major73-hc.csv (ledger E17; moved out of git 2026-10-26, E45)
   overall_row: computed from all eligible people, once each (never an average of majors)
   weights: PWGTP; standard errors from PWGTP1-80 (SDR, 4/80)
   weighted_median: lower weighted median (first value where cumulative weight >= 50%)  # variant: interpolated

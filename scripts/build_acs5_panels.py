@@ -25,8 +25,8 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from build_rank_panel import medians  # noqa: E402  (one median rule for the page)
-from hc_tables12_check import BLOCKS, recode_block  # noqa: E402
+from build_rank_panel import major_map, medians  # noqa: E402  (one map rule and one median rule for the page)
+from occp_labels import census_occp_labels  # noqa: E402
 
 REPS = [f"PWGTP{r}" for r in range(1, 81)]
 WCOLS = ["PWGTP"] + REPS                      # column 0 = full-sample weight
@@ -109,11 +109,7 @@ def age_cell(d, idx, tgt_idx, reweight_on):
 
 def load():
     df = pd.read_parquet(ROOT / "cache" / "acs5-2020-2024-ba.parquet")
-    m73 = {int(r["fod1p"]): r["nyfed_major"] for r in csv.DictReader(open(ROOT / "spec" / "major73-hc.csv"))
-           if r["nyfed_major"]}
-    nyfed = [r["Major"] for r in csv.DictReader(
-        open(ROOT / "raw/benchmarks/nyfed-2024/college-labor-outcomes-by-major-data.csv", encoding="utf-8-sig"))]
-    majors = sorted(m for m in nyfed if m != "Overall")
+    m73, majors = major_map()
     df["g"] = df.FOD1P.map(lambda c: m73.get(int(c)))
     adj = df.ADJINC.to_numpy(float) / 1e6
     df["pay_wagp"] = df.WAGP.to_numpy(float) * adj        # D2: 2024 dollars
@@ -232,7 +228,7 @@ def dump(obj):
 def main():
     t0 = time.time()
     df, majors = load()
-    occ_label = recode_block(*BLOCKS["table1"][:2])
+    occ_label = census_occp_labels(ROOT / "raw/benchmarks/census-5yr/PUMS_Data_Dictionary_2020-2024.csv")   # E45: Census labels
 
     # Gates (spec: gates)
     fod_unmapped = df.g.isna() & (df.FOD1P != 0)
@@ -323,10 +319,10 @@ def main():
                 "stats": stats, "dictionaries": dicts,
                 "dollars": "2024 dollars (ADJINC)", "years": {"rank": "ACS 2024 1-year", "other": "ACS 2020-24 5-year"},
                 "sources": {p: sha(ROOT / p) for p in ["raw/acs1-2024/csv_pus.zip", "raw/acs5-2020-2024/csv_pus.zip"]},
-                "spec": {p: sha(ROOT / p) for p in ["spec/acs5-panels.yaml", "spec/rank-panel.yaml", "spec/major73-hc.csv",
+                "spec": {p: sha(ROOT / p) for p in ["spec/acs5-panels.yaml", "spec/rank-panel.yaml", "spec/major73.csv",
                                                      "spec/front-end.yaml"]},
                 "code": {p: sha(ROOT / p) for p in ["scripts/build_acs5_panels.py", "scripts/build_rank_panel.py",
-                                                     "scripts/hc_tables12_check.py", "scripts/extract_acs5.py"]},
+                                                     "scripts/occp_labels.py", "scripts/extract_acs5.py"]},
                 "files": {f.name: sha(f) for f in sorted(out.glob("*.json")) if f.name != "manifest.json"}}
     (out / "manifest.json").write_text(dump(manifest))
     (ROOT / "output" / "checks" / "acs5-variants.json").write_text(dump(variants))

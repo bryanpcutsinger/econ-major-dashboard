@@ -15,7 +15,8 @@ data:
   adjinc: {2020: 1.222017, 2021: 1.193241, 2022: 1.117193, 2023: 1.049470, 2024: 1.015250}
   geography: "one 2020-based PUMA column; Census crosswalked the 2020-21 records (User Guide VIII.C). No second crosswalk"
   codes: "every year on one list: INDP = 2023 PUMS list (265 codes), OCCP = 2018 list (530 codes)"
-  majors: spec/major73-hc.csv on FOD1P (first major); economics = the Economics group = FOD1P 1102, 5501, 6205
+  majors: spec/major73.csv on FOD1P (first major); economics = the Economics group = FOD1P 1102, 5501, 6205
+  # AMENDED 2026-10-26 (instructor ruling, ledger E45): was spec/major73-hc.csv; our map, as in rank-panel.yaml
 
 common:
   sample: "SCH == 1 and ESR in [1, 2, 4, 5]"
@@ -51,7 +52,8 @@ same_occupation:               # panel 3
   groups: {economics: "Economics group", major: "chosen major", all: "everyone in the occupation (all 73 groups)"}
   comparisons: ["economics - major", "economics - all (all contains economics)"]
   chosen_economics_or_none: "rows = economics top 10; comparison = economics - all"
-  occupation_labels: "Census OCCP list (frozen census-codelists/OCCP-2018.json, -2023.json); page wording later"
+  occupation_labels: "Census OCCP labels from the 5-year PUMS data dictionary (VAL rows), group prefix dropped,
+                      sentence case (scripts/occp_labels.py). AMENDED 2026-10-26 (instructor ruling, ledger E45): the build had used HC's occupation2 labels"
   headline: "counts over shown rows: more / about the same / less"
   check_variant: "ages 35-45, no reweighting (D4 check); computed, not shown; report label agreement"
 

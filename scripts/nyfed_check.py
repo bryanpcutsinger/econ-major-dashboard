@@ -8,7 +8,7 @@ standard errors are not needed to match a benchmark.
 Usage (repo root):
   python3 scripts/nyfed_check.py 2024    # vs raw/benchmarks/nyfed-2024 (ACS 2024)
   python3 scripts/nyfed_check.py 2022    # vs the Feb 2024 posting HC matched (ACS 2022)
-  python3 scripts/nyfed_check.py 2022 spec/major73-hc.csv   # another major map; outputs get "-<map stem>"
+  python3 scripts/nyfed_check.py 2022 raw/benchmarks/hc-2026-openicpsr/derived/major73-hc.csv   # another major map; outputs get "-<map stem>"
 
 Match rule: the NY Fed rounds medians (to $100 or $1,000), so |ours - theirs| <= $50
 counts as exact. Tolerance (spec D1): Overall exact; every miss <= 2% and reconciled.
