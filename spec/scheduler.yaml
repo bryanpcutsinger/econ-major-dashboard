@@ -100,6 +100,19 @@ issues_11_3:                   # detail written 2026-10-26 before the issue code
   done_check: "tests: each kind's title and wording (rebuild has no announcement; new-data has one); term freeze holds
                the flip and a publish-in-term run flips it; accept-revision publishes a revised source; a repeat key
                posts nothing; a new key calls gh issue create once; existing step-9 tests still pass"
+stale_note_11_4:               # detail written 2026-10-26 before the page code
+  file: "data/last-checked.json (written by the keep-alive job, 11.5): {last_attempt, last_success, decision, live,
+         run_url, confirmed}; times in UTC ISO 8601. last_success = the last run whose probe gave a decision other
+         than error"
+  states: "missing (HTTP 404: the scheduler is not armed yet, D8) -> no note, no footer date; unreadable (any other
+           failure, bad JSON, or no valid last_success) -> note 'could not confirm when this page last checked';
+           readable and last_success more than 45 days before the viewer's clock -> note with that date; otherwise
+           no note and the footer says 'Last checked for new data: <date>'"
+  place: "a short note at the top of every panel (each Canvas frame shows it) and the footer date"
+  logic: "one pure function staleNote(lastChecked, now) in app.js, exposed as window.EMD.staleNote for tests;
+          window.EMD_NO_START = true loads app.js without starting the page (test page only)"
+  done_check: "tests/site/stale.html (headless Chrome): missing -> none; unreadable -> note; 30 days -> none and a date;
+               50 days -> note; bad date -> note; harness PASS"
 h9_baseline: "each bundle manifest records url, bytes, Last-Modified, sha256 per source; H9 compares the probe with the
               live manifest; bundles without the fields fall back to spec/sources.json. The bot never rewrites spec/"
 issues: "kinds from the manifests: new vintage (with announcement draft) / rebuild with the same data ('no new Census

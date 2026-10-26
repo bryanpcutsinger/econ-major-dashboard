@@ -497,8 +497,33 @@
       '" class="major-pick">' + opts + '</select><span class="hint">All ' + (majors.length + 1) +
       ' majors. The choice carries to every panel.</span></div>';
   }
+  // ---------- stale-data note (spec/scheduler.yaml stale_note_11_4) ----------
+  // lc: 'missing' (404: the scheduler is not armed yet), 'unreadable', or the parsed data/last-checked.json
+  var STALE_DAYS = 45;
+  function longDate(d) {
+    var m = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+             'November', 'December'];
+    return m[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear();
+  }
+  function staleNote(lc, now) {
+    if (lc === 'missing') { return { note: null, footer: null }; }
+    var t = lc && typeof lc === 'object' && typeof lc.last_success === 'string' ? new Date(lc.last_success) : null;
+    if (!t || isNaN(t.getTime())) {
+      return { note: 'This page could not confirm when it last checked for new Census data.', footer: null };
+    }
+    var days = (now.getTime() - t.getTime()) / 86400000;
+    return { note: days > STALE_DAYS ? 'This page last checked for new Census data on ' + longDate(t) +
+               '. Newer numbers may exist.' : null, footer: longDate(t) };
+  }
+  function staleBanner() {
+    var s = staleNote(D.lastChecked, new Date());
+    return s.note ? '<p class="stale" role="note">' + esc(s.note) + '</p>' : '';
+  }
+  window.EMD = { staleNote: staleNote };                          // for tests/site/stale.html
+
   function footer() {
-    var lc = D.lastChecked && D.lastChecked.date ? ' Last checked for new data: ' + esc(D.lastChecked.date) + '.' : '';
+    var s = staleNote(D.lastChecked, new Date());
+    var lc = s.footer ? ' Last checked for new data: ' + esc(s.footer) + '.' : '';
     return '<div class="footer"><p><strong>Updates itself.</strong> Data: U.S. Census Bureau, American Community Survey ' +
       yearsText(D.manifest.years.rank) + ' and ' + yearsText(D.manifest.years.other) + '.' + lc + '</p>' +
       '<p>Our calculations, following the methods of the New York Fed and Holian and Chiu (2026), and adapted from Bartsch (2026). ' +
@@ -516,7 +541,7 @@
     }
     panels.forEach(function (p) {
       h += '<section class="panel" id="panel-' + p + '" aria-labelledby="h-' + p + '"><h2 id="h-' + p + '">' + TITLES[p] + '</h2>' +
-        (full ? '' : picker(p)) + '<div class="panel-body" id="body-' + p + '"></div>' +
+        (full ? '' : picker(p)) + staleBanner() + '<div class="panel-body" id="body-' + p + '"></div>' +
         (full ? '' : (p === PANELS[PANELS.length - 1] ? footer() : '') +
           '<p class="open-full"><a href="index.html" target="_blank" rel="noopener">Open the full explorer</a></p>') + '</section>';
     });
@@ -663,7 +688,11 @@
     }).then(function (vals) {
       names.forEach(function (n, i) { D[n] = vals[i]; });
       if (!D.lifetime) { panels = panels.filter(function (p) { return p !== 'lifetime'; }); full = full || false; }
-      return getJSON('../data/last-checked.json').then(function (lc) { D.lastChecked = lc; }, function () { D.lastChecked = null; });
+      return fetch('../data/last-checked.json', { cache: 'no-cache' }).then(function (r) {
+        if (r.status === 404) { D.lastChecked = 'missing'; return null; }
+        if (!r.ok) { D.lastChecked = 'unreadable'; return null; }
+        return r.json().then(function (lc) { D.lastChecked = lc; }, function () { D.lastChecked = 'unreadable'; });
+      }, function () { D.lastChecked = 'unreadable'; });
     }).then(function () {
       var src = D.rank ? D.rank.measures.unemployment.map(function (r) { return r.major; })
         : D.compare ? Object.keys(D.compare.measures.pay_mid.by_major)
@@ -690,5 +719,5 @@
       if (window.console) { console.error(err); }
     });
   }
-  start();
+  if (!window.EMD_NO_START) { start(); }
 }());

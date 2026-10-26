@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>stale note test</title></head>
+<body><div id="app"></div><pre id="out"></pre>
+<script>window.EMD_NO_START = true;</script>
+<script src="../../site/app.js"></script>
+<script>
+  // spec/scheduler.yaml stale_note_11_4 done check
+  var now = new Date('2027-03-01T12:00:00Z'), f = window.EMD.staleNote, bad = [];
+  function ago(days) { return new Date(now.getTime() - days * 86400000).toISOString(); }
+  var cases = [
+    ['missing', 'missing', false, false],
+    ['unreadable', 'unreadable', true, false],
+    ['30 days', { last_success: ago(30) }, false, true],
+    ['45 days', { last_success: ago(45) }, false, true],
+    ['50 days', { last_success: ago(50) }, true, true],
+    ['bad date', { last_success: 'not a date' }, true, false],
+    ['no field', { last_attempt: ago(1) }, true, false]
+  ];
+  var res = cases.map(function (c) {
+    var r = f(c[1], now), ok = !!r.note === c[2] && !!r.footer === c[3];
+    if (!ok) { bad.push(c[0]); }
+    return [c[0], r.note, r.footer, ok];
+  });
+  document.getElementById('out').textContent = JSON.stringify({ pass: bad.length === 0, bad: bad, cases: res });
+  document.documentElement.setAttribute('data-ready', 'true');
+</script></body></html>

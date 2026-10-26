@@ -158,3 +158,6 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .dots[data-tip]:hover { background: rgba(0, 51, 102, 0.05); }
 .ag-hit { fill: transparent; }
 .ag-hit:hover { fill: rgba(0, 51, 102, 0.07); }
+
+/* stale-data note (spec/scheduler.yaml stale_note_11_4) */
+.stale { background: #FFF4E0; color: #5C3B00; border-radius: 6px; padding: 8px 12px; font-size: 14px; }
