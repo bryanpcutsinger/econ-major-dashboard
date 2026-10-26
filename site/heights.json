@@ -1,5 +1,5 @@
 {
- "note": "Content height in px (all details closed), the maximum over every major and switch state; from tests/site/harness.html on bundle 2024-1yr_2020-24-5yr_6f8bddb5-616d91, 2026-10-26. Since E45 the page tells Canvas its height (lti.frameResize; works in Canvas, desktop Chrome, 2026-10-26), so these are only the fallback frame heights (each panel's 320 px value).",
+ "note": "Content height in px (all details closed), the maximum over every major and switch state; from tests/site/harness.html on bundle 2024-1yr_2020-24-5yr_6f8bddb5-542f98, 2026-10-26. Since E45 the page tells Canvas its height (lti.frameResize; works in Canvas, desktop Chrome, 2026-10-26), so these are only the fallback frame heights (each panel's 320 px value).",
  "heights": {
   "compare": {
    "320": 1867,
@@ -7,14 +7,14 @@
    "640": 1319
   },
   "lifetime": {
-   "320": 1582,
-   "380": 1479,
-   "640": 1252
+   "320": 1483,
+   "380": 1405,
+   "640": 1157
   },
   "samejob": {
-   "320": 2948,
+   "320": 2931,
    "380": 2726,
-   "640": 2008
+   "640": 1985
   },
   "rank": {
    "320": 1457,
@@ -27,9 +27,9 @@
    "640": 636
   },
   "cause": {
-   "320": 1063,
-   "380": 946,
-   "640": 683
+   "320": 1041,
+   "380": 901,
+   "640": 664
   }
  }
 }
