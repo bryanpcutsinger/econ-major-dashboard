@@ -25,6 +25,10 @@ on:
 
 permissions: {}
 
+defaults:
+  run:
+    shell: bash      # bash -eo pipefail: a failure behind '| tee' fails the step (run 40365813250 hid one)
+
 concurrency:
   group: data
   cancel-in-progress: false
@@ -195,7 +199,8 @@ jobs:
           $PY scripts/measure.py "5-year build" -- $PY scripts/build_acs5_panels.py
           $PY scripts/probe.py --out "$RUNNER_TEMP/probe.json" || echo "probe: error (H9 then reports it)"
           $PY scripts/runner_report.py --live-copy "$RUNNER_TEMP/live/$L" --probe "$RUNNER_TEMP/probe.json"
-          B=$(ls -t data/bundles | head -1)
+          B=$($PY -c 'import sys; sys.path.insert(0, "scripts"); import runner_report; print(runner_report.newest_bundle())')   # by manifest time, not folder time
+          echo "Bundle handed to dry-publish: $B" | tee -a "$GITHUB_STEP_SUMMARY"
           mkdir -p "$RUNNER_TEMP/out/bundle"
           cp -R "data/bundles/$B" "$RUNNER_TEMP/out/bundle/"
           cp "$RUNNER_TEMP/probe.json" "$RUNNER_TEMP/probe-forced.json" "$RUNNER_TEMP/out/"
@@ -257,6 +262,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           KIND: ${{ steps.pub.outputs.kind }}
         run: |
+          [ -s "$RUNNER_TEMP/issue.md" ] || { echo "no issue was rendered: the dry run failed" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1; }
           python3 scripts/post_issue.py --body-file "$RUNNER_TEMP/issue.md" --kind "$KIND" --dry-run --close "Dry run (step 11.8, spec/scheduler.yaml dry_run_11_8): closed by the workflow." | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Push the scratch data to a dryrun/ branch (never main)
         env:
