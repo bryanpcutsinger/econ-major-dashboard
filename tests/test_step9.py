@@ -165,6 +165,23 @@ class Step9(unittest.TestCase):
         self.put("rank", r)
         self.assert_held("H5_cell_rules")
 
+    def test_H5_lifetime_band(self):
+        """E47: a shown lifetime total whose age band has n < 100 holds."""
+        lt = self.get("lifetime")
+        c = lt["grad=0"]["by_major"]["Accounting"]["major"]
+        self.assertFalse(c["hidden"])
+        c["bands"][3]["n"] = 50
+        self.put("lifetime", lt)
+        self.assert_held("H5_cell_rules")
+
+    def test_H6_lifetime_label(self):
+        lt = self.get("lifetime")
+        d = lt["grad=0"]["econ_vs_hs"]
+        self.assertEqual(d["label"], "better")
+        d["label"] = "worse"
+        self.put("lifetime", lt)
+        self.assert_held("H6_labels")
+
     def test_H6_label(self):
         so = self.get("same_occupation")
         for r in so["grad=0"]["Nursing"]["major_top"]["rows"]:
