@@ -24,6 +24,22 @@ def newest_bundle():
     return b[-1].name
 
 
+
+def leaf_diff(a, b, path=""):
+    """[(path, a, b)] for every leaf that differs between two parsed JSON values."""
+    if isinstance(a, dict) and isinstance(b, dict):
+        out = []
+        for k in sorted(set(a) | set(b)):
+            out += leaf_diff(a.get(k), b.get(k), f"{path}/{k}")
+        return out
+    if isinstance(a, list) and isinstance(b, list) and len(a) == len(b):
+        out = []
+        for i, (x, y) in enumerate(zip(a, b)):
+            out += leaf_diff(x, y, f"{path}[{i}]")
+        return out
+    return [] if a == b else [(path, a, b)]
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--live-copy", required=True)
@@ -37,6 +53,12 @@ def main(argv=None):
     same = [f for f in files if filecmp.cmp(live_dir / f, ROOT / "data" / "bundles" / new / f, shallow=False)]
     lines.append(f"Data files byte-identical to live: {len(same)} of {len(files)}"
                  + ("" if len(same) == len(files) else f" (differ: {sorted(set(files) - set(same))})"))
+    for f in sorted(set(files) - set(same)):            # every leaf that differs, up to 25 per file
+        diffs = leaf_diff(json.loads((live_dir / f).read_text()),
+                          json.loads((ROOT / "data" / "bundles" / new / f).read_text()))
+        big = max((abs(a - b) for _, a, b in diffs if isinstance(a, (int, float)) and isinstance(b, (int, float))), default=0)
+        lines.append(f"- {f}: {len(diffs)} values differ; largest absolute difference {big}")
+        lines += [f"  - `{k}`: {a} -> {b}" for k, a, b in diffs[:25]]
     if new != live or len(same) != len(files):
         tmp = Path(tempfile.mkdtemp())                 # gates and change list on a scratch data dir
         (tmp / "bundles").mkdir()
