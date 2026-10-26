@@ -174,6 +174,9 @@ dry_run_11_8:                  # detail written 2026-10-26 before the code (inst
                rollback worked; main's current.json unchanged; the runner bundle id equals live (Mac = Linux after E53).
                A second dry-run dispatch posts nothing (de-dup). A fixture=hold dispatch posts and closes a gate-hold
                issue and leaves the scratch pointer on v1"
+  fixes: "AMENDED after run 40365813250 (E54): the bundle goes to dry-publish by manifest time (runner_report.newest_bundle),
+          not 'ls -t' folder time; the workflow default shell is bash (-eo pipefail), so a failure behind '| tee' fails
+          its step; the post step stops if no issue was rendered"
   reuse: "AMENDED: input reuse_run = an earlier dry-run's run id: dry-publish downloads that run's artifact and the build is
           skipped, so the de-dup and hold runs cost no second or third ~2.9 GB download (the yes covered one)"
 h9_baseline: "each bundle manifest records url, bytes, Last-Modified, sha256 per source; H9 compares the probe with the
