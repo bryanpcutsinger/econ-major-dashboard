@@ -1,0 +1,28 @@
+{
+ "acs1-2024": {
+  "accessed": "2026-10-24T02:40:57Z",
+  "bytes": 602847146,
+  "dictionary": {
+   "accessed": "2026-10-25T21:26:15Z",
+   "bytes": 329514,
+   "sha256": "cd562a3719c6cdf79736bd9cfbacf8c20e650d641c62abd7e67fd131da036e18",
+   "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.csv"
+  },
+  "last_modified": "Thu, 04 Dec 2025 12:00:14 GMT",
+  "sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
+  "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip"
+ },
+ "acs5-2020-2024": {
+  "accessed": "2026-10-25T15:39:37Z",
+  "bytes": 2273780719,
+  "dictionary": {
+   "accessed": "2026-10-25T15:41:39Z",
+   "bytes": 330431,
+   "sha256": "8816ab616c9025bf6a217588d18c402ebb84ddf889d5d1bd7161a9f0c2e099ae",
+   "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2020-2024.csv"
+  },
+  "last_modified": "Thu, 05 Mar 2026 12:10:41 GMT",
+  "sha256": "7e8f4f189d850fef9dd79de0ae0c6a6398471df27631e5a6613479b739e06d27",
+  "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pus.zip"
+ }
+}

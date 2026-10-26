@@ -10,7 +10,8 @@ D4 check ages 35-45). Every cell: n, estimate, SDR SE and MOE from PWGTP1-80, hi
 
 Run from the repo root (after scripts/extract_acs5.py):  python3 scripts/build_acs5_panels.py
 Reads cache/acs5-2020-2024-ba.parquet, spec/, raw/benchmarks/ (read-only).
-Writes data/bundles/<bundle id>/, data/current.json, output/checks/acs5-variants.json.
+Writes data/bundles/<bundle id>/ and output/checks/acs5-variants.json. It does not publish:
+scripts/publish.py runs the step-9 gates, then writes data/current.json (spec/gates.yaml).
 """
 import csv
 import hashlib
@@ -362,12 +363,22 @@ def main():
     out = ROOT / "data" / "bundles" / bid
     out.mkdir(parents=True, exist_ok=True)
     (out / "rank.json").write_bytes((ROOT / "output/panels/rank-2024.json").read_bytes())
+    # Step 9 (spec/gates.yaml bundle_additions): code lists and counts the gates compare, no microdata
+    prof1 = json.loads((ROOT / "output/panels/rank-2024-profile.json").read_text())
+    (out / "codes.json").write_text(dump({"acs5": codes, "acs1": {"FOD1P": prof1["FOD1P"], "SOCP": prof1["SOCP"]},
+                                          "south_florida_pumas": inside}))
+    stats = {"acs1": {k: v for k, v in prof1.items() if k not in ("FOD1P", "SOCP")},
+             "acs5": {"records_kept": len(df), "pwgtp_sum": int(df.PWGTP.sum()),
+                      "fod1p_unmapped_persons": gates["fod1p_unmapped_persons"]}}
+    dicts = {"acs1": sha(ROOT / "raw/benchmarks/census-1yr/PUMS_Data_Dictionary_2024.csv"),
+             "acs5": sha(ROOT / "raw/benchmarks/census-5yr/PUMS_Data_Dictionary_2020-2024.csv")}
     for name in ("same_occupation", "local", "hc_tables_5yr"):
         (out / f"{name}.json").write_text(dump(bundle[name]))
     git = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     dirty = bool(subprocess.run(["git", "status", "--porcelain", "scripts", "spec"], cwd=ROOT,
                                 capture_output=True, text=True).stdout.strip())
     manifest = {"bundle": bid, "git_commit": git, "worktree_dirty": dirty, "gates": gates,
+                "stats": stats, "dictionaries": dicts,
                 "dollars": "2024 dollars (ADJINC)", "years": {"rank": "ACS 2024 1-year", "other": "ACS 2020-24 5-year"},
                 "sources": {p: sha(ROOT / p) for p in ["raw/acs1-2024/csv_pus.zip", "raw/acs5-2020-2024/csv_pus.zip"]},
                 "spec": {p: sha(ROOT / p) for p in ["spec/acs5-panels.yaml", "spec/rank-panel.yaml", "spec/major73-hc.csv"]},
@@ -375,7 +386,6 @@ def main():
                                                      "scripts/hc_tables12_check.py", "scripts/extract_acs5.py"]},
                 "files": {f.name: sha(f) for f in sorted(out.glob("*.json")) if f.name != "manifest.json"}}
     (out / "manifest.json").write_text(dump(manifest))
-    (ROOT / "data" / "current.json").write_text(dump({"bundle": bid}))
     (ROOT / "output" / "checks" / "acs5-variants.json").write_text(dump(variants))
     print(f"wrote data/bundles/{bid}/ ({len(manifest['files']) + 1} files); {time.time() - t0:.0f} s")
     print("gates:", json.dumps(gates))

@@ -7,7 +7,8 @@ point rank (the page shows this). Audit only: a 90% rank range from pairwise tes
 number of majors "about the same".
 
 Run from the repo root:  python3 scripts/build_rank_panel.py
-Reads raw/ (read-only); writes output/panels/rank-2024.{json,csv}.
+Reads raw/ (read-only); writes output/panels/rank-2024.{json,csv} and rank-2024-profile.json
+(counts and code lists for the step-9 gates).
 """
 import csv
 import itertools
@@ -95,6 +96,11 @@ def main():
     print(f"loading ACS {YEAR} 1-year with 80 replicate weights ...", flush=True)
     df = load()
     df["g"] = df.FOD1P.map(lambda c: m73.get(int(c)) if pd.notna(c) else None)
+    # Step 9 side file (spec/gates.yaml H2, H7): counts and code lists before the 73-group filter
+    profile = {"records_kept": len(df), "pwgtp_sum": int(df.PWGTP.sum()),
+               "fod1p_unmapped_persons": int((df.FOD1P.notna() & df.g.isna()).sum()),
+               "fod1p_missing_persons": int(df.FOD1P.isna().sum()),
+               "FOD1P": sorted({int(c) for c in df.FOD1P.dropna()})}
     df = df[df.g.isin(majors)].reset_index(drop=True)
     gi = df.g.map({m: i for i, m in enumerate(majors)}).to_numpy()
     W = df[WCOLS].to_numpy(float)
@@ -138,6 +144,10 @@ def main():
     emp = young & df.ESR.isin([1, 2, 4, 5]).to_numpy() & ~np.isnan(score)
     rate, cnt, cnum = shares((emp & (score < 50)).astype(float), emp.astype(float))
     out["underemployment"] = summarize(majors, rate, rate[:, 0], cnt, "lower", cnum)
+    employed = young & df.ESR.isin([1, 2]).to_numpy()            # civilian jobs (E27 coverage rule)
+    profile["SOCP"] = sorted({c.strip() for c in df.SOCP.dropna() if c.strip()})
+    profile["civilian_employed_recent_grads"] = int(employed.sum())
+    profile["civilian_employed_recent_grads_unscored"] = int((employed & np.isnan(score)).sum())
 
     dest = ROOT / "output" / "panels"
     dest.mkdir(parents=True, exist_ok=True)
@@ -145,6 +155,7 @@ def main():
                 dollars=f"{YEAR} dollars (WAGP x ADJINC {adj})", margin="90% (1.645 x SE), SDR 80 replicates",
                 underemployment=f"our definition: O*NET {ONET_RELEASE.replace('_', '.')}, {LINK}")
     (dest / f"rank-{YEAR}.json").write_text(json.dumps(dict(meta=meta, measures=out), indent=1))
+    (dest / f"rank-{YEAR}-profile.json").write_text(json.dumps(profile, indent=1, sort_keys=True) + "\n")
     with (dest / f"rank-{YEAR}.csv").open("w", newline="") as fh:
         wr = None
         for setting, rows in out.items():

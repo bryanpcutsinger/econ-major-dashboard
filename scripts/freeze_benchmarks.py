@@ -57,6 +57,8 @@ SOURCES += [
     ("census-geo", "2020_Census_Tract_to_2020_PUMA.txt",
      "https://www2.census.gov/geo/docs/maps-data/data/rel2020/2020_Census_Tract_to_2020_PUMA.txt"),
 ]
+# Step 9: the 2024 1-year data dictionary, the baseline for the dictionary gate (spec/gates.yaml H8).
+SOURCES.append(("census-1yr", "PUMS_Data_Dictionary_2024.csv", PUMS_DOCS + "data_dict/PUMS_Data_Dictionary_2024.csv"))
 # The 5-year file codes every year on the 2023 INDP list; these map its codes back to the
 # 2017-based codes HC's industry block lists (linked from census.gov industry-occupation code lists).
 IO = "https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/"

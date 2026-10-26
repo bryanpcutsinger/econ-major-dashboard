@@ -1,0 +1,166 @@
+# Step 9: gates, change list, issue templates, publish and rollback (data plan section 3, row 9;
+# section 4). Written 2026-10-25 BEFORE any gate code or gate run.
+# Lines marked AMENDED changed while the code was written or after the first runs (2026-10-25);
+# each says why (ledger E39).
+# Done check (plan): each gate forced to fail once in a test and opens the right issue; rollback tested.
+# "Opens the right issue" here = the test asserts the template chosen and renders its body. Posting a
+# real GitHub issue is step 11. AMENDED: the scripts have no posting code at all; step 11 adds
+# --post on the instructor's say-so.
+#
+# Scope (instructor 2026-10-25 scope concern; advisor): step 9 = scripts/gates.py,
+# scripts/change_list.py, scripts/publish.py, templates/issues/*.md, tests/. NOT the workflow YAML,
+# scheduler, heartbeat, or Census probe (step 11). The only build changes: (1) the 5-year build stops
+# writing data/current.json (publish.py does that, after the gates) and writes codes.json + stats into
+# the bundle; (2) the rank build writes a side file (codes + counts) and rank.json stays byte-identical.
+# The E35-E36 rank fixes are NOT folded in (say-so only).
+
+inputs:
+  rule: "every gate reads only the candidate bundle, the live bundle, tracked spec/ files, and (H8, H9)
+         a file path given on the command line. Never raw/ or output/checks/: the step-11 runner has
+         neither (it downloads, builds, and discards)"
+  candidate: "data/bundles/<id>/ (manifest.json + the panel files + codes.json)"
+  live: "the bundle named in data/current.json; none on a first publish (then the comparison gates
+         H7 and H4's list check pass with a note, and the change list says 'first bundle')"
+  baselines_tracked: "spec/sources.json (AMENDED: JSON, not YAML, so the gates need no YAML package): url,
+                      bytes, Last-Modified, sha256 of each published source zip and data dictionary;
+                      spec/dictionary-baseline.json: the dictionary shape (H8). Both written by
+                      scripts/make_baselines.py from the raw/ provenance records"
+  paths: "every script takes --data <dir> (default data/), so tests run on a temp copy and never touch
+          the real data/current.json"
+
+bundle_additions:              # build changes (the only ones); manifest-only change for v1's numbers
+  codes.json: "code lists used: 5-year FOD1P, OCCP, INDP, STATE+PUMA; 1-year FOD1P, SOCP; the South
+               Florida PUMA list (G1 = A); aggregates only"
+  manifest.stats: "per source: records kept and the PWGTP sum of the extract (5-year: BA+ ages 22-65;
+                   1-year: BA+ ages 22-45 before the 73-group filter), unmapped-FOD1P persons, and
+                   (1-year) civilian employed recent graduates (ESR 1-2) with no O*NET score. AMENDED:
+                   civilian, as in E27; with ESR 4-5 included, 361 of 52,332 are unscored (military jobs
+                   have no O*NET score), with civilians only, 0 of 51,729"
+  manifest.dictionaries: "sha256 of the data dictionary used for each source (from spec/sources.yaml)"
+  rank_side_file: "output/panels/rank-2024-profile.json from build_rank_panel.py; AMENDED: its code lists
+                   go into codes.json and its counts into manifest.stats (not a sixth file).
+                   rank-2024.json and .csv must stay byte-identical (checked: identical)"
+
+hard_gates:                    # any fail -> no publish; live bundle unchanged; issue
+  H1_outputs:
+    rule: "manifest, rank, same_occupation, local, hc_tables_5yr, codes present and parse; each file's
+           sha256 = the manifest's; each file <= 10 MB; no key named SERIALNO, SPORDER, or PWGTP* anywhere
+           (no microdata); rank has the 10 measures x 73 majors"
+    template: gate-hold
+    test: "change one byte of local.json without re-signing the manifest"
+  H2_codes_mapped:
+    rule: "5-year: fod1p_unmapped_persons == 0, occp_without_label == [], indp_unmapped == [],
+           hc_table2_indp_unmapped == []. 1-year: unmapped-FOD1P persons == 0; employed recent graduates
+           with no O*NET score < 0.1% (E27 coverage rule; civilian jobs, see bundle_additions). New codes vs the live bundle are listed in
+           the change list (information); only an unmapped code holds"
+    template: gate-hold
+    test: "set indp_unmapped = [9999] in the manifest (re-signed)"
+  H3_majors_present:
+    rule: "73 majors in same_occupation (both graduate settings), in hc table3, and in each rank measure"
+    template: gate-hold
+    test: "delete one major from same_occupation grad=0 (re-signed)"
+  H4_south_florida:
+    rule: "the South Florida PUMA list in codes.json equals the live bundle's (G1 = A). A changed list
+           (e.g. 2030 PUMAs) holds for a new G1 reading"
+    template: gate-hold
+    test: "drop one PUMA from the candidate's list (re-signed)"
+  H5_cell_rules:
+    rule: "every cell with n / se / moe: se and moe finite and >= 0, moe = 1.645 x se (within rounding;
+           AMENDED: |moe - 1.645 se| <= 0.001 x moe + 1e-6, because shares are stored to 6 decimals); shown pay cell -> n >= 100 and moe / estimate <= 0.30 (D5); hidden cell ->
+           non-empty reason (5-year files). Rank rows: pay hidden == (n < 100 or moe_ratio > 0.30);
+           rate rows: n < 100 -> hidden (the count part of the rate rule needs numerator counts the
+           rank file does not store: a known gap, fixed at the next rank rebuild on say-so)"
+    template: gate-hold
+    test: "set one shown economics cell's n to 50 (re-signed)"
+  H6_labels:
+    rule: "every difference: label 'better' iff d > moe, 'worse' iff d < -moe, else 'about the same'
+           (C3; moe = 1.645 x se(d)); label null iff a side is hidden; each headline count and hidden-row
+           count equals its rows. AMENDED: a d within 0.02 of the boundary accepts either label (rounding),
+           and 'economics vs itself' in the local panel has no label by design"
+    template: gate-hold
+    test: "flip one 'about the same' label to 'better' (re-signed)"
+  H7_sample_size:
+    rule: "per source type (1-year, 5-year): records kept and PWGTP sum within +-5% of the live bundle's
+           (plan section 4)"
+    template: gate-hold
+    test: "multiply the candidate's 5-year records by 1.10 (re-signed)"
+  H8_dictionary:
+    rule: "the candidate's data dictionary, reduced to its shape for the variables the build uses (each
+           NAME row's type and length; for categorical variables, the set of VAL (min, max) codes; for
+           numeric variables, only the single-value special codes), equals spec/dictionary-baseline.json
+           for its source type. Excluded: ADJINC (changes every year, D2), and the code-list variables
+           FOD1P, OCCP, INDP, SOCP, PUMA (H2 covers them). Guards against the disclosure-avoidance
+           change (plan section 4)"
+    input: "--dictionary-1y <csv> --dictionary-5y <csv>; a missing argument = fail (no silent skip)"
+    template: gate-hold
+    test: "a copy of the dictionary with one SCHL code removed"
+  H9_source_revision:
+    rule: "for each source vintage the live bundle already uses, the probe's sha256 (or, if the probe
+           has no sha, its bytes and Last-Modified) equals spec/sources.yaml. A difference = Census
+           revised a published file: hold, rebuild, and open the revision issue"
+    input: "--probe <json> written by the step-11 probe; absent -> the gate reports 'not run' and passes
+            (a local build has no probe; step 11 makes the argument required on the runner)"
+    template: revision
+    test: "a probe file with a new Last-Modified for the 2020-24 5-year zip"
+  H10_provenance:
+    rule: "manifest git_commit is 40 hex characters and worktree_dirty is false"
+    template: gate-hold
+    test: "worktree_dirty = true (re-signed)"
+
+warnings:                      # publish anyway (C2); listed in the new-data issue
+  dollars: "values are compared as published: the candidate's dollar year vs the live one's, both
+            printed. No extra deflator (D2: one ADJINC rule)"
+  W1_economics_pay: "economics pay in any panel or setting moves more than 8% (in place of the plan's
+                     'Overall pay', which the bundle does not hold). AMENDED: each economics cell
+                     counts once (the same-occupation economics cell for one job and setting repeats in
+                     many majors' lists; local 'Economics' in by_major repeats the economics cell)"
+  W2_major_pay: "a major's pay moves more than 15% and |new - old| > moe_old + moe_new"
+  W3_rates: "a rate (unemployment, underemployment) moves more than 2 points"
+  W4_economics_rank: "economics rank on any rank measure moves 5 or more places"
+  W5_economics_labels: "an economics label moves two steps (better <-> worse)"
+  W6_hidden: "hidden cells in a panel and setting change by more than 10% of that panel's cells"
+
+change_list:                   # scripts/change_list.py; candidate vs live (plan S24)
+  contents: ["years and dollar year, old and new", "gate results", "warnings W1-W6",
+             "per number: old, new, difference, moe (JSON, full); the markdown shows counts + the 20 largest",
+             "label flips (all)", "rank moves (all of 5+ places)", "majors or jobs added, dropped, newly
+              hidden, newly shown", "new codes vs live (information)",
+             "lecture pin: difference vs lecture-pin.json; no pin yet (step 12) -> 'no lecture pin' and go on",
+             "draft Canvas announcement (the instructor posts it, C2)"]
+  baseline: "bundle v1 is the first baseline. The plan's bundle v0 (frozen replication outputs) is
+             dropped: the replication results stay in output/checks/ and the ledger (E38 records this)"
+
+publish:                       # scripts/publish.py
+  publish: "publish.py <bundle id> --data <dir> [--probe] [--dictionary-1y] [--dictionary-5y]: run the
+            gates vs the live bundle; all hard gates pass -> write current.json {bundle, previous} and
+            append data/history.json; render the new-data issue. Any fail -> current.json untouched,
+            render gate-hold (or revision if only H9 failed), exit 1"
+  rollback: "publish.py --rollback --data <dir>: current.json -> the bundle in its 'previous' field;
+             history records it; no previous -> exit 1, nothing changed. Rollback runs no gates (the
+             previous bundle already passed them)"
+  post: "AMENDED: no --post and no posting code in step 9; step 11 adds it on say-so"
+
+templates:                     # templates/issues/<name>.md; {placeholders} filled by the scripts
+  gate-hold: "a data update was held: which gates failed, the live bundle stays, what to check"
+  revision: "Census changed a file we already publish: which file, old vs new, rebuild to follow"
+  new-data: "new data published: years, change list summary, warnings, lecture-pin note, draft
+             announcement"
+  stale: "no new Census vintage for more than 15 months (plan section 4); function + test here, called
+          by the step-11 scheduler"
+
+tests:                         # tests/test_step9.py, stdlib unittest, Python 3.9
+  setup: "copy bundle v1 to a temp data dir as the live bundle; a second copy under a new id is the
+          candidate; a helper re-signs the manifest after each change (except H1's test)"
+  cases: ["clean candidate passes every hard gate", "each of H1-H10 fails on its test change, and
+           publish refuses, current.json is unchanged, and the template is gate-hold (revision for H9)",
+          "each warning W1-W6 fires on a test change, and publish still succeeds with it in the issue",
+          "rollback: publish -> current = candidate; rollback -> current = live; second rollback with no
+           previous -> exit 1, current unchanged", "stale fires at 16 months and not at 14",
+          "first publish with no live bundle succeeds and says 'first bundle'"]
+
+done_check:
+  1: "tests/test_step9.py passes: every hard gate fails once on its change and selects its template"
+  2: "every warning fires once"
+  3: "rollback tested (both directions + the no-previous case)"
+  4: "the real bundle v1 passes all hard gates vs itself as live (no false hold)"
+  5: "rank-2024.json byte-identical after the rank side-file change; bundle v1 data files byte-identical"
