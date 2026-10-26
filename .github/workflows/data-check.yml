@@ -1,19 +1,24 @@
-# Steps 11.5 and 11.7 (spec/scheduler.yaml workflow_11_5, build_11_7): probe + keep-alive, and a build that publishes nothing.
+# Steps 11.5, 11.7, 11.8 (spec/scheduler.yaml workflow_11_5, build_11_7, dry_run_11_8): probe + keep-alive; a build that
+# publishes nothing; and the forced dry run (publish to a scratch copy, a dryrun/ branch, one closed [DRY RUN] issue).
 name: data-check
 
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "probe-only = probe + keep-alive commit; build-only = full runner build, no publish (~2.9 GB download)"
+        description: "probe-only = probe + keep-alive commit; build-only = runner build, no publish; dry-run = forced new vintage to a scratch copy + test issue (both ~2.9 GB)"
         type: choice
-        options: [probe-only, build-only]
+        options: [probe-only, build-only, dry-run]
         default: probe-only
       fixture:
-        description: "Test only: 'error' makes the probe answer from an empty recording (forces the error path)"
+        description: "Test only: probe-only + error = empty recording (forces the error path); dry-run + hold = a dictionary missing one SCHL code (forces a gate hold)"
         type: choice
-        options: [none, error]
+        options: [none, error, hold]
         default: none
+      reuse_run:
+        description: "dry-run only: reuse the bundle built by this earlier run id (skips the build and its ~2.9 GB download)"
+        type: string
+        default: ""
   # The monthly schedule is armed at step 11.9, after the 1/12/2027 lecture (ruling D8):
   # schedule:
   #   - cron: "17 13 3 * *"
@@ -155,3 +160,115 @@ jobs:
           $PY scripts/measure.py "5-year build" -- $PY scripts/build_acs5_panels.py
           $PY scripts/probe.py --out "$RUNNER_TEMP/probe.json" || echo "probe: error (H9 then reports it)"
           $PY scripts/runner_report.py --live-copy "$RUNNER_TEMP/live/$L" --probe "$RUNNER_TEMP/probe.json"
+
+  dry-build:
+    if: inputs.mode == 'dry-run' && inputs.reuse_run == ''
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Free disk and install the locked packages
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --quiet --require-hashes --only-binary=:all: -r requirements.lock
+      - name: Probe, forced (the current vintage counts as new)
+        run: |
+          python3 scripts/probe.py --next-offset 0 --out "$RUNNER_TEMP/probe-forced.json"
+          D=$(python3 -c 'import json; print(json.load(open("'"$RUNNER_TEMP"'/probe-forced.json"))["decision"])')
+          echo "Forced probe decision: $D" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "$D" = "new_vintage" ]
+      - name: Build from zero
+        run: |
+          PY="$RUNNER_TEMP/venv/bin/python"
+          L=$(python3 -c 'import json; print(json.load(open("data/current.json"))["bundle"])')
+          mkdir -p "$RUNNER_TEMP/live" && cp -R "data/bundles/$L" "$RUNNER_TEMP/live/"
+          { echo '### Runner build'; echo '| step | time | peak memory | free disk after | result |'; echo '|---|---|---|---|---|'; } >> "$GITHUB_STEP_SUMMARY"
+          set -e
+          $PY scripts/measure.py "fetch inputs (with PUMS)" -- $PY scripts/fetch_inputs.py --pums
+          $PY scripts/measure.py "extract 5-year" -- $PY scripts/extract_acs5.py
+          $PY scripts/measure.py "rank build" -- $PY scripts/build_rank_panel.py
+          $PY scripts/measure.py "5-year build" -- $PY scripts/build_acs5_panels.py
+          $PY scripts/probe.py --out "$RUNNER_TEMP/probe.json" || echo "probe: error (H9 then reports it)"
+          $PY scripts/runner_report.py --live-copy "$RUNNER_TEMP/live/$L" --probe "$RUNNER_TEMP/probe.json"
+          B=$(ls -t data/bundles | head -1)
+          mkdir -p "$RUNNER_TEMP/out/bundle"
+          cp -R "data/bundles/$B" "$RUNNER_TEMP/out/bundle/"
+          cp "$RUNNER_TEMP/probe.json" "$RUNNER_TEMP/probe-forced.json" "$RUNNER_TEMP/out/"
+          $PY -c 'import sys, shutil; sys.path.insert(0, "scripts"); from vintage import V; shutil.copy(V.dict1, sys.argv[1] + "/dict1.csv"); shutil.copy(V.dict5, sys.argv[1] + "/dict5.csv")' "$RUNNER_TEMP/out"
+          echo "$B" > "$RUNNER_TEMP/out/bundle-id.txt"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dry-run
+          path: ${{ runner.temp }}/out
+          retention-days: 7
+
+  dry-publish:
+    needs: dry-build
+    if: always() && inputs.mode == 'dry-run' && (needs.dry-build.result == 'success' || inputs.reuse_run != '')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      issues: write
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dry-run
+          path: ${{ runner.temp }}/in
+          run-id: ${{ inputs.reuse_run || github.run_id }}
+          github-token: ${{ github.token }}
+      - name: Publish to a scratch copy (live = bundle v1), roll back, publish again
+        id: pub
+        env:
+          FIXTURE: ${{ inputs.fixture }}
+        run: |
+          IN="$RUNNER_TEMP/in"; S="$RUNNER_TEMP/scratch"; B=$(cat "$IN/bundle-id.txt")
+          echo "main_current=$(git rev-parse HEAD:data/current.json)" >> "$GITHUB_OUTPUT"
+          cp -R data "$S"
+          printf '{\n "bundle": "2024-1yr_2020-24-5yr_6f8bddb5"\n}\n' > "$S/current.json"
+          rm -rf "$S/bundles/$B" && cp -R "$IN/bundle/$B" "$S/bundles/"
+          D5="$IN/dict5.csv"
+          if [ "$FIXTURE" = "hold" ]; then
+            python3 -c 'import csv, sys; r = list(csv.reader(open(sys.argv[1]))); i = next(i for i, x in enumerate(r) if x[:2] == ["VAL", "SCHL"]); del r[i]; csv.writer(open(sys.argv[2], "w", newline="")).writerows(r)' "$D5" "$RUNNER_TEMP/dict5-hold.csv"
+            D5="$RUNNER_TEMP/dict5-hold.csv"
+          fi
+          set +e
+          python3 scripts/publish.py "$B" --data "$S" --dictionary-1y "$IN/dict1.csv" --dictionary-5y "$D5" --probe "$IN/probe.json" --issue-out "$RUNNER_TEMP/issue.md" | tee "$RUNNER_TEMP/publish.txt"
+          CODE=${PIPESTATUS[0]}
+          set -e
+          KIND=$(sed -n 's/^issue (\(.*\)) written.*/\1/p' "$RUNNER_TEMP/publish.txt")
+          echo "kind=$KIND" >> "$GITHUB_OUTPUT"
+          echo "Scratch publish: exit $CODE, issue kind $KIND, scratch live now $(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["bundle"])' "$S/current.json")" | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "$CODE" = "0" ]; then
+            python3 scripts/publish.py --rollback --data "$S" | tee -a "$GITHUB_STEP_SUMMARY"
+            python3 scripts/publish.py "$B" --data "$S" --dictionary-1y "$IN/dict1.csv" --dictionary-5y "$D5" --probe "$IN/probe.json" --issue-out "$RUNNER_TEMP/issue-again.md" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Post the [DRY RUN] issue once, then close it
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KIND: ${{ steps.pub.outputs.kind }}
+        run: |
+          python3 scripts/post_issue.py --body-file "$RUNNER_TEMP/issue.md" --kind "$KIND" --dry-run --close "Dry run (step 11.8, spec/scheduler.yaml dry_run_11_8): closed by the workflow." | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Push the scratch data to a dryrun/ branch (never main)
+        env:
+          MAIN_CURRENT: ${{ steps.pub.outputs.main_current }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "dryrun/${{ github.run_id }}"
+          rm -rf data && cp -R "$RUNNER_TEMP/scratch" data
+          git add -A data
+          git commit -m "Dry run ${{ github.run_id }}: scratch data after publish (step 11.8)"
+          git push origin "dryrun/${{ github.run_id }}"
+          git fetch origin main
+          NOW=$(git rev-parse origin/main:data/current.json)
+          if [ "$NOW" = "$MAIN_CURRENT" ]; then echo "main data/current.json unchanged" | tee -a "$GITHUB_STEP_SUMMARY"; else echo "main data/current.json CHANGED" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1; fi

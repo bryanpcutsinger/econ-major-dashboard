@@ -3,7 +3,7 @@
     kind_of(candidate_manifest, live_manifest)  -> new-data | revision-published | rebuild
     announcement(kind, change_list)              -> the draft Canvas text, or None (rebuild)
     with_key(body, key)                          -> body + a hidden '<!-- dashboard-key: KEY -->' line
-    post(title, body, key, labels, gh=..., dry_run=False) -> 'posted' | 'duplicate'
+    post(title, body, key, labels, gh=..., dry_run=False) -> the new issue's URL | 'duplicate'
 
 Posting runs `gh` (GH_TOKEN in the workflow). Tests pass a stub for `gh`; real posting starts at 11.8.
 """
@@ -70,11 +70,16 @@ def post(title, body, key, labels, gh=run_gh, dry_run=False):
     args = ["issue", "create", "--title", ("[DRY RUN] " if dry_run else "") + title, "--body-file", path]
     for lab in labels:
         args += ["--label", lab]
-    gh(args)
-    return "posted"
+    return gh(args).strip() or "posted"
 
 
 def title_of(body):
     """The first '# ' line of a rendered template is the issue title."""
     first = body.lstrip().splitlines()[0]
     return first[2:].strip() if first.startswith("# ") else first.strip()
+
+
+def split_key(body):
+    """(body without its key line, key) for a body rendered by publish.py."""
+    m = KEY_RE.search(body)
+    return (KEY_RE.sub("", body).rstrip() + "\n", m.group(1)) if m else (body, None)

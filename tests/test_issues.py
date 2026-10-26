@@ -143,11 +143,17 @@ class Issues(unittest.TestCase):
         _, _, body = self.run_publish()
         gh, calls = self.gh_stub([])
         title = issues.title_of(body)
-        self.assertEqual(issues.post(title, body, self.key(body), ["rebuild"], gh=gh), "posted")
+        self.assertEqual(issues.post(title, body, self.key(body), ["rebuild"], gh=gh), "https://github.com/x/y/issues/9")
         self.assertEqual(issues.post(title, body, self.key(body), ["rebuild"], gh=gh), "duplicate")
         creates = [c for c in calls if c[:2] == ["issue", "create"]]
         self.assertEqual(len(creates), 1)
         self.assertIn("data-bot", creates[0])
+
+    def test_split_key(self):
+        _, _, body = self.run_publish()
+        b, k = issues.split_key(body)
+        self.assertEqual(k, f"publish:{CAND}")
+        self.assertNotIn("dashboard-key", b)
 
     def test_dry_run_title(self):
         gh, calls = self.gh_stub([])

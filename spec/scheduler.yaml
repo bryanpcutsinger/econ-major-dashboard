@@ -154,6 +154,28 @@ build_11_7:                    # detail written 2026-10-26 before the build job 
   done_check: "the run goes green in under 3 h; free disk never below 4 GB on a 14 GB budget (we use < 10 GB); peak
                memory logged; bundle id = the live one or, if not, the change list explains the difference (a Mac ->
                Linux float difference is logged in the ledger, not a failure)"
+dry_run_11_8:                  # detail written 2026-10-26 before the code (instructor yes 2026-10-26: post and close one
+                               # test issue; push a dryrun/ branch; one more ~2.9 GB download)
+  force: "probe.py --next-offset 0 treats the current vintage as 'next', so the real 2024 files answer as new (real web
+          answers, no recording): decision new_vintage"
+  jobs: "dry-build (contents read, no secrets): probe, full build, upload the bundle + probe.json + the two dictionaries as
+         an artifact (actions/upload-artifact v7.0.2 by SHA). dry-publish (contents write, issues write): download it
+         (actions/download-artifact v8.0.2 by SHA); scratch = a copy of data/ whose current.json names bundle v1
+         (2024-1yr_2020-24-5yr_6f8bddb5), so the gates and the flip really run; publish.py --data scratch --probe; then
+         --rollback on the scratch copy (back to v1) and publish again"
+  issue: "scripts/post_issue.py posts the rendered body once per key with the [DRY RUN] title and the dry-run label, key
+          prefixed 'dryrun:' (a dry run never blocks a real issue's key), then closes it with a comment. Labels are
+          created first (gh label create --force)"
+  hold_fixture: "input fixture=hold: the 5-year dictionary given to the gates loses one SCHL code, so H8 holds: the gate-hold
+                 issue is posted and closed; scratch current.json stays on v1"
+  branch: "the scratch data/ goes to branch dryrun/<run id> (one bot commit); main is never written; the job fails if
+           main's data/current.json changed during the run"
+  done_check: "dispatch dry-run: green; issue posted and closed; dryrun/<id> branch has current.json = the new bundle;
+               rollback worked; main's current.json unchanged; the runner bundle id equals live (Mac = Linux after E53).
+               A second dry-run dispatch posts nothing (de-dup). A fixture=hold dispatch posts and closes a gate-hold
+               issue and leaves the scratch pointer on v1"
+  reuse: "AMENDED: input reuse_run = an earlier dry-run's run id: dry-publish downloads that run's artifact and the build is
+          skipped, so the de-dup and hold runs cost no second or third ~2.9 GB download (the yes covered one)"
 h9_baseline: "each bundle manifest records url, bytes, Last-Modified, sha256 per source; H9 compares the probe with the
               live manifest; bundles without the fields fall back to spec/sources.json. The bot never rewrites spec/"
 issues: "kinds from the manifests: new vintage (with announcement draft) / rebuild with the same data ('no new Census

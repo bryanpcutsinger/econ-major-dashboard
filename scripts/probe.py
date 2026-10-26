@@ -96,7 +96,7 @@ def confirmed(data):
         return {}
 
 
-def probe(web, data=ROOT / "data", now=None):
+def probe(web, data=ROOT / "data", now=None, next_offset=1):
     out = {"version": 1, "probed_at": now or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "vintage": V.config, "sources": {}, "next": {}, "api": {}, "reasons": [], "errors": []}
     sha_of = getattr(web, "body_sha", lambda url, body: hashlib.sha256(body).hexdigest())
@@ -154,7 +154,7 @@ def probe(web, data=ROOT / "data", now=None):
                                           f"{rec['dictionary_sha256'][:12]})")
 
     # 2. the vintage one year on (pairing rule: both files, both dictionaries)
-    nv = V.shifted(1)
+    nv = V.shifted(next_offset)         # 1 = next year; 0 = the dry run's forced 'new vintage' (dry_run_11_8)
     names = {nv.acs1_id: nv.acs1_zip, nv.acs5_id: nv.acs5_zip,
              f"dictionary-{nv.acs1_id}": nv.dict1, f"dictionary-{nv.acs5_id}": nv.dict5}
     present = {}
@@ -205,8 +205,9 @@ def main(argv=None):
     ap.add_argument("--out", default="-")
     ap.add_argument("--fixture")
     ap.add_argument("--data", default=str(ROOT / "data"))
+    ap.add_argument("--next-offset", type=int, default=1, help="0 in the dry run only")
     a = ap.parse_args(argv)
-    res = probe(Fixture(a.fixture) if a.fixture else Web(), a.data)
+    res = probe(Fixture(a.fixture) if a.fixture else Web(), a.data, next_offset=a.next_offset)
     text = json.dumps(res, indent=1, sort_keys=True) + "\n"
     if a.out == "-":
         sys.stdout.write(text)
