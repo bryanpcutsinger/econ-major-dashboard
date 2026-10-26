@@ -39,7 +39,7 @@ inputs:
   not_needed: "the NY Fed CSV (E45: names from spec/major73.csv); the HC package (E45: Census labels); benchmarks for the
                replication checks (audit only, not run on the runner)"
   packages: "requirements.txt adds pyarrow (the build reads and writes Parquet). A hashed lockfile comes with the
-             workflow (11.5), pinned to the runner's Python"
+             build job (11.7; AMENDED, was 11.5), pinned to the runner's Python"
 done_check_11_1: "with the tracked spec/vintage.json, a rebuild from the clean tree gives the live bundle id
                   (2024-1yr_2020-24-5yr_6f8bddb5-27bdb9) with byte-identical data files; tests pass; fetch_inputs.py into
                   an empty raw/ copy downloads every non-PUMS input and every sha matches; a 2022 rank rehearsal
@@ -113,6 +113,29 @@ stale_note_11_4:               # detail written 2026-10-26 before the page code
           window.EMD_NO_START = true loads app.js without starting the page (test page only)"
   done_check: "tests/site/stale.html (headless Chrome): missing -> none; unreadable -> note; 30 days -> none and a date;
                50 days -> note; bad date -> note; harness PASS"
+workflow_11_5:                 # detail written 2026-10-26 before the workflow (instructor yes 2026-10-26: bot commits to
+                               # main; a few dispatch test runs; the cron stays off until 11.9, D8)
+  file: ".github/workflows/data-check.yml"
+  triggers: "workflow_dispatch only (mode: probe-only). The schedule '17 13 3 * *' is written but commented out; 11.9
+             arms it after the 1/12/2027 lecture"
+  actions: "one outside action, actions/checkout v7.0.1 pinned by full SHA 3d3c42e5aac5ba805825da76410c181273ba90b1;
+            probe and keep-alive are stdlib Python on the runner's own python3 (no setup-python). The hashed lockfile
+            moves to 11.7 (AMENDED: was 11.5), where the build first needs numpy, pandas, pyarrow"
+  permissions: "top level {}; probe: contents read, checkout without persisted credentials; keepalive: contents write,
+                actions write (the enable call), pages write (the build request)"
+  hand_off: "the probe job passes probe.json to keepalive as a base64 job output (no artifact action)"
+  keepalive: "always runs after probe (if: always()). scripts/keepalive.py writes data/last-checked.json: last_attempt,
+              last_success (advances only when the decision is not error), decision, first reasons and errors, live,
+              run_url, confirmed (carried over). A missing or unreadable probe output = decision error. Commit as
+              github-actions[bot]; push with one rebase retry; then PUT the workflow's enable endpoint (whether this
+              resets the 60-day timer: UNCERTAIN, logged only)"
+  pages: "after the push: poll GET /pages/builds/latest for the pushed commit for 90 s; if no build for it, POST
+          /pages/builds and poll again (up to 4 min); the job summary and the ledger record which case held"
+  limits: "concurrency group data, no cancel; timeouts probe 10 min, keepalive 10 min; ubuntu-24.04"
+  done_check: "keepalive.py unit tests (success, error keeps last_success, bad probe output, confirmed carried); a
+               dispatch run goes green; main gets one bot commit with data/last-checked.json; the live site serves it
+               (the page then shows 'Last checked for new data: <date>'); the Pages case recorded; a forced probe error
+               run commits decision error with last_success unchanged"
 h9_baseline: "each bundle manifest records url, bytes, Last-Modified, sha256 per source; H9 compares the probe with the
               live manifest; bundles without the fields fall back to spec/sources.json. The bot never rewrites spec/"
 issues: "kinds from the manifests: new vintage (with announcement draft) / rebuild with the same data ('no new Census

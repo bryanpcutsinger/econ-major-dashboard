@@ -1,0 +1,114 @@
+# Step 11.5 (spec/scheduler.yaml workflow_11_5): probe + keep-alive. No PUMS download, no publish, no issues yet.
+name: data-check
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "What to run (more modes come with steps 11.7-11.8)"
+        type: choice
+        options: [probe-only]
+        default: probe-only
+      fixture:
+        description: "Test only: 'error' makes the probe answer from an empty recording (forces the error path)"
+        type: choice
+        options: [none, error]
+        default: none
+  # The monthly schedule is armed at step 11.9, after the 1/12/2027 lecture (ruling D8):
+  # schedule:
+  #   - cron: "17 13 3 * *"
+
+permissions: {}
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      decision: ${{ steps.probe.outputs.decision }}
+      probe: ${{ steps.probe.outputs.probe }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Probe Census for a new or revised vintage
+        id: probe
+        env:
+          FIXTURE: ${{ inputs.fixture }}
+        run: |
+          set +e
+          if [ "$FIXTURE" = "error" ]; then
+            python3 scripts/probe.py --out probe.json --fixture tests/fixtures/probe-error.json
+          else
+            python3 scripts/probe.py --out probe.json
+          fi
+          echo "probe exit code: $?"
+          if [ -s probe.json ]; then
+            echo "decision=$(python3 -c 'import json; print(json.load(open("probe.json"))["decision"])')" >> "$GITHUB_OUTPUT"
+            echo "probe=$(base64 -w0 probe.json)" >> "$GITHUB_OUTPUT"
+            { echo '### Probe'; echo '```json'; cat probe.json; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "decision=error" >> "$GITHUB_OUTPUT"
+            echo "The probe wrote no output." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit 0
+
+  keepalive:
+    needs: probe
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: write
+      pages: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - name: Write data/last-checked.json
+        env:
+          PROBE_B64: ${{ needs.probe.outputs.probe }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -n "$PROBE_B64" ]; then echo "$PROBE_B64" | base64 -d > "$RUNNER_TEMP/probe.json"; fi
+          python3 scripts/keepalive.py --probe "$RUNNER_TEMP/probe.json" --run-url "$RUN_URL"
+      - name: Commit and push
+        id: push
+        env:
+          DECISION: ${{ needs.probe.outputs.decision }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/last-checked.json
+          git commit -m "Data check $(date -u +%F): ${DECISION:-error}"
+          git push || { git pull --rebase && git push; }
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Keep the workflow enabled (60-day rule; effect UNCERTAIN)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X PUT "repos/${{ github.repository }}/actions/workflows/data-check.yml/enable" && echo "enable call ok" || echo "enable call failed"
+      - name: Make sure Pages serves the new commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ steps.push.outputs.sha }}
+        run: |
+          latest() { gh api "repos/${{ github.repository }}/pages/builds/latest" --jq '.commit + " " + .status' 2>/dev/null; }
+          for i in $(seq 1 9); do
+            set -- $(latest); if [ "$1" = "$SHA" ]; then echo "Pages built $SHA by itself ($2)" | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
+            sleep 10
+          done
+          echo "No Pages build for $SHA after 90 s: requesting one" | tee -a "$GITHUB_STEP_SUMMARY"
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" --jq '.status'
+          for i in $(seq 1 24); do
+            set -- $(latest); if [ "$1" = "$SHA" ] && [ "$2" = "built" ]; then echo "Pages built $SHA after the request" | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
+            sleep 10
+          done
+          echo "Pages did not build $SHA within 4 min of the request" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1
