@@ -26,6 +26,7 @@ from vintage import V  # noqa: E402  (spec/vintage.json; spec/scheduler.yaml 11.
 
 ZIP = V.acs5_zip
 OUT = V.cache
+OUT_HS = V.cache_hs      # high school only, ages 25-64 (spec/lifetime-panel.yaml); same pass
 REPS = [f"PWGTP{i}" for i in range(1, 81)]
 COLS = ["SERIALNO", "SPORDER", "STATE", "PUMA", "ADJINC", "AGEP", "SCHL", "SCH", "ESR", "WKHP",
         "WKWN", "WAGP", "PERNP", "COW", "FOD1P", "FOD2P", "OCCP", "INDP", "MIL", "SEX", "RELSHIPP",
@@ -52,7 +53,7 @@ def fixture_rows(c):
 def main():
     t0 = time.time()
     z = zipfile.ZipFile(ZIP)
-    parts, n_all, n_file, sums = [], {}, {}, {}
+    parts, hs_parts, n_all, n_file, sums = [], [], {}, {}, {}
     for name in sorted(n for n in z.namelist() if n.startswith("psam_pus") and n.endswith(".csv")):
         with z.open(name) as fh:
             for chunk in pd.read_csv(fh, usecols=COLS, chunksize=500_000, dtype=DTYPES):
@@ -65,6 +66,7 @@ def main():
                         acc = sums.setdefault((st, row), [0] * 81)
                         sums[(st, row)] = [a + int(b) for a, b in zip(acc, s.tolist())]
                 parts.append(chunk[(chunk.SCHL >= 21) & chunk.AGEP.between(22, 65)])
+                hs_parts.append(chunk[chunk.SCHL.isin([16, 17]) & chunk.AGEP.between(25, 64)])
         print(f"  read {name}: {sum(len(p) for p in parts):,} kept so far, {time.time() - t0:.0f} s", flush=True)
     df = pd.concat(parts, ignore_index=True).sort_values(["SERIALNO", "SPORDER"], kind="mergesort")
     df["YEAR"] = df.SERIALNO.str[:4].astype(int)
@@ -72,6 +74,12 @@ def main():
         df[c] = df[c].astype("int32")
     OUT.parent.mkdir(exist_ok=True)
     df.to_parquet(OUT, index=False)
+    hs = pd.concat(hs_parts, ignore_index=True).sort_values(["SERIALNO", "SPORDER"], kind="mergesort")
+    hs["YEAR"] = hs.SERIALNO.str[:4].astype(int)
+    for c in REPS + ["PWGTP"]:
+        hs[c] = hs[c].astype("int32")
+    hs.to_parquet(OUT_HS, index=False)
+    print(f"wrote {OUT_HS.relative_to(ROOT)}: {len(hs):,} rows (high school only, ages 25-64)")
 
     # Profile by survey year: what the panels' code rules must handle
     prof = {"records_all_persons": dict(sorted(n_all.items())), "kept_ba_plus_22_65": {},

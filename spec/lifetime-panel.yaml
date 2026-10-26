@@ -1,0 +1,61 @@
+# Lifetime earnings panel ("Earnings over a working life"). Written 2026-10-26 BEFORE any estimate, cell count,
+# or label was computed. Instructor rulings 2026-10-26: use the Census Bureau's method (Julian and Kominski 2011,
+# ACS-14, https://www.census.gov/library/publications/2011/acs/acs-14.html; instructor-confirmed source, not in
+# Zotero); place the panel right after the side-by-side panel; the Waldron match is dropped.
+# Lines marked AMENDED change after the first code or runs.
+
+method:                        # Julian and Kominski (2011): quotes and pages in the private planning file
+  rule: "synthetic work-life earnings = sum over eight 5-year age bands (25-29, 30-34, ..., 60-64) of the band's
+         median annual earnings x 5 (J&K pp. 1, 4-5, 13)"
+  unit_test: "J&K p. 5 worked example: the eight medians 33,202; 39,740; 44,098; 45,287; 46,677; 47,411; 47,310;
+              44,922, each x 5, sum to 1,743,235"
+  by_major: "ours. J&K have no field-of-degree results (the ACS asked field of degree from 2009, J&K p. 2)"
+
+data:
+  file: "the 5-year file in spec/vintage.json (now ACS 2020-24)"
+  extracts: "bachelor's or more: the existing cache (ages 22-65); high school only: a new cache from the same pass
+             of scripts/extract_acs5.py (SCHL 16-17, ages 25-64), cache/acs5-<A>-<B>-hs.parquet. The BA cache must
+             stay byte-identical"
+  dollars: "PERNP * ADJINC / 1e6, in the vintage's 1-year dollars (now 2024; D2)"
+
+sample:
+  ages: [25, 64]
+  earnings: "PERNP (wages and self-employment), the Census meaning of earnings (J&K name no variable: our reading)"
+  with_earnings: "PERNP != 0 (Census earnings tables count people with earnings, losses included: our reading).
+                  Report how many kept records have PERNP < 0"
+  full_time_year_round: "WKHP >= 35 and WKWN >= 50 (J&K give no numbers; the usual Census rule: our reading)"
+  no_other_filter: "no school-enrollment, employment-status, or pay-floor rule (J&K state none)"
+groups:
+  economics: "the Economics group (FOD1P 1102, 5501, 6205) by spec/major73.csv"
+  major: "each of the 73 majors by spec/major73.csv (first major, FOD1P)"
+  all_bachelors: "everyone in the 73 groups"
+  high_school: "SCHL 16-17 (regular diploma, or GED or alternative credential); no college"
+  degree: {default: "SCHL == 21 (bachelor's only)", graduate_switch: "SCHL >= 21"}   # high school is the same in both
+
+estimate:
+  band_median: "the page's median rule (spec/acs5-panels.yaml common.median): lower weighted median with PWGTP
+                shown; the interpolated median in each of the 81 weight columns for the SE; negative replicate
+                weights = 0 inside medians only"
+  total: "shown = 5 x sum of the eight shown band medians; replicate r = 5 x sum of the eight interpolated band
+          medians in column r"
+  se: "SDR on the total (all eight bands inside each replicate): sqrt(4/80 * sum_r (T_r - T_0)^2); MOE = 1.645 SE"
+  difference: "economics minus other, inside each replicate; label by C3 (better / about the same / worse)"
+  hide: "a group's total is hidden if any of its eight bands has unweighted n < 100 (instructor ruling), or
+         MOE / total > 0.30 (D5). A difference gets a label only if both sides show"
+
+output:
+  file: "lifetime.json in the bundle: per graduate setting: economics, all_bachelors, high_school, and by_major
+         {major: {major, econ_vs_major}}; plus econ_vs_all and econ_vs_hs. Each group: total, se, moe, n (people in
+         the eight bands), hidden, reason, and bands [{ages, median, n}]"
+  gates: "H1 (present, signed, no microdata keys), H3 (73 majors per setting), H5 (cell and hide rules), H6 (labels);
+          the change list covers its totals and labels"
+
+page:
+  title: "Earnings over a working life"
+  place: "right after the side-by-side panel (compare, lifetime, samejob, rank, local, cause)"
+  shows: "lifetime totals as bars (economics, the chosen major, all bachelor's, high school only) with margins and
+          labels; the eight band medians as a small age chart; a data table with every number; the graduate switch"
+  caveat: "one plain note: a snapshot of today's full-time workers at each age, added up; not one person's future;
+           not adjusted for interest, inflation after 2024, or taxes; the gaps are not proof that a major causes
+           them (see the Q&A)"
+  credit: "Our calculations, following the Census Bureau's method (Julian and Kominski 2011)"

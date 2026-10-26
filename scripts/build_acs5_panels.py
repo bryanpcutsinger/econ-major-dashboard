@@ -212,6 +212,68 @@ def local(df, majors, areas, grad, fulltime, ages, reweight_on, pay_col):
     return out
 
 
+# ---------- lifetime earnings (spec/lifetime-panel.yaml; Julian and Kominski 2011) ----------
+
+BANDS = [(a, a + 4) for a in range(25, 65, 5)]            # 25-29 ... 60-64
+
+
+def worklife(band_medians):
+    """J&K synthetic work-life earnings: each 5-year band's median x 5, summed (pp. 1, 4-5, 13)."""
+    return 5 * sum(band_medians)
+
+
+def load_hs():
+    hs = pd.read_parquet(V.cache_hs)
+    hs["pay_pernp"] = hs.PERNP.to_numpy(float) * hs.ADJINC.to_numpy(float) / 1e6
+    return hs
+
+
+def lifetime_mask(df):
+    """Ages 25-64, full-time year-round (WKHP >= 35, WKWN >= 50), with earnings (PERNP != 0). No other filter."""
+    return (df.AGEP.between(25, 64) & (df.WKHP >= 35) & (df.WKWN >= 50) & (df.PERNP != 0)).to_numpy()
+
+
+def lifetime_cell(pay, W, age):
+    """One group: the shown total (lower band medians) and its 81-column test statistic (interpolated medians)."""
+    W0 = np.maximum(W, 0)                                   # negative replicate weights = 0 inside medians only
+    bands, shown, T, reason = [], [], np.zeros(W.shape[1]), ""
+    for lo, hi in BANDS:
+        m = (age >= lo) & (age <= hi)
+        k = int(m.sum())
+        if k == 0:
+            return {"n": int(len(age)), "hidden": True, "reason": f"no people aged {lo}-{hi}", "bands": []}, None
+        lower, interp = medians(pay[m], W0[m])
+        bands.append({"ages": f"{lo}-{hi}", "median": round(float(lower[0]), 2), "n": k})
+        shown.append(float(lower[0]))
+        T += 5 * interp
+        if k < 100 and not reason:
+            reason = f"fewer than 100 people aged {lo}-{hi}"
+    total, se = worklife(shown), sdr(T)
+    if not reason and Z90 * se / total > 0.30:
+        reason = "MOE / estimate > 0.30"
+    return {"total": round(total, 2), "se": round(se, 2), "moe": round(Z90 * se, 2), "n": int(len(age)),
+            "hidden": bool(reason), "reason": reason, "bands": bands}, T
+
+
+def lifetime(df, hs, majors):
+    hs_s = hs[lifetime_mask(hs)]
+    hs_c = lifetime_cell(hs_s.pay_pernp.to_numpy(float), hs_s[WCOLS].to_numpy(float), hs_s.AGEP.to_numpy(int))
+    out = {}
+    for grad in (False, True):
+        s = df[lifetime_mask(df) & ((df.SCHL >= 21) if grad else (df.SCHL == 21)).to_numpy() & df.g.isin(majors).to_numpy()]
+        pay, W, age, g = s.pay_pernp.to_numpy(float), s[WCOLS].to_numpy(float), s.AGEP.to_numpy(int), s.g.to_numpy(object)
+        cells = {m: lifetime_cell(pay[g == m], W[g == m], age[g == m]) for m in majors}
+        allc, econ = lifetime_cell(pay, W, age), cells[ECON]
+        out[f"grad={int(grad)}"] = {
+            "economics": econ[0], "all_bachelors": allc[0], "high_school": hs_c[0],
+            "econ_vs_all": compare(econ, allc), "econ_vs_hs": compare(econ, hs_c),
+            "by_major": {m: {"major": cells[m][0], "econ_vs_major": compare(econ, cells[m])} for m in majors if m != ECON}}
+    stats = {"records_kept": len(hs), "pwgtp_sum": int(hs.PWGTP.sum()),
+             "lifetime_negative_pernp": int((lifetime_mask(df) & (df.PERNP < 0).to_numpy()).sum()
+                                            + (lifetime_mask(hs) & (hs.PERNP < 0).to_numpy()).sum())}
+    return out, stats
+
+
 # ---------- bundle ----------
 
 def sha(path):
@@ -273,6 +335,8 @@ def main():
     variants["local_sf_with_08625"] = local(df, majors, {"south_florida": in_fl & df.PUMA.isin(inside + [EXTRA_SF_PUMA]).to_numpy()},
                                             False, True, (25, 54), True, "pay_wagp")
     print(f"  local: {time.time() - t0:.0f} s", flush=True)
+    life, hs_stats = lifetime(df, load_hs(), majors)
+    print(f"  lifetime: {time.time() - t0:.0f} s", flush=True)
 
     # HC Tables 1-3 rolled forward: dropped 2026-10-25 (instructor; ledger E40). No panel used them; the replication stays in output/checks.
 
@@ -297,7 +361,8 @@ def main():
              "codes.json": dump({"acs5": codes, "acs1": {"FOD1P": prof1["FOD1P"], "SOCP": prof1["SOCP"]},
                                  "south_florida_pumas": inside}).encode(),
              "same_occupation.json": dump(bundle["same_occupation"]).encode(),
-             "local.json": dump(bundle["local"]).encode()}
+             "local.json": dump(bundle["local"]).encode(),
+             "lifetime.json": dump(life).encode()}
     # Bundle id = years + code-list hash + data hash (2026-10-26, ledger E43): a rebuild with new numbers
     # gets a new folder, so a published bundle is never overwritten and rollback keeps its target.
     # Bundle v1 (2024-1yr_2020-24-5yr_6f8bddb5) predates the data hash.
@@ -310,7 +375,8 @@ def main():
         (out / name).write_bytes(data)
     stats = {"acs1": {k: v for k, v in prof1.items() if k not in ("FOD1P", "SOCP")},
              "acs5": {"records_kept": len(df), "pwgtp_sum": int(df.PWGTP.sum()),
-                      "fod1p_unmapped_persons": gates["fod1p_unmapped_persons"]}}
+                      "fod1p_unmapped_persons": gates["fod1p_unmapped_persons"]},
+             "acs5_hs": hs_stats}
     dicts = {"acs1": sha(V.dict1), "acs5": sha(V.dict5)}
     git = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     dirty = bool(subprocess.run(["git", "status", "--porcelain", "scripts", "spec"], cwd=ROOT,
@@ -320,7 +386,8 @@ def main():
                 "dollars": f"{V.dollar_year} dollars (ADJINC)", "years": V.years,
                 "sources": {str(z.relative_to(ROOT)): sha(z) for z in V.pums},
                 "spec": {p: sha(ROOT / p) for p in ["spec/acs5-panels.yaml", "spec/rank-panel.yaml", "spec/major73.csv",
-                                                     "spec/front-end.yaml", "spec/vintage.json"]},
+                                                     "spec/front-end.yaml", "spec/vintage.json",
+                                                     "spec/lifetime-panel.yaml"]},
                 "code": {p: sha(ROOT / p) for p in ["scripts/build_acs5_panels.py", "scripts/build_rank_panel.py",
                                                      "scripts/occp_labels.py", "scripts/extract_acs5.py",
                                                      "scripts/vintage.py"]},

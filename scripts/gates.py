@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 Z90 = 1.645
 ECON = "Economics"
-FILES = ["codes.json", "compare.json", "local.json", "rank.json", "same_occupation.json"]   # E40: HC dropped; E41: compare added
+FILES = ["codes.json", "compare.json", "lifetime.json", "local.json", "rank.json", "same_occupation.json"]   # E40: HC dropped; E41: compare; E47: lifetime
 COMPARE = {"pay_mid": "pay_mid|grad=0|fulltime=1", "pay_early": "pay_early|grad=0|fulltime=1",   # compare measure -> rank setting
            "unemployment": "unemployment", "underemployment": "underemployment"}
 MAX_BYTES = 10 * 1024 * 1024
@@ -176,6 +176,9 @@ def h3_majors_present(b):
     for k, v in ((b["compare"] or {}).get("measures", {})).items():
         if len(set(v["by_major"]) - {ECON}) != 72:
             bad.append(f"compare {k}: {len(set(v['by_major']) - {ECON}) + 1} majors")
+    for k, v in (b.get("lifetime") or {}).items():
+        if len(set(v["by_major"]) - {ECON}) != 72:
+            bad.append(f"lifetime {k}: {len(set(v['by_major']) - {ECON}) + 1} majors")
     return bad
 
 
@@ -224,6 +227,22 @@ def h5_cell_rules(b):
                     bad.append(f"{where}: hidden = {r['hidden']} but n {r['n']}, n_num {r['n_num']}")
             elif r["hidden"] != (r["n"] < 100 or r["moe_ratio"] > 0.30):
                 bad.append(f"{where}: hidden = {r['hidden']} but n {r['n']}, moe_ratio {r['moe_ratio']}")
+    for k, v in (b.get("lifetime") or {}).items():               # spec/lifetime-panel.yaml (E47)
+        cells = [("economics", v["economics"]), ("all_bachelors", v["all_bachelors"]), ("high_school", v["high_school"])]
+        cells += [(m, x["major"]) for m, x in v["by_major"].items()]
+        for name, c in cells:
+            where = f"lifetime {k} {name}"
+            short = any(bd["n"] < 100 for bd in c.get("bands", [])) or len(c.get("bands", [])) < 8
+            if c["hidden"]:
+                if not c.get("reason"):
+                    bad.append(f"{where}: hidden with no reason")
+            elif short or not moe_ok(c) or not finite(c.get("total")) or c["moe"] / c["total"] > 0.30:
+                bad.append(f"{where}: shown but a band has n < 100, or the total / margin fails")
+            elif abs(5 * sum(bd["median"] for bd in c["bands"]) - c["total"]) > 0.2 + 1e-6:   # 8 bands x 5 x half a cent
+                bad.append(f"{where}: total {c['total']} is not 5 x the sum of its band medians")
+        for path, d in walk(v):
+            if "d" in d and not moe_ok(d):
+                bad.append(f"lifetime {k}{path}: se/moe invalid")
     rank = {k: {r["major"]: r for r in rows} for k, rows in ((b["rank"] or {}).get("measures", {})).items()}
     for k, v in ((b["compare"] or {}).get("measures", {})).items():
         cells = {m: x["major"] for m, x in v["by_major"].items()}
@@ -272,6 +291,12 @@ def check_label(where, diff, sides, bad):
 
 def h6_labels(b):
     bad = []
+    for k, v in (b.get("lifetime") or {}).items():               # E47
+        e = v["economics"]
+        check_label(f"lifetime {k} econ_vs_all", v["econ_vs_all"], [e, v["all_bachelors"]], bad)
+        check_label(f"lifetime {k} econ_vs_hs", v["econ_vs_hs"], [e, v["high_school"]], bad)
+        for m, x in v["by_major"].items():
+            check_label(f"lifetime {k} {m}", x["econ_vs_major"], [e, x["major"]], bad)
     for k, majors in (b["same_occupation"] or {}).items():
         for m, v in majors.items():
             for which in ("major_top", "economics_top"):
@@ -308,7 +333,9 @@ def h7_sample_size(b, live):
     if live is None or not live["manifest"].get("stats"):
         return []                                        # first bundle with stats: nothing to compare
     bad, new, old = [], b["manifest"].get("stats", {}), live["manifest"]["stats"]
-    for src in ("acs1", "acs5"):
+    for src in ("acs1", "acs5", "acs5_hs"):
+        if src == "acs5_hs" and src not in old:                 # E47: first bundle with the high-school sample
+            continue
         for k in ("records_kept", "pwgtp_sum"):
             o, n = old.get(src, {}).get(k), new.get(src, {}).get(k)
             if not o or n is None or abs(n / o - 1) > 0.05:

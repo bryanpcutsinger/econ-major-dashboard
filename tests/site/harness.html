@@ -14,10 +14,10 @@
 <script>
 (function () {
   'use strict';
-  var PANELS = ['compare', 'samejob', 'rank', 'local', 'cause'];
+  var PANELS = ['compare', 'lifetime', 'samejob', 'rank', 'local', 'cause'];
   var WIDTHS = [320, 380, 640];
   var SWITCHES = {                     // switch states per panel: [checkbox id, ...] combinations, plus the list toggle
-    compare: [[]], cause: [[]],
+    compare: [[]], cause: [[]], lifetime: [[], ['life-grad']],
     samejob: [[], ['job-grad']],
     rank: [[], ['rank-grad'], ['rank-full'], ['rank-grad', 'rank-full']],
     local: [[], ['local-grad'], ['local-full'], ['local-grad', 'local-full']]

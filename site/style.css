@@ -139,3 +139,15 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .bar-val.inside { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); margin: 0; }
 .bar-val, .bar-na { position: relative; z-index: 1; }
 .bar-val.inside { position: absolute; }
+
+/* lifetime panel (spec/lifetime-panel.yaml) */
+.agechart { width: 100%; max-width: 520px; height: auto; display: block; font-family: var(--chart); }
+.ag-grid { stroke: var(--rule); stroke-width: 1; }
+.ag-tick { font-size: 11px; fill: var(--gray); }
+.ag-line { fill: none; stroke-width: 2.5; }
+.ag-line.econ, .ag-dot.econ { stroke: var(--navy); } .ag-dot.econ { fill: var(--navy); }
+.ag-line.major, .ag-dot.major { stroke: var(--teal); } .ag-dot.major { fill: var(--teal); }
+.ag-line.all, .ag-dot.all { stroke: var(--gray); stroke-dasharray: 4 3; } .ag-dot.all { fill: var(--gray); stroke: none; }
+.ag-line.hs, .ag-dot.hs { stroke: #8A5A00; } .ag-dot.hs { fill: #8A5A00; }
+.hs { color: #8A5A00; }
+.bar.hs { background: #F1E4CC; border-color: #8A5A00; }

@@ -61,6 +61,15 @@ def flatten(b):
                 num(f"{base}|major|{m}", r["major"], "pay", m == ECON, f"local|{k}")
                 if m != ECON:
                     labels[f"{base}|{m}|econ_vs_major"] = r["econ_vs_major"].get("label")
+    for k, v in (b.get("lifetime") or {}).items():               # E47: lifetime totals and labels
+        base, grp = f"lifetime|{k}", f"lifetime|{k}"
+        for name in ("economics", "all_bachelors", "high_school"):
+            num(f"{base}|{name}", dict(v[name], median=v[name].get("total")), "pay", name == "economics", grp)
+        labels[f"{base}|econ_vs_all"] = v["econ_vs_all"].get("label")
+        labels[f"{base}|econ_vs_hs"] = v["econ_vs_hs"].get("label")
+        for m, x in v["by_major"].items():
+            num(f"{base}|major|{m}", dict(x["major"], median=x["major"].get("total")), "pay", False, grp)
+            labels[f"{base}|{m}|econ_vs_major"] = x["econ_vs_major"].get("label")
     return nums, labels, ranks
 
 

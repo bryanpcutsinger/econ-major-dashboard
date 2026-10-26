@@ -7,11 +7,12 @@
 
   var ECON = 'Economics', UNDECIDED = 'Undecided';
   var KEY = 'econ-major-dashboard:major';
-  var PANELS = ['compare', 'samejob', 'rank', 'local', 'cause'];   // figures first, the questions last (instructor 2026-10-26)
-  var FILES = { compare: ['compare'], samejob: ['same_occupation'], cause: ['same_occupation'],
+  var PANELS = ['compare', 'lifetime', 'samejob', 'rank', 'local', 'cause'];   // figures first, the questions last (instructor 2026-10-26)
+  var FILES = { compare: ['compare'], lifetime: ['lifetime'], samejob: ['same_occupation'], cause: ['same_occupation'],
                 rank: ['rank'], local: ['local', 'codes'] };
   var TITLES = {
     compare: 'Your major and economics, side by side',
+    lifetime: 'Earnings over a working life',
     samejob: 'In the same job, who earns more?',
     cause: 'Is it the major, or the students who choose it?',
     rank: 'Where the two majors rank',
@@ -34,14 +35,18 @@
              'above is checked.',
     rank: 'Pay: median wages, ages 35–45 (mid-career) and 22–27 (early career). Unemployment and ' +
           'underemployment: ages 22–27, bachelor’s degree or higher, not in school.',
+    lifetime: 'Lifetime earnings: the median yearly earnings (wages and self-employment) of full-time, year-round ' +
+              'workers (35+ hours a week, 50+ weeks a year) in eight age groups, 25–29 to 60–64, each times five, added up. ' +
+              'Bachelor’s degree only unless the box above is checked. High school = a diploma or GED, no college.',
     local: 'Median wages of people who live in the area, ages 25–54, weighted to the age mix of all majors ' +
            'in the area.'
   };
   var NYFED = 'https://www.newyorkfed.org/research/college-labor-market';
+  var JK = 'https://www.census.gov/library/publications/2011/acs/acs-14.html';   // Julian and Kominski (2011), instructor-confirmed
   var BLEEMER = 'https://doi.org/10.1257/app.20200447';   // Bleemer and Mehta (2022), AEJ: Applied; Zotero XTC9VCJ5; text approved 2026-10-26
 
   var state = { major: '', t: 0, jobList: 'mine', jobGrad: false, rankGrad: false, rankFull: true,
-                localGrad: false, localFull: true };
+                localGrad: false, localFull: true, lifeGrad: false };
   var D = {}, majors = [], panels = [], full = false;
 
   // ---------- helpers ----------
@@ -315,6 +320,97 @@
           'accounting. The result holds for those students at that university. It is evidence, not a promise for every student.');
   }
 
+  // ---------- panel: lifetime earnings (spec/lifetime-panel.yaml) ----------
+  function millions(v) { return '$' + (v / 1e6).toFixed(2) + ' million'; }
+  function lifeMoe(c) { return '± $' + Math.max(1000, Math.round(c.moe / 1000) * 1000).toLocaleString('en-US'); }
+  function ageChart(groups) {
+    // groups: [{cls, name, cell}] with eight bands each; one line per shown group
+    var shown = groups.filter(function (g) { return !g.cell.hidden; }), mx = 0;
+    shown.forEach(function (g) { g.cell.bands.forEach(function (b) { mx = Math.max(mx, b.median); }); });
+    var axis = niceTicks(0, mx, 4), W = 360, H = 190, L = 44, R = 8, T = 10, B = 26;
+    var x = function (i) { return L + (W - L - R) * (i + 0.5) / 8; };
+    var y = function (v) { return T + (H - T - B) * (1 - (v - axis.lo) / (axis.hi - axis.lo)); };
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" class="agechart" aria-hidden="true" focusable="false">';
+    axis.ticks.forEach(function (t) {
+      svg += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(t) + '" y2="' + y(t) + '" class="ag-grid"/>' +
+             '<text x="' + (L - 6) + '" y="' + (y(t) + 4) + '" text-anchor="end" class="ag-tick">' + tickLabel('pay', t) + '</text>';
+    });
+    (shown[0] ? shown[0].cell.bands : []).forEach(function (b, i) {
+      svg += '<text x="' + x(i) + '" y="' + (H - 8) + '" text-anchor="middle" class="ag-tick">' + b.ages.replace('-', '–') + '</text>';
+    });
+    shown.forEach(function (g) {
+      var pts = g.cell.bands.map(function (b, i) { return x(i).toFixed(1) + ',' + y(b.median).toFixed(1); });
+      svg += '<polyline points="' + pts.join(' ') + '" class="ag-line ' + g.cls + '"/>' +
+             pts.map(function (pt) { var q = pt.split(','); return '<circle cx="' + q[0] + '" cy="' + q[1] + '" r="3" class="ag-dot ' + g.cls + '"/>'; }).join('');
+    });
+    var legend = '<div class="legend" aria-hidden="true">' + shown.map(function (g) {
+      var col = { econ: 'var(--navy)', major: 'var(--teal)', all: 'var(--gray)', hs: '#8A5A00' }[g.cls];
+      return '<span><i class="dot-key" style="background:' + col + '"></i>' + esc(g.name) + '</span>';
+    }).join('') + '</div>';
+    return '<figure role="group" aria-label="Median yearly earnings by age group (the data table has every value)">' +
+      '<figcaption><span class="cap-top"><b>Median yearly earnings by age</b><span>full-time, year-round</span></span></figcaption>' +
+      svg + '</svg>' + legend + '</figure>';
+  }
+  function renderLifetime() {
+    var pick = realPick(), k = 'grad=' + (state.lifeGrad ? 1 : 0), L = D.lifetime[k];
+    var groups = [{ cls: 'econ', tag: 'econ', name: ECON, cell: L.economics }];
+    if (pick) { groups.push({ cls: 'major', tag: 'major', name: pick, cell: L.by_major[pick].major }); }
+    groups.push({ cls: 'all', tag: 'all', name: 'All bachelor’s', cell: L.all_bachelors },
+                { cls: 'hs', tag: 'hs', name: 'High school only', cell: L.high_school });
+    var mx = 0;
+    [L.economics, L.all_bachelors, L.high_school].concat(Object.keys(L.by_major).map(function (m) { return L.by_major[m].major; }))
+      .forEach(function (c) { if (!c.hidden) { mx = Math.max(mx, c.total); } });
+    var axis = niceTicks(0, mx, 4);
+    var bars = groups.map(function (g) {
+      var cell;
+      if (g.cell.hidden) {
+        cell = '<span class="bar-na">not enough data</span>';
+      } else {
+        var w = 100 * g.cell.total / axis.hi, inside = w > 60;
+        var v = '<span class="bar-val ' + g.cls + (inside ? ' inside' : '') + '" data-v="life|' + g.tag + '">' + millions(g.cell.total) + '</span>';
+        cell = '<span class="bar ' + g.cls + '" style="width:' + w.toFixed(2) + '%;height:20px">' + (inside ? v : '') + '</span>' + (inside ? '' : v);
+      }
+      return '<div class="brow"><span class="bar-name ' + g.cls + '">' + esc(g.name) + '</span><span class="bcell">' + gridHtml(axis) + cell + '</span></div>';
+    }).join('');
+    var mticks = '<span class="ticks">' + axis.ticks.map(function (t, i) {
+      var shift = i === 0 ? '0' : (i === axis.ticks.length - 1 ? '-100%' : '-50%');
+      return '<span class="tick" style="left:' + 100 * (t - axis.lo) / (axis.hi - axis.lo) + '%;transform:translateX(' + shift + ')">' +
+        (t === 0 ? '$0' : '$' + t / 1e6 + 'M') + '</span>';
+    }).join('') + '</span>';
+    var vs = pick ? L.by_major[pick].econ_vs_major : L.econ_vs_all, other = pick ? pick + ' majors' : 'all bachelor’s holders';
+    var head;
+    if (L.economics.hidden) {
+      head = 'There is not enough data on economics majors for this setting.';
+    } else if (pick && L.by_major[pick].major.hidden) {
+      head = 'There are too few ' + esc(pick) + ' majors in the data to add up a working life.';
+    } else {
+      head = 'Over a working life, economics majors earn about ' + millions(L.economics.total) + '; ' + esc(other) + ', about ' +
+        millions((pick ? L.by_major[pick].major : L.all_bachelors).total) + '.';
+    }
+    var verdict = vs.label ? 'Economics vs ' + esc(other) + ': ' + vs.label : 'Not enough data to compare';
+    var sub = L.high_school.hidden ? '' : 'People with only a high school diploma: about ' + millions(L.high_school.total) +
+      ' (economics vs high school only: ' + (L.econ_vs_hs.label || 'not enough data') + ').';
+    var trows = groups.map(function (g) {
+      return [esc(g.name), g.cell.hidden ? 'not enough data' : '<span data-v="life|' + g.tag + '">' + millions(g.cell.total) + '</span> (' + lifeMoe(g.cell) + ')']
+        .concat(g.cell.hidden ? ['', '', '', '', '', '', '', ''] : g.cell.bands.map(function (b) { return money(b.median); }));
+    });
+    var bandHead = (L.economics.bands.length ? L.economics.bands : L.high_school.bands).map(function (b) { return 'Ages ' + b.ages.replace('-', '–'); });
+    return '<div class="controls" role="group" aria-label="Who is counted"><label class="check"><input type="checkbox" id="life-grad" data-act="lifeGrad"' +
+      (state.lifeGrad ? ' checked' : '') + '> Include people with graduate degrees</label></div>' +
+      '<div class="headline"><strong>' + head + '</strong><span>' + sub + '</span></div>' +
+      '<div class="metrics"><figure role="group" aria-label="' + esc('Lifetime earnings. ' + verdict) + '"><figcaption><span class="cap-top"><b>Lifetime earnings</b>' +
+      '<span>ages 25–64</span></span><span class="verdict' + (vs.label === 'better' ? ' better' : '') + '">' + verdict + '</span></figcaption>' +
+      '<div class="bars" aria-hidden="true">' + bars + '<div class="brow"><span></span>' + mticks + '</div></div></figure>' +
+      ageChart(groups) + '</div>' +
+      table('table-lifetime', 'Lifetime earnings with 90% margins of error, and the median yearly earnings in each age group',
+            ['Group', 'Lifetime'].concat(bandHead), trows) +
+      '<div class="notes"><p>' + DEFS.lifetime + '</p><p>This is a snapshot of today’s workers at each age, added up. It is not one ' +
+      'person’s future earnings, and it is not adjusted for interest, future inflation, or taxes. A gap does not prove that the ' +
+      'major causes it: see the questions at the end.</p><p>Data: U.S. Census Bureau, American Community Survey ' +
+      yearsText(D.manifest.years.other) + '. Our calculations, following the Census Bureau’s method (<a href="' + JK +
+      '">Julian and Kominski 2011</a>). Pay in ' + dollarYear() + ' dollars.</p></div>';
+  }
+
   // ---------- panel 4: rank ----------
   function renderRank() {
     var pick = realPick(), cards = [], trows = [];
@@ -376,7 +472,7 @@
       yearsText(D.manifest.years.other) + '. Our calculations. Pay in ' + dollarYear() + ' dollars.</p></div>';
   }
 
-  var RENDER = { compare: renderCompare, samejob: renderSamejob, cause: renderCause, rank: renderRank, local: renderLocal };
+  var RENDER = { compare: renderCompare, lifetime: renderLifetime, samejob: renderSamejob, cause: renderCause, rank: renderRank, local: renderLocal };
 
   // ---------- page shell ----------
   function picker(id) {
@@ -515,14 +611,19 @@
     var names = Object.keys(need);
     getJSON('../data/current.json').then(function (cur) {
       var base = '../data/bundles/' + encodeURIComponent(cur.bundle) + '/';
-      return Promise.all(names.map(function (n) { return getJSON(base + n + '.json'); }));
+      return Promise.all(names.map(function (n) {
+        var g = getJSON(base + n + '.json');
+        return n === 'lifetime' ? g.catch(function () { return null; }) : g;   // older bundles have no lifetime.json
+      }));
     }).then(function (vals) {
       names.forEach(function (n, i) { D[n] = vals[i]; });
+      if (!D.lifetime) { panels = panels.filter(function (p) { return p !== 'lifetime'; }); full = full || false; }
       return getJSON('../data/last-checked.json').then(function (lc) { D.lastChecked = lc; }, function () { D.lastChecked = null; });
     }).then(function () {
       var src = D.rank ? D.rank.measures.unemployment.map(function (r) { return r.major; })
         : D.compare ? Object.keys(D.compare.measures.pay_mid.by_major)
         : D.same_occupation ? Object.keys(D.same_occupation['grad=0'])
+        : D.lifetime ? Object.keys(D.lifetime['grad=0'].by_major)
         : Object.keys(D.local['grad=0|fulltime=1'].florida.by_major);
       majors = src.filter(function (x) { return x !== ECON; }).sort();
       var o = null;
