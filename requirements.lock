@@ -1,5 +1,6 @@
 # Hashed lockfile for the GitHub runner (spec/scheduler.yaml build_11_7): Python 3.12, ubuntu-24.04, x86_64.
-# Versions = those installed on the instructor's Mac (requirements.txt); hashes from the PyPI JSON API, 2026-10-26.
+# Versions = those installed on the instructor's Mac (requirements.txt), except six 1.17.0 (the Mac's 1.15.0 has no
+# six.moves on Python 3.12; six is only python-dateutil's helper); hashes from the PyPI JSON API, 2026-10-26.
 # Install: python3 -m venv .venv && .venv/bin/pip install --require-hashes --only-binary=:all: -r requirements.lock
 
 numpy==2.0.2 \
@@ -15,5 +16,5 @@ pytz==2025.2 \
     --hash=sha256:5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00
 tzdata==2025.3 \
     --hash=sha256:06a47e5700f3081aab02b2e513160914ff0694bce9947d6b76ebd6bf57cfc5d1
-six==1.15.0 \
-    --hash=sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced
+six==1.17.0 \
+    --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274
