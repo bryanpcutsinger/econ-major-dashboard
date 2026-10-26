@@ -1,0 +1,9219 @@
+{
+ "grad=0|fulltime=0": {
+  "florida": {
+   "all": {
+    "hidden": false,
+    "median": 62968.2,
+    "moe": 504.62,
+    "n": 60742,
+    "reason": "",
+    "se": 306.76
+   },
+   "by_major": {
+    "Accounting": {
+     "econ_vs_major": {
+      "d": 12157.92,
+      "label": "better",
+      "moe": 9660.25,
+      "se": 5872.49
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 3110.04,
+      "n": 2115,
+      "reason": "",
+      "se": 1890.6
+     }
+    },
+    "Advertising and Public Relations": {
+     "econ_vs_major": {
+      "d": 11978.57,
+      "label": "better",
+      "moe": 10697.14,
+      "se": 6502.82
+     },
+     "major": {
+      "hidden": false,
+      "median": 67210.93,
+      "moe": 7016.71,
+      "n": 568,
+      "reason": "",
+      "se": 4265.48
+     }
+    },
+    "Aerospace Engineering": {
+     "econ_vs_major": {
+      "d": -40326.22,
+      "label": "worse",
+      "moe": 11320.3,
+      "se": 6881.64
+     },
+     "major": {
+      "hidden": false,
+      "median": 119324.1,
+      "moe": 8569.12,
+      "n": 138,
+      "reason": "",
+      "se": 5209.19
+     }
+    },
+    "Agriculture": {
+     "econ_vs_major": {
+      "d": 12909.82,
+      "label": "about the same",
+      "moe": 14061.54,
+      "se": 8548.05
+     },
+     "major": {
+      "hidden": false,
+      "median": 66116.61,
+      "moe": 12072.65,
+      "n": 136,
+      "reason": "",
+      "se": 7338.99
+     }
+    },
+    "Animal and Plant Sciences": {
+     "econ_vs_major": {
+      "d": 25493.65,
+      "label": "better",
+      "moe": 12534.76,
+      "se": 7619.92
+     },
+     "major": {
+      "hidden": false,
+      "median": 53695.85,
+      "moe": 9292.59,
+      "n": 215,
+      "reason": "",
+      "se": 5648.99
+     }
+    },
+    "Anthropology": {
+     "econ_vs_major": {
+      "d": 21468.65,
+      "label": "better",
+      "moe": 12280.26,
+      "se": 7465.2
+     },
+     "major": {
+      "hidden": false,
+      "median": 57720.85,
+      "moe": 7562.07,
+      "n": 225,
+      "reason": "",
+      "se": 4597.0
+     }
+    },
+    "Architecture": {
+     "econ_vs_major": {
+      "d": 13198.58,
+      "label": "better",
+      "moe": 8917.84,
+      "se": 5421.18
+     },
+     "major": {
+      "hidden": false,
+      "median": 65991.25,
+      "moe": 2941.83,
+      "n": 415,
+      "reason": "",
+      "se": 1788.35
+     }
+    },
+    "Art History": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 52793.0,
+      "moe": 16237.75,
+      "n": 94,
+      "reason": "n < 100",
+      "se": 9870.97
+     }
+    },
+    "Biochemistry": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 79431.1,
+      "moe": 10671.4,
+      "n": 68,
+      "reason": "n < 100",
+      "se": 6487.18
+     }
+    },
+    "Biology": {
+     "econ_vs_major": {
+      "d": 18088.65,
+      "label": "better",
+      "moe": 8283.37,
+      "se": 5035.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 1625.7,
+      "n": 1329,
+      "reason": "",
+      "se": 988.27
+     }
+    },
+    "Business Analytics": {
+     "econ_vs_major": {
+      "d": -12135.85,
+      "label": "about the same",
+      "moe": 12813.55,
+      "se": 7789.39
+     },
+     "major": {
+      "hidden": false,
+      "median": 91303.89,
+      "moe": 9053.74,
+      "n": 650,
+      "reason": "",
+      "se": 5503.79
+     }
+    },
+    "Business Management": {
+     "econ_vs_major": {
+      "d": 16866.63,
+      "label": "better",
+      "moe": 8647.63,
+      "se": 5256.92
+     },
+     "major": {
+      "hidden": false,
+      "median": 62322.87,
+      "moe": 1680.96,
+      "n": 6962,
+      "reason": "",
+      "se": 1021.86
+     }
+    },
+    "Chemical Engineering": {
+     "econ_vs_major": {
+      "d": -23210.47,
+      "label": "worse",
+      "moe": 11804.49,
+      "se": 7175.98
+     },
+     "major": {
+      "hidden": false,
+      "median": 102540.25,
+      "moe": 9622.99,
+      "n": 195,
+      "reason": "",
+      "se": 5849.84
+     }
+    },
+    "Chemistry": {
+     "econ_vs_major": {
+      "d": 15456.08,
+      "label": "better",
+      "moe": 12213.2,
+      "se": 7424.44
+     },
+     "major": {
+      "hidden": false,
+      "median": 63680.0,
+      "moe": 8669.32,
+      "n": 244,
+      "reason": "",
+      "se": 5270.1
+     }
+    },
+    "Civil Engineering": {
+     "econ_vs_major": {
+      "d": -15150.0,
+      "label": "worse",
+      "moe": 11695.7,
+      "se": 7109.85
+     },
+     "major": {
+      "hidden": false,
+      "median": 94266.04,
+      "moe": 7385.74,
+      "n": 657,
+      "reason": "",
+      "se": 4489.81
+     }
+    },
+    "Commercial Art & Graphic Design": {
+     "econ_vs_major": {
+      "d": 23329.85,
+      "label": "better",
+      "moe": 9609.7,
+      "se": 5841.76
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 4792.18,
+      "n": 928,
+      "reason": "",
+      "se": 2913.18
+     }
+    },
+    "Communications": {
+     "econ_vs_major": {
+      "d": 15669.61,
+      "label": "better",
+      "moe": 9251.63,
+      "se": 5624.09
+     },
+     "major": {
+      "hidden": false,
+      "median": 63241.77,
+      "moe": 3381.14,
+      "n": 1931,
+      "reason": "",
+      "se": 2055.41
+     }
+    },
+    "Computer Engineering": {
+     "econ_vs_major": {
+      "d": -10807.56,
+      "label": "worse",
+      "moe": 8989.21,
+      "se": 5464.56
+     },
+     "major": {
+      "hidden": false,
+      "median": 90254.42,
+      "moe": 4594.04,
+      "n": 672,
+      "reason": "",
+      "se": 2792.73
+     }
+    },
+    "Computer Science": {
+     "econ_vs_major": {
+      "d": -10185.94,
+      "label": "worse",
+      "moe": 9889.34,
+      "se": 6011.76
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 4752.87,
+      "n": 1743,
+      "reason": "",
+      "se": 2889.28
+     }
+    },
+    "Construction Services": {
+     "econ_vs_major": {
+      "d": -14264.2,
+      "label": "about the same",
+      "moe": 14637.67,
+      "se": 8898.28
+     },
+     "major": {
+      "hidden": false,
+      "median": 93072.8,
+      "moe": 11569.11,
+      "n": 275,
+      "reason": "",
+      "se": 7032.9
+     }
+    },
+    "Criminal Justice": {
+     "econ_vs_major": {
+      "d": 18274.5,
+      "label": "better",
+      "moe": 8543.17,
+      "se": 5193.42
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 914.12,
+      "n": 2343,
+      "reason": "",
+      "se": 555.69
+     }
+    },
+    "Early Childhood Education": {
+     "econ_vs_major": {
+      "d": 29717.59,
+      "label": "better",
+      "moe": 9292.52,
+      "se": 5648.95
+     },
+     "major": {
+      "hidden": false,
+      "median": 49325.09,
+      "moe": 2311.14,
+      "n": 240,
+      "reason": "",
+      "se": 1404.95
+     }
+    },
+    "Earth Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 62968.2,
+      "moe": 5303.44,
+      "n": 74,
+      "reason": "n < 100",
+      "se": 3223.97
+     }
+    },
+    "Economics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": false,
+      "median": 79189.5,
+      "moe": 8424.31,
+      "n": 1061,
+      "reason": "",
+      "se": 5121.16
+     }
+    },
+    "Electrical Engineering": {
+     "econ_vs_major": {
+      "d": -10185.94,
+      "label": "worse",
+      "moe": 8746.7,
+      "se": 5317.14
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 2912.45,
+      "n": 834,
+      "reason": "",
+      "se": 1770.49
+     }
+    },
+    "Elementary Education": {
+     "econ_vs_major": {
+      "d": 26716.0,
+      "label": "better",
+      "moe": 8761.1,
+      "se": 5325.9
+     },
+     "major": {
+      "hidden": false,
+      "median": 52473.5,
+      "moe": 1737.34,
+      "n": 1503,
+      "reason": "",
+      "se": 1056.13
+     }
+    },
+    "Engineering Technologies": {
+     "econ_vs_major": {
+      "d": 3453.36,
+      "label": "about the same",
+      "moe": 13578.69,
+      "se": 8254.52
+     },
+     "major": {
+      "hidden": false,
+      "median": 75561.84,
+      "moe": 13224.34,
+      "n": 349,
+      "reason": "",
+      "se": 8039.11
+     }
+    },
+    "English Language": {
+     "econ_vs_major": {
+      "d": 22371.84,
+      "label": "better",
+      "moe": 8865.36,
+      "se": 5389.28
+     },
+     "major": {
+      "hidden": false,
+      "median": 56854.0,
+      "moe": 3441.25,
+      "n": 1138,
+      "reason": "",
+      "se": 2091.95
+     }
+    },
+    "Environmental Studies": {
+     "econ_vs_major": {
+      "d": 20305.0,
+      "label": "better",
+      "moe": 9659.71,
+      "se": 5872.17
+     },
+     "major": {
+      "hidden": false,
+      "median": 58884.5,
+      "moe": 4296.7,
+      "n": 429,
+      "reason": "",
+      "se": 2611.98
+     }
+    },
+    "Ethnic Studies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 50273.69,
+      "moe": 4356.86,
+      "n": 99,
+      "reason": "n < 100",
+      "se": 2648.55
+     }
+    },
+    "Family and Consumer Sciences": {
+     "econ_vs_major": {
+      "d": 27918.86,
+      "label": "better",
+      "moe": 10436.7,
+      "se": 6344.5
+     },
+     "major": {
+      "hidden": false,
+      "median": 51309.36,
+      "moe": 6023.11,
+      "n": 244,
+      "reason": "",
+      "se": 3661.46
+     }
+    },
+    "Finance": {
+     "econ_vs_major": {
+      "d": -12183.0,
+      "label": "worse",
+      "moe": 10068.08,
+      "se": 6120.42
+     },
+     "major": {
+      "hidden": false,
+      "median": 91372.5,
+      "moe": 4423.97,
+      "n": 1898,
+      "reason": "",
+      "se": 2689.34
+     }
+    },
+    "Fine Arts": {
+     "econ_vs_major": {
+      "d": 26716.0,
+      "label": "better",
+      "moe": 8189.05,
+      "se": 4978.14
+     },
+     "major": {
+      "hidden": false,
+      "median": 52473.5,
+      "moe": 2466.54,
+      "n": 1050,
+      "reason": "",
+      "se": 1499.42
+     }
+    },
+    "Foreign Language": {
+     "econ_vs_major": {
+      "d": 25539.08,
+      "label": "better",
+      "moe": 9092.44,
+      "se": 5527.32
+     },
+     "major": {
+      "hidden": false,
+      "median": 53625.26,
+      "moe": 3944.97,
+      "n": 328,
+      "reason": "",
+      "se": 2398.16
+     }
+    },
+    "General Business": {
+     "econ_vs_major": {
+      "d": 9024.79,
+      "label": "about the same",
+      "moe": 9932.69,
+      "se": 6038.11
+     },
+     "major": {
+      "hidden": false,
+      "median": 70052.25,
+      "moe": 4427.97,
+      "n": 3104,
+      "reason": "",
+      "se": 2691.77
+     }
+    },
+    "General Education": {
+     "econ_vs_major": {
+      "d": 28427.0,
+      "label": "better",
+      "moe": 8765.83,
+      "se": 5328.77
+     },
+     "major": {
+      "hidden": false,
+      "median": 50762.5,
+      "moe": 1624.0,
+      "n": 1465,
+      "reason": "",
+      "se": 987.23
+     }
+    },
+    "General Engineering": {
+     "econ_vs_major": {
+      "d": 479.25,
+      "label": "about the same",
+      "moe": 10479.66,
+      "se": 6370.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 78710.25,
+      "moe": 4911.65,
+      "n": 661,
+      "reason": "",
+      "se": 2985.81
+     }
+    },
+    "General Social Sciences": {
+     "econ_vs_major": {
+      "d": 22518.12,
+      "label": "better",
+      "moe": 11121.14,
+      "se": 6760.57
+     },
+     "major": {
+      "hidden": false,
+      "median": 56671.38,
+      "moe": 6818.51,
+      "n": 170,
+      "reason": "",
+      "se": 4144.99
+     }
+    },
+    "Geography": {
+     "econ_vs_major": {
+      "d": 5868.48,
+      "label": "about the same",
+      "moe": 9507.3,
+      "se": 5779.51
+     },
+     "major": {
+      "hidden": false,
+      "median": 73321.02,
+      "moe": 6549.59,
+      "n": 127,
+      "reason": "",
+      "se": 3981.51
+     }
+    },
+    "Health Services": {
+     "econ_vs_major": {
+      "d": 23733.02,
+      "label": "better",
+      "moe": 8953.75,
+      "se": 5443.01
+     },
+     "major": {
+      "hidden": false,
+      "median": 55301.05,
+      "moe": 3217.78,
+      "n": 1284,
+      "reason": "",
+      "se": 1956.1
+     }
+    },
+    "History": {
+     "econ_vs_major": {
+      "d": 16221.3,
+      "label": "better",
+      "moe": 10091.44,
+      "se": 6134.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 5020.8,
+      "n": 685,
+      "reason": "",
+      "se": 3052.16
+     }
+    },
+    "Industrial Engineering": {
+     "econ_vs_major": {
+      "d": 19527.45,
+      "label": "better",
+      "moe": 11303.45,
+      "se": 6871.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 8434.84,
+      "n": 383,
+      "reason": "",
+      "se": 5127.56
+     }
+    },
+    "Information Systems & Management": {
+     "econ_vs_major": {
+      "d": -241.6,
+      "label": "about the same",
+      "moe": 8565.62,
+      "se": 5207.06
+     },
+     "major": {
+      "hidden": false,
+      "median": 79431.1,
+      "moe": 3898.02,
+      "n": 1305,
+      "reason": "",
+      "se": 2369.62
+     }
+    },
+    "Interdisciplinary Studies": {
+     "econ_vs_major": {
+      "d": 20232.61,
+      "label": "better",
+      "moe": 8921.87,
+      "se": 5423.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 58884.5,
+      "moe": 3577.82,
+      "n": 911,
+      "reason": "",
+      "se": 2174.97
+     }
+    },
+    "International Affairs": {
+     "econ_vs_major": {
+      "d": 14393.24,
+      "label": "better",
+      "moe": 10437.28,
+      "se": 6344.85
+     },
+     "major": {
+      "hidden": false,
+      "median": 64797.19,
+      "moe": 9678.02,
+      "n": 595,
+      "reason": "",
+      "se": 5883.3
+     }
+    },
+    "Journalism": {
+     "econ_vs_major": {
+      "d": 12157.92,
+      "label": "better",
+      "moe": 9527.04,
+      "se": 5791.51
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 4014.74,
+      "n": 507,
+      "reason": "",
+      "se": 2440.57
+     }
+    },
+    "Leisure and Hospitality": {
+     "econ_vs_major": {
+      "d": 19527.45,
+      "label": "better",
+      "moe": 9358.16,
+      "se": 5688.85
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 4164.2,
+      "n": 992,
+      "reason": "",
+      "se": 2531.43
+     }
+    },
+    "Liberal Arts": {
+     "econ_vs_major": {
+      "d": 24269.9,
+      "label": "better",
+      "moe": 10415.3,
+      "se": 6331.49
+     },
+     "major": {
+      "hidden": false,
+      "median": 54990.76,
+      "moe": 4831.53,
+      "n": 612,
+      "reason": "",
+      "se": 2937.1
+     }
+    },
+    "Marketing": {
+     "econ_vs_major": {
+      "d": 6688.09,
+      "label": "about the same",
+      "moe": 9457.15,
+      "se": 5749.03
+     },
+     "major": {
+      "hidden": false,
+      "median": 72617.55,
+      "moe": 3047.31,
+      "n": 2161,
+      "reason": "",
+      "se": 1852.47
+     }
+    },
+    "Mass Media": {
+     "econ_vs_major": {
+      "d": 16221.3,
+      "label": "better",
+      "moe": 10376.69,
+      "se": 6308.02
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 6153.01,
+      "n": 512,
+      "reason": "",
+      "se": 3740.43
+     }
+    },
+    "Mathematics": {
+     "econ_vs_major": {
+      "d": 10973.95,
+      "label": "better",
+      "moe": 10843.74,
+      "se": 6591.94
+     },
+     "major": {
+      "hidden": false,
+      "median": 68215.55,
+      "moe": 7864.69,
+      "n": 398,
+      "reason": "",
+      "se": 4780.97
+     }
+    },
+    "Mechanical Engineering": {
+     "econ_vs_major": {
+      "d": -12387.34,
+      "label": "worse",
+      "moe": 10754.41,
+      "se": 6537.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 91609.83,
+      "moe": 6280.15,
+      "n": 904,
+      "reason": "",
+      "se": 3817.72
+     }
+    },
+    "Medical Technicians": {
+     "econ_vs_major": {
+      "d": 23329.85,
+      "label": "better",
+      "moe": 11356.64,
+      "se": 6903.73
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 9179.52,
+      "n": 205,
+      "reason": "",
+      "se": 5580.26
+     }
+    },
+    "Miscellaneous Biological Science": {
+     "econ_vs_major": {
+      "d": 21452.17,
+      "label": "better",
+      "moe": 10771.3,
+      "se": 6547.91
+     },
+     "major": {
+      "hidden": false,
+      "median": 57720.85,
+      "moe": 7359.65,
+      "n": 372,
+      "reason": "",
+      "se": 4473.95
+     }
+    },
+    "Miscellaneous Education": {
+     "econ_vs_major": {
+      "d": 25453.09,
+      "label": "better",
+      "moe": 9372.88,
+      "se": 5697.8
+     },
+     "major": {
+      "hidden": false,
+      "median": 53695.85,
+      "moe": 5480.71,
+      "n": 132,
+      "reason": "",
+      "se": 3331.74
+     }
+    },
+    "Miscellaneous Engineering": {
+     "econ_vs_major": {
+      "d": 3414.83,
+      "label": "about the same",
+      "moe": 10603.21,
+      "se": 6445.72
+     },
+     "major": {
+      "hidden": false,
+      "median": 75765.05,
+      "moe": 5548.63,
+      "n": 443,
+      "reason": "",
+      "se": 3373.03
+     }
+    },
+    "Miscellaneous Physical Sciences": {
+     "econ_vs_major": {
+      "d": 18370.23,
+      "label": "better",
+      "moe": 11932.69,
+      "se": 7253.91
+     },
+     "major": {
+      "hidden": false,
+      "median": 60869.26,
+      "moe": 9161.72,
+      "n": 120,
+      "reason": "",
+      "se": 5569.43
+     }
+    },
+    "Miscellaneous Technologies": {
+     "econ_vs_major": {
+      "d": 4250.46,
+      "label": "about the same",
+      "moe": 11936.34,
+      "se": 7256.13
+     },
+     "major": {
+      "hidden": false,
+      "median": 74851.93,
+      "moe": 8009.1,
+      "n": 606,
+      "reason": "",
+      "se": 4868.75
+     }
+    },
+    "Nursing": {
+     "econ_vs_major": {
+      "d": 6571.95,
+      "label": "about the same",
+      "moe": 8271.91,
+      "se": 5028.52
+     },
+     "major": {
+      "hidden": false,
+      "median": 72617.55,
+      "moe": 2016.88,
+      "n": 3137,
+      "reason": "",
+      "se": 1226.07
+     }
+    },
+    "Nutrition Sciences": {
+     "econ_vs_major": {
+      "d": 23879.24,
+      "label": "better",
+      "moe": 8801.64,
+      "se": 5350.54
+     },
+     "major": {
+      "hidden": false,
+      "median": 54990.76,
+      "moe": 1984.22,
+      "n": 114,
+      "reason": "",
+      "se": 1206.21
+     }
+    },
+    "Performing Arts": {
+     "econ_vs_major": {
+      "d": 30308.82,
+      "label": "better",
+      "moe": 8622.85,
+      "se": 5241.85
+     },
+     "major": {
+      "hidden": false,
+      "median": 48880.68,
+      "moe": 3583.27,
+      "n": 616,
+      "reason": "",
+      "se": 2178.28
+     }
+    },
+    "Pharmacy": {
+     "econ_vs_major": {
+      "d": 19128.78,
+      "label": "better",
+      "moe": 15978.38,
+      "se": 9713.3
+     },
+     "major": {
+      "hidden": false,
+      "median": 59819.79,
+      "moe": 11226.77,
+      "n": 166,
+      "reason": "",
+      "se": 6824.78
+     }
+    },
+    "Philosophy": {
+     "econ_vs_major": {
+      "d": 22518.12,
+      "label": "better",
+      "moe": 11069.01,
+      "se": 6728.88
+     },
+     "major": {
+      "hidden": false,
+      "median": 56671.38,
+      "moe": 7700.25,
+      "n": 219,
+      "reason": "",
+      "se": 4681.0
+     }
+    },
+    "Physics": {
+     "econ_vs_major": {
+      "d": -2950.92,
+      "label": "about the same",
+      "moe": 10151.67,
+      "se": 6171.23
+     },
+     "major": {
+      "hidden": false,
+      "median": 82333.63,
+      "moe": 4103.12,
+      "n": 105,
+      "reason": "",
+      "se": 2494.3
+     }
+    },
+    "Political Science": {
+     "econ_vs_major": {
+      "d": 10152.5,
+      "label": "about the same",
+      "moe": 10385.14,
+      "se": 6313.15
+     },
+     "major": {
+      "hidden": false,
+      "median": 69037.0,
+      "moe": 5383.28,
+      "n": 927,
+      "reason": "",
+      "se": 3272.51
+     }
+    },
+    "Psychology": {
+     "econ_vs_major": {
+      "d": 23329.85,
+      "label": "better",
+      "moe": 8648.02,
+      "se": 5257.15
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 1578.37,
+      "n": 2620,
+      "reason": "",
+      "se": 959.5
+     }
+    },
+    "Public Policy and Law": {
+     "econ_vs_major": {
+      "d": 15431.77,
+      "label": "better",
+      "moe": 10427.98,
+      "se": 6339.2
+     },
+     "major": {
+      "hidden": false,
+      "median": 63960.75,
+      "moe": 5558.71,
+      "n": 349,
+      "reason": "",
+      "se": 3379.15
+     }
+    },
+    "Secondary Education": {
+     "econ_vs_major": {
+      "d": 26122.83,
+      "label": "better",
+      "moe": 8668.0,
+      "se": 5269.3
+     },
+     "major": {
+      "hidden": false,
+      "median": 53066.67,
+      "moe": 1627.15,
+      "n": 924,
+      "reason": "",
+      "se": 989.15
+     }
+    },
+    "Social Services": {
+     "econ_vs_major": {
+      "d": 32876.76,
+      "label": "better",
+      "moe": 9405.13,
+      "se": 5717.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 46193.88,
+      "moe": 3068.36,
+      "n": 382,
+      "reason": "",
+      "se": 1865.27
+     }
+    },
+    "Sociology": {
+     "econ_vs_major": {
+      "d": 20809.64,
+      "label": "better",
+      "moe": 10301.99,
+      "se": 6262.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 58094.04,
+      "moe": 4611.98,
+      "n": 537,
+      "reason": "",
+      "se": 2803.64
+     }
+    },
+    "Special Education": {
+     "econ_vs_major": {
+      "d": 29318.81,
+      "label": "better",
+      "moe": 9042.9,
+      "se": 5497.2
+     },
+     "major": {
+      "hidden": false,
+      "median": 49849.82,
+      "moe": 2847.97,
+      "n": 191,
+      "reason": "",
+      "se": 1731.29
+     }
+    },
+    "Theology and Religion": {
+     "econ_vs_major": {
+      "d": 28427.0,
+      "label": "better",
+      "moe": 10041.22,
+      "se": 6104.08
+     },
+     "major": {
+      "hidden": false,
+      "median": 50762.5,
+      "moe": 3580.17,
+      "n": 280,
+      "reason": "",
+      "se": 2176.39
+     }
+    },
+    "Treatment Therapy": {
+     "econ_vs_major": {
+      "d": 23329.85,
+      "label": "better",
+      "moe": 12045.98,
+      "se": 7322.78
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 9985.85,
+      "n": 371,
+      "reason": "",
+      "se": 6070.43
+     }
+    }
+   },
+   "econ_vs_all": {
+    "d": 16221.3,
+    "label": "better",
+    "moe": 8426.19,
+    "se": 5122.3
+   },
+   "economics": {
+    "hidden": false,
+    "median": 79189.5,
+    "moe": 8424.31,
+    "n": 1061,
+    "reason": "",
+    "se": 5121.16
+   },
+   "majors_present": 73
+  },
+  "south_florida": {
+   "all": {
+    "hidden": false,
+    "median": 62968.2,
+    "moe": 1182.31,
+    "n": 18906,
+    "reason": "",
+    "se": 718.73
+   },
+   "by_major": {
+    "Accounting": {
+     "econ_vs_major": {
+      "d": 20087.17,
+      "label": "better",
+      "moe": 17195.83,
+      "se": 10453.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 4527.03,
+      "n": 755,
+      "reason": "",
+      "se": 2751.99
+     }
+    },
+    "Advertising and Public Relations": {
+     "econ_vs_major": {
+      "d": 7725.12,
+      "label": "about the same",
+      "moe": 19077.65,
+      "se": 11597.35
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 8865.25,
+      "n": 177,
+      "reason": "",
+      "se": 5389.21
+     }
+    },
+    "Aerospace Engineering": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 93403.0,
+      "moe": 66081.15,
+      "n": 23,
+      "reason": "n < 100",
+      "se": 40170.91
+     }
+    },
+    "Agriculture": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 77560.66,
+      "moe": 22767.68,
+      "n": 29,
+      "reason": "n < 100",
+      "se": 13840.53
+     }
+    },
+    "Animal and Plant Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 52473.5,
+      "moe": 21657.49,
+      "n": 37,
+      "reason": "n < 100",
+      "se": 13165.65
+     }
+    },
+    "Anthropology": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 72617.55,
+      "moe": 23342.65,
+      "n": 57,
+      "reason": "n < 100",
+      "se": 14190.06
+     }
+    },
+    "Architecture": {
+     "econ_vs_major": {
+      "d": 15198.7,
+      "label": "about the same",
+      "moe": 15320.48,
+      "se": 9313.36
+     },
+     "major": {
+      "hidden": false,
+      "median": 65988.92,
+      "moe": 5713.92,
+      "n": 205,
+      "reason": "",
+      "se": 3473.51
+     }
+    },
+    "Art History": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 86296.25,
+      "moe": 42706.66,
+      "n": 36,
+      "reason": "n < 100",
+      "se": 25961.5
+     }
+    },
+    "Biochemistry": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 75128.5,
+      "moe": 4051.98,
+      "n": 17,
+      "reason": "n < 100",
+      "se": 2463.21
+     }
+    },
+    "Biology": {
+     "econ_vs_major": {
+      "d": 15292.84,
+      "label": "about the same",
+      "moe": 16425.72,
+      "se": 9985.24
+     },
+     "major": {
+      "hidden": false,
+      "median": 65988.92,
+      "moe": 5713.56,
+      "n": 355,
+      "reason": "",
+      "se": 3473.29
+     }
+    },
+    "Business Analytics": {
+     "econ_vs_major": {
+      "d": -13773.38,
+      "label": "about the same",
+      "moe": 22904.13,
+      "se": 13923.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 94961.41,
+      "moe": 16198.81,
+      "n": 172,
+      "reason": "",
+      "se": 9847.3
+     }
+    },
+    "Business Management": {
+     "econ_vs_major": {
+      "d": 20273.02,
+      "label": "better",
+      "moe": 15964.19,
+      "se": 9704.68
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 2667.0,
+      "n": 2397,
+      "reason": "",
+      "se": 1621.27
+     }
+    },
+    "Chemical Engineering": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 89493.07,
+      "moe": 35261.36,
+      "n": 57,
+      "reason": "n < 100",
+      "se": 21435.48
+     }
+    },
+    "Chemistry": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 65991.25,
+      "moe": 16095.43,
+      "n": 78,
+      "reason": "n < 100",
+      "se": 9784.46
+     }
+    },
+    "Civil Engineering": {
+     "econ_vs_major": {
+      "d": -2191.09,
+      "label": "about the same",
+      "moe": 15602.2,
+      "se": 9484.62
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 5541.36,
+      "n": 226,
+      "reason": "",
+      "se": 3368.61
+     }
+    },
+    "Commercial Art & Graphic Design": {
+     "econ_vs_major": {
+      "d": 24334.02,
+      "label": "better",
+      "moe": 18021.86,
+      "se": 10955.54
+     },
+     "major": {
+      "hidden": false,
+      "median": 56854.0,
+      "moe": 6175.48,
+      "n": 340,
+      "reason": "",
+      "se": 3754.09
+     }
+    },
+    "Communications": {
+     "econ_vs_major": {
+      "d": 16862.47,
+      "label": "better",
+      "moe": 16676.81,
+      "se": 10137.88
+     },
+     "major": {
+      "hidden": false,
+      "median": 64435.01,
+      "moe": 5821.54,
+      "n": 658,
+      "reason": "",
+      "se": 3538.93
+     }
+    },
+    "Computer Engineering": {
+     "econ_vs_major": {
+      "d": -4956.84,
+      "label": "about the same",
+      "moe": 18498.59,
+      "se": 11245.35
+     },
+     "major": {
+      "hidden": false,
+      "median": 87106.01,
+      "moe": 11788.17,
+      "n": 286,
+      "reason": "",
+      "se": 7166.06
+     }
+    },
+    "Computer Science": {
+     "econ_vs_major": {
+      "d": 517.84,
+      "label": "about the same",
+      "moe": 17351.94,
+      "se": 10548.29
+     },
+     "major": {
+      "hidden": false,
+      "median": 81140.39,
+      "moe": 7227.03,
+      "n": 540,
+      "reason": "",
+      "se": 4393.33
+     }
+    },
+    "Construction Services": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 101425.49,
+      "moe": 11996.33,
+      "n": 71,
+      "reason": "n < 100",
+      "se": 7292.6
+     }
+    },
+    "Criminal Justice": {
+     "econ_vs_major": {
+      "d": 18219.82,
+      "label": "better",
+      "moe": 17030.72,
+      "se": 10353.02
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 6308.1,
+      "n": 697,
+      "reason": "",
+      "se": 3834.71
+     }
+    },
+    "Early Childhood Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 47716.75,
+      "moe": 8659.81,
+      "n": 61,
+      "reason": "n < 100",
+      "se": 5264.32
+     }
+    },
+    "Earth Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 64017.67,
+      "moe": 26495.24,
+      "n": 25,
+      "reason": "n < 100",
+      "se": 16106.53
+     }
+    },
+    "Economics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": false,
+      "median": 81140.39,
+      "moe": 15685.58,
+      "n": 435,
+      "reason": "",
+      "se": 9535.31
+     }
+    },
+    "Electrical Engineering": {
+     "econ_vs_major": {
+      "d": -568.03,
+      "label": "about the same",
+      "moe": 19502.74,
+      "se": 11855.77
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 13632.8,
+      "n": 301,
+      "reason": "",
+      "se": 8287.42
+     }
+    },
+    "Elementary Education": {
+     "econ_vs_major": {
+      "d": 27562.76,
+      "label": "better",
+      "moe": 15860.79,
+      "se": 9641.82
+     },
+     "major": {
+      "hidden": false,
+      "median": 53625.26,
+      "moe": 1995.81,
+      "n": 303,
+      "reason": "",
+      "se": 1213.26
+     }
+    },
+    "Engineering Technologies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 61100.85,
+      "moe": 14188.33,
+      "n": 84,
+      "reason": "n < 100",
+      "se": 8625.13
+     }
+    },
+    "English Language": {
+     "econ_vs_major": {
+      "d": 22460.01,
+      "label": "better",
+      "moe": 16282.88,
+      "se": 9898.41
+     },
+     "major": {
+      "hidden": false,
+      "median": 58656.82,
+      "moe": 4857.97,
+      "n": 278,
+      "reason": "",
+      "se": 2953.17
+     }
+    },
+    "Environmental Studies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 52473.5,
+      "moe": 9947.87,
+      "n": 91,
+      "reason": "n < 100",
+      "se": 6047.34
+     }
+    },
+    "Ethnic Studies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 52473.5,
+      "moe": 52869.49,
+      "n": 27,
+      "reason": "n < 100",
+      "se": 32139.51
+     }
+    },
+    "Family and Consumer Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 60869.26,
+      "moe": 7442.41,
+      "n": 50,
+      "reason": "n < 100",
+      "se": 4524.26
+     }
+    },
+    "Finance": {
+     "econ_vs_major": {
+      "d": -9209.85,
+      "label": "about the same",
+      "moe": 20012.26,
+      "se": 12165.51
+     },
+     "major": {
+      "hidden": false,
+      "median": 91372.5,
+      "moe": 9177.9,
+      "n": 644,
+      "reason": "",
+      "se": 5579.27
+     }
+    },
+    "Fine Arts": {
+     "econ_vs_major": {
+      "d": 28714.52,
+      "label": "better",
+      "moe": 15745.4,
+      "se": 9571.67
+     },
+     "major": {
+      "hidden": false,
+      "median": 52473.5,
+      "moe": 3430.31,
+      "n": 306,
+      "reason": "",
+      "se": 2085.3
+     }
+    },
+    "Foreign Language": {
+     "econ_vs_major": {
+      "d": 30271.8,
+      "label": "better",
+      "moe": 19900.76,
+      "se": 12097.73
+     },
+     "major": {
+      "hidden": false,
+      "median": 50762.5,
+      "moe": 9254.77,
+      "n": 117,
+      "reason": "",
+      "se": 5626.0
+     }
+    },
+    "General Business": {
+     "econ_vs_major": {
+      "d": 9593.56,
+      "label": "about the same",
+      "moe": 16660.51,
+      "se": 10127.97
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 4175.77,
+      "n": 1027,
+      "reason": "",
+      "se": 2538.46
+     }
+    },
+    "General Education": {
+     "econ_vs_major": {
+      "d": 29377.73,
+      "label": "better",
+      "moe": 15877.78,
+      "se": 9652.14
+     },
+     "major": {
+      "hidden": false,
+      "median": 51777.75,
+      "moe": 3226.28,
+      "n": 504,
+      "reason": "",
+      "se": 1961.26
+     }
+    },
+    "General Engineering": {
+     "econ_vs_major": {
+      "d": 10866.58,
+      "label": "about the same",
+      "moe": 19617.87,
+      "se": 11925.76
+     },
+     "major": {
+      "hidden": false,
+      "median": 70314.49,
+      "moe": 11568.82,
+      "n": 257,
+      "reason": "",
+      "se": 7032.72
+     }
+    },
+    "General Social Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 75765.05,
+      "moe": 41179.27,
+      "n": 37,
+      "reason": "n < 100",
+      "se": 25032.99
+     }
+    },
+    "Geography": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 81220.0,
+      "moe": 24756.42,
+      "n": 30,
+      "reason": "n < 100",
+      "se": 15049.49
+     }
+    },
+    "Health Services": {
+     "econ_vs_major": {
+      "d": 28714.52,
+      "label": "better",
+      "moe": 15311.15,
+      "se": 9307.69
+     },
+     "major": {
+      "hidden": false,
+      "median": 52473.5,
+      "moe": 3712.0,
+      "n": 344,
+      "reason": "",
+      "se": 2256.53
+     }
+    },
+    "History": {
+     "econ_vs_major": {
+      "d": 12351.33,
+      "label": "about the same",
+      "moe": 16715.05,
+      "se": 10161.12
+     },
+     "major": {
+      "hidden": false,
+      "median": 69037.0,
+      "moe": 5432.48,
+      "n": 157,
+      "reason": "",
+      "se": 3302.42
+     }
+    },
+    "Industrial Engineering": {
+     "econ_vs_major": {
+      "d": 11455.21,
+      "label": "about the same",
+      "moe": 21199.47,
+      "se": 12887.22
+     },
+     "major": {
+      "hidden": false,
+      "median": 69207.98,
+      "moe": 13850.66,
+      "n": 177,
+      "reason": "",
+      "se": 8419.85
+     }
+    },
+    "Information Systems & Management": {
+     "econ_vs_major": {
+      "d": 4875.41,
+      "label": "about the same",
+      "moe": 18719.36,
+      "se": 11379.55
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 7798.52,
+      "n": 351,
+      "reason": "",
+      "se": 4740.74
+     }
+    },
+    "Interdisciplinary Studies": {
+     "econ_vs_major": {
+      "d": 25328.37,
+      "label": "better",
+      "moe": 17838.85,
+      "se": 10844.28
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 6026.01,
+      "n": 271,
+      "reason": "",
+      "se": 3663.23
+     }
+    },
+    "International Affairs": {
+     "econ_vs_major": {
+      "d": 20068.51,
+      "label": "better",
+      "moe": 18577.95,
+      "se": 11293.58
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 8692.49,
+      "n": 296,
+      "reason": "",
+      "se": 5284.19
+     }
+    },
+    "Journalism": {
+     "econ_vs_major": {
+      "d": 7705.63,
+      "label": "about the same",
+      "moe": 19258.52,
+      "se": 11707.31
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 11164.84,
+      "n": 199,
+      "reason": "",
+      "se": 6787.14
+     }
+    },
+    "Leisure and Hospitality": {
+     "econ_vs_major": {
+      "d": 21525.97,
+      "label": "better",
+      "moe": 16388.52,
+      "se": 9962.62
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 5694.82,
+      "n": 265,
+      "reason": "",
+      "se": 3461.9
+     }
+    },
+    "Liberal Arts": {
+     "econ_vs_major": {
+      "d": 21115.29,
+      "label": "better",
+      "moe": 18471.0,
+      "se": 11228.57
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 6813.74,
+      "n": 210,
+      "reason": "",
+      "se": 4142.09
+     }
+    },
+    "Marketing": {
+     "econ_vs_major": {
+      "d": 8570.48,
+      "label": "about the same",
+      "moe": 16451.45,
+      "se": 10000.88
+     },
+     "major": {
+      "hidden": false,
+      "median": 72617.55,
+      "moe": 4919.74,
+      "n": 748,
+      "reason": "",
+      "se": 2990.72
+     }
+    },
+    "Mass Media": {
+     "econ_vs_major": {
+      "d": 14429.05,
+      "label": "about the same",
+      "moe": 17944.64,
+      "se": 10908.59
+     },
+     "major": {
+      "hidden": false,
+      "median": 67210.93,
+      "moe": 14210.16,
+      "n": 156,
+      "reason": "",
+      "se": 8638.4
+     }
+    },
+    "Mathematics": {
+     "econ_vs_major": {
+      "d": 9817.11,
+      "label": "about the same",
+      "moe": 18034.93,
+      "se": 10963.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 8260.59,
+      "n": 106,
+      "reason": "",
+      "se": 5021.63
+     }
+    },
+    "Mechanical Engineering": {
+     "econ_vs_major": {
+      "d": 2984.51,
+      "label": "about the same",
+      "moe": 17520.78,
+      "se": 10650.93
+     },
+     "major": {
+      "hidden": false,
+      "median": 78203.51,
+      "moe": 11396.73,
+      "n": 254,
+      "reason": "",
+      "se": 6928.1
+     }
+    },
+    "Medical Technicians": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 14213.5,
+      "moe": 48395.62,
+      "n": 43,
+      "reason": "n < 100",
+      "se": 29419.83
+     }
+    },
+    "Miscellaneous Biological Science": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 50762.5,
+      "moe": 7111.73,
+      "n": 96,
+      "reason": "n < 100",
+      "se": 4323.24
+     }
+    },
+    "Miscellaneous Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 51324.71,
+      "moe": 864.85,
+      "n": 32,
+      "reason": "n < 100",
+      "se": 525.74
+     }
+    },
+    "Miscellaneous Engineering": {
+     "econ_vs_major": {
+      "d": 534.9,
+      "label": "about the same",
+      "moe": 19882.84,
+      "se": 12086.83
+     },
+     "major": {
+      "hidden": false,
+      "median": 80653.12,
+      "moe": 10870.71,
+      "n": 164,
+      "reason": "",
+      "se": 6608.34
+     }
+    },
+    "Miscellaneous Physical Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 50374.56,
+      "moe": 15750.89,
+      "n": 27,
+      "reason": "n < 100",
+      "se": 9575.01
+     }
+    },
+    "Miscellaneous Technologies": {
+     "econ_vs_major": {
+      "d": -670.64,
+      "label": "about the same",
+      "moe": 29989.16,
+      "se": 18230.49
+     },
+     "major": {
+      "hidden": false,
+      "median": 81858.66,
+      "moe": 23324.86,
+      "n": 169,
+      "reason": "",
+      "se": 14179.25
+     }
+    },
+    "Nursing": {
+     "econ_vs_major": {
+      "d": 8570.48,
+      "label": "about the same",
+      "moe": 15292.83,
+      "se": 9296.55
+     },
+     "major": {
+      "hidden": false,
+      "median": 72617.55,
+      "moe": 3706.85,
+      "n": 924,
+      "reason": "",
+      "se": 2253.4
+     }
+    },
+    "Nutrition Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 52473.5,
+      "moe": 8334.56,
+      "n": 42,
+      "reason": "n < 100",
+      "se": 5066.6
+     }
+    },
+    "Performing Arts": {
+     "econ_vs_major": {
+      "d": 33269.63,
+      "label": "better",
+      "moe": 20214.83,
+      "se": 12288.65
+     },
+     "major": {
+      "hidden": false,
+      "median": 48039.3,
+      "moe": 10946.42,
+      "n": 155,
+      "reason": "",
+      "se": 6654.36
+     }
+    },
+    "Pharmacy": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 55838.75,
+      "moe": 13764.97,
+      "n": 62,
+      "reason": "n < 100",
+      "se": 8367.77
+     }
+    },
+    "Philosophy": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 69207.98,
+      "moe": 16299.19,
+      "n": 60,
+      "reason": "n < 100",
+      "se": 9908.33
+     }
+    },
+    "Physics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 60915.0,
+      "moe": 15836.25,
+      "n": 30,
+      "reason": "n < 100",
+      "se": 9626.9
+     }
+    },
+    "Political Science": {
+     "econ_vs_major": {
+      "d": -770.32,
+      "label": "about the same",
+      "moe": 19717.76,
+      "se": 11986.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 14258.53,
+      "n": 278,
+      "reason": "",
+      "se": 8667.8
+     }
+    },
+    "Psychology": {
+     "econ_vs_major": {
+      "d": 24304.4,
+      "label": "better",
+      "moe": 16331.99,
+      "se": 9928.26
+     },
+     "major": {
+      "hidden": false,
+      "median": 56823.79,
+      "moe": 3725.04,
+      "n": 733,
+      "reason": "",
+      "se": 2264.46
+     }
+    },
+    "Public Policy and Law": {
+     "econ_vs_major": {
+      "d": 9601.23,
+      "label": "about the same",
+      "moe": 18681.83,
+      "se": 11356.74
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 11139.64,
+      "n": 109,
+      "reason": "",
+      "se": 6771.82
+     }
+    },
+    "Secondary Education": {
+     "econ_vs_major": {
+      "d": 30425.52,
+      "label": "better",
+      "moe": 15892.88,
+      "se": 9661.33
+     },
+     "major": {
+      "hidden": false,
+      "median": 50762.5,
+      "moe": 4420.08,
+      "n": 212,
+      "reason": "",
+      "se": 2686.98
+     }
+    },
+    "Social Services": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 45343.16,
+      "moe": 4361.22,
+      "n": 79,
+      "reason": "n < 100",
+      "se": 2651.2
+     }
+    },
+    "Sociology": {
+     "econ_vs_major": {
+      "d": 25325.54,
+      "label": "better",
+      "moe": 16564.62,
+      "se": 10069.68
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 3671.7,
+      "n": 145,
+      "reason": "",
+      "se": 2232.03
+     }
+    },
+    "Special Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 54572.44,
+      "moe": 11051.86,
+      "n": 61,
+      "reason": "n < 100",
+      "se": 6718.45
+     }
+    },
+    "Theology and Religion": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 47729.64,
+      "moe": 8095.42,
+      "n": 53,
+      "reason": "n < 100",
+      "se": 4921.23
+     }
+    },
+    "Treatment Therapy": {
+     "econ_vs_major": {
+      "d": 34054.26,
+      "label": "better",
+      "moe": 18899.67,
+      "se": 11489.16
+     },
+     "major": {
+      "hidden": false,
+      "median": 46922.11,
+      "moe": 9680.77,
+      "n": 108,
+      "reason": "",
+      "se": 5884.96
+     }
+    }
+   },
+   "econ_vs_all": {
+    "d": 18219.82,
+    "label": "better",
+    "moe": 15963.27,
+    "se": 9704.12
+   },
+   "economics": {
+    "hidden": false,
+    "median": 81140.39,
+    "moe": 15685.58,
+    "n": 435,
+    "reason": "",
+    "se": 9535.31
+   },
+   "majors_present": 73
+  }
+ },
+ "grad=0|fulltime=1": {
+  "florida": {
+   "all": {
+    "hidden": false,
+    "median": 68432.95,
+    "moe": 1567.33,
+    "n": 53353,
+    "reason": "",
+    "se": 952.79
+   },
+   "by_major": {
+    "Accounting": {
+     "econ_vs_major": {
+      "d": 10909.32,
+      "label": "better",
+      "moe": 5639.58,
+      "se": 3428.31
+     },
+     "major": {
+      "hidden": false,
+      "median": 72617.55,
+      "moe": 2288.09,
+      "n": 1869,
+      "reason": "",
+      "se": 1390.94
+     }
+    },
+    "Advertising and Public Relations": {
+     "econ_vs_major": {
+      "d": 10205.85,
+      "label": "better",
+      "moe": 6553.4,
+      "se": 3983.83
+     },
+     "major": {
+      "hidden": false,
+      "median": 73321.02,
+      "moe": 3596.32,
+      "n": 496,
+      "reason": "",
+      "se": 2186.21
+     }
+    },
+    "Aerospace Engineering": {
+     "econ_vs_major": {
+      "d": -36421.95,
+      "label": "worse",
+      "moe": 9019.03,
+      "se": 5482.7
+     },
+     "major": {
+      "hidden": false,
+      "median": 119799.5,
+      "moe": 7689.13,
+      "n": 132,
+      "reason": "",
+      "se": 4674.24
+     }
+    },
+    "Agriculture": {
+     "econ_vs_major": {
+      "d": 11777.17,
+      "label": "about the same",
+      "moe": 12743.37,
+      "se": 7746.73
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 12498.54,
+      "n": 122,
+      "reason": "",
+      "se": 7597.9
+     }
+    },
+    "Animal and Plant Sciences": {
+     "econ_vs_major": {
+      "d": 22511.9,
+      "label": "better",
+      "moe": 11054.07,
+      "se": 6719.8
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 8823.34,
+      "n": 193,
+      "reason": "",
+      "se": 5363.73
+     }
+    },
+    "Anthropology": {
+     "econ_vs_major": {
+      "d": 22611.87,
+      "label": "better",
+      "moe": 6738.62,
+      "se": 4096.43
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 3561.0,
+      "n": 192,
+      "reason": "",
+      "se": 2164.74
+     }
+    },
+    "Architecture": {
+     "econ_vs_major": {
+      "d": 12450.99,
+      "label": "better",
+      "moe": 9406.89,
+      "se": 5718.47
+     },
+     "major": {
+      "hidden": false,
+      "median": 71067.5,
+      "moe": 7898.32,
+      "n": 367,
+      "reason": "",
+      "se": 4801.41
+     }
+    },
+    "Art History": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 58094.04,
+      "moe": 10318.18,
+      "n": 75,
+      "reason": "n < 100",
+      "se": 6272.45
+     }
+    },
+    "Biochemistry": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 85541.19,
+      "moe": 8515.43,
+      "n": 57,
+      "reason": "n < 100",
+      "se": 5176.56
+     }
+    },
+    "Biology": {
+     "econ_vs_major": {
+      "d": 16518.37,
+      "label": "better",
+      "moe": 5505.87,
+      "se": 3347.04
+     },
+     "major": {
+      "hidden": false,
+      "median": 67006.5,
+      "moe": 2573.48,
+      "n": 1137,
+      "reason": "",
+      "se": 1564.43
+     }
+    },
+    "Business Analytics": {
+     "econ_vs_major": {
+      "d": -15967.63,
+      "label": "worse",
+      "moe": 9226.2,
+      "se": 5608.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 99494.5,
+      "moe": 7753.73,
+      "n": 606,
+      "reason": "",
+      "se": 4713.51
+     }
+    },
+    "Business Management": {
+     "econ_vs_major": {
+      "d": 16495.29,
+      "label": "better",
+      "moe": 5725.06,
+      "se": 3480.28
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 1298.37,
+      "n": 6123,
+      "reason": "",
+      "se": 789.28
+     }
+    },
+    "Chemical Engineering": {
+     "econ_vs_major": {
+      "d": -22533.05,
+      "label": "worse",
+      "moe": 11456.53,
+      "se": 6964.46
+     },
+     "major": {
+      "hidden": false,
+      "median": 105005.21,
+      "moe": 10781.95,
+      "n": 183,
+      "reason": "",
+      "se": 6554.38
+     }
+    },
+    "Chemistry": {
+     "econ_vs_major": {
+      "d": 11967.85,
+      "label": "better",
+      "moe": 10020.19,
+      "se": 6091.3
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 7833.26,
+      "n": 212,
+      "reason": "",
+      "se": 4761.86
+     }
+    },
+    "Civil Engineering": {
+     "econ_vs_major": {
+      "d": -17222.25,
+      "label": "worse",
+      "moe": 9173.87,
+      "se": 5576.82
+     },
+     "major": {
+      "hidden": false,
+      "median": 100749.12,
+      "moe": 7075.04,
+      "n": 612,
+      "reason": "",
+      "se": 4300.94
+     }
+    },
+    "Commercial Art & Graphic Design": {
+     "econ_vs_major": {
+      "d": 20112.75,
+      "label": "better",
+      "moe": 5923.57,
+      "se": 3600.96
+     },
+     "major": {
+      "hidden": false,
+      "median": 63544.88,
+      "moe": 2388.58,
+      "n": 775,
+      "reason": "",
+      "se": 1452.02
+     }
+    },
+    "Communications": {
+     "econ_vs_major": {
+      "d": 11932.41,
+      "label": "better",
+      "moe": 6480.96,
+      "se": 3939.8
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 3335.62,
+      "n": 1684,
+      "reason": "",
+      "se": 2027.73
+     }
+    },
+    "Computer Engineering": {
+     "econ_vs_major": {
+      "d": -12921.88,
+      "label": "worse",
+      "moe": 7084.37,
+      "se": 4306.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 96448.75,
+      "moe": 5158.69,
+      "n": 619,
+      "reason": "",
+      "se": 3135.98
+     }
+    },
+    "Computer Science": {
+     "econ_vs_major": {
+      "d": -11821.26,
+      "label": "worse",
+      "moe": 5768.4,
+      "se": 3506.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 95317.33,
+      "moe": 2082.56,
+      "n": 1620,
+      "reason": "",
+      "se": 1266.0
+     }
+    },
+    "Construction Services": {
+     "econ_vs_major": {
+      "d": -16375.52,
+      "label": "worse",
+      "moe": 13346.47,
+      "se": 8113.36
+     },
+     "major": {
+      "hidden": false,
+      "median": 97761.36,
+      "moe": 12300.47,
+      "n": 257,
+      "reason": "",
+      "se": 7477.49
+     }
+    },
+    "Criminal Justice": {
+     "econ_vs_major": {
+      "d": 20285.1,
+      "label": "better",
+      "moe": 6369.6,
+      "se": 3872.1
+     },
+     "major": {
+      "hidden": false,
+      "median": 63241.77,
+      "moe": 3835.79,
+      "n": 2150,
+      "reason": "",
+      "se": 2331.79
+     }
+    },
+    "Early Childhood Education": {
+     "econ_vs_major": {
+      "d": 32298.2,
+      "label": "better",
+      "moe": 7001.48,
+      "se": 4256.22
+     },
+     "major": {
+      "hidden": false,
+      "median": 51309.36,
+      "moe": 3153.17,
+      "n": 198,
+      "reason": "",
+      "se": 1916.82
+     }
+    },
+    "Earth Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 62968.2,
+      "moe": 5479.49,
+      "n": 66,
+      "reason": "n < 100",
+      "se": 3331.0
+     }
+    },
+    "Economics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 5311.26,
+      "n": 956,
+      "reason": "",
+      "se": 3228.73
+     }
+    },
+    "Electrical Engineering": {
+     "econ_vs_major": {
+      "d": -8124.4,
+      "label": "about the same",
+      "moe": 8323.66,
+      "se": 5059.97
+     },
+     "major": {
+      "hidden": false,
+      "median": 91651.27,
+      "moe": 5793.3,
+      "n": 773,
+      "reason": "",
+      "se": 3521.76
+     }
+    },
+    "Elementary Education": {
+     "econ_vs_major": {
+      "d": 30733.87,
+      "label": "better",
+      "moe": 5339.46,
+      "se": 3245.87
+     },
+     "major": {
+      "hidden": false,
+      "median": 52793.0,
+      "moe": 788.29,
+      "n": 1299,
+      "reason": "",
+      "se": 479.21
+     }
+    },
+    "Engineering Technologies": {
+     "econ_vs_major": {
+      "d": 2321.26,
+      "label": "about the same",
+      "moe": 12917.37,
+      "se": 7852.5
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 12935.11,
+      "n": 311,
+      "reason": "",
+      "se": 7863.29
+     }
+    },
+    "English Language": {
+     "econ_vs_major": {
+      "d": 22426.02,
+      "label": "better",
+      "moe": 6409.05,
+      "se": 3896.08
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 3347.91,
+      "n": 957,
+      "reason": "",
+      "se": 2035.21
+     }
+    },
+    "Environmental Studies": {
+     "econ_vs_major": {
+      "d": 22081.25,
+      "label": "better",
+      "moe": 10359.09,
+      "se": 6297.32
+     },
+     "major": {
+      "hidden": false,
+      "median": 61445.62,
+      "moe": 8597.61,
+      "n": 384,
+      "reason": "",
+      "se": 5226.51
+     }
+    },
+    "Ethnic Studies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 55621.91,
+      "moe": 15934.66,
+      "n": 82,
+      "reason": "n < 100",
+      "se": 9686.73
+     }
+    },
+    "Family and Consumer Sciences": {
+     "econ_vs_major": {
+      "d": 27667.22,
+      "label": "better",
+      "moe": 7022.86,
+      "se": 4269.21
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 3837.94,
+      "n": 195,
+      "reason": "",
+      "se": 2333.1
+     }
+    },
+    "Finance": {
+     "econ_vs_major": {
+      "d": -14234.49,
+      "label": "worse",
+      "moe": 9092.15,
+      "se": 5527.14
+     },
+     "major": {
+      "hidden": false,
+      "median": 97761.36,
+      "moe": 7085.77,
+      "n": 1741,
+      "reason": "",
+      "se": 4307.46
+     }
+    },
+    "Fine Arts": {
+     "econ_vs_major": {
+      "d": 26855.49,
+      "label": "better",
+      "moe": 5468.03,
+      "se": 3324.03
+     },
+     "major": {
+      "hidden": false,
+      "median": 56671.38,
+      "moe": 2364.32,
+      "n": 850,
+      "reason": "",
+      "se": 1437.27
+     }
+    },
+    "Foreign Language": {
+     "econ_vs_major": {
+      "d": 22611.87,
+      "label": "better",
+      "moe": 7555.56,
+      "se": 4593.05
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 5263.54,
+      "n": 277,
+      "reason": "",
+      "se": 3199.72
+     }
+    },
+    "General Business": {
+     "econ_vs_major": {
+      "d": 10063.97,
+      "label": "better",
+      "moe": 6387.27,
+      "se": 3882.84
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 3429.32,
+      "n": 2792,
+      "reason": "",
+      "se": 2084.69
+     }
+    },
+    "General Education": {
+     "econ_vs_major": {
+      "d": 30862.59,
+      "label": "better",
+      "moe": 5954.4,
+      "se": 3619.7
+     },
+     "major": {
+      "hidden": false,
+      "median": 52741.25,
+      "moe": 1608.8,
+      "n": 1268,
+      "reason": "",
+      "se": 977.99
+     }
+    },
+    "General Engineering": {
+     "econ_vs_major": {
+      "d": -262.61,
+      "label": "about the same",
+      "moe": 7837.08,
+      "se": 4764.18
+     },
+     "major": {
+      "hidden": false,
+      "median": 83789.48,
+      "moe": 5439.58,
+      "n": 605,
+      "reason": "",
+      "se": 3306.74
+     }
+    },
+    "General Social Sciences": {
+     "econ_vs_major": {
+      "d": 25806.02,
+      "label": "better",
+      "moe": 7604.25,
+      "se": 4622.64
+     },
+     "major": {
+      "hidden": false,
+      "median": 57720.85,
+      "moe": 5309.76,
+      "n": 146,
+      "reason": "",
+      "se": 3227.82
+     }
+    },
+    "Geography": {
+     "econ_vs_major": {
+      "d": 8521.79,
+      "label": "about the same",
+      "moe": 10362.16,
+      "se": 6299.19
+     },
+     "major": {
+      "hidden": false,
+      "median": 74851.93,
+      "moe": 9291.77,
+      "n": 115,
+      "reason": "",
+      "se": 5648.49
+     }
+    },
+    "Health Services": {
+     "econ_vs_major": {
+      "d": 24945.97,
+      "label": "better",
+      "moe": 5547.5,
+      "se": 3372.34
+     },
+     "major": {
+      "hidden": false,
+      "median": 58656.82,
+      "moe": 2229.96,
+      "n": 1108,
+      "reason": "",
+      "se": 1355.6
+     }
+    },
+    "History": {
+     "econ_vs_major": {
+      "d": 15311.32,
+      "label": "better",
+      "moe": 6983.06,
+      "se": 4245.02
+     },
+     "major": {
+      "hidden": false,
+      "median": 68215.55,
+      "moe": 4652.9,
+      "n": 590,
+      "reason": "",
+      "se": 2828.51
+     }
+    },
+    "Industrial Engineering": {
+     "econ_vs_major": {
+      "d": 17410.26,
+      "label": "better",
+      "moe": 11349.11,
+      "se": 6899.15
+     },
+     "major": {
+      "hidden": false,
+      "median": 66116.61,
+      "moe": 10765.11,
+      "n": 342,
+      "reason": "",
+      "se": 6544.14
+     }
+    },
+    "Information Systems & Management": {
+     "econ_vs_major": {
+      "d": -262.61,
+      "label": "about the same",
+      "moe": 6191.76,
+      "se": 3763.99
+     },
+     "major": {
+      "hidden": false,
+      "median": 83789.48,
+      "moe": 4187.6,
+      "n": 1209,
+      "reason": "",
+      "se": 2545.65
+     }
+    },
+    "Interdisciplinary Studies": {
+     "econ_vs_major": {
+      "d": 20558.67,
+      "label": "better",
+      "moe": 6684.83,
+      "se": 4063.73
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 3789.4,
+      "n": 791,
+      "reason": "",
+      "se": 2303.59
+     }
+    },
+    "International Affairs": {
+     "econ_vs_major": {
+      "d": 7383.12,
+      "label": "about the same",
+      "moe": 9291.26,
+      "se": 5648.18
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 8898.88,
+      "n": 518,
+      "reason": "",
+      "se": 5409.65
+     }
+    },
+    "Journalism": {
+     "econ_vs_major": {
+      "d": 11657.57,
+      "label": "better",
+      "moe": 9467.94,
+      "se": 5755.59
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 7331.26,
+      "n": 444,
+      "reason": "",
+      "se": 4456.69
+     }
+    },
+    "Leisure and Hospitality": {
+     "econ_vs_major": {
+      "d": 20558.67,
+      "label": "better",
+      "moe": 5795.98,
+      "se": 3523.39
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 3393.5,
+      "n": 855,
+      "reason": "",
+      "se": 2062.92
+     }
+    },
+    "Liberal Arts": {
+     "econ_vs_major": {
+      "d": 22612.23,
+      "label": "better",
+      "moe": 6756.29,
+      "se": 4107.17
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 4163.85,
+      "n": 518,
+      "reason": "",
+      "se": 2531.21
+     }
+    },
+    "Marketing": {
+     "econ_vs_major": {
+      "d": 4095.76,
+      "label": "about the same",
+      "moe": 6530.32,
+      "se": 3969.8
+     },
+     "major": {
+      "hidden": false,
+      "median": 79431.1,
+      "moe": 3514.34,
+      "n": 1905,
+      "reason": "",
+      "se": 2136.38
+     }
+    },
+    "Mass Media": {
+     "econ_vs_major": {
+      "d": 17496.59,
+      "label": "better",
+      "moe": 5898.31,
+      "se": 3585.6
+     },
+     "major": {
+      "hidden": false,
+      "median": 65988.92,
+      "moe": 3925.75,
+      "n": 437,
+      "reason": "",
+      "se": 2386.47
+     }
+    },
+    "Mathematics": {
+     "econ_vs_major": {
+      "d": 10063.97,
+      "label": "better",
+      "moe": 9447.04,
+      "se": 5742.88
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 8008.23,
+      "n": 355,
+      "reason": "",
+      "se": 4868.23
+     }
+    },
+    "Mechanical Engineering": {
+     "econ_vs_major": {
+      "d": -12973.91,
+      "label": "worse",
+      "moe": 7857.0,
+      "se": 4776.29
+     },
+     "major": {
+      "hidden": false,
+      "median": 96652.52,
+      "moe": 5646.89,
+      "n": 846,
+      "reason": "",
+      "se": 3432.76
+     }
+    },
+    "Medical Technicians": {
+     "econ_vs_major": {
+      "d": 20558.67,
+      "label": "better",
+      "moe": 10162.53,
+      "se": 6177.83
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 8700.14,
+      "n": 169,
+      "reason": "",
+      "se": 5288.84
+     }
+    },
+    "Miscellaneous Biological Science": {
+     "econ_vs_major": {
+      "d": 20237.95,
+      "label": "better",
+      "moe": 7379.87,
+      "se": 4486.25
+     },
+     "major": {
+      "hidden": false,
+      "median": 63241.77,
+      "moe": 5649.37,
+      "n": 314,
+      "reason": "",
+      "se": 3434.27
+     }
+    },
+    "Miscellaneous Education": {
+     "econ_vs_major": {
+      "d": 27664.73,
+      "label": "better",
+      "moe": 7541.31,
+      "se": 4584.38
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 5382.47,
+      "n": 120,
+      "reason": "",
+      "se": 3272.02
+     }
+    },
+    "Miscellaneous Engineering": {
+     "econ_vs_major": {
+      "d": 2873.75,
+      "label": "about the same",
+      "moe": 10171.68,
+      "se": 6183.39
+     },
+     "major": {
+      "hidden": false,
+      "median": 80653.12,
+      "moe": 8144.0,
+      "n": 399,
+      "reason": "",
+      "se": 4950.76
+     }
+    },
+    "Miscellaneous Physical Sciences": {
+     "econ_vs_major": {
+      "d": 20557.61,
+      "label": "better",
+      "moe": 13534.1,
+      "se": 8227.41
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 12990.66,
+      "n": 106,
+      "reason": "",
+      "se": 7897.06
+     }
+    },
+    "Miscellaneous Technologies": {
+     "econ_vs_major": {
+      "d": 4290.05,
+      "label": "about the same",
+      "moe": 9113.42,
+      "se": 5540.07
+     },
+     "major": {
+      "hidden": false,
+      "median": 79431.1,
+      "moe": 7423.1,
+      "n": 511,
+      "reason": "",
+      "se": 4512.52
+     }
+    },
+    "Nursing": {
+     "econ_vs_major": {
+      "d": 7383.12,
+      "label": "better",
+      "moe": 5936.13,
+      "se": 3608.59
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 2448.14,
+      "n": 2637,
+      "reason": "",
+      "se": 1488.23
+     }
+    },
+    "Nutrition Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 59662.05,
+      "moe": 6249.48,
+      "n": 91,
+      "reason": "n < 100",
+      "se": 3799.08
+     }
+    },
+    "Performing Arts": {
+     "econ_vs_major": {
+      "d": 29200.52,
+      "label": "better",
+      "moe": 6577.89,
+      "se": 3998.72
+     },
+     "major": {
+      "hidden": false,
+      "median": 54295.58,
+      "moe": 3894.66,
+      "n": 510,
+      "reason": "",
+      "se": 2367.58
+     }
+    },
+    "Pharmacy": {
+     "econ_vs_major": {
+      "d": 22600.23,
+      "label": "better",
+      "moe": 12232.54,
+      "se": 7436.2
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 10353.44,
+      "n": 142,
+      "reason": "",
+      "se": 6293.89
+     }
+    },
+    "Philosophy": {
+     "econ_vs_major": {
+      "d": 17732.65,
+      "label": "better",
+      "moe": 10153.37,
+      "se": 6172.26
+     },
+     "major": {
+      "hidden": false,
+      "median": 65628.26,
+      "moe": 9062.45,
+      "n": 188,
+      "reason": "",
+      "se": 5509.09
+     }
+    },
+    "Physics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 82908.13,
+      "moe": 7554.93,
+      "n": 94,
+      "reason": "n < 100",
+      "se": 4592.66
+     }
+    },
+    "Political Science": {
+     "econ_vs_major": {
+      "d": 7370.85,
+      "label": "about the same",
+      "moe": 10036.67,
+      "se": 6101.32
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 7075.93,
+      "n": 826,
+      "reason": "",
+      "se": 4301.48
+     }
+    },
+    "Psychology": {
+     "econ_vs_major": {
+      "d": 23198.45,
+      "label": "better",
+      "moe": 5595.68,
+      "se": 3401.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 60328.42,
+      "moe": 2040.75,
+      "n": 2244,
+      "reason": "",
+      "se": 1240.58
+     }
+    },
+    "Public Policy and Law": {
+     "econ_vs_major": {
+      "d": 17898.61,
+      "label": "better",
+      "moe": 7189.94,
+      "se": 4370.78
+     },
+     "major": {
+      "hidden": false,
+      "median": 65628.26,
+      "moe": 4557.73,
+      "n": 323,
+      "reason": "",
+      "se": 2770.66
+     }
+    },
+    "Secondary Education": {
+     "econ_vs_major": {
+      "d": 28637.78,
+      "label": "better",
+      "moe": 5459.68,
+      "se": 3318.95
+     },
+     "major": {
+      "hidden": false,
+      "median": 54889.09,
+      "moe": 900.47,
+      "n": 788,
+      "reason": "",
+      "se": 547.4
+     }
+    },
+    "Social Services": {
+     "econ_vs_major": {
+      "d": 32997.32,
+      "label": "better",
+      "moe": 6713.37,
+      "se": 4081.07
+     },
+     "major": {
+      "hidden": false,
+      "median": 50374.56,
+      "moe": 3638.73,
+      "n": 318,
+      "reason": "",
+      "se": 2211.99
+     }
+    },
+    "Sociology": {
+     "econ_vs_major": {
+      "d": 22426.02,
+      "label": "better",
+      "moe": 8955.28,
+      "se": 5443.94
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 6113.03,
+      "n": 462,
+      "reason": "",
+      "se": 3716.13
+     }
+    },
+    "Special Education": {
+     "econ_vs_major": {
+      "d": 32461.87,
+      "label": "better",
+      "moe": 6822.02,
+      "se": 4147.12
+     },
+     "major": {
+      "hidden": false,
+      "median": 51309.36,
+      "moe": 3635.05,
+      "n": 164,
+      "reason": "",
+      "se": 2209.76
+     }
+    },
+    "Theology and Religion": {
+     "econ_vs_major": {
+      "d": 30772.05,
+      "label": "better",
+      "moe": 9614.27,
+      "se": 5844.54
+     },
+     "major": {
+      "hidden": false,
+      "median": 52793.0,
+      "moe": 6389.8,
+      "n": 235,
+      "reason": "",
+      "se": 3884.37
+     }
+    },
+    "Treatment Therapy": {
+     "econ_vs_major": {
+      "d": 20558.67,
+      "label": "better",
+      "moe": 9399.86,
+      "se": 5714.2
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 7743.94,
+      "n": 298,
+      "reason": "",
+      "se": 4707.56
+     }
+    }
+   },
+   "econ_vs_all": {
+    "d": 15093.92,
+    "label": "better",
+    "moe": 5525.77,
+    "se": 3359.13
+   },
+   "economics": {
+    "hidden": false,
+    "median": 83526.87,
+    "moe": 5311.26,
+    "n": 956,
+    "reason": "",
+    "se": 3228.73
+   },
+   "majors_present": 73
+  },
+  "south_florida": {
+   "all": {
+    "hidden": false,
+    "median": 69265.97,
+    "moe": 2159.49,
+    "n": 16540,
+    "reason": "",
+    "se": 1312.76
+   },
+   "by_major": {
+    "Accounting": {
+     "econ_vs_major": {
+      "d": 14551.27,
+      "label": "better",
+      "moe": 7910.35,
+      "se": 4808.72
+     },
+     "major": {
+      "hidden": false,
+      "median": 69037.0,
+      "moe": 6006.68,
+      "n": 644,
+      "reason": "",
+      "se": 3651.48
+     }
+    },
+    "Advertising and Public Relations": {
+     "econ_vs_major": {
+      "d": 6100.72,
+      "label": "about the same",
+      "moe": 9696.57,
+      "se": 5894.57
+     },
+     "major": {
+      "hidden": false,
+      "median": 77560.66,
+      "moe": 8052.16,
+      "n": 161,
+      "reason": "",
+      "se": 4894.93
+     }
+    },
+    "Aerospace Engineering": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 93403.0,
+      "moe": 69497.38,
+      "n": 21,
+      "reason": "n < 100",
+      "se": 42247.64
+     }
+    },
+    "Agriculture": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 77560.66,
+      "moe": 26122.74,
+      "n": 27,
+      "reason": "n < 100",
+      "se": 15880.09
+     }
+    },
+    "Animal and Plant Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 60328.42,
+      "moe": 17285.81,
+      "n": 32,
+      "reason": "n < 100",
+      "se": 10508.09
+     }
+    },
+    "Anthropology": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 77560.66,
+      "moe": 29930.89,
+      "n": 50,
+      "reason": "n < 100",
+      "se": 18195.07
+     }
+    },
+    "Architecture": {
+     "econ_vs_major": {
+      "d": 13158.18,
+      "label": "better",
+      "moe": 9209.66,
+      "se": 5598.58
+     },
+     "major": {
+      "hidden": false,
+      "median": 70314.49,
+      "moe": 8897.05,
+      "n": 179,
+      "reason": "",
+      "se": 5408.54
+     }
+    },
+    "Art History": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 71067.5,
+      "moe": 34464.41,
+      "n": 30,
+      "reason": "n < 100",
+      "se": 20951.01
+     }
+    },
+    "Biochemistry": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 75128.5,
+      "moe": 38476.23,
+      "n": 15,
+      "reason": "n < 100",
+      "se": 23389.81
+     }
+    },
+    "Biology": {
+     "econ_vs_major": {
+      "d": 13871.9,
+      "label": "better",
+      "moe": 6651.76,
+      "se": 4043.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 69654.97,
+      "moe": 3570.89,
+      "n": 304,
+      "reason": "",
+      "se": 2170.75
+     }
+    },
+    "Business Analytics": {
+     "econ_vs_major": {
+      "d": -12921.88,
+      "label": "about the same",
+      "moe": 17125.13,
+      "se": 10410.41
+     },
+     "major": {
+      "hidden": false,
+      "median": 96448.75,
+      "moe": 15676.64,
+      "n": 164,
+      "reason": "",
+      "se": 9529.87
+     }
+    },
+    "Business Management": {
+     "econ_vs_major": {
+      "d": 16520.37,
+      "label": "better",
+      "moe": 7384.22,
+      "se": 4488.89
+     },
+     "major": {
+      "hidden": false,
+      "median": 67006.5,
+      "moe": 3477.99,
+      "n": 2084,
+      "reason": "",
+      "se": 2114.28
+     }
+    },
+    "Chemical Engineering": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 89493.07,
+      "moe": 48225.81,
+      "n": 52,
+      "reason": "n < 100",
+      "se": 29316.6
+     }
+    },
+    "Chemistry": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 73462.9,
+      "moe": 16960.6,
+      "n": 67,
+      "reason": "n < 100",
+      "se": 10310.4
+     }
+    },
+    "Civil Engineering": {
+     "econ_vs_major": {
+      "d": -3590.12,
+      "label": "about the same",
+      "moe": 11311.1,
+      "se": 6876.05
+     },
+     "major": {
+      "hidden": false,
+      "median": 86296.25,
+      "moe": 10567.67,
+      "n": 201,
+      "reason": "",
+      "se": 6424.11
+     }
+    },
+    "Commercial Art & Graphic Design": {
+     "econ_vs_major": {
+      "d": 20578.31,
+      "label": "better",
+      "moe": 9105.12,
+      "se": 5535.03
+     },
+     "major": {
+      "hidden": false,
+      "median": 62945.5,
+      "moe": 6593.03,
+      "n": 285,
+      "reason": "",
+      "se": 4007.92
+     }
+    },
+    "Communications": {
+     "econ_vs_major": {
+      "d": 11932.41,
+      "label": "better",
+      "moe": 7706.66,
+      "se": 4684.9
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 5479.27,
+      "n": 572,
+      "reason": "",
+      "se": 3330.87
+     }
+    },
+    "Computer Engineering": {
+     "econ_vs_major": {
+      "d": -5848.57,
+      "label": "about the same",
+      "moe": 8979.51,
+      "se": 5458.67
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 7454.42,
+      "n": 264,
+      "reason": "",
+      "se": 4531.56
+     }
+    },
+    "Computer Science": {
+     "econ_vs_major": {
+      "d": -2285.8,
+      "label": "about the same",
+      "moe": 14663.79,
+      "se": 8914.16
+     },
+     "major": {
+      "hidden": false,
+      "median": 85541.19,
+      "moe": 12883.75,
+      "n": 494,
+      "reason": "",
+      "se": 7832.07
+     }
+    },
+    "Construction Services": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 105586.0,
+      "moe": 13980.69,
+      "n": 66,
+      "reason": "n < 100",
+      "se": 8498.9
+     }
+    },
+    "Criminal Justice": {
+     "econ_vs_major": {
+      "d": 16495.29,
+      "label": "better",
+      "moe": 7575.79,
+      "se": 4605.34
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 5655.42,
+      "n": 640,
+      "reason": "",
+      "se": 3437.95
+     }
+    },
+    "Early Childhood Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 48922.88,
+      "moe": 6995.78,
+      "n": 51,
+      "reason": "n < 100",
+      "se": 4252.75
+     }
+    },
+    "Earth Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 64017.67,
+      "moe": 29808.04,
+      "n": 23,
+      "reason": "n < 100",
+      "se": 18120.39
+     }
+    },
+    "Economics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 5502.68,
+      "n": 385,
+      "reason": "",
+      "se": 3345.09
+     }
+    },
+    "Electrical Engineering": {
+     "econ_vs_major": {
+      "d": -5729.13,
+      "label": "about the same",
+      "moe": 11245.99,
+      "se": 6836.47
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 9323.71,
+      "n": 273,
+      "reason": "",
+      "se": 5667.91
+     }
+    },
+    "Elementary Education": {
+     "econ_vs_major": {
+      "d": 28068.75,
+      "label": "better",
+      "moe": 6205.88,
+      "se": 3772.57
+     },
+     "major": {
+      "hidden": false,
+      "median": 55838.75,
+      "moe": 2646.26,
+      "n": 265,
+      "reason": "",
+      "se": 1608.67
+     }
+    },
+    "Engineering Technologies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 66116.61,
+      "moe": 12805.15,
+      "n": 72,
+      "reason": "n < 100",
+      "se": 7784.29
+     }
+    },
+    "English Language": {
+     "econ_vs_major": {
+      "d": 18075.67,
+      "label": "better",
+      "moe": 9141.71,
+      "se": 5557.27
+     },
+     "major": {
+      "hidden": false,
+      "median": 65628.26,
+      "moe": 7168.24,
+      "n": 232,
+      "reason": "",
+      "se": 4357.59
+     }
+    },
+    "Environmental Studies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 58884.5,
+      "moe": 11663.8,
+      "n": 82,
+      "reason": "n < 100",
+      "se": 7090.46
+     }
+    },
+    "Ethnic Studies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 73462.9,
+      "moe": 51980.66,
+      "n": 24,
+      "reason": "n < 100",
+      "se": 31599.19
+     }
+    },
+    "Family and Consumer Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 62562.81,
+      "moe": 18456.9,
+      "n": 37,
+      "reason": "n < 100",
+      "se": 11220.0
+     }
+    },
+    "Finance": {
+     "econ_vs_major": {
+      "d": -12921.88,
+      "label": "about the same",
+      "moe": 13602.36,
+      "se": 8268.91
+     },
+     "major": {
+      "hidden": false,
+      "median": 96448.75,
+      "moe": 12389.62,
+      "n": 590,
+      "reason": "",
+      "se": 7531.68
+     }
+    },
+    "Fine Arts": {
+     "econ_vs_major": {
+      "d": 22625.89,
+      "label": "better",
+      "moe": 8335.43,
+      "se": 5067.13
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 7382.73,
+      "n": 245,
+      "reason": "",
+      "se": 4487.98
+     }
+    },
+    "Foreign Language": {
+     "econ_vs_major": {
+      "d": 21489.09,
+      "label": "better",
+      "moe": 18259.96,
+      "se": 11100.28
+     },
+     "major": {
+      "hidden": false,
+      "median": 62048.53,
+      "moe": 16622.1,
+      "n": 102,
+      "reason": "",
+      "se": 10104.62
+     }
+    },
+    "General Business": {
+     "econ_vs_major": {
+      "d": 4816.62,
+      "label": "about the same",
+      "moe": 7540.87,
+      "se": 4584.12
+     },
+     "major": {
+      "hidden": false,
+      "median": 78710.25,
+      "moe": 5112.23,
+      "n": 921,
+      "reason": "",
+      "se": 3107.74
+     }
+    },
+    "General Education": {
+     "econ_vs_major": {
+      "d": 29853.23,
+      "label": "better",
+      "moe": 5900.18,
+      "se": 3586.74
+     },
+     "major": {
+      "hidden": false,
+      "median": 53695.85,
+      "moe": 1745.45,
+      "n": 438,
+      "reason": "",
+      "se": 1061.07
+     }
+    },
+    "General Engineering": {
+     "econ_vs_major": {
+      "d": 10052.43,
+      "label": "about the same",
+      "moe": 12200.87,
+      "se": 7416.94
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 10487.5,
+      "n": 238,
+      "reason": "",
+      "se": 6375.38
+     }
+    },
+    "General Social Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 94961.41,
+      "moe": 57365.81,
+      "n": 34,
+      "reason": "n < 100",
+      "se": 34872.83
+     }
+    },
+    "Geography": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 81220.0,
+      "moe": 24803.58,
+      "n": 26,
+      "reason": "n < 100",
+      "se": 15078.17
+     }
+    },
+    "Health Services": {
+     "econ_vs_major": {
+      "d": 27711.21,
+      "label": "better",
+      "moe": 6577.39,
+      "se": 3998.41
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 4435.85,
+      "n": 298,
+      "reason": "",
+      "se": 2696.57
+     }
+    },
+    "History": {
+     "econ_vs_major": {
+      "d": 11932.41,
+      "label": "better",
+      "moe": 8906.8,
+      "se": 5414.47
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 6541.76,
+      "n": 131,
+      "reason": "",
+      "se": 3976.75
+     }
+    },
+    "Industrial Engineering": {
+     "econ_vs_major": {
+      "d": 3353.74,
+      "label": "about the same",
+      "moe": 19118.71,
+      "se": 11622.31
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 17577.83,
+      "n": 156,
+      "reason": "",
+      "se": 10685.61
+     }
+    },
+    "Information Systems & Management": {
+     "econ_vs_major": {
+      "d": 4700.43,
+      "label": "about the same",
+      "moe": 7097.39,
+      "se": 4314.52
+     },
+     "major": {
+      "hidden": false,
+      "median": 78710.25,
+      "moe": 3694.6,
+      "n": 327,
+      "reason": "",
+      "se": 2245.96
+     }
+    },
+    "Interdisciplinary Studies": {
+     "econ_vs_major": {
+      "d": 23864.82,
+      "label": "better",
+      "moe": 8359.2,
+      "se": 5081.58
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 5766.35,
+      "n": 240,
+      "reason": "",
+      "se": 3505.38
+     }
+    },
+    "International Affairs": {
+     "econ_vs_major": {
+      "d": 15359.87,
+      "label": "about the same",
+      "moe": 16170.8,
+      "se": 9830.27
+     },
+     "major": {
+      "hidden": false,
+      "median": 68215.55,
+      "moe": 14946.27,
+      "n": 252,
+      "reason": "",
+      "se": 9085.88
+     }
+    },
+    "Journalism": {
+     "econ_vs_major": {
+      "d": 4189.09,
+      "label": "about the same",
+      "moe": 10321.38,
+      "se": 6274.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 79189.5,
+      "moe": 9615.35,
+      "n": 174,
+      "reason": "",
+      "se": 5845.2
+     }
+    },
+    "Leisure and Hospitality": {
+     "econ_vs_major": {
+      "d": 20558.67,
+      "label": "better",
+      "moe": 8329.34,
+      "se": 5063.43
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 6100.29,
+      "n": 224,
+      "reason": "",
+      "se": 3708.38
+     }
+    },
+    "Liberal Arts": {
+     "econ_vs_major": {
+      "d": 20558.67,
+      "label": "better",
+      "moe": 6911.19,
+      "se": 4201.33
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 3316.84,
+      "n": 178,
+      "reason": "",
+      "se": 2016.32
+     }
+    },
+    "Marketing": {
+     "econ_vs_major": {
+      "d": 4823.76,
+      "label": "about the same",
+      "moe": 8298.09,
+      "se": 5044.43
+     },
+     "major": {
+      "hidden": false,
+      "median": 78710.25,
+      "moe": 5917.07,
+      "n": 666,
+      "reason": "",
+      "se": 3597.0
+     }
+    },
+    "Mass Media": {
+     "econ_vs_major": {
+      "d": 15729.94,
+      "label": "better",
+      "moe": 13328.23,
+      "se": 8102.27
+     },
+     "major": {
+      "hidden": false,
+      "median": 67210.93,
+      "moe": 12757.68,
+      "n": 136,
+      "reason": "",
+      "se": 7755.43
+     }
+    },
+    "Mathematics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 73462.9,
+      "moe": 5397.02,
+      "n": 93,
+      "reason": "n < 100",
+      "se": 3280.86
+     }
+    },
+    "Mechanical Engineering": {
+     "econ_vs_major": {
+      "d": 2306.87,
+      "label": "about the same",
+      "moe": 10287.74,
+      "se": 6253.95
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 9512.4,
+      "n": 237,
+      "reason": "",
+      "se": 5782.61
+     }
+    },
+    "Medical Technicians": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "n": 30,
+      "reason": "age mix"
+     }
+    },
+    "Miscellaneous Biological Science": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 52546.73,
+      "moe": 13228.3,
+      "n": 77,
+      "reason": "n < 100",
+      "se": 8041.52
+     }
+    },
+    "Miscellaneous Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 51324.71,
+      "moe": 2764.05,
+      "n": 26,
+      "reason": "n < 100",
+      "se": 1680.27
+     }
+    },
+    "Miscellaneous Engineering": {
+     "econ_vs_major": {
+      "d": -689.63,
+      "label": "about the same",
+      "moe": 15504.33,
+      "se": 9425.12
+     },
+     "major": {
+      "hidden": false,
+      "median": 84265.75,
+      "moe": 14070.53,
+      "n": 148,
+      "reason": "",
+      "se": 8553.52
+     }
+    },
+    "Miscellaneous Physical Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 50762.5,
+      "moe": 14048.43,
+      "n": 25,
+      "reason": "n < 100",
+      "se": 8540.08
+     }
+    },
+    "Miscellaneous Technologies": {
+     "econ_vs_major": {
+      "d": 1668.21,
+      "label": "about the same",
+      "moe": 21998.89,
+      "se": 13373.19
+     },
+     "major": {
+      "hidden": false,
+      "median": 81858.66,
+      "moe": 21704.29,
+      "n": 144,
+      "reason": "",
+      "se": 13194.1
+     }
+    },
+    "Nursing": {
+     "econ_vs_major": {
+      "d": 8378.17,
+      "label": "better",
+      "moe": 7108.17,
+      "se": 4321.07
+     },
+     "major": {
+      "hidden": false,
+      "median": 75174.18,
+      "moe": 5286.8,
+      "n": 792,
+      "reason": "",
+      "se": 3213.86
+     }
+    },
+    "Nutrition Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 59662.05,
+      "moe": 11387.73,
+      "n": 33,
+      "reason": "n < 100",
+      "se": 6922.63
+     }
+    },
+    "Performing Arts": {
+     "econ_vs_major": {
+      "d": 26585.84,
+      "label": "better",
+      "moe": 11297.47,
+      "se": 6867.76
+     },
+     "major": {
+      "hidden": false,
+      "median": 56671.38,
+      "moe": 8760.6,
+      "n": 125,
+      "reason": "",
+      "se": 5325.59
+     }
+    },
+    "Pharmacy": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 55838.75,
+      "moe": 13128.19,
+      "n": 53,
+      "reason": "n < 100",
+      "se": 7980.66
+     }
+    },
+    "Philosophy": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 76143.75,
+      "moe": 8864.71,
+      "n": 50,
+      "reason": "n < 100",
+      "se": 5388.88
+     }
+    },
+    "Physics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 61100.85,
+      "moe": 36434.71,
+      "n": 26,
+      "reason": "n < 100",
+      "se": 22148.76
+     }
+    },
+    "Political Science": {
+     "econ_vs_major": {
+      "d": -4155.7,
+      "label": "about the same",
+      "moe": 10815.5,
+      "se": 6574.77
+     },
+     "major": {
+      "hidden": false,
+      "median": 85541.19,
+      "moe": 9620.42,
+      "n": 243,
+      "reason": "",
+      "se": 5848.28
+     }
+    },
+    "Psychology": {
+     "econ_vs_major": {
+      "d": 22649.58,
+      "label": "better",
+      "moe": 6870.42,
+      "se": 4176.55
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 3746.77,
+      "n": 629,
+      "reason": "",
+      "se": 2277.67
+     }
+    },
+    "Public Policy and Law": {
+     "econ_vs_major": {
+      "d": 6279.54,
+      "label": "about the same",
+      "moe": 17243.35,
+      "se": 10482.28
+     },
+     "major": {
+      "hidden": false,
+      "median": 77560.66,
+      "moe": 16080.32,
+      "n": 102,
+      "reason": "",
+      "se": 9775.27
+     }
+    },
+    "Secondary Education": {
+     "econ_vs_major": {
+      "d": 28600.96,
+      "label": "better",
+      "moe": 7348.82,
+      "se": 4467.37
+     },
+     "major": {
+      "hidden": false,
+      "median": 54990.76,
+      "moe": 4894.35,
+      "n": 171,
+      "reason": "",
+      "se": 2975.29
+     }
+    },
+    "Social Services": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 46922.11,
+      "moe": 4015.5,
+      "n": 63,
+      "reason": "n < 100",
+      "se": 2441.03
+     }
+    },
+    "Sociology": {
+     "econ_vs_major": {
+      "d": 22309.11,
+      "label": "better",
+      "moe": 9719.51,
+      "se": 5908.52
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 7307.06,
+      "n": 119,
+      "reason": "",
+      "se": 4441.98
+     }
+    },
+    "Special Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 59662.05,
+      "moe": 8224.66,
+      "n": 51,
+      "reason": "n < 100",
+      "se": 4999.79
+     }
+    },
+    "Theology and Religion": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 47729.64,
+      "moe": 7509.3,
+      "n": 44,
+      "reason": "n < 100",
+      "se": 4564.92
+     }
+    },
+    "Treatment Therapy": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 48880.68,
+      "moe": 10878.07,
+      "n": 87,
+      "reason": "n < 100",
+      "se": 6612.81
+     }
+    }
+   },
+   "econ_vs_all": {
+    "d": 14260.9,
+    "label": "better",
+    "moe": 5866.14,
+    "se": 3566.04
+   },
+   "economics": {
+    "hidden": false,
+    "median": 83526.87,
+    "moe": 5502.68,
+    "n": 385,
+    "reason": "",
+    "se": 3345.09
+   },
+   "majors_present": 73
+  }
+ },
+ "grad=1|fulltime=0": {
+  "florida": {
+   "all": {
+    "hidden": false,
+    "median": 71067.5,
+    "moe": 424.19,
+    "n": 97824,
+    "reason": "",
+    "se": 257.87
+   },
+   "by_major": {
+    "Accounting": {
+     "econ_vs_major": {
+      "d": 11289.56,
+      "label": "better",
+      "moe": 4442.89,
+      "se": 2700.84
+     },
+     "major": {
+      "hidden": false,
+      "median": 78203.51,
+      "moe": 1369.36,
+      "n": 3558,
+      "reason": "",
+      "se": 832.44
+     }
+    },
+    "Advertising and Public Relations": {
+     "econ_vs_major": {
+      "d": 17900.12,
+      "label": "better",
+      "moe": 6499.0,
+      "se": 3950.76
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 4457.3,
+      "n": 752,
+      "reason": "",
+      "se": 2709.61
+     }
+    },
+    "Aerospace Engineering": {
+     "econ_vs_major": {
+      "d": -32708.62,
+      "label": "worse",
+      "moe": 4829.46,
+      "se": 2935.84
+     },
+     "major": {
+      "hidden": false,
+      "median": 122201.7,
+      "moe": 3127.33,
+      "n": 261,
+      "reason": "",
+      "se": 1901.11
+     }
+    },
+    "Agriculture": {
+     "econ_vs_major": {
+      "d": 17898.61,
+      "label": "better",
+      "moe": 13094.18,
+      "se": 7959.99
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 11756.58,
+      "n": 182,
+      "reason": "",
+      "se": 7146.86
+     }
+    },
+    "Animal and Plant Sciences": {
+     "econ_vs_major": {
+      "d": 16279.88,
+      "label": "better",
+      "moe": 10327.02,
+      "se": 6277.82
+     },
+     "major": {
+      "hidden": false,
+      "median": 73098.0,
+      "moe": 9736.0,
+      "n": 404,
+      "reason": "",
+      "se": 5918.54
+     }
+    },
+    "Anthropology": {
+     "econ_vs_major": {
+      "d": 25813.07,
+      "label": "better",
+      "moe": 7263.09,
+      "se": 4415.25
+     },
+     "major": {
+      "hidden": false,
+      "median": 63680.0,
+      "moe": 7187.36,
+      "n": 403,
+      "reason": "",
+      "se": 4369.22
+     }
+    },
+    "Architecture": {
+     "econ_vs_major": {
+      "d": 17898.61,
+      "label": "better",
+      "moe": 5821.93,
+      "se": 3539.17
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 4924.42,
+      "n": 762,
+      "reason": "",
+      "se": 2993.57
+     }
+    },
+    "Art History": {
+     "econ_vs_major": {
+      "d": 28578.07,
+      "label": "better",
+      "moe": 8450.11,
+      "se": 5136.84
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 7440.97,
+      "n": 173,
+      "reason": "",
+      "se": 4523.39
+     }
+    },
+    "Biochemistry": {
+     "econ_vs_major": {
+      "d": -12031.93,
+      "label": "worse",
+      "moe": 10338.93,
+      "se": 6285.06
+     },
+     "major": {
+      "hidden": false,
+      "median": 101525.0,
+      "moe": 10381.16,
+      "n": 269,
+      "reason": "",
+      "se": 6310.74
+     }
+    },
+    "Biology": {
+     "econ_vs_major": {
+      "d": 4583.67,
+      "label": "about the same",
+      "moe": 5438.47,
+      "se": 3306.06
+     },
+     "major": {
+      "hidden": false,
+      "median": 84906.67,
+      "moe": 3241.43,
+      "n": 3815,
+      "reason": "",
+      "se": 1970.47
+     }
+    },
+    "Business Analytics": {
+     "econ_vs_major": {
+      "d": -5966.21,
+      "label": "about the same",
+      "moe": 6102.82,
+      "se": 3709.92
+     },
+     "major": {
+      "hidden": false,
+      "median": 95459.28,
+      "moe": 4229.81,
+      "n": 906,
+      "reason": "",
+      "se": 2571.31
+     }
+    },
+    "Business Management": {
+     "econ_vs_major": {
+      "d": 22461.49,
+      "label": "better",
+      "moe": 4337.06,
+      "se": 2636.51
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 1093.84,
+      "n": 9567,
+      "reason": "",
+      "se": 664.95
+     }
+    },
+    "Chemical Engineering": {
+     "econ_vs_major": {
+      "d": -10064.14,
+      "label": "about the same",
+      "moe": 10068.14,
+      "se": 6120.45
+     },
+     "major": {
+      "hidden": false,
+      "median": 99699.65,
+      "moe": 8659.79,
+      "n": 358,
+      "reason": "",
+      "se": 5264.31
+     }
+    },
+    "Chemistry": {
+     "econ_vs_major": {
+      "d": 5703.6,
+      "label": "about the same",
+      "moe": 8434.96,
+      "se": 5127.64
+     },
+     "major": {
+      "hidden": false,
+      "median": 83789.48,
+      "moe": 6813.62,
+      "n": 654,
+      "reason": "",
+      "se": 4142.02
+     }
+    },
+    "Civil Engineering": {
+     "econ_vs_major": {
+      "d": -9909.31,
+      "label": "worse",
+      "moe": 8712.76,
+      "se": 5296.51
+     },
+     "major": {
+      "hidden": false,
+      "median": 99039.0,
+      "moe": 6529.86,
+      "n": 1049,
+      "reason": "",
+      "se": 3969.52
+     }
+    },
+    "Commercial Art & Graphic Design": {
+     "econ_vs_major": {
+      "d": 29831.02,
+      "label": "better",
+      "moe": 6403.0,
+      "se": 3892.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 4414.31,
+      "n": 1067,
+      "reason": "",
+      "se": 2683.47
+     }
+    },
+    "Communications": {
+     "econ_vs_major": {
+      "d": 22282.14,
+      "label": "better",
+      "moe": 4869.13,
+      "se": 2959.95
+     },
+     "major": {
+      "hidden": false,
+      "median": 67210.93,
+      "moe": 2848.67,
+      "n": 2534,
+      "reason": "",
+      "se": 1731.72
+     }
+    },
+    "Computer Engineering": {
+     "econ_vs_major": {
+      "d": -8819.91,
+      "label": "worse",
+      "moe": 5507.63,
+      "se": 3348.1
+     },
+     "major": {
+      "hidden": false,
+      "median": 98312.98,
+      "moe": 5005.96,
+      "n": 1044,
+      "reason": "",
+      "se": 3043.13
+     }
+    },
+    "Computer Science": {
+     "econ_vs_major": {
+      "d": -7159.45,
+      "label": "worse",
+      "moe": 5278.62,
+      "se": 3208.89
+     },
+     "major": {
+      "hidden": false,
+      "median": 96652.52,
+      "moe": 4413.04,
+      "n": 2467,
+      "reason": "",
+      "se": 2682.7
+     }
+    },
+    "Construction Services": {
+     "econ_vs_major": {
+      "d": -451.76,
+      "label": "about the same",
+      "moe": 10641.8,
+      "se": 6469.18
+     },
+     "major": {
+      "hidden": false,
+      "median": 90254.42,
+      "moe": 9412.11,
+      "n": 322,
+      "reason": "",
+      "se": 5721.65
+     }
+    },
+    "Criminal Justice": {
+     "econ_vs_major": {
+      "d": 23501.82,
+      "label": "better",
+      "moe": 5255.79,
+      "se": 3195.01
+     },
+     "major": {
+      "hidden": false,
+      "median": 65991.25,
+      "moe": 2277.06,
+      "n": 3235,
+      "reason": "",
+      "se": 1384.23
+     }
+    },
+    "Early Childhood Education": {
+     "econ_vs_major": {
+      "d": 37019.58,
+      "label": "better",
+      "moe": 5251.89,
+      "se": 3192.64
+     },
+     "major": {
+      "hidden": false,
+      "median": 52473.5,
+      "moe": 1739.22,
+      "n": 366,
+      "reason": "",
+      "se": 1057.28
+     }
+    },
+    "Earth Sciences": {
+     "econ_vs_major": {
+      "d": 22351.96,
+      "label": "better",
+      "moe": 9062.85,
+      "se": 5509.33
+     },
+     "major": {
+      "hidden": false,
+      "median": 68021.75,
+      "moe": 7839.28,
+      "n": 116,
+      "reason": "",
+      "se": 4765.52
+     }
+    },
+    "Economics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": false,
+      "median": 89493.07,
+      "moe": 4313.98,
+      "n": 1789,
+      "reason": "",
+      "se": 2622.48
+     }
+    },
+    "Electrical Engineering": {
+     "econ_vs_major": {
+      "d": -8268.28,
+      "label": "worse",
+      "moe": 5521.04,
+      "se": 3356.26
+     },
+     "major": {
+      "hidden": false,
+      "median": 97761.36,
+      "moe": 4612.28,
+      "n": 1445,
+      "reason": "",
+      "se": 2803.82
+     }
+    },
+    "Elementary Education": {
+     "econ_vs_major": {
+      "d": 35636.62,
+      "label": "better",
+      "moe": 4072.84,
+      "se": 2475.89
+     },
+     "major": {
+      "hidden": false,
+      "median": 53808.25,
+      "moe": 1352.9,
+      "n": 2452,
+      "reason": "",
+      "se": 822.43
+     }
+    },
+    "Engineering Technologies": {
+     "econ_vs_major": {
+      "d": 8273.07,
+      "label": "about the same",
+      "moe": 9832.08,
+      "se": 5976.95
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 9340.01,
+      "n": 484,
+      "reason": "",
+      "se": 5677.82
+     }
+    },
+    "English Language": {
+     "econ_vs_major": {
+      "d": 26524.88,
+      "label": "better",
+      "moe": 5976.22,
+      "se": 3632.96
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 3262.22,
+      "n": 2091,
+      "reason": "",
+      "se": 1983.11
+     }
+    },
+    "Environmental Studies": {
+     "econ_vs_major": {
+      "d": 22461.49,
+      "label": "better",
+      "moe": 5899.71,
+      "se": 3586.45
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 4155.26,
+      "n": 631,
+      "reason": "",
+      "se": 2526.0
+     }
+    },
+    "Ethnic Studies": {
+     "econ_vs_major": {
+      "d": 29806.32,
+      "label": "better",
+      "moe": 10905.08,
+      "se": 6629.23
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 9856.19,
+      "n": 175,
+      "reason": "",
+      "se": 5991.61
+     }
+    },
+    "Family and Consumer Sciences": {
+     "econ_vs_major": {
+      "d": 30281.85,
+      "label": "better",
+      "moe": 6492.55,
+      "se": 3946.84
+     },
+     "major": {
+      "hidden": false,
+      "median": 59211.23,
+      "moe": 4818.51,
+      "n": 428,
+      "reason": "",
+      "se": 2929.19
+     }
+    },
+    "Finance": {
+     "econ_vs_major": {
+      "d": -10001.43,
+      "label": "worse",
+      "moe": 6524.25,
+      "se": 3966.11
+     },
+     "major": {
+      "hidden": false,
+      "median": 99494.5,
+      "moe": 4492.73,
+      "n": 2990,
+      "reason": "",
+      "se": 2731.14
+     }
+    },
+    "Fine Arts": {
+     "econ_vs_major": {
+      "d": 34920.64,
+      "label": "better",
+      "moe": 5347.02,
+      "se": 3250.47
+     },
+     "major": {
+      "hidden": false,
+      "median": 54572.44,
+      "moe": 3049.36,
+      "n": 1322,
+      "reason": "",
+      "se": 1853.71
+     }
+    },
+    "Foreign Language": {
+     "econ_vs_major": {
+      "d": 26169.1,
+      "label": "better",
+      "moe": 4876.51,
+      "se": 2964.45
+     },
+     "major": {
+      "hidden": false,
+      "median": 63544.88,
+      "moe": 2754.4,
+      "n": 658,
+      "reason": "",
+      "se": 1674.41
+     }
+    },
+    "General Business": {
+     "econ_vs_major": {
+      "d": 16030.18,
+      "label": "better",
+      "moe": 4571.03,
+      "se": 2778.74
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 2472.83,
+      "n": 4244,
+      "reason": "",
+      "se": 1503.24
+     }
+    },
+    "General Education": {
+     "econ_vs_major": {
+      "d": 35867.81,
+      "label": "better",
+      "moe": 4328.38,
+      "se": 2631.23
+     },
+     "major": {
+      "hidden": false,
+      "median": 53625.26,
+      "moe": 326.67,
+      "n": 2384,
+      "reason": "",
+      "se": 198.58
+     }
+    },
+    "General Engineering": {
+     "econ_vs_major": {
+      "d": 5535.48,
+      "label": "about the same",
+      "moe": 6038.08,
+      "se": 3670.56
+     },
+     "major": {
+      "hidden": false,
+      "median": 83957.6,
+      "moe": 3769.35,
+      "n": 1033,
+      "reason": "",
+      "se": 2291.4
+     }
+    },
+    "General Social Sciences": {
+     "econ_vs_major": {
+      "d": 31772.23,
+      "label": "better",
+      "moe": 6191.0,
+      "se": 3763.52
+     },
+     "major": {
+      "hidden": false,
+      "median": 57720.85,
+      "moe": 4763.74,
+      "n": 258,
+      "reason": "",
+      "se": 2895.89
+     }
+    },
+    "Geography": {
+     "econ_vs_major": {
+      "d": 12728.7,
+      "label": "better",
+      "moe": 7691.3,
+      "se": 4675.56
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 7346.48,
+      "n": 188,
+      "reason": "",
+      "se": 4465.95
+     }
+    },
+    "Health Services": {
+     "econ_vs_major": {
+      "d": 23864.82,
+      "label": "better",
+      "moe": 4914.84,
+      "se": 2987.75
+     },
+     "major": {
+      "hidden": false,
+      "median": 65628.26,
+      "moe": 2105.96,
+      "n": 2682,
+      "reason": "",
+      "se": 1280.22
+     }
+    },
+    "History": {
+     "econ_vs_major": {
+      "d": 17946.15,
+      "label": "better",
+      "moe": 5407.04,
+      "se": 3286.95
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 2881.74,
+      "n": 1286,
+      "reason": "",
+      "se": 1751.82
+     }
+    },
+    "Industrial Engineering": {
+     "econ_vs_major": {
+      "d": 4586.41,
+      "label": "about the same",
+      "moe": 8109.67,
+      "se": 4929.89
+     },
+     "major": {
+      "hidden": false,
+      "median": 84906.67,
+      "moe": 7177.41,
+      "n": 695,
+      "reason": "",
+      "se": 4363.17
+     }
+    },
+    "Information Systems & Management": {
+     "econ_vs_major": {
+      "d": 3579.72,
+      "label": "about the same",
+      "moe": 5815.66,
+      "se": 3535.35
+     },
+     "major": {
+      "hidden": false,
+      "median": 85913.35,
+      "moe": 4086.78,
+      "n": 1706,
+      "reason": "",
+      "se": 2484.36
+     }
+    },
+    "Interdisciplinary Studies": {
+     "econ_vs_major": {
+      "d": 23503.76,
+      "label": "better",
+      "moe": 5220.33,
+      "se": 3173.45
+     },
+     "major": {
+      "hidden": false,
+      "median": 65988.92,
+      "moe": 2951.24,
+      "n": 1425,
+      "reason": "",
+      "se": 1794.07
+     }
+    },
+    "International Affairs": {
+     "econ_vs_major": {
+      "d": 11289.56,
+      "label": "better",
+      "moe": 7507.17,
+      "se": 4563.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 78203.51,
+      "moe": 6231.8,
+      "n": 1036,
+      "reason": "",
+      "se": 3788.33
+     }
+    },
+    "Journalism": {
+     "econ_vs_major": {
+      "d": 16030.18,
+      "label": "better",
+      "moe": 7655.43,
+      "se": 4653.76
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 6751.63,
+      "n": 734,
+      "reason": "",
+      "se": 4104.34
+     }
+    },
+    "Leisure and Hospitality": {
+     "econ_vs_major": {
+      "d": 26524.88,
+      "label": "better",
+      "moe": 5216.26,
+      "se": 3170.98
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 3359.64,
+      "n": 1518,
+      "reason": "",
+      "se": 2042.33
+     }
+    },
+    "Liberal Arts": {
+     "econ_vs_major": {
+      "d": 29831.02,
+      "label": "better",
+      "moe": 6494.8,
+      "se": 3948.2
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 4764.06,
+      "n": 825,
+      "reason": "",
+      "se": 2896.08
+     }
+    },
+    "Marketing": {
+     "econ_vs_major": {
+      "d": 16030.18,
+      "label": "better",
+      "moe": 4802.78,
+      "se": 2919.62
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 3531.15,
+      "n": 2808,
+      "reason": "",
+      "se": 2146.59
+     }
+    },
+    "Mass Media": {
+     "econ_vs_major": {
+      "d": 24698.67,
+      "label": "better",
+      "moe": 4881.5,
+      "se": 2967.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 64766.9,
+      "moe": 3529.54,
+      "n": 657,
+      "reason": "",
+      "se": 2145.62
+     }
+    },
+    "Mathematics": {
+     "econ_vs_major": {
+      "d": 5535.48,
+      "label": "about the same",
+      "moe": 7127.42,
+      "se": 4332.78
+     },
+     "major": {
+      "hidden": false,
+      "median": 83957.6,
+      "moe": 6013.1,
+      "n": 804,
+      "reason": "",
+      "se": 3655.38
+     }
+    },
+    "Mechanical Engineering": {
+     "econ_vs_major": {
+      "d": -10066.81,
+      "label": "worse",
+      "moe": 5453.27,
+      "se": 3315.06
+     },
+     "major": {
+      "hidden": false,
+      "median": 99494.5,
+      "moe": 3203.65,
+      "n": 1427,
+      "reason": "",
+      "se": 1947.51
+     }
+    },
+    "Medical Technicians": {
+     "econ_vs_major": {
+      "d": 25400.05,
+      "label": "better",
+      "moe": 8595.35,
+      "se": 5225.14
+     },
+     "major": {
+      "hidden": false,
+      "median": 64017.67,
+      "moe": 8042.01,
+      "n": 282,
+      "reason": "",
+      "se": 4888.76
+     }
+    },
+    "Miscellaneous Biological Science": {
+     "econ_vs_major": {
+      "d": 16030.18,
+      "label": "better",
+      "moe": 6032.8,
+      "se": 3667.35
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 5467.4,
+      "n": 913,
+      "reason": "",
+      "se": 3323.65
+     }
+    },
+    "Miscellaneous Education": {
+     "econ_vs_major": {
+      "d": 29726.41,
+      "label": "better",
+      "moe": 5112.76,
+      "se": 3108.06
+     },
+     "major": {
+      "hidden": false,
+      "median": 59899.75,
+      "moe": 3282.53,
+      "n": 339,
+      "reason": "",
+      "se": 1995.46
+     }
+    },
+    "Miscellaneous Engineering": {
+     "econ_vs_major": {
+      "d": 6276.1,
+      "label": "about the same",
+      "moe": 8674.28,
+      "se": 5273.12
+     },
+     "major": {
+      "hidden": false,
+      "median": 83097.16,
+      "moe": 6620.65,
+      "n": 818,
+      "reason": "",
+      "se": 4024.71
+     }
+    },
+    "Miscellaneous Physical Sciences": {
+     "econ_vs_major": {
+      "d": 21199.29,
+      "label": "better",
+      "moe": 13020.13,
+      "se": 7914.97
+     },
+     "major": {
+      "hidden": false,
+      "median": 68215.55,
+      "moe": 13226.14,
+      "n": 208,
+      "reason": "",
+      "se": 8040.21
+     }
+    },
+    "Miscellaneous Technologies": {
+     "econ_vs_major": {
+      "d": 9477.5,
+      "label": "better",
+      "moe": 7168.27,
+      "se": 4357.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 79947.15,
+      "moe": 6403.24,
+      "n": 766,
+      "reason": "",
+      "se": 3892.54
+     }
+    },
+    "Nursing": {
+     "econ_vs_major": {
+      "d": 11283.99,
+      "label": "better",
+      "moe": 3997.71,
+      "se": 2430.22
+     },
+     "major": {
+      "hidden": false,
+      "median": 78209.09,
+      "moe": 1432.78,
+      "n": 4795,
+      "reason": "",
+      "se": 870.99
+     }
+    },
+    "Nutrition Sciences": {
+     "econ_vs_major": {
+      "d": 23387.4,
+      "label": "better",
+      "moe": 6227.32,
+      "se": 3785.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 65991.25,
+      "moe": 5853.73,
+      "n": 237,
+      "reason": "",
+      "se": 3558.5
+     }
+    },
+    "Performing Arts": {
+     "econ_vs_major": {
+      "d": 35797.23,
+      "label": "better",
+      "moe": 5586.43,
+      "se": 3396.01
+     },
+     "major": {
+      "hidden": false,
+      "median": 53695.85,
+      "moe": 4285.28,
+      "n": 910,
+      "reason": "",
+      "se": 2605.04
+     }
+    },
+    "Pharmacy": {
+     "econ_vs_major": {
+      "d": -12082.05,
+      "label": "about the same",
+      "moe": 12374.14,
+      "se": 7522.27
+     },
+     "major": {
+      "hidden": false,
+      "median": 101525.0,
+      "moe": 11964.33,
+      "n": 482,
+      "reason": "",
+      "se": 7273.15
+     }
+    },
+    "Philosophy": {
+     "econ_vs_major": {
+      "d": 20150.91,
+      "label": "better",
+      "moe": 6847.28,
+      "se": 4162.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 69265.02,
+      "moe": 6435.71,
+      "n": 456,
+      "reason": "",
+      "se": 3912.29
+     }
+    },
+    "Physics": {
+     "econ_vs_major": {
+      "d": 1222.07,
+      "label": "about the same",
+      "moe": 18483.58,
+      "se": 11236.22
+     },
+     "major": {
+      "hidden": false,
+      "median": 88326.75,
+      "moe": 18137.37,
+      "n": 268,
+      "reason": "",
+      "se": 11025.75
+     }
+    },
+    "Political Science": {
+     "econ_vs_major": {
+      "d": 5535.48,
+      "label": "about the same",
+      "moe": 5850.03,
+      "se": 3556.25
+     },
+     "major": {
+      "hidden": false,
+      "median": 83957.6,
+      "moe": 4339.13,
+      "n": 2052,
+      "reason": "",
+      "se": 2637.77
+     }
+    },
+    "Psychology": {
+     "econ_vs_major": {
+      "d": 27170.21,
+      "label": "better",
+      "moe": 4799.75,
+      "se": 2917.78
+     },
+     "major": {
+      "hidden": false,
+      "median": 62322.87,
+      "moe": 1936.16,
+      "n": 5358,
+      "reason": "",
+      "se": 1177.0
+     }
+    },
+    "Public Policy and Law": {
+     "econ_vs_major": {
+      "d": 16030.18,
+      "label": "better",
+      "moe": 6515.4,
+      "se": 3960.73
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 5043.35,
+      "n": 606,
+      "reason": "",
+      "se": 3065.87
+     }
+    },
+    "Secondary Education": {
+     "econ_vs_major": {
+      "d": 33654.32,
+      "label": "better",
+      "moe": 4337.01,
+      "se": 2636.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 55838.75,
+      "moe": 156.55,
+      "n": 1577,
+      "reason": "",
+      "se": 95.17
+     }
+    },
+    "Social Services": {
+     "econ_vs_major": {
+      "d": 33633.42,
+      "label": "better",
+      "moe": 4811.07,
+      "se": 2924.66
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 1462.31,
+      "n": 856,
+      "reason": "",
+      "se": 888.94
+     }
+    },
+    "Sociology": {
+     "econ_vs_major": {
+      "d": 26524.88,
+      "label": "better",
+      "moe": 6751.75,
+      "se": 4104.41
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 5519.13,
+      "n": 866,
+      "reason": "",
+      "se": 3355.09
+     }
+    },
+    "Special Education": {
+     "econ_vs_major": {
+      "d": 33633.42,
+      "label": "better",
+      "moe": 6928.95,
+      "se": 4212.13
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 4286.76,
+      "n": 405,
+      "reason": "",
+      "se": 2605.94
+     }
+    },
+    "Theology and Religion": {
+     "econ_vs_major": {
+      "d": 38089.92,
+      "label": "better",
+      "moe": 5086.8,
+      "se": 3092.28
+     },
+     "major": {
+      "hidden": false,
+      "median": 51390.88,
+      "moe": 3414.69,
+      "n": 457,
+      "reason": "",
+      "se": 2075.8
+     }
+    },
+    "Treatment Therapy": {
+     "econ_vs_major": {
+      "d": 21739.17,
+      "label": "better",
+      "moe": 7838.85,
+      "se": 4765.26
+     },
+     "major": {
+      "hidden": false,
+      "median": 67210.93,
+      "moe": 7444.79,
+      "n": 734,
+      "reason": "",
+      "se": 4525.71
+     }
+    }
+   },
+   "econ_vs_all": {
+    "d": 18425.57,
+    "label": "better",
+    "moe": 4222.69,
+    "se": 2566.99
+   },
+   "economics": {
+    "hidden": false,
+    "median": 89493.07,
+    "moe": 4313.98,
+    "n": 1789,
+    "reason": "",
+    "se": 2622.48
+   },
+   "majors_present": 73
+  },
+  "south_florida": {
+   "all": {
+    "hidden": false,
+    "median": 71594.46,
+    "moe": 1572.99,
+    "n": 31895,
+    "reason": "",
+    "se": 956.22
+   },
+   "by_major": {
+    "Accounting": {
+     "econ_vs_major": {
+      "d": 23185.36,
+      "label": "better",
+      "moe": 13092.67,
+      "se": 7959.07
+     },
+     "major": {
+      "hidden": false,
+      "median": 78203.51,
+      "moe": 4279.62,
+      "n": 1351,
+      "reason": "",
+      "se": 2601.59
+     }
+    },
+    "Advertising and Public Relations": {
+     "econ_vs_major": {
+      "d": 27925.97,
+      "label": "better",
+      "moe": 17015.35,
+      "se": 10343.68
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 9465.05,
+      "n": 253,
+      "reason": "",
+      "se": 5753.83
+     }
+    },
+    "Aerospace Engineering": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 104947.0,
+      "moe": 30042.91,
+      "n": 44,
+      "reason": "n < 100",
+      "se": 18263.16
+     }
+    },
+    "Agriculture": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 77560.66,
+      "moe": 23698.89,
+      "n": 36,
+      "reason": "n < 100",
+      "se": 14406.62
+     }
+    },
+    "Animal and Plant Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 69037.0,
+      "moe": 19175.47,
+      "n": 90,
+      "reason": "n < 100",
+      "se": 11656.82
+     }
+    },
+    "Anthropology": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 77560.66,
+      "moe": 33357.54,
+      "n": 94,
+      "reason": "n < 100",
+      "se": 20278.14
+     }
+    },
+    "Architecture": {
+     "econ_vs_major": {
+      "d": 32180.89,
+      "label": "better",
+      "moe": 13739.18,
+      "se": 8352.09
+     },
+     "major": {
+      "hidden": false,
+      "median": 69207.98,
+      "moe": 7054.24,
+      "n": 376,
+      "reason": "",
+      "se": 4288.29
+     }
+    },
+    "Art History": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 71067.5,
+      "moe": 26192.64,
+      "n": 63,
+      "reason": "n < 100",
+      "se": 15922.58
+     }
+    },
+    "Biochemistry": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 83526.87,
+      "moe": 26527.88,
+      "n": 72,
+      "reason": "n < 100",
+      "se": 16126.37
+     }
+    },
+    "Biology": {
+     "econ_vs_major": {
+      "d": 22050.39,
+      "label": "better",
+      "moe": 13339.26,
+      "se": 8108.97
+     },
+     "major": {
+      "hidden": false,
+      "median": 79320.7,
+      "moe": 6058.58,
+      "n": 1119,
+      "reason": "",
+      "se": 3683.03
+     }
+    },
+    "Business Analytics": {
+     "econ_vs_major": {
+      "d": 6427.46,
+      "label": "about the same",
+      "moe": 17698.07,
+      "se": 10758.7
+     },
+     "major": {
+      "hidden": false,
+      "median": 94961.41,
+      "moe": 12182.99,
+      "n": 255,
+      "reason": "",
+      "se": 7406.07
+     }
+    },
+    "Business Management": {
+     "econ_vs_major": {
+      "d": 34357.29,
+      "label": "better",
+      "moe": 12766.91,
+      "se": 7761.04
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 2313.11,
+      "n": 3466,
+      "reason": "",
+      "se": 1406.14
+     }
+    },
+    "Chemical Engineering": {
+     "econ_vs_major": {
+      "d": 15847.68,
+      "label": "better",
+      "moe": 14304.17,
+      "se": 8695.55
+     },
+     "major": {
+      "hidden": false,
+      "median": 85541.19,
+      "moe": 6493.34,
+      "n": 115,
+      "reason": "",
+      "se": 3947.32
+     }
+    },
+    "Chemistry": {
+     "econ_vs_major": {
+      "d": 18091.88,
+      "label": "about the same",
+      "moe": 18130.15,
+      "se": 11021.37
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 14665.41,
+      "n": 200,
+      "reason": "",
+      "se": 8915.14
+     }
+    },
+    "Civil Engineering": {
+     "econ_vs_major": {
+      "d": 11895.79,
+      "label": "about the same",
+      "moe": 14722.37,
+      "se": 8949.77
+     },
+     "major": {
+      "hidden": false,
+      "median": 89493.07,
+      "moe": 7298.64,
+      "n": 394,
+      "reason": "",
+      "se": 4436.87
+     }
+    },
+    "Commercial Art & Graphic Design": {
+     "econ_vs_major": {
+      "d": 40675.07,
+      "label": "better",
+      "moe": 12952.35,
+      "se": 7873.77
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 5820.13,
+      "n": 405,
+      "reason": "",
+      "se": 3538.07
+     }
+    },
+    "Communications": {
+     "econ_vs_major": {
+      "d": 33408.28,
+      "label": "better",
+      "moe": 12829.9,
+      "se": 7799.33
+     },
+     "major": {
+      "hidden": false,
+      "median": 68014.74,
+      "moe": 3359.32,
+      "n": 857,
+      "reason": "",
+      "se": 2042.14
+     }
+    },
+    "Computer Engineering": {
+     "econ_vs_major": {
+      "d": 9484.54,
+      "label": "about the same",
+      "moe": 13814.59,
+      "se": 8397.92
+     },
+     "major": {
+      "hidden": false,
+      "median": 91651.27,
+      "moe": 7194.11,
+      "n": 443,
+      "reason": "",
+      "se": 4373.32
+     }
+    },
+    "Computer Science": {
+     "econ_vs_major": {
+      "d": 13492.58,
+      "label": "about the same",
+      "moe": 15961.12,
+      "se": 9702.81
+     },
+     "major": {
+      "hidden": false,
+      "median": 88326.75,
+      "moe": 11713.68,
+      "n": 791,
+      "reason": "",
+      "se": 7120.78
+     }
+    },
+    "Construction Services": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 91609.83,
+      "moe": 11100.52,
+      "n": 90,
+      "reason": "n < 100",
+      "se": 6748.04
+     }
+    },
+    "Criminal Justice": {
+     "econ_vs_major": {
+      "d": 29794.41,
+      "label": "better",
+      "moe": 14256.76,
+      "se": 8666.72
+     },
+     "major": {
+      "hidden": false,
+      "median": 71594.46,
+      "moe": 5028.39,
+      "n": 938,
+      "reason": "",
+      "se": 3056.77
+     }
+    },
+    "Early Childhood Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 52473.5,
+      "moe": 5688.99,
+      "n": 91,
+      "reason": "n < 100",
+      "se": 3458.35
+     }
+    },
+    "Earth Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 83250.5,
+      "moe": 27433.28,
+      "n": 39,
+      "reason": "n < 100",
+      "se": 16676.77
+     }
+    },
+    "Economics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": false,
+      "median": 101525.0,
+      "moe": 12189.05,
+      "n": 781,
+      "reason": "",
+      "se": 7409.76
+     }
+    },
+    "Electrical Engineering": {
+     "econ_vs_major": {
+      "d": 9737.59,
+      "label": "about the same",
+      "moe": 20836.7,
+      "se": 12666.69
+     },
+     "major": {
+      "hidden": false,
+      "median": 91651.27,
+      "moe": 14319.41,
+      "n": 526,
+      "reason": "",
+      "se": 8704.81
+     }
+    },
+    "Elementary Education": {
+     "econ_vs_major": {
+      "d": 45529.22,
+      "label": "better",
+      "moe": 12444.18,
+      "se": 7564.85
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 1569.79,
+      "n": 588,
+      "reason": "",
+      "se": 954.28
+     }
+    },
+    "Engineering Technologies": {
+     "econ_vs_major": {
+      "d": 40473.87,
+      "label": "better",
+      "moe": 14408.9,
+      "se": 8759.21
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 8832.41,
+      "n": 140,
+      "reason": "",
+      "se": 5369.25
+     }
+    },
+    "English Language": {
+     "econ_vs_major": {
+      "d": 35397.62,
+      "label": "better",
+      "moe": 12606.35,
+      "se": 7663.44
+     },
+     "major": {
+      "hidden": false,
+      "median": 65991.25,
+      "moe": 4309.82,
+      "n": 552,
+      "reason": "",
+      "se": 2619.95
+     }
+    },
+    "Environmental Studies": {
+     "econ_vs_major": {
+      "d": 36771.34,
+      "label": "better",
+      "moe": 15098.52,
+      "se": 9178.43
+     },
+     "major": {
+      "hidden": false,
+      "median": 64435.01,
+      "moe": 11355.32,
+      "n": 137,
+      "reason": "",
+      "se": 6902.93
+     }
+    },
+    "Ethnic Studies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 71594.46,
+      "moe": 18607.45,
+      "n": 60,
+      "reason": "n < 100",
+      "se": 11311.52
+     }
+    },
+    "Family and Consumer Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 70052.25,
+      "moe": 11359.57,
+      "n": 94,
+      "reason": "n < 100",
+      "se": 6905.52
+     }
+    },
+    "Finance": {
+     "econ_vs_major": {
+      "d": 841.5,
+      "label": "about the same",
+      "moe": 13380.1,
+      "se": 8133.8
+     },
+     "major": {
+      "hidden": false,
+      "median": 100547.37,
+      "moe": 6958.55,
+      "n": 1080,
+      "reason": "",
+      "se": 4230.12
+     }
+    },
+    "Fine Arts": {
+     "econ_vs_major": {
+      "d": 43410.94,
+      "label": "better",
+      "moe": 13483.05,
+      "se": 8196.38
+     },
+     "major": {
+      "hidden": false,
+      "median": 58094.04,
+      "moe": 8541.47,
+      "n": 407,
+      "reason": "",
+      "se": 5192.38
+     }
+    },
+    "Foreign Language": {
+     "econ_vs_major": {
+      "d": 38420.67,
+      "label": "better",
+      "moe": 16274.63,
+      "se": 9893.39
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 9902.75,
+      "n": 235,
+      "reason": "",
+      "se": 6019.91
+     }
+    },
+    "General Business": {
+     "econ_vs_major": {
+      "d": 23549.8,
+      "label": "better",
+      "moe": 12984.29,
+      "se": 7893.18
+     },
+     "major": {
+      "hidden": false,
+      "median": 77560.66,
+      "moe": 4195.15,
+      "n": 1465,
+      "reason": "",
+      "se": 2550.25
+     }
+    },
+    "General Education": {
+     "econ_vs_major": {
+      "d": 46566.77,
+      "label": "better",
+      "moe": 12347.47,
+      "se": 7506.06
+     },
+     "major": {
+      "hidden": false,
+      "median": 54823.5,
+      "moe": 2246.66,
+      "n": 847,
+      "reason": "",
+      "se": 1365.75
+     }
+    },
+    "General Engineering": {
+     "econ_vs_major": {
+      "d": 30530.84,
+      "label": "better",
+      "moe": 15073.8,
+      "se": 9163.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 71067.5,
+      "moe": 11168.57,
+      "n": 418,
+      "reason": "",
+      "se": 6789.4
+     }
+    },
+    "General Social Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 71067.5,
+      "moe": 10713.33,
+      "n": 68,
+      "reason": "n < 100",
+      "se": 6512.66
+     }
+    },
+    "Geography": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 72617.55,
+      "moe": 27670.52,
+      "n": 41,
+      "reason": "n < 100",
+      "se": 16820.99
+     }
+    },
+    "Health Services": {
+     "econ_vs_major": {
+      "d": 39458.62,
+      "label": "better",
+      "moe": 14414.44,
+      "se": 8762.58
+     },
+     "major": {
+      "hidden": false,
+      "median": 61930.25,
+      "moe": 5339.49,
+      "n": 769,
+      "reason": "",
+      "se": 3245.89
+     }
+    },
+    "History": {
+     "econ_vs_major": {
+      "d": 16448.99,
+      "label": "better",
+      "moe": 15334.43,
+      "se": 9321.84
+     },
+     "major": {
+      "hidden": false,
+      "median": 85281.0,
+      "moe": 8253.48,
+      "n": 343,
+      "reason": "",
+      "se": 5017.31
+     }
+    },
+    "Industrial Engineering": {
+     "econ_vs_major": {
+      "d": 15092.62,
+      "label": "about the same",
+      "moe": 17795.53,
+      "se": 10817.95
+     },
+     "major": {
+      "hidden": false,
+      "median": 86296.25,
+      "moe": 11037.75,
+      "n": 345,
+      "reason": "",
+      "se": 6709.88
+     }
+    },
+    "Information Systems & Management": {
+     "econ_vs_major": {
+      "d": 17862.0,
+      "label": "better",
+      "moe": 12958.57,
+      "se": 7877.55
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 6191.7,
+      "n": 491,
+      "reason": "",
+      "se": 3763.95
+     }
+    },
+    "Interdisciplinary Studies": {
+     "econ_vs_major": {
+      "d": 39943.25,
+      "label": "better",
+      "moe": 13671.38,
+      "se": 8310.87
+     },
+     "major": {
+      "hidden": false,
+      "median": 61445.62,
+      "moe": 4142.16,
+      "n": 428,
+      "reason": "",
+      "se": 2518.03
+     }
+    },
+    "International Affairs": {
+     "econ_vs_major": {
+      "d": 26286.67,
+      "label": "better",
+      "moe": 17725.64,
+      "se": 10775.46
+     },
+     "major": {
+      "hidden": false,
+      "median": 75561.84,
+      "moe": 12816.48,
+      "n": 512,
+      "reason": "",
+      "se": 7791.17
+     }
+    },
+    "Journalism": {
+     "econ_vs_major": {
+      "d": 22975.43,
+      "label": "better",
+      "moe": 14685.88,
+      "se": 8927.58
+     },
+     "major": {
+      "hidden": false,
+      "median": 78203.51,
+      "moe": 8801.11,
+      "n": 286,
+      "reason": "",
+      "se": 5350.22
+     }
+    },
+    "Leisure and Hospitality": {
+     "econ_vs_major": {
+      "d": 35663.46,
+      "label": "better",
+      "moe": 12114.57,
+      "se": 7364.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 65628.26,
+      "moe": 6571.24,
+      "n": 412,
+      "reason": "",
+      "se": 3994.68
+     }
+    },
+    "Liberal Arts": {
+     "econ_vs_major": {
+      "d": 38420.67,
+      "label": "better",
+      "moe": 12222.93,
+      "se": 7430.35
+     },
+     "major": {
+      "hidden": false,
+      "median": 62968.2,
+      "moe": 2983.29,
+      "n": 278,
+      "reason": "",
+      "se": 1813.55
+     }
+    },
+    "Marketing": {
+     "econ_vs_major": {
+      "d": 25245.12,
+      "label": "better",
+      "moe": 13314.93,
+      "se": 8094.18
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 5775.97,
+      "n": 1018,
+      "reason": "",
+      "se": 3511.23
+     }
+    },
+    "Mass Media": {
+     "econ_vs_major": {
+      "d": 33984.34,
+      "label": "better",
+      "moe": 14600.02,
+      "se": 8875.39
+     },
+     "major": {
+      "hidden": false,
+      "median": 67210.93,
+      "moe": 9471.45,
+      "n": 208,
+      "reason": "",
+      "se": 5757.72
+     }
+    },
+    "Mathematics": {
+     "econ_vs_major": {
+      "d": 20439.72,
+      "label": "better",
+      "moe": 16640.64,
+      "se": 10115.89
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 11647.18,
+      "n": 251,
+      "reason": "",
+      "se": 7080.35
+     }
+    },
+    "Mechanical Engineering": {
+     "econ_vs_major": {
+      "d": 15332.33,
+      "label": "better",
+      "moe": 12379.68,
+      "se": 7525.64
+     },
+     "major": {
+      "hidden": false,
+      "median": 86056.54,
+      "moe": 6269.51,
+      "n": 417,
+      "reason": "",
+      "se": 3811.25
+     }
+    },
+    "Medical Technicians": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 50762.5,
+      "moe": 14045.63,
+      "n": 59,
+      "reason": "n < 100",
+      "se": 8538.38
+     }
+    },
+    "Miscellaneous Biological Science": {
+     "econ_vs_major": {
+      "d": 23185.36,
+      "label": "better",
+      "moe": 18736.45,
+      "se": 11389.94
+     },
+     "major": {
+      "hidden": false,
+      "median": 78203.51,
+      "moe": 14021.97,
+      "n": 276,
+      "reason": "",
+      "se": 8524.0
+     }
+    },
+    "Miscellaneous Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 78203.51,
+      "moe": 21501.27,
+      "n": 72,
+      "reason": "n < 100",
+      "se": 13070.68
+     }
+    },
+    "Miscellaneous Engineering": {
+     "econ_vs_major": {
+      "d": 15601.82,
+      "label": "about the same",
+      "moe": 15986.34,
+      "se": 9718.14
+     },
+     "major": {
+      "hidden": false,
+      "median": 85913.35,
+      "moe": 11102.17,
+      "n": 288,
+      "reason": "",
+      "se": 6749.04
+     }
+    },
+    "Miscellaneous Physical Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 61100.85,
+      "moe": 28955.27,
+      "n": 55,
+      "reason": "n < 100",
+      "se": 17601.99
+     }
+    },
+    "Miscellaneous Technologies": {
+     "econ_vs_major": {
+      "d": 11186.04,
+      "label": "about the same",
+      "moe": 24061.63,
+      "se": 14627.13
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 23130.13,
+      "n": 217,
+      "reason": "",
+      "se": 14060.87
+     }
+    },
+    "Nursing": {
+     "econ_vs_major": {
+      "d": 22033.78,
+      "label": "better",
+      "moe": 12940.15,
+      "se": 7866.36
+     },
+     "major": {
+      "hidden": false,
+      "median": 79320.7,
+      "moe": 4932.67,
+      "n": 1499,
+      "reason": "",
+      "se": 2998.58
+     }
+    },
+    "Nutrition Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 78710.25,
+      "moe": 16555.79,
+      "n": 81,
+      "reason": "n < 100",
+      "se": 10064.31
+     }
+    },
+    "Performing Arts": {
+     "econ_vs_major": {
+      "d": 45340.89,
+      "label": "better",
+      "moe": 16054.0,
+      "se": 9759.27
+     },
+     "major": {
+      "hidden": false,
+      "median": 56671.38,
+      "moe": 8417.21,
+      "n": 229,
+      "reason": "",
+      "se": 5116.84
+     }
+    },
+    "Pharmacy": {
+     "econ_vs_major": {
+      "d": 20840.67,
+      "label": "about the same",
+      "moe": 22182.02,
+      "se": 13484.51
+     },
+     "major": {
+      "hidden": false,
+      "median": 80653.12,
+      "moe": 18248.32,
+      "n": 175,
+      "reason": "",
+      "se": 11093.21
+     }
+    },
+    "Philosophy": {
+     "econ_vs_major": {
+      "d": 23864.63,
+      "label": "better",
+      "moe": 17338.3,
+      "se": 10540.0
+     },
+     "major": {
+      "hidden": false,
+      "median": 78203.51,
+      "moe": 12833.46,
+      "n": 151,
+      "reason": "",
+      "se": 7801.5
+     }
+    },
+    "Physics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 94452.3,
+      "moe": 28381.91,
+      "n": 85,
+      "reason": "n < 100",
+      "se": 17253.44
+     }
+    },
+    "Political Science": {
+     "econ_vs_major": {
+      "d": 9737.59,
+      "label": "about the same",
+      "moe": 16097.25,
+      "se": 9785.56
+     },
+     "major": {
+      "hidden": false,
+      "median": 91651.27,
+      "moe": 7396.97,
+      "n": 745,
+      "reason": "",
+      "se": 4496.64
+     }
+    },
+    "Psychology": {
+     "econ_vs_major": {
+      "d": 35397.62,
+      "label": "better",
+      "moe": 12258.68,
+      "se": 7452.09
+     },
+     "major": {
+      "hidden": false,
+      "median": 65991.25,
+      "moe": 2715.78,
+      "n": 1706,
+      "reason": "",
+      "se": 1650.93
+     }
+    },
+    "Public Policy and Law": {
+     "econ_vs_major": {
+      "d": 24523.82,
+      "label": "better",
+      "moe": 14647.71,
+      "se": 8904.38
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 8588.16,
+      "n": 206,
+      "reason": "",
+      "se": 5220.76
+     }
+    },
+    "Secondary Education": {
+     "econ_vs_major": {
+      "d": 46449.59,
+      "label": "better",
+      "moe": 12427.28,
+      "se": 7554.58
+     },
+     "major": {
+      "hidden": false,
+      "median": 54990.76,
+      "moe": 3610.65,
+      "n": 381,
+      "reason": "",
+      "se": 2194.92
+     }
+    },
+    "Social Services": {
+     "econ_vs_major": {
+      "d": 46398.1,
+      "label": "better",
+      "moe": 12749.96,
+      "se": 7750.74
+     },
+     "major": {
+      "hidden": false,
+      "median": 54990.76,
+      "moe": 3964.67,
+      "n": 215,
+      "reason": "",
+      "se": 2410.13
+     }
+    },
+    "Sociology": {
+     "econ_vs_major": {
+      "d": 40144.0,
+      "label": "better",
+      "moe": 13991.39,
+      "se": 8505.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 5960.81,
+      "n": 246,
+      "reason": "",
+      "se": 3623.59
+     }
+    },
+    "Special Education": {
+     "econ_vs_major": {
+      "d": 41549.66,
+      "label": "better",
+      "moe": 13276.45,
+      "se": 8070.79
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 3455.05,
+      "n": 132,
+      "reason": "",
+      "se": 2100.33
+     }
+    },
+    "Theology and Religion": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 49826.81,
+      "moe": 8199.66,
+      "n": 92,
+      "reason": "n < 100",
+      "se": 4984.59
+     }
+    },
+    "Treatment Therapy": {
+     "econ_vs_major": {
+      "d": 39094.77,
+      "label": "better",
+      "moe": 18707.89,
+      "se": 11372.58
+     },
+     "major": {
+      "hidden": false,
+      "median": 62322.87,
+      "moe": 13602.36,
+      "n": 206,
+      "reason": "",
+      "se": 8268.91
+     }
+    }
+   },
+   "econ_vs_all": {
+    "d": 29794.41,
+    "label": "better",
+    "moe": 12645.61,
+    "se": 7687.3
+   },
+   "economics": {
+    "hidden": false,
+    "median": 101525.0,
+    "moe": 12189.05,
+    "n": 781,
+    "reason": "",
+    "se": 7409.76
+   },
+   "majors_present": 73
+  }
+ },
+ "grad=1|fulltime=1": {
+  "florida": {
+   "all": {
+    "hidden": false,
+    "median": 76143.75,
+    "moe": 277.79,
+    "n": 86319,
+    "reason": "",
+    "se": 168.87
+   },
+   "by_major": {
+    "Accounting": {
+     "econ_vs_major": {
+      "d": 10494.7,
+      "label": "better",
+      "moe": 6964.37,
+      "se": 4233.66
+     },
+     "major": {
+      "hidden": false,
+      "median": 83957.6,
+      "moe": 1960.29,
+      "n": 3180,
+      "reason": "",
+      "se": 1191.66
+     }
+    },
+    "Advertising and Public Relations": {
+     "econ_vs_major": {
+      "d": 17370.74,
+      "label": "better",
+      "moe": 7743.03,
+      "se": 4707.01
+     },
+     "major": {
+      "hidden": false,
+      "median": 77086.32,
+      "moe": 4746.5,
+      "n": 648,
+      "reason": "",
+      "se": 2885.41
+     }
+    },
+    "Aerospace Engineering": {
+     "econ_vs_major": {
+      "d": -28586.75,
+      "label": "worse",
+      "moe": 8167.93,
+      "se": 4965.31
+     },
+     "major": {
+      "hidden": false,
+      "median": 123423.72,
+      "moe": 4351.32,
+      "n": 248,
+      "reason": "",
+      "se": 2645.18
+     }
+    },
+    "Agriculture": {
+     "econ_vs_major": {
+      "d": 21834.75,
+      "label": "better",
+      "moe": 10473.97,
+      "se": 6367.16
+     },
+     "major": {
+      "hidden": false,
+      "median": 72617.55,
+      "moe": 8957.86,
+      "n": 162,
+      "reason": "",
+      "se": 5445.51
+     }
+    },
+    "Animal and Plant Sciences": {
+     "econ_vs_major": {
+      "d": 13666.4,
+      "label": "better",
+      "moe": 12915.9,
+      "se": 7851.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 9510.93,
+      "n": 361,
+      "reason": "",
+      "se": 5781.72
+     }
+    },
+    "Anthropology": {
+     "econ_vs_major": {
+      "d": 26166.68,
+      "label": "better",
+      "moe": 7755.27,
+      "se": 4714.45
+     },
+     "major": {
+      "hidden": false,
+      "median": 68432.95,
+      "moe": 4377.26,
+      "n": 348,
+      "reason": "",
+      "se": 2660.95
+     }
+    },
+    "Architecture": {
+     "econ_vs_major": {
+      "d": 17765.5,
+      "label": "better",
+      "moe": 7033.6,
+      "se": 4275.75
+     },
+     "major": {
+      "hidden": false,
+      "median": 76367.42,
+      "moe": 3750.94,
+      "n": 675,
+      "reason": "",
+      "se": 2280.21
+     }
+    },
+    "Art History": {
+     "econ_vs_major": {
+      "d": 29365.29,
+      "label": "better",
+      "moe": 9513.89,
+      "se": 5783.52
+     },
+     "major": {
+      "hidden": false,
+      "median": 64797.19,
+      "moe": 7162.33,
+      "n": 145,
+      "reason": "",
+      "se": 4354.0
+     }
+    },
+    "Biochemistry": {
+     "econ_vs_major": {
+      "d": -20945.64,
+      "label": "about the same",
+      "moe": 21235.85,
+      "se": 12909.33
+     },
+     "major": {
+      "hidden": false,
+      "median": 115441.7,
+      "moe": 21018.21,
+      "n": 239,
+      "reason": "",
+      "se": 12777.03
+     }
+    },
+    "Biology": {
+     "econ_vs_major": {
+      "d": 4875.56,
+      "label": "about the same",
+      "moe": 8051.44,
+      "se": 4894.49
+     },
+     "major": {
+      "hidden": false,
+      "median": 89493.07,
+      "moe": 4596.32,
+      "n": 3308,
+      "reason": "",
+      "se": 2794.11
+     }
+    },
+    "Business Analytics": {
+     "econ_vs_major": {
+      "d": -6067.69,
+      "label": "about the same",
+      "moe": 8359.16,
+      "se": 5081.55
+     },
+     "major": {
+      "hidden": false,
+      "median": 100509.75,
+      "moe": 5387.82,
+      "n": 846,
+      "reason": "",
+      "se": 3275.27
+     }
+    },
+    "Business Management": {
+     "econ_vs_major": {
+      "d": 21827.92,
+      "label": "better",
+      "moe": 6956.22,
+      "se": 4228.71
+     },
+     "major": {
+      "hidden": false,
+      "median": 72617.55,
+      "moe": 1558.88,
+      "n": 8481,
+      "reason": "",
+      "se": 947.65
+     }
+    },
+    "Chemical Engineering": {
+     "econ_vs_major": {
+      "d": -7749.27,
+      "label": "about the same",
+      "moe": 9207.85,
+      "se": 5597.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 102540.25,
+      "moe": 5688.72,
+      "n": 327,
+      "reason": "",
+      "se": 3458.19
+     }
+    },
+    "Chemistry": {
+     "econ_vs_major": {
+      "d": 5380.26,
+      "label": "about the same",
+      "moe": 11564.01,
+      "se": 7029.8
+     },
+     "major": {
+      "hidden": false,
+      "median": 89204.95,
+      "moe": 9289.9,
+      "n": 578,
+      "reason": "",
+      "se": 5647.35
+     }
+    },
+    "Civil Engineering": {
+     "econ_vs_major": {
+      "d": -9120.98,
+      "label": "worse",
+      "moe": 8931.42,
+      "se": 5429.44
+     },
+     "major": {
+      "hidden": false,
+      "median": 103811.97,
+      "moe": 5344.63,
+      "n": 977,
+      "reason": "",
+      "se": 3249.01
+     }
+    },
+    "Commercial Art & Graphic Design": {
+     "econ_vs_major": {
+      "d": 28500.09,
+      "label": "better",
+      "moe": 8765.8,
+      "se": 5328.75
+     },
+     "major": {
+      "hidden": false,
+      "median": 65914.39,
+      "moe": 4882.95,
+      "n": 893,
+      "reason": "",
+      "se": 2968.36
+     }
+    },
+    "Communications": {
+     "econ_vs_major": {
+      "d": 20989.4,
+      "label": "better",
+      "moe": 8015.87,
+      "se": 4872.87
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 3186.81,
+      "n": 2225,
+      "reason": "",
+      "se": 1937.27
+     }
+    },
+    "Computer Engineering": {
+     "econ_vs_major": {
+      "d": -7072.7,
+      "label": "about the same",
+      "moe": 9325.03,
+      "se": 5668.71
+     },
+     "major": {
+      "hidden": false,
+      "median": 101525.0,
+      "moe": 6051.83,
+      "n": 958,
+      "reason": "",
+      "se": 3678.92
+     }
+    },
+    "Computer Science": {
+     "econ_vs_major": {
+      "d": -9359.67,
+      "label": "worse",
+      "moe": 7657.14,
+      "se": 4654.79
+     },
+     "major": {
+      "hidden": false,
+      "median": 103811.97,
+      "moe": 3931.47,
+      "n": 2301,
+      "reason": "",
+      "se": 2389.95
+     }
+    },
+    "Construction Services": {
+     "econ_vs_major": {
+      "d": -390.43,
+      "label": "about the same",
+      "moe": 11886.0,
+      "se": 7225.53
+     },
+     "major": {
+      "hidden": false,
+      "median": 94961.41,
+      "moe": 9939.83,
+      "n": 302,
+      "reason": "",
+      "se": 6042.45
+     }
+    },
+    "Criminal Justice": {
+     "econ_vs_major": {
+      "d": 26146.33,
+      "label": "better",
+      "moe": 8041.99,
+      "se": 4888.75
+     },
+     "major": {
+      "hidden": false,
+      "median": 68432.95,
+      "moe": 3442.33,
+      "n": 2960,
+      "reason": "",
+      "se": 2092.6
+     }
+    },
+    "Early Childhood Education": {
+     "econ_vs_major": {
+      "d": 40756.45,
+      "label": "better",
+      "moe": 7333.48,
+      "se": 4458.04
+     },
+     "major": {
+      "hidden": false,
+      "median": 53695.85,
+      "moe": 1715.64,
+      "n": 310,
+      "reason": "",
+      "se": 1042.94
+     }
+    },
+    "Earth Sciences": {
+     "econ_vs_major": {
+      "d": 26438.71,
+      "label": "better",
+      "moe": 21155.44,
+      "se": 12860.45
+     },
+     "major": {
+      "hidden": false,
+      "median": 69265.02,
+      "moe": 19927.15,
+      "n": 101,
+      "reason": "",
+      "se": 12113.77
+     }
+    },
+    "Economics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": false,
+      "median": 94452.3,
+      "moe": 6716.92,
+      "n": 1612,
+      "reason": "",
+      "se": 4083.23
+     }
+    },
+    "Electrical Engineering": {
+     "econ_vs_major": {
+      "d": -9419.15,
+      "label": "worse",
+      "moe": 8044.69,
+      "se": 4890.39
+     },
+     "major": {
+      "hidden": false,
+      "median": 103871.44,
+      "moe": 4755.79,
+      "n": 1341,
+      "reason": "",
+      "se": 2891.06
+     }
+    },
+    "Elementary Education": {
+     "econ_vs_major": {
+      "d": 38613.55,
+      "label": "better",
+      "moe": 6679.9,
+      "se": 4060.73
+     },
+     "major": {
+      "hidden": false,
+      "median": 55838.75,
+      "moe": 724.32,
+      "n": 2135,
+      "reason": "",
+      "se": 440.31
+     }
+    },
+    "Engineering Technologies": {
+     "econ_vs_major": {
+      "d": 9284.39,
+      "label": "about the same",
+      "moe": 9421.31,
+      "se": 5727.24
+     },
+     "major": {
+      "hidden": false,
+      "median": 85541.19,
+      "moe": 9039.83,
+      "n": 431,
+      "reason": "",
+      "se": 5495.34
+     }
+    },
+    "English Language": {
+     "econ_vs_major": {
+      "d": 27420.72,
+      "label": "better",
+      "moe": 7660.76,
+      "se": 4656.99
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 2952.2,
+      "n": 1785,
+      "reason": "",
+      "se": 1794.65
+     }
+    },
+    "Environmental Studies": {
+     "econ_vs_major": {
+      "d": 23384.8,
+      "label": "better",
+      "moe": 9458.98,
+      "se": 5750.14
+     },
+     "major": {
+      "hidden": false,
+      "median": 71067.5,
+      "moe": 6904.38,
+      "n": 569,
+      "reason": "",
+      "se": 4197.19
+     }
+    },
+    "Ethnic Studies": {
+     "econ_vs_major": {
+      "d": 26996.9,
+      "label": "better",
+      "moe": 14345.33,
+      "se": 8720.57
+     },
+     "major": {
+      "hidden": false,
+      "median": 68014.74,
+      "moe": 11459.8,
+      "n": 146,
+      "reason": "",
+      "se": 6966.44
+     }
+    },
+    "Family and Consumer Sciences": {
+     "econ_vs_major": {
+      "d": 32403.77,
+      "label": "better",
+      "moe": 8986.73,
+      "se": 5463.06
+     },
+     "major": {
+      "hidden": false,
+      "median": 62048.53,
+      "moe": 5441.95,
+      "n": 355,
+      "reason": "",
+      "se": 3308.18
+     }
+    },
+    "Finance": {
+     "econ_vs_major": {
+      "d": -10477.87,
+      "label": "worse",
+      "moe": 8606.03,
+      "se": 5231.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 104947.0,
+      "moe": 5634.18,
+      "n": 2747,
+      "reason": "",
+      "se": 3425.03
+     }
+    },
+    "Fine Arts": {
+     "econ_vs_major": {
+      "d": 34790.25,
+      "label": "better",
+      "moe": 6796.64,
+      "se": 4131.7
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 3124.91,
+      "n": 1072,
+      "reason": "",
+      "se": 1899.64
+     }
+    },
+    "Foreign Language": {
+     "econ_vs_major": {
+      "d": 26297.67,
+      "label": "better",
+      "moe": 8387.39,
+      "se": 5098.72
+     },
+     "major": {
+      "hidden": false,
+      "median": 68148.77,
+      "moe": 5455.22,
+      "n": 566,
+      "reason": "",
+      "se": 3316.24
+     }
+    },
+    "General Business": {
+     "econ_vs_major": {
+      "d": 15742.05,
+      "label": "better",
+      "moe": 7114.09,
+      "se": 4324.67
+     },
+     "major": {
+      "hidden": false,
+      "median": 78710.25,
+      "moe": 2047.83,
+      "n": 3835,
+      "reason": "",
+      "se": 1244.88
+     }
+    },
+    "General Education": {
+     "econ_vs_major": {
+      "d": 38830.39,
+      "label": "better",
+      "moe": 6988.47,
+      "se": 4248.31
+     },
+     "major": {
+      "hidden": false,
+      "median": 55621.91,
+      "moe": 1568.46,
+      "n": 2103,
+      "reason": "",
+      "se": 953.47
+     }
+    },
+    "General Engineering": {
+     "econ_vs_major": {
+      "d": 6246.68,
+      "label": "about the same",
+      "moe": 8899.47,
+      "se": 5410.01
+     },
+     "major": {
+      "hidden": false,
+      "median": 88155.48,
+      "moe": 5245.68,
+      "n": 948,
+      "reason": "",
+      "se": 3188.86
+     }
+    },
+    "General Social Sciences": {
+     "econ_vs_major": {
+      "d": 34790.25,
+      "label": "better",
+      "moe": 10413.61,
+      "se": 6330.46
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 7274.33,
+      "n": 226,
+      "reason": "",
+      "se": 4422.09
+     }
+    },
+    "Geography": {
+     "econ_vs_major": {
+      "d": 14015.81,
+      "label": "better",
+      "moe": 10099.46,
+      "se": 6139.49
+     },
+     "major": {
+      "hidden": false,
+      "median": 80437.9,
+      "moe": 7905.99,
+      "n": 171,
+      "reason": "",
+      "se": 4806.08
+     }
+    },
+    "Health Services": {
+     "econ_vs_major": {
+      "d": 24069.14,
+      "label": "better",
+      "moe": 7635.74,
+      "se": 4641.79
+     },
+     "major": {
+      "hidden": false,
+      "median": 70383.16,
+      "moe": 3973.74,
+      "n": 2285,
+      "reason": "",
+      "se": 2415.65
+     }
+    },
+    "History": {
+     "econ_vs_major": {
+      "d": 18411.18,
+      "label": "better",
+      "moe": 8996.06,
+      "se": 5468.73
+     },
+     "major": {
+      "hidden": false,
+      "median": 75969.12,
+      "moe": 5536.6,
+      "n": 1132,
+      "reason": "",
+      "se": 3365.71
+     }
+    },
+    "Industrial Engineering": {
+     "econ_vs_major": {
+      "d": 3332.76,
+      "label": "about the same",
+      "moe": 8694.75,
+      "se": 5285.56
+     },
+     "major": {
+      "hidden": false,
+      "median": 91303.89,
+      "moe": 5835.05,
+      "n": 621,
+      "reason": "",
+      "se": 3547.14
+     }
+    },
+    "Information Systems & Management": {
+     "econ_vs_major": {
+      "d": 4170.9,
+      "label": "about the same",
+      "moe": 7856.11,
+      "se": 4775.75
+     },
+     "major": {
+      "hidden": false,
+      "median": 90357.25,
+      "moe": 4602.08,
+      "n": 1590,
+      "reason": "",
+      "se": 2797.62
+     }
+    },
+    "Interdisciplinary Studies": {
+     "econ_vs_major": {
+      "d": 23384.8,
+      "label": "better",
+      "moe": 7351.61,
+      "se": 4469.06
+     },
+     "major": {
+      "hidden": false,
+      "median": 71067.5,
+      "moe": 3593.39,
+      "n": 1239,
+      "reason": "",
+      "se": 2184.43
+     }
+    },
+    "International Affairs": {
+     "econ_vs_major": {
+      "d": 10494.7,
+      "label": "better",
+      "moe": 8203.96,
+      "se": 4987.21
+     },
+     "major": {
+      "hidden": false,
+      "median": 83957.6,
+      "moe": 3960.87,
+      "n": 913,
+      "reason": "",
+      "se": 2407.82
+     }
+    },
+    "Journalism": {
+     "econ_vs_major": {
+      "d": 15262.8,
+      "label": "better",
+      "moe": 9891.87,
+      "se": 6013.29
+     },
+     "major": {
+      "hidden": false,
+      "median": 79189.5,
+      "moe": 6506.26,
+      "n": 647,
+      "reason": "",
+      "se": 3955.17
+     }
+    },
+    "Leisure and Hospitality": {
+     "econ_vs_major": {
+      "d": 27420.72,
+      "label": "better",
+      "moe": 6627.99,
+      "se": 4029.18
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 1249.21,
+      "n": 1298,
+      "reason": "",
+      "se": 759.4
+     }
+    },
+    "Liberal Arts": {
+     "econ_vs_major": {
+      "d": 28824.04,
+      "label": "better",
+      "moe": 7988.17,
+      "se": 4856.03
+     },
+     "major": {
+      "hidden": false,
+      "median": 65628.26,
+      "moe": 4918.72,
+      "n": 705,
+      "reason": "",
+      "se": 2990.1
+     }
+    },
+    "Marketing": {
+     "econ_vs_major": {
+      "d": 13232.3,
+      "label": "better",
+      "moe": 8162.15,
+      "se": 4961.79
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 3719.33,
+      "n": 2492,
+      "reason": "",
+      "se": 2260.99
+     }
+    },
+    "Mass Media": {
+     "econ_vs_major": {
+      "d": 25211.96,
+      "label": "better",
+      "moe": 8059.81,
+      "se": 4899.58
+     },
+     "major": {
+      "hidden": false,
+      "median": 69265.97,
+      "moe": 5909.17,
+      "n": 563,
+      "reason": "",
+      "se": 3592.2
+     }
+    },
+    "Mathematics": {
+     "econ_vs_major": {
+      "d": 5945.31,
+      "label": "about the same",
+      "moe": 9994.06,
+      "se": 6075.42
+     },
+     "major": {
+      "hidden": false,
+      "median": 88326.75,
+      "moe": 6169.35,
+      "n": 728,
+      "reason": "",
+      "se": 3750.36
+     }
+    },
+    "Mechanical Engineering": {
+     "econ_vs_major": {
+      "d": -7072.7,
+      "label": "about the same",
+      "moe": 7163.84,
+      "se": 4354.92
+     },
+     "major": {
+      "hidden": false,
+      "median": 101525.0,
+      "moe": 2523.0,
+      "n": 1345,
+      "reason": "",
+      "se": 1533.74
+     }
+    },
+    "Medical Technicians": {
+     "econ_vs_major": {
+      "d": 23036.77,
+      "label": "better",
+      "moe": 10018.49,
+      "se": 6090.27
+     },
+     "major": {
+      "hidden": false,
+      "median": 71363.96,
+      "moe": 6859.76,
+      "n": 237,
+      "reason": "",
+      "se": 4170.07
+     }
+    },
+    "Miscellaneous Biological Science": {
+     "econ_vs_major": {
+      "d": 13232.3,
+      "label": "better",
+      "moe": 9081.59,
+      "se": 5520.72
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 5865.44,
+      "n": 782,
+      "reason": "",
+      "se": 3565.62
+     }
+    },
+    "Miscellaneous Education": {
+     "econ_vs_major": {
+      "d": 33537.3,
+      "label": "better",
+      "moe": 7391.99,
+      "se": 4493.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 60915.0,
+      "moe": 3237.92,
+      "n": 310,
+      "reason": "",
+      "se": 1968.34
+     }
+    },
+    "Miscellaneous Engineering": {
+     "econ_vs_major": {
+      "d": 5076.86,
+      "label": "about the same",
+      "moe": 10263.98,
+      "se": 6239.5
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 7686.26,
+      "n": 751,
+      "reason": "",
+      "se": 4672.5
+     }
+    },
+    "Miscellaneous Physical Sciences": {
+     "econ_vs_major": {
+      "d": 20701.49,
+      "label": "better",
+      "moe": 17550.38,
+      "se": 10668.93
+     },
+     "major": {
+      "hidden": false,
+      "median": 73734.74,
+      "moe": 16827.15,
+      "n": 183,
+      "reason": "",
+      "se": 10229.27
+     }
+    },
+    "Miscellaneous Technologies": {
+     "econ_vs_major": {
+      "d": 10925.43,
+      "label": "better",
+      "moe": 8247.96,
+      "se": 5013.95
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 5606.93,
+      "n": 649,
+      "reason": "",
+      "se": 3408.47
+     }
+    },
+    "Nursing": {
+     "econ_vs_major": {
+      "d": 10662.82,
+      "label": "better",
+      "moe": 6735.33,
+      "se": 4094.43
+     },
+     "major": {
+      "hidden": false,
+      "median": 83789.48,
+      "moe": 620.3,
+      "n": 4053,
+      "reason": "",
+      "se": 377.08
+     }
+    },
+    "Nutrition Sciences": {
+     "econ_vs_major": {
+      "d": 19068.92,
+      "label": "better",
+      "moe": 12675.39,
+      "se": 7705.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 74851.93,
+      "moe": 10559.7,
+      "n": 184,
+      "reason": "",
+      "se": 6419.27
+     }
+    },
+    "Performing Arts": {
+     "econ_vs_major": {
+      "d": 34790.25,
+      "label": "better",
+      "moe": 7000.65,
+      "se": 4255.72
+     },
+     "major": {
+      "hidden": false,
+      "median": 59662.05,
+      "moe": 2760.59,
+      "n": 754,
+      "reason": "",
+      "se": 1678.17
+     }
+    },
+    "Pharmacy": {
+     "econ_vs_major": {
+      "d": -15380.66,
+      "label": "worse",
+      "moe": 12062.58,
+      "se": 7332.88
+     },
+     "major": {
+      "hidden": false,
+      "median": 109647.0,
+      "moe": 9836.14,
+      "n": 416,
+      "reason": "",
+      "se": 5979.42
+     }
+    },
+    "Philosophy": {
+     "econ_vs_major": {
+      "d": 18308.55,
+      "label": "better",
+      "moe": 8513.26,
+      "se": 5175.23
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 6173.52,
+      "n": 396,
+      "reason": "",
+      "se": 3752.9
+     }
+    },
+    "Physics": {
+     "econ_vs_major": {
+      "d": -6035.25,
+      "label": "about the same",
+      "moe": 12658.32,
+      "se": 7695.03
+     },
+     "major": {
+      "hidden": false,
+      "median": 100547.37,
+      "moe": 10411.71,
+      "n": 233,
+      "reason": "",
+      "se": 6329.31
+     }
+    },
+    "Political Science": {
+     "econ_vs_major": {
+      "d": 3079.8,
+      "label": "about the same",
+      "moe": 7901.72,
+      "se": 4803.48
+     },
+     "major": {
+      "hidden": false,
+      "median": 91372.5,
+      "moe": 3584.74,
+      "n": 1847,
+      "reason": "",
+      "se": 2179.18
+     }
+    },
+    "Psychology": {
+     "econ_vs_major": {
+      "d": 27420.72,
+      "label": "better",
+      "moe": 6734.48,
+      "se": 4093.91
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 1027.51,
+      "n": 4590,
+      "reason": "",
+      "se": 624.63
+     }
+    },
+    "Public Policy and Law": {
+     "econ_vs_major": {
+      "d": 18308.55,
+      "label": "better",
+      "moe": 9260.45,
+      "se": 5629.45
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 5590.94,
+      "n": 557,
+      "reason": "",
+      "se": 3398.75
+     }
+    },
+    "Secondary Education": {
+     "econ_vs_major": {
+      "d": 37176.73,
+      "label": "better",
+      "moe": 7086.33,
+      "se": 4307.8
+     },
+     "major": {
+      "hidden": false,
+      "median": 57275.57,
+      "moe": 1758.48,
+      "n": 1371,
+      "reason": "",
+      "se": 1068.98
+     }
+    },
+    "Social Services": {
+     "econ_vs_major": {
+      "d": 35681.98,
+      "label": "better",
+      "moe": 6838.73,
+      "se": 4157.28
+     },
+     "major": {
+      "hidden": false,
+      "median": 58770.32,
+      "moe": 2615.69,
+      "n": 730,
+      "reason": "",
+      "se": 1590.08
+     }
+    },
+    "Sociology": {
+     "econ_vs_major": {
+      "d": 27214.85,
+      "label": "better",
+      "moe": 9764.07,
+      "se": 5935.6
+     },
+     "major": {
+      "hidden": false,
+      "median": 67210.93,
+      "moe": 6546.61,
+      "n": 756,
+      "reason": "",
+      "se": 3979.7
+     }
+    },
+    "Special Education": {
+     "econ_vs_major": {
+      "d": 36810.46,
+      "label": "better",
+      "moe": 7955.04,
+      "se": 4835.89
+     },
+     "major": {
+      "hidden": false,
+      "median": 57720.85,
+      "moe": 3336.69,
+      "n": 352,
+      "reason": "",
+      "se": 2028.38
+     }
+    },
+    "Theology and Religion": {
+     "econ_vs_major": {
+      "d": 38592.65,
+      "label": "better",
+      "moe": 9916.92,
+      "se": 6028.52
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 5967.09,
+      "n": 393,
+      "reason": "",
+      "se": 3627.41
+     }
+    },
+    "Treatment Therapy": {
+     "econ_vs_major": {
+      "d": 18308.55,
+      "label": "better",
+      "moe": 9878.18,
+      "se": 6004.97
+     },
+     "major": {
+      "hidden": false,
+      "median": 76143.75,
+      "moe": 5872.83,
+      "n": 602,
+      "reason": "",
+      "se": 3570.11
+     }
+    }
+   },
+   "econ_vs_all": {
+    "d": 18308.55,
+    "label": "better",
+    "moe": 6690.88,
+    "se": 4067.41
+   },
+   "economics": {
+    "hidden": false,
+    "median": 94452.3,
+    "moe": 6716.92,
+    "n": 1612,
+    "reason": "",
+    "se": 4083.23
+   },
+   "majors_present": 73
+  },
+  "south_florida": {
+   "all": {
+    "hidden": false,
+    "median": 77560.66,
+    "moe": 1430.41,
+    "n": 28009,
+    "reason": "",
+    "se": 869.55
+   },
+   "by_major": {
+    "Accounting": {
+     "econ_vs_major": {
+      "d": 22826.53,
+      "label": "better",
+      "moe": 12106.32,
+      "se": 7359.47
+     },
+     "major": {
+      "hidden": false,
+      "median": 85541.19,
+      "moe": 3734.5,
+      "n": 1187,
+      "reason": "",
+      "se": 2270.21
+     }
+    },
+    "Advertising and Public Relations": {
+     "econ_vs_major": {
+      "d": 29657.47,
+      "label": "better",
+      "moe": 14786.78,
+      "se": 8988.92
+     },
+     "major": {
+      "hidden": false,
+      "median": 78710.25,
+      "moe": 9330.76,
+      "n": 224,
+      "reason": "",
+      "se": 5672.19
+     }
+    },
+    "Aerospace Engineering": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 104947.0,
+      "moe": 33736.13,
+      "n": 41,
+      "reason": "n < 100",
+      "se": 20508.29
+     }
+    },
+    "Agriculture": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 77560.66,
+      "moe": 26451.98,
+      "n": 33,
+      "reason": "n < 100",
+      "se": 16080.23
+     }
+    },
+    "Animal and Plant Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 74512.37,
+      "moe": 21284.75,
+      "n": 78,
+      "reason": "n < 100",
+      "se": 12939.06
+     }
+    },
+    "Anthropology": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 101425.49,
+      "moe": 33551.19,
+      "n": 82,
+      "reason": "n < 100",
+      "se": 20395.86
+     }
+    },
+    "Architecture": {
+     "econ_vs_major": {
+      "d": 33684.16,
+      "label": "better",
+      "moe": 11143.73,
+      "se": 6774.3
+     },
+     "major": {
+      "hidden": false,
+      "median": 74113.25,
+      "moe": 4725.17,
+      "n": 328,
+      "reason": "",
+      "se": 2872.44
+     }
+    },
+    "Art History": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 86296.25,
+      "moe": 32666.51,
+      "n": 53,
+      "reason": "n < 100",
+      "se": 19858.06
+     }
+    },
+    "Biochemistry": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 106133.34,
+      "moe": 70817.33,
+      "n": 62,
+      "reason": "n < 100",
+      "se": 43050.05
+     }
+    },
+    "Biology": {
+     "econ_vs_major": {
+      "d": 24840.85,
+      "label": "better",
+      "moe": 12556.42,
+      "se": 7633.08
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 5574.28,
+      "n": 965,
+      "reason": "",
+      "se": 3388.62
+     }
+    },
+    "Business Analytics": {
+     "econ_vs_major": {
+      "d": 12490.63,
+      "label": "about the same",
+      "moe": 16544.13,
+      "se": 10057.22
+     },
+     "major": {
+      "hidden": false,
+      "median": 96448.75,
+      "moe": 11126.85,
+      "n": 241,
+      "reason": "",
+      "se": 6764.04
+     }
+    },
+    "Business Management": {
+     "econ_vs_major": {
+      "d": 34904.82,
+      "label": "better",
+      "moe": 12889.01,
+      "se": 7835.26
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 4180.1,
+      "n": 3037,
+      "reason": "",
+      "se": 2541.1
+     }
+    },
+    "Chemical Engineering": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 89493.07,
+      "moe": 35710.73,
+      "n": 100,
+      "reason": "MOE / estimate > 0.30",
+      "se": 21708.65
+     }
+    },
+    "Chemistry": {
+     "econ_vs_major": {
+      "d": 24405.88,
+      "label": "better",
+      "moe": 18029.03,
+      "se": 10959.9
+     },
+     "major": {
+      "hidden": false,
+      "median": 83957.6,
+      "moe": 13295.87,
+      "n": 182,
+      "reason": "",
+      "se": 8082.6
+     }
+    },
+    "Civil Engineering": {
+     "econ_vs_major": {
+      "d": 13949.47,
+      "label": "about the same",
+      "moe": 15373.36,
+      "se": 9345.51
+     },
+     "major": {
+      "hidden": false,
+      "median": 94418.25,
+      "moe": 9421.74,
+      "n": 356,
+      "reason": "",
+      "se": 5727.5
+     }
+    },
+    "Commercial Art & Graphic Design": {
+     "econ_vs_major": {
+      "d": 42383.91,
+      "label": "better",
+      "moe": 12492.42,
+      "se": 7594.17
+     },
+     "major": {
+      "hidden": false,
+      "median": 65991.25,
+      "moe": 6265.2,
+      "n": 343,
+      "reason": "",
+      "se": 3808.63
+     }
+    },
+    "Communications": {
+     "econ_vs_major": {
+      "d": 32541.77,
+      "label": "better",
+      "moe": 14088.25,
+      "se": 8564.29
+     },
+     "major": {
+      "hidden": false,
+      "median": 75969.12,
+      "moe": 7978.39,
+      "n": 748,
+      "reason": "",
+      "se": 4850.08
+     }
+    },
+    "Computer Engineering": {
+     "econ_vs_major": {
+      "d": 12908.44,
+      "label": "about the same",
+      "moe": 13303.44,
+      "se": 8087.2
+     },
+     "major": {
+      "hidden": false,
+      "median": 95459.28,
+      "moe": 8192.54,
+      "n": 406,
+      "reason": "",
+      "se": 4980.27
+     }
+    },
+    "Computer Science": {
+     "econ_vs_major": {
+      "d": 10906.61,
+      "label": "about the same",
+      "moe": 14466.33,
+      "se": 8794.12
+     },
+     "major": {
+      "hidden": false,
+      "median": 97195.79,
+      "moe": 9057.45,
+      "n": 726,
+      "reason": "",
+      "se": 5506.05
+     }
+    },
+    "Construction Services": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 97761.36,
+      "moe": 11622.11,
+      "n": 84,
+      "reason": "n < 100",
+      "se": 7065.11
+     }
+    },
+    "Criminal Justice": {
+     "econ_vs_major": {
+      "d": 32805.88,
+      "label": "better",
+      "moe": 12724.99,
+      "se": 7735.56
+     },
+     "major": {
+      "hidden": false,
+      "median": 75561.84,
+      "moe": 5112.4,
+      "n": 862,
+      "reason": "",
+      "se": 3107.84
+     }
+    },
+    "Early Childhood Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 53625.26,
+      "moe": 3622.47,
+      "n": 80,
+      "reason": "n < 100",
+      "se": 2202.11
+     }
+    },
+    "Earth Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 83250.5,
+      "moe": 27717.49,
+      "n": 36,
+      "reason": "n < 100",
+      "se": 16849.54
+     }
+    },
+    "Economics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": false,
+      "median": 108367.72,
+      "moe": 11362.74,
+      "n": 693,
+      "reason": "",
+      "se": 6907.44
+     }
+    },
+    "Electrical Engineering": {
+     "econ_vs_major": {
+      "d": 4477.6,
+      "label": "about the same",
+      "moe": 15309.36,
+      "se": 9306.6
+     },
+     "major": {
+      "hidden": false,
+      "median": 103871.44,
+      "moe": 9483.07,
+      "n": 483,
+      "reason": "",
+      "se": 5764.78
+     }
+    },
+    "Elementary Education": {
+     "econ_vs_major": {
+      "d": 50646.87,
+      "label": "better",
+      "moe": 11165.95,
+      "se": 6787.81
+     },
+     "major": {
+      "hidden": false,
+      "median": 57720.85,
+      "moe": 2224.94,
+      "n": 502,
+      "reason": "",
+      "se": 1352.55
+     }
+    },
+    "Engineering Technologies": {
+     "econ_vs_major": {
+      "d": 42391.57,
+      "label": "better",
+      "moe": 16420.83,
+      "se": 9982.27
+     },
+     "major": {
+      "hidden": false,
+      "median": 66116.61,
+      "moe": 11809.71,
+      "n": 120,
+      "reason": "",
+      "se": 7179.15
+     }
+    },
+    "English Language": {
+     "econ_vs_major": {
+      "d": 37300.22,
+      "label": "better",
+      "moe": 11796.88,
+      "se": 7171.35
+     },
+     "major": {
+      "hidden": false,
+      "median": 71067.5,
+      "moe": 4002.49,
+      "n": 472,
+      "reason": "",
+      "se": 2433.13
+     }
+    },
+    "Environmental Studies": {
+     "econ_vs_major": {
+      "d": 41859.28,
+      "label": "better",
+      "moe": 13499.51,
+      "se": 8206.39
+     },
+     "major": {
+      "hidden": false,
+      "median": 67006.5,
+      "moe": 7776.96,
+      "n": 122,
+      "reason": "",
+      "se": 4727.63
+     }
+    },
+    "Ethnic Studies": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 71594.46,
+      "moe": 26353.73,
+      "n": 51,
+      "reason": "n < 100",
+      "se": 16020.5
+     }
+    },
+    "Family and Consumer Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 81220.0,
+      "moe": 12654.52,
+      "n": 75,
+      "reason": "n < 100",
+      "se": 7692.72
+     }
+    },
+    "Finance": {
+     "econ_vs_major": {
+      "d": 3420.72,
+      "label": "about the same",
+      "moe": 13811.83,
+      "se": 8396.25
+     },
+     "major": {
+      "hidden": false,
+      "median": 104947.0,
+      "moe": 8310.23,
+      "n": 984,
+      "reason": "",
+      "se": 5051.81
+     }
+    },
+    "Fine Arts": {
+     "econ_vs_major": {
+      "d": 42186.1,
+      "label": "better",
+      "moe": 11683.22,
+      "se": 7102.26
+     },
+     "major": {
+      "hidden": false,
+      "median": 66116.61,
+      "moe": 5293.32,
+      "n": 331,
+      "reason": "",
+      "se": 3217.82
+     }
+    },
+    "Foreign Language": {
+     "econ_vs_major": {
+      "d": 38341.4,
+      "label": "better",
+      "moe": 12423.7,
+      "se": 7552.4
+     },
+     "major": {
+      "hidden": false,
+      "median": 70052.25,
+      "moe": 5769.75,
+      "n": 207,
+      "reason": "",
+      "se": 3507.44
+     }
+    },
+    "General Business": {
+     "econ_vs_major": {
+      "d": 24840.85,
+      "label": "better",
+      "moe": 11938.04,
+      "se": 7257.17
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 3816.35,
+      "n": 1316,
+      "reason": "",
+      "se": 2319.97
+     }
+    },
+    "General Education": {
+     "econ_vs_major": {
+      "d": 50679.28,
+      "label": "better",
+      "moe": 11437.25,
+      "se": 6952.74
+     },
+     "major": {
+      "hidden": false,
+      "median": 57720.85,
+      "moe": 3007.81,
+      "n": 741,
+      "reason": "",
+      "se": 1828.46
+     }
+    },
+    "General Engineering": {
+     "econ_vs_major": {
+      "d": 34904.82,
+      "label": "better",
+      "moe": 14773.42,
+      "se": 8980.81
+     },
+     "major": {
+      "hidden": false,
+      "median": 73462.9,
+      "moe": 10302.33,
+      "n": 391,
+      "reason": "",
+      "se": 6262.82
+     }
+    },
+    "General Social Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 72787.7,
+      "moe": 10070.11,
+      "n": 65,
+      "reason": "n < 100",
+      "se": 6121.65
+     }
+    },
+    "Geography": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 81220.0,
+      "moe": 26403.36,
+      "n": 35,
+      "reason": "n < 100",
+      "se": 16050.68
+     }
+    },
+    "Health Services": {
+     "econ_vs_major": {
+      "d": 41336.14,
+      "label": "better",
+      "moe": 12697.79,
+      "se": 7719.02
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 4297.36,
+      "n": 656,
+      "reason": "",
+      "se": 2612.37
+     }
+    },
+    "History": {
+     "econ_vs_major": {
+      "d": 12908.44,
+      "label": "about the same",
+      "moe": 14904.91,
+      "se": 9060.74
+     },
+     "major": {
+      "hidden": false,
+      "median": 95459.28,
+      "moe": 9412.52,
+      "n": 299,
+      "reason": "",
+      "se": 5721.9
+     }
+    },
+    "Industrial Engineering": {
+     "econ_vs_major": {
+      "d": 13923.18,
+      "label": "about the same",
+      "moe": 14910.82,
+      "se": 9064.33
+     },
+     "major": {
+      "hidden": false,
+      "median": 94452.3,
+      "moe": 10163.36,
+      "n": 301,
+      "reason": "",
+      "se": 6178.34
+     }
+    },
+    "Information Systems & Management": {
+     "econ_vs_major": {
+      "d": 19136.89,
+      "label": "better",
+      "moe": 14472.2,
+      "se": 8797.69
+     },
+     "major": {
+      "hidden": false,
+      "median": 89204.95,
+      "moe": 9909.31,
+      "n": 460,
+      "reason": "",
+      "se": 6023.9
+     }
+    },
+    "Interdisciplinary Studies": {
+     "econ_vs_major": {
+      "d": 43648.69,
+      "label": "better",
+      "moe": 12278.89,
+      "se": 7464.37
+     },
+     "major": {
+      "hidden": false,
+      "median": 64766.9,
+      "moe": 4700.56,
+      "n": 379,
+      "reason": "",
+      "se": 2857.48
+     }
+    },
+    "International Affairs": {
+     "econ_vs_major": {
+      "d": 24840.85,
+      "label": "better",
+      "moe": 14808.88,
+      "se": 9002.36
+     },
+     "major": {
+      "hidden": false,
+      "median": 83526.87,
+      "moe": 9643.35,
+      "n": 440,
+      "reason": "",
+      "se": 5862.22
+     }
+    },
+    "Journalism": {
+     "econ_vs_major": {
+      "d": 27761.65,
+      "label": "better",
+      "moe": 15756.85,
+      "se": 9578.63
+     },
+     "major": {
+      "hidden": false,
+      "median": 81220.0,
+      "moe": 9510.96,
+      "n": 253,
+      "reason": "",
+      "se": 5781.74
+     }
+    },
+    "Leisure and Hospitality": {
+     "econ_vs_major": {
+      "d": 40123.0,
+      "label": "better",
+      "moe": 12342.79,
+      "se": 7503.21
+     },
+     "major": {
+      "hidden": false,
+      "median": 68215.55,
+      "moe": 7160.25,
+      "n": 350,
+      "reason": "",
+      "se": 4352.74
+     }
+    },
+    "Liberal Arts": {
+     "econ_vs_major": {
+      "d": 42694.36,
+      "label": "better",
+      "moe": 12983.92,
+      "se": 7892.96
+     },
+     "major": {
+      "hidden": false,
+      "median": 65628.26,
+      "moe": 5044.41,
+      "n": 233,
+      "reason": "",
+      "se": 3066.51
+     }
+    },
+    "Marketing": {
+     "econ_vs_major": {
+      "d": 25232.32,
+      "label": "better",
+      "moe": 12318.67,
+      "se": 7488.55
+     },
+     "major": {
+      "hidden": false,
+      "median": 83097.16,
+      "moe": 4988.94,
+      "n": 905,
+      "reason": "",
+      "se": 3032.79
+     }
+    },
+    "Mass Media": {
+     "econ_vs_major": {
+      "d": 37161.92,
+      "label": "better",
+      "moe": 14041.32,
+      "se": 8535.76
+     },
+     "major": {
+      "hidden": false,
+      "median": 71067.5,
+      "moe": 10109.35,
+      "n": 184,
+      "reason": "",
+      "se": 6145.5
+     }
+    },
+    "Mathematics": {
+     "econ_vs_major": {
+      "d": 24410.12,
+      "label": "better",
+      "moe": 16709.88,
+      "se": 10157.98
+     },
+     "major": {
+      "hidden": false,
+      "median": 83957.6,
+      "moe": 13400.84,
+      "n": 227,
+      "reason": "",
+      "se": 8146.41
+     }
+    },
+    "Mechanical Engineering": {
+     "econ_vs_major": {
+      "d": 18992.28,
+      "label": "better",
+      "moe": 13057.98,
+      "se": 7937.98
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 6514.48,
+      "n": 386,
+      "reason": "",
+      "se": 3960.17
+     }
+    },
+    "Medical Technicians": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 58045.81,
+      "moe": 22211.1,
+      "n": 44,
+      "reason": "n < 100",
+      "se": 13502.19
+     }
+    },
+    "Miscellaneous Biological Science": {
+     "econ_vs_major": {
+      "d": 18992.28,
+      "label": "better",
+      "moe": 16145.47,
+      "se": 9814.87
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 12227.68,
+      "n": 228,
+      "reason": "",
+      "se": 7433.24
+     }
+    },
+    "Miscellaneous Education": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 78710.25,
+      "moe": 12172.11,
+      "n": 64,
+      "reason": "n < 100",
+      "se": 7399.46
+     }
+    },
+    "Miscellaneous Engineering": {
+     "econ_vs_major": {
+      "d": 17318.68,
+      "label": "better",
+      "moe": 13722.67,
+      "se": 8342.05
+     },
+     "major": {
+      "hidden": false,
+      "median": 91372.5,
+      "moe": 7615.57,
+      "n": 263,
+      "reason": "",
+      "se": 4629.53
+     }
+    },
+    "Miscellaneous Physical Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 61100.85,
+      "moe": 20847.29,
+      "n": 49,
+      "reason": "n < 100",
+      "se": 12673.12
+     }
+    },
+    "Miscellaneous Technologies": {
+     "econ_vs_major": {
+      "d": 18856.39,
+      "label": "about the same",
+      "moe": 24128.86,
+      "se": 14668.0
+     },
+     "major": {
+      "hidden": false,
+      "median": 89375.44,
+      "moe": 22282.22,
+      "n": 184,
+      "reason": "",
+      "se": 13545.42
+     }
+    },
+    "Nursing": {
+     "econ_vs_major": {
+      "d": 23471.34,
+      "label": "better",
+      "moe": 11848.52,
+      "se": 7202.75
+     },
+     "major": {
+      "hidden": false,
+      "median": 84906.67,
+      "moe": 3538.42,
+      "n": 1286,
+      "reason": "",
+      "se": 2151.01
+     }
+    },
+    "Nutrition Sciences": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 85541.19,
+      "moe": 36238.91,
+      "n": 68,
+      "reason": "n < 100",
+      "se": 22029.73
+     }
+    },
+    "Performing Arts": {
+     "econ_vs_major": {
+      "d": 46922.11,
+      "label": "better",
+      "moe": 13863.85,
+      "se": 8427.87
+     },
+     "major": {
+      "hidden": false,
+      "median": 61445.62,
+      "moe": 6957.19,
+      "n": 186,
+      "reason": "",
+      "se": 4229.3
+     }
+    },
+    "Pharmacy": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 81220.0,
+      "moe": 29719.31,
+      "n": 155,
+      "reason": "MOE / estimate > 0.30",
+      "se": 18066.45
+     }
+    },
+    "Philosophy": {
+     "econ_vs_major": {
+      "d": 19096.55,
+      "label": "about the same",
+      "moe": 19222.04,
+      "se": 11685.13
+     },
+     "major": {
+      "hidden": false,
+      "median": 89204.95,
+      "moe": 16949.52,
+      "n": 129,
+      "reason": "",
+      "se": 10303.66
+     }
+    },
+    "Physics": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 101427.41,
+      "moe": 32089.26,
+      "n": 75,
+      "reason": "n < 100",
+      "se": 19507.15
+     }
+    },
+    "Political Science": {
+     "econ_vs_major": {
+      "d": 6842.72,
+      "label": "about the same",
+      "moe": 14826.58,
+      "se": 9013.12
+     },
+     "major": {
+      "hidden": false,
+      "median": 101525.0,
+      "moe": 7799.77,
+      "n": 663,
+      "reason": "",
+      "se": 4741.5
+     }
+    },
+    "Psychology": {
+     "econ_vs_major": {
+      "d": 37984.56,
+      "label": "better",
+      "moe": 11592.04,
+      "se": 7046.83
+     },
+     "major": {
+      "hidden": false,
+      "median": 70383.16,
+      "moe": 3211.8,
+      "n": 1451,
+      "reason": "",
+      "se": 1952.46
+     }
+    },
+    "Public Policy and Law": {
+     "econ_vs_major": {
+      "d": 25781.85,
+      "label": "better",
+      "moe": 17032.78,
+      "se": 10354.27
+     },
+     "major": {
+      "hidden": false,
+      "median": 82235.25,
+      "moe": 12257.37,
+      "n": 187,
+      "reason": "",
+      "se": 7451.29
+     }
+    },
+    "Secondary Education": {
+     "econ_vs_major": {
+      "d": 50310.91,
+      "label": "better",
+      "moe": 13919.34,
+      "se": 8461.61
+     },
+     "major": {
+      "hidden": false,
+      "median": 58094.04,
+      "moe": 6565.3,
+      "n": 318,
+      "reason": "",
+      "se": 3991.06
+     }
+    },
+    "Social Services": {
+     "econ_vs_major": {
+      "d": 52508.07,
+      "label": "better",
+      "moe": 12113.52,
+      "se": 7363.84
+     },
+     "major": {
+      "hidden": false,
+      "median": 55859.65,
+      "moe": 3555.55,
+      "n": 179,
+      "reason": "",
+      "se": 2161.43
+     }
+    },
+    "Sociology": {
+     "econ_vs_major": {
+      "d": 41336.14,
+      "label": "better",
+      "moe": 12649.8,
+      "se": 7689.85
+     },
+     "major": {
+      "hidden": false,
+      "median": 67031.58,
+      "moe": 5446.49,
+      "n": 207,
+      "reason": "",
+      "se": 3310.94
+     }
+    },
+    "Special Education": {
+     "econ_vs_major": {
+      "d": 47241.15,
+      "label": "better",
+      "moe": 12523.91,
+      "se": 7613.32
+     },
+     "major": {
+      "hidden": false,
+      "median": 61100.85,
+      "moe": 4717.61,
+      "n": 114,
+      "reason": "",
+      "se": 2867.85
+     }
+    },
+    "Theology and Religion": {
+     "econ_vs_major": {
+      "label": null
+     },
+     "major": {
+      "hidden": true,
+      "median": 50762.5,
+      "moe": 1960.8,
+      "n": 79,
+      "reason": "n < 100",
+      "se": 1191.98
+     }
+    },
+    "Treatment Therapy": {
+     "econ_vs_major": {
+      "d": 38216.12,
+      "label": "better",
+      "moe": 22268.15,
+      "se": 13536.87
+     },
+     "major": {
+      "hidden": false,
+      "median": 71067.5,
+      "moe": 18328.43,
+      "n": 165,
+      "reason": "",
+      "se": 11141.9
+     }
+    }
+   },
+   "econ_vs_all": {
+    "d": 30807.06,
+    "label": "better",
+    "moe": 11543.29,
+    "se": 7017.2
+   },
+   "economics": {
+    "hidden": false,
+    "median": 108367.72,
+    "moe": 11362.74,
+    "n": 693,
+    "reason": "",
+    "se": 6907.44
+   },
+   "majors_present": 73
+  }
+ }
+}

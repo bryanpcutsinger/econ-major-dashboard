@@ -6,7 +6,7 @@ American Community Survey (ACS) microdata. "Our calculations from the ACS, follo
 [source]'s method": the NY Fed's *Labor Market for Recent College Graduates* and
 Holian and Chiu (2026).
 
-**Status (October 2026):** data bundle v1 built and gated; the page (`site/`) is built and in testing.
+**Status (October 2026):** live on GitHub Pages; bundle `2024-1yr_2020-24-5yr_6f8bddb5-880490` (2026-10-26 rank fixes, ledger E43); the page (`site/`) is in testing (iPhone check open). Next: step 11 (scheduler, probe, heartbeat).
 Not yet in the course. The page reads `data/current.json` and the bundle it names; `spec/` holds every
 rule, `spec/exception-ledger.md` every judgment call. Only aggregate numbers are published.
 

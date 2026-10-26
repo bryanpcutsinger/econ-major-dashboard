@@ -1,5 +1,5 @@
 {
- "note": "Content height in px (all details closed), the maximum over every major and switch state; from tests/site/harness.html on bundle 2024-1yr_2020-24-5yr_6f8bddb5, 2026-10-25. The Canvas iframe height is chosen in step 12 (one height serves every screen width).",
+ "note": "Content height in px (all details closed), the maximum over every major and switch state; from tests/site/harness.html on bundle 2024-1yr_2020-24-5yr_6f8bddb5-880490, 2026-10-26. Step 12 (ruled 2026-10-26): each Canvas frame = the panel's 320 px height. Open <details> boxes add height; step 12 measures them too.",
  "heights": {
   "compare": {
    "320": 1770,
@@ -9,17 +9,17 @@
   "samejob": {
    "320": 2815,
    "380": 2558,
-   "640": 1962
+   "640": 1965
   },
   "cause": {
    "320": 686,
    "380": 622,
-   "640": 497
+   "640": 516
   },
   "rank": {
-   "320": 1333,
-   "380": 1179,
-   "640": 792
+   "320": 1396,
+   "380": 1242,
+   "640": 854
   },
   "local": {
    "320": 1268,

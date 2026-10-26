@@ -1470,16 +1470,16 @@
      "econ_vs_major": {
       "d": -7201.7734,
       "label": "about the same",
-      "moe": 11729.3106,
-      "se": 7130.28
+      "moe": 11574.863031,
+      "se": 7036.3909
      },
      "major": {
       "hidden": false,
       "median": 121830.0,
-      "moe": 8388.594263,
+      "moe": 8301.585607,
       "n": 387,
       "reason": "",
-      "se": 5099.4494
+      "se": 5046.5566
      }
     },
     "Criminal Justice": {
@@ -1614,16 +1614,16 @@
      "econ_vs_major": {
       "d": 23344.0092,
       "label": "better",
-      "moe": 13228.584821,
-      "se": 8041.6929
+      "moe": 13225.40339,
+      "se": 8039.7589
      },
      "major": {
       "hidden": false,
       "median": 91372.5,
-      "moe": 10636.798819,
+      "moe": 10637.389539,
       "n": 249,
       "reason": "",
-      "se": 6466.1391
+      "se": 6466.4982
      }
     },
     "Family and Consumer Sciences": {
