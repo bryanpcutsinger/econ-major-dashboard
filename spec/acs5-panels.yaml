@@ -67,6 +67,8 @@ local:                         # panel 5
   comparisons: ["economics - major", "economics - all"]
 
 hc_tables_5yr:                 # HC Tables 1-3 rolled forward; production record (no benchmark)
+  AMENDED: "dropped 2026-10-25 (instructor; ledger E40). Not built and not in the bundle; no A2 panel used them. The
+            replication (E28-E32) stays in output/checks. Kept here as the record of the rules"
   sample: "HC rules (ledger E22, E28, E30): ages 35-45, SCHL == 21, SCH == 1, ESR in [1, 2, 4, 5],
            WKHP >= 35, WKWN >= 40, all five survey years"
   dollars: "PERNP * ADJINC / 1e6 (HC's earnings measure), '2024 dollars'; kept if > 5499 (2024 dollars).
@@ -88,7 +90,7 @@ fixture:                       # tests our weights and SE code on this file (don
 
 gates:                         # hard gates (plan section 4) on this vintage
   - "every FOD1P in the extract maps to one of the 73 groups (code 0 / N/A excepted, count reported)"
-  - "every OCCP has an HC occupation2 label; every INDP maps to one HC industry group"
+  - "every OCCP has an HC occupation2 label (AMENDED: the INDP rule dropped 2026-10-25 (instructor; ledger E40))"
   - "all 73 majors present in the national samples (same occupation, HC Table 3); the local areas
      report how many are present (an absent major = a hidden row), not a gate"
   - "South Florida PUMA rule as ruled (G1)"
@@ -100,7 +102,7 @@ cross_check:                   # warning only, not pass / fail
 bundle_v1:
   path: "data/bundles/<1y>_<5y>_<codehash>/ ; data/current.json names it (plan section 4)"
   codehash: "first 8 hex of sha256 over the sorted FOD1P, OCCP, INDP, and PUMA code lists used"
-  files: [rank.json, same_occupation.json, local.json, hc_tables_5yr.json, manifest.json]
+  files: [rank.json, same_occupation.json, local.json, codes.json, manifest.json]   # AMENDED: hc_tables_5yr dropped 2026-10-25 (instructor; ledger E40)
   rank: "rank.json = a byte copy of output/panels/rank-2024.json (1-year build, step 5); step 8 does not rebuild it"
   manifest: "sha256 of each source zip (the 2024 1-year AND the 2020-24 5-year), spec file, and code
              file; git commit; no clock time"

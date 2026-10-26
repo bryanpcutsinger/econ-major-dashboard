@@ -54,8 +54,6 @@ def flatten(b):
                 num(f"{base}|major|{m}", r["major"], "pay", m == ECON, f"local|{k}")
                 if m != ECON:
                     labels[f"{base}|{m}|econ_vs_major"] = r["econ_vs_major"].get("label")
-    for r in b["hc_tables_5yr"]["table3"]["rows"]:                # audit file: listed, never warned
-        num(f"hc_tables_5yr|table3|{r['major']}", r["median"], "audit", r["major"] == ECON, "hc_tables_5yr|table3")
     return nums, labels, ranks
 
 

@@ -33,7 +33,7 @@ def agreement(a, b):
 
 
 def main():
-    so, loc, hc = load("same_occupation"), load("local"), load("hc_tables_5yr")
+    so, loc = load("same_occupation"), load("local")
     var = json.loads((ROOT / "output/checks/acs5-variants.json").read_text())
     man = json.loads((ROOT / "data/bundles" / json.loads((ROOT / "data/current.json").read_text())["bundle"]
                       / "manifest.json").read_text())
@@ -68,16 +68,6 @@ def main():
             print(f"  variant {name} {area}: econ n {a['economics']['n']} median {a['economics'].get('median')} "
                   f"hidden {a['economics']['hidden']}; majors hidden {hid}/72")
 
-    print("\n== HC tables, 2020-24 (2024 dollars)")
-    for t in ("table1", "table2"):
-        rows = hc[t]["rows"]
-        print(f"  {t}: economics n {hc[t]['economics_n']}; top 5:",
-              [(r["group"][:30], r["frequency"], r["share_unweighted"], r["median"].get("median")) for r in rows[:5]])
-    t3 = hc["table3"]
-    er = next(r for r in t3["rows"] if r["major"] == ECON)
-    print(f"  table3: total n {t3['total_n']}; economics freq {er['frequency']}, median {er['median'].get('median')} "
-          f"(SE {er['median'].get('se')}), self-employment {er['self_employment']['unweighted']}%; "
-          f"hidden medians {sum(r['median']['hidden'] for r in t3['rows'])}/73")
     print("\n== Cross-check (warning only):", json.dumps(var["cross_check_econ_mid_pay"]))
 
 

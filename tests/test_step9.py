@@ -120,7 +120,7 @@ class Step9(unittest.TestCase):
 
     def test_H2_unmapped_code(self):
         m = self.get("manifest")
-        m["gates"]["indp_unmapped"] = [9999]
+        m["gates"]["occp_without_label"] = [9999]
         self.put("manifest", m)
         self.assert_held("H2_codes_mapped")
 

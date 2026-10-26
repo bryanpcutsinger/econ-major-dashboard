@@ -45,18 +45,20 @@ hard_gates:                    # any fail -> no publish; live bundle unchanged; 
   H1_outputs:
     rule: "manifest, rank, same_occupation, local, hc_tables_5yr, codes present and parse; each file's
            sha256 = the manifest's; each file <= 10 MB; no key named SERIALNO, SPORDER, or PWGTP* anywhere
-           (no microdata); rank has the 10 measures x 73 majors"
+           (no microdata); rank has the 10 measures x 73 majors. AMENDED: hc_tables_5yr dropped 2026-10-25 (instructor; ledger E40)"
     template: gate-hold
     test: "change one byte of local.json without re-signing the manifest"
   H2_codes_mapped:
     rule: "5-year: fod1p_unmapped_persons == 0, occp_without_label == [], indp_unmapped == [],
            hc_table2_indp_unmapped == []. 1-year: unmapped-FOD1P persons == 0; employed recent graduates
            with no O*NET score < 0.1% (E27 coverage rule; civilian jobs, see bundle_additions). New codes vs the live bundle are listed in
-           the change list (information); only an unmapped code holds"
+           the change list (information); only an unmapped code holds. AMENDED: indp_unmapped and
+           hc_table2_indp_unmapped dropped 2026-10-25 (instructor; ledger E40): INDP fed only HC Table 2"
     template: gate-hold
-    test: "set indp_unmapped = [9999] in the manifest (re-signed)"
+    test: "set occp_without_label = [9999] in the manifest (re-signed; AMENDED, was indp_unmapped)"
   H3_majors_present:
-    rule: "73 majors in same_occupation (both graduate settings), in hc table3, and in each rank measure"
+    rule: "73 majors in same_occupation (both graduate settings) and in each rank measure (AMENDED: hc table3
+           dropped 2026-10-25 (instructor; ledger E40))"
     template: gate-hold
     test: "delete one major from same_occupation grad=0 (re-signed)"
   H4_south_florida:
@@ -67,7 +69,7 @@ hard_gates:                    # any fail -> no publish; live bundle unchanged; 
   H5_cell_rules:
     rule: "every cell with n / se / moe: se and moe finite and >= 0, moe = 1.645 x se (within rounding;
            AMENDED: |moe - 1.645 se| <= 0.001 x moe + 1e-6, because shares are stored to 6 decimals); shown pay cell -> n >= 100 and moe / estimate <= 0.30 (D5); hidden cell ->
-           non-empty reason (5-year files). Rank rows: pay hidden == (n < 100 or moe_ratio > 0.30);
+           non-empty reason (5-year files: AMENDED, same_occupation and local, E40). Rank rows: pay hidden == (n < 100 or moe_ratio > 0.30);
            rate rows: n < 100 -> hidden (the count part of the rate rule needs numerator counts the
            rank file does not store: a known gap, fixed at the next rank rebuild on say-so)"
     template: gate-hold

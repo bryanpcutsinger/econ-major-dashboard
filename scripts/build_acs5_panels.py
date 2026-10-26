@@ -4,7 +4,6 @@ Spec: spec/acs5-panels.yaml (written 2026-10-25 before any estimate; ledger E33-
   - same occupation (panel 3): each major's top 10 jobs; economics vs the major vs everyone in the
     job, ages 25-54 reweighted to the job's age mix (D4); graduate switch
   - local (panel 5): Florida and South Florida; economics vs the major vs all majors; 4 switch settings
-  - HC Tables 1-3 rolled forward to 2020-24, in 2024 dollars
 and, for the instructor calls, the variants (G1 South Florida PUMAs, L1 local ages, P1 pay measure,
 D4 check ages 35-45). Every cell: n, estimate, SDR SE and MOE from PWGTP1-80, hidden flag + reason.
 
@@ -22,7 +21,6 @@ import time
 from pathlib import Path
 
 import numpy as np
-import openpyxl
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -217,67 +215,6 @@ def local(df, majors, areas, grad, fulltime, ages, reweight_on, pay_col):
     return out
 
 
-# ---------- HC Tables 1-3 rolled forward ----------
-
-def industry_map():
-    """HC industry_category on INDP, plus the 33 new codes via the Census 2017 -> 2022 changes (E34)."""
-    hc = recode_block(*BLOCKS["table2"][:2])
-    wb = openpyxl.load_workbook(ROOT / "raw/benchmarks/census-codelists/2022-Census-Industry-Code-List-with-Crosswalk.xlsx",
-                                read_only=True)
-    pred = {}
-    for row in list(wb["2022 Ind Code Changes"].iter_rows(values_only=True))[3:]:
-        if isinstance(row[0], int) and isinstance(row[2], int):
-            pred.setdefault(row[2], set()).add(row[0])
-    for row in wb["Explanation of 2022 Changes "].iter_rows(values_only=True):
-        old, new = row[1], row[5]
-        if str(old).strip().isdigit() and str(new).strip().isdigit() and int(old) != int(new):
-            pred.setdefault(int(new), set()).add(int(old))
-    ext = dict(hc)
-    for new, olds in pred.items():
-        groups = {hc[o] for o in olds if o in hc}
-        if new not in hc and len(groups) == 1:
-            ext[new] = groups.pop()
-    return ext
-
-
-def hc_tables(df, majors, occ_label, ind_map):
-    m = base_mask(df, False, True, (35, 45), "pay_pernp", threshold=5499, strict=True)
-    s = df[m].reset_index(drop=True)
-    d = arrays(s, "pay_pernp")
-    out = {}
-    econ = np.flatnonzero(d["g"] == ECON)
-    econ_tot = d["W"][econ].sum(axis=0)
-    indp = s.INDP.astype(int).to_numpy()
-    unmapped_ind = sorted({int(c) for c in indp if c not in ind_map})
-    for key, codes, labels, top in (("table1", d["OCCP"], occ_label, 40), ("table2", indp, ind_map, 20)):
-        grp = np.array([labels.get(int(c), f"code {c}") for c in codes], dtype=object)
-        freq = pd.Series(grp[econ]).value_counts()
-        order = sorted(freq.index, key=lambda g: (-freq[g], g))[:top]
-        rows = []
-        for g in order:
-            idx = econ[grp[econ] == g]
-            c = cell(d["pay"][idx], d["W"][idx])[0]
-            rows.append({"group": g, "frequency": int(freq[g]), "share_unweighted": round(100 * freq[g] / len(econ), 4),
-                         "share_weighted": ratio(d["W"][idx].sum(axis=0), econ_tot), "median": c})
-        out[key] = {"economics_n": int(len(econ)), "rows": rows}
-    total = len(s)
-    t3 = []
-    selfemp = s.COW.isin([6, 7]).to_numpy()
-    all_tot = d["W"].sum(axis=0)
-    for mj in majors:
-        idx = np.flatnonzero(d["g"] == mj)
-        k = int(selfemp[idx].sum())
-        se_rate = ratio(d["W"][idx[selfemp[idx]]].sum(axis=0), d["W"][idx].sum(axis=0)) if len(idx) else None
-        hide_rate = len(idx) < 100 or min(k, len(idx) - k) < 10
-        t3.append({"major": mj, "frequency": int(len(idx)), "share_unweighted": round(100 * len(idx) / total, 4),
-                   "share_weighted": ratio(d["W"][idx].sum(axis=0), all_tot),
-                   "median": cell(d["pay"][idx], d["W"][idx])[0],
-                   "self_employment": {"unweighted": round(100 * k / len(idx), 4) if len(idx) else None,
-                                       "weighted": se_rate, "hidden": hide_rate}})
-    out["table3"] = {"total_n": total, "rows": t3}
-    return out, unmapped_ind
-
-
 # ---------- bundle ----------
 
 def sha(path):
@@ -296,13 +233,11 @@ def main():
     t0 = time.time()
     df, majors = load()
     occ_label = recode_block(*BLOCKS["table1"][:2])
-    ind_map = industry_map()
 
     # Gates (spec: gates)
     fod_unmapped = df.g.isna() & (df.FOD1P != 0)
     gates = {"fod1p_unmapped_persons": int(fod_unmapped.sum()),
-             "occp_without_label": sorted({int(c) for c in df.OCCP.dropna()} - set(occ_label)),
-             "indp_unmapped": sorted({int(c) for c in df.INDP.dropna()} - set(ind_map))}
+             "occp_without_label": sorted({int(c) for c in df.OCCP.dropna()} - set(occ_label))}
     tract = pd.read_csv(ROOT / "raw/benchmarks/census-geo/2020_Census_Tract_to_2020_PUMA.txt", dtype=str,
                         encoding="utf-8-sig")
     fl = tract[tract.STATEFP == "12"]
@@ -342,9 +277,7 @@ def main():
                                             False, True, (25, 54), True, "pay_wagp")
     print(f"  local: {time.time() - t0:.0f} s", flush=True)
 
-    # HC Tables 1-3, 2020-24
-    bundle["hc_tables_5yr"], gates["hc_table2_indp_unmapped"] = hc_tables(df, majors, occ_label, ind_map)
-    gates["hc_table3_majors_present"] = sum(r["frequency"] > 0 for r in bundle["hc_tables_5yr"]["table3"]["rows"])
+    # HC Tables 1-3 rolled forward: dropped 2026-10-25 (instructor; ledger E40). No panel used them; the replication stays in output/checks.
 
     # Cross-check (warning only): national economics mid-career pay, rank-panel rules, 5-year vs 1-year
     s = df[base_mask(df, False, True, (35, 45), "pay_wagp") & (df.g == ECON).to_numpy()]
@@ -354,7 +287,7 @@ def main():
     variants["cross_check_econ_mid_pay"] = {"acs5_2020_24": c5, "acs1_2024_rank_panel": {"estimate": r1["estimate"], "se": r1["se"], "n": r1["n"]}}
     gates["negative_weight_cells"] = STATS["neg_weight_cells"]
 
-    # Bundle v1 (spec: bundle_v1)
+    # Bundle v1 (spec: bundle_v1). INDP stays in the code list (a bundle id input), though no panel uses it (E40)
     codes = {"FOD1P": sorted({int(c) for c in df.FOD1P}), "OCCP": sorted({int(c) for c in df.OCCP.dropna()}),
              "INDP": sorted({int(c) for c in df.INDP.dropna()}),
              "PUMA": sorted(set(df.STATE + df.PUMA))}
@@ -372,7 +305,7 @@ def main():
                       "fod1p_unmapped_persons": gates["fod1p_unmapped_persons"]}}
     dicts = {"acs1": sha(ROOT / "raw/benchmarks/census-1yr/PUMS_Data_Dictionary_2024.csv"),
              "acs5": sha(ROOT / "raw/benchmarks/census-5yr/PUMS_Data_Dictionary_2020-2024.csv")}
-    for name in ("same_occupation", "local", "hc_tables_5yr"):
+    for name in ("same_occupation", "local"):
         (out / f"{name}.json").write_text(dump(bundle[name]))
     git = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     dirty = bool(subprocess.run(["git", "status", "--porcelain", "scripts", "spec"], cwd=ROOT,

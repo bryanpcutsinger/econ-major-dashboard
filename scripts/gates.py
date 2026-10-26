@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 Z90 = 1.645
 ECON = "Economics"
-FILES = ["codes.json", "hc_tables_5yr.json", "local.json", "rank.json", "same_occupation.json"]
+FILES = ["codes.json", "local.json", "rank.json", "same_occupation.json"]      # HC 5-year tables dropped (E40)
 MAX_BYTES = 10 * 1024 * 1024
 MICRODATA_KEY = re.compile(r"^(SERIALNO|SPORDER|PWGTP\d*)$")
 RANK_MEASURES = 10
@@ -147,7 +147,7 @@ def h1_outputs(data, bid, b):
 def h2_codes_mapped(b):
     m, bad = b["manifest"], []
     g, s1 = m.get("gates", {}), m.get("stats", {}).get("acs1", {})
-    for k in ("occp_without_label", "indp_unmapped", "hc_table2_indp_unmapped"):
+    for k in ("occp_without_label",):                   # INDP checks dropped with the HC tables (E40)
         if g.get(k) != []:
             bad.append(f"5-year {k} = {g.get(k)}")
     if g.get("fod1p_unmapped_persons") != 0:
@@ -165,9 +165,6 @@ def h3_majors_present(b):
     for k, v in (b["same_occupation"] or {}).items():
         if len(v) != 73:
             bad.append(f"same_occupation {k}: {len(v)} majors")
-    t3 = (b["hc_tables_5yr"] or {}).get("table3", {}).get("rows", [])
-    if sum(r.get("frequency", 0) > 0 for r in t3) != 73:
-        bad.append(f"hc table3: {sum(r.get('frequency', 0) > 0 for r in t3)} majors present")
     for k, rows in ((b["rank"] or {}).get("measures", {})).items():
         if len({r["major"] for r in rows}) != 73:
             bad.append(f"rank {k}: {len({r['major'] for r in rows})} majors")
@@ -189,7 +186,7 @@ def h4_south_florida(b, live):
 
 def h5_cell_rules(b):
     bad = []
-    for name in ("same_occupation", "local", "hc_tables_5yr"):
+    for name in ("same_occupation", "local"):
         for path, c in walk(b[name] or {}):
             where = f"{name}{path}"
             if "hidden" in c and "n" in c:                       # a pay cell (median or age-mix hidden)
