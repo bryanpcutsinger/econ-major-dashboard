@@ -1,0 +1,19 @@
+# Hashed lockfile for the GitHub runner (spec/scheduler.yaml build_11_7): Python 3.12, ubuntu-24.04, x86_64.
+# Versions = those installed on the instructor's Mac (requirements.txt); hashes from the PyPI JSON API, 2026-10-26.
+# Install: python3 -m venv .venv && .venv/bin/pip install --require-hashes --only-binary=:all: -r requirements.lock
+
+numpy==2.0.2 \
+    --hash=sha256:0123ffdaa88fa4ab64835dcbde75dcdf89c453c922f18dced6e27c90d1d0ec5a
+pandas==2.3.3 \
+    --hash=sha256:b3d11d2fda7eb164ef27ffc14b4fcab16a80e1ce67e9f57e19ec0afaf715ba89
+pyarrow==18.1.0 \
+    --hash=sha256:0743e503c55be0fdb5c08e7d44853da27f19dc854531c0570f9f394ec9671d54 \
+    --hash=sha256:c52f81aa6f6575058d8e2c782bf79d4f9fdc89887f16825ec3a66607a5dd8e30
+python-dateutil==2.9.0.post0 \
+    --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+pytz==2025.2 \
+    --hash=sha256:5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00
+tzdata==2025.3 \
+    --hash=sha256:06a47e5700f3081aab02b2e513160914ff0694bce9947d6b76ebd6bf57cfc5d1
+six==1.15.0 \
+    --hash=sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced

@@ -139,6 +139,21 @@ workflow_11_5:                 # detail written 2026-10-26 before the workflow (
                dispatch run goes green; main gets one bot commit with data/last-checked.json; the live site serves it
                (the page then shows 'Last checked for new data: <date>'); the Pages case recorded; a forced probe error
                run commits decision error with last_success unchanged"
+build_11_7:                    # detail written 2026-10-26 before the build job (instructor yes 2026-10-26: ~2.9 GB of
+                               # Census downloads on the GitHub runner per build)
+  memory: "extract_acs5.py casts PWGTP and PWGTP1-80 to int32 in each kept chunk before the concat (the final cast was
+           already int32), so the cache is byte-identical and the peak is lower. Measured here before and after"
+  lockfile: "requirements.lock: numpy 2.0.2, pandas 2.3.3, pyarrow 18.1.0 and their dependencies at the versions
+             installed here, every file hash from the PyPI JSON API (no wheel downloaded here); the runner makes a venv on
+             its own python3 (3.12 on ubuntu-24.04) and installs with --require-hashes"
+  job: "mode build-only: job build (contents read, no secrets, 180 min): free disk (remove preinstalled toolchains),
+        venv + locked install, fetch_inputs.py --pums, extract, rank build, 5-year build, each step under
+        /usr/bin/time -v; the summary lists elapsed time, peak memory (max RSS), and free disk after each step; then
+        cmp of each data file against the live bundle, the bundle id, and the gates vs live with the dictionaries
+        and a fresh probe. Nothing is published, committed, or uploaded"
+  done_check: "the run goes green in under 3 h; free disk never below 4 GB on a 14 GB budget (we use < 10 GB); peak
+               memory logged; bundle id = the live one or, if not, the change list explains the difference (a Mac ->
+               Linux float difference is logged in the ledger, not a failure)"
 h9_baseline: "each bundle manifest records url, bytes, Last-Modified, sha256 per source; H9 compares the probe with the
               live manifest; bundles without the fields fall back to spec/sources.json. The bot never rewrites spec/"
 issues: "kinds from the manifests: new vintage (with announcement draft) / rebuild with the same data ('no new Census

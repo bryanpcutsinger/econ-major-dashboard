@@ -64,7 +64,8 @@ def main():
                     for st, s in chunk.loc[m, ["PWGTP"] + REPS].groupby(chunk.STATE[m]).sum().iterrows():
                         acc = sums.setdefault((st, row), [0] * 81)
                         sums[(st, row)] = [a + int(b) for a, b in zip(acc, s.tolist())]
-                parts.append(chunk[(chunk.SCHL >= 21) & chunk.AGEP.between(22, 65)])
+                kept = chunk[(chunk.SCHL >= 21) & chunk.AGEP.between(22, 65)]
+                parts.append(kept.astype({c: "int32" for c in REPS + ["PWGTP"]}))   # 11.7: lower peak memory; same output
         print(f"  read {name}: {sum(len(p) for p in parts):,} kept so far, {time.time() - t0:.0f} s", flush=True)
     df = pd.concat(parts, ignore_index=True).sort_values(["SERIALNO", "SPORDER"], kind="mergesort")
     df["YEAR"] = df.SERIALNO.str[:4].astype(int)
