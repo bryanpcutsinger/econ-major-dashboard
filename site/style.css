@@ -148,6 +148,13 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .ag-line.econ, .ag-dot.econ { stroke: var(--navy); } .ag-dot.econ { fill: var(--navy); }
 .ag-line.major, .ag-dot.major { stroke: var(--teal); } .ag-dot.major { fill: var(--teal); }
 .ag-line.all, .ag-dot.all { stroke: var(--gray); stroke-dasharray: 4 3; } .ag-dot.all { fill: var(--gray); stroke: none; }
-.ag-line.hs, .ag-dot.hs { stroke: #8A5A00; } .ag-dot.hs { fill: #8A5A00; }
-.hs { color: #8A5A00; }
-.bar.hs { background: #F1E4CC; border-color: #8A5A00; }
+
+/* chart tooltips (hover or tap) */
+.tip { position: absolute; z-index: 10; display: none; pointer-events: none; max-width: 260px; padding: 7px 9px;
+       background: #18222E; color: #FFFFFF; font: 13px/1.4 var(--chart); border-radius: 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); }
+[data-tip] { cursor: default; }
+.brow[data-tip]:hover .bar { filter: brightness(0.93); }
+.brow[data-tip]:hover .bar-name { text-decoration: underline; }
+.dots[data-tip]:hover { background: rgba(0, 51, 102, 0.05); }
+.ag-hit { fill: transparent; }
+.ag-hit:hover { fill: rgba(0, 51, 102, 0.07); }

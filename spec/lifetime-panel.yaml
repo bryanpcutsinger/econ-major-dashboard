@@ -3,6 +3,8 @@
 # ACS-14, https://www.census.gov/library/publications/2011/acs/acs-14.html; instructor-confirmed source, not in
 # Zotero); place the panel right after the side-by-side panel; the Waldron match is dropped.
 # Lines marked AMENDED change after the first code or runs.
+# AMENDED 2026-10-26 (instructor: "We don't need to include high school"; ledger E48): the high-school group, its
+# extract (cache/acs5-<A>-<B>-hs.parquet), and econ_vs_hs are dropped from the build, the gates, and the page.
 
 method:                        # Julian and Kominski (2011): quotes and pages in the private planning file
   rule: "synthetic work-life earnings = sum over eight 5-year age bands (25-29, 30-34, ..., 60-64) of the band's
@@ -29,7 +31,7 @@ groups:
   economics: "the Economics group (FOD1P 1102, 5501, 6205) by spec/major73.csv"
   major: "each of the 73 majors by spec/major73.csv (first major, FOD1P)"
   all_bachelors: "everyone in the 73 groups"
-  high_school: "SCHL 16-17 (regular diploma, or GED or alternative credential); no college"
+  high_school: "DROPPED 2026-10-26 (E48)"
   degree: {default: "SCHL == 21 (bachelor's only)", graduate_switch: "SCHL >= 21"}   # high school is the same in both
 
 estimate:

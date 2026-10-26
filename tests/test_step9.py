@@ -176,7 +176,7 @@ class Step9(unittest.TestCase):
 
     def test_H6_lifetime_label(self):
         lt = self.get("lifetime")
-        d = lt["grad=0"]["econ_vs_hs"]
+        d = lt["grad=0"]["econ_vs_all"]
         self.assertEqual(d["label"], "better")
         d["label"] = "worse"
         self.put("lifetime", lt)

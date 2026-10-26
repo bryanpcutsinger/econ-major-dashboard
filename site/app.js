@@ -37,7 +37,7 @@
           'underemployment: ages 22–27, bachelor’s degree or higher, not in school.',
     lifetime: 'Lifetime earnings: the median yearly earnings (wages and self-employment) of full-time, year-round ' +
               'workers (35+ hours a week, 50+ weeks a year) in eight age groups, 25–29 to 60–64, each times five, added up. ' +
-              'Bachelor’s degree only unless the box above is checked. High school = a diploma or GED, no college.',
+              'Bachelor’s degree only unless the box above is checked.',
     local: 'Median wages of people who live in the area, ages 25–54, weighted to the age mix of all majors ' +
            'in the area.'
   };
@@ -69,6 +69,8 @@
     return state.major && state.major !== ECON && state.major !== UNDECIDED && majors.indexOf(state.major) >= 0
       ? state.major : null;
   }
+  // Hover (or tap) tooltip text for a chart element; lines joined by '\n' (instructor 2026-10-26: every chart interactive)
+  function tip(lines) { return ' data-tip="' + esc(lines.filter(Boolean).join('\n')) + '"'; }
   function verdictWord(lab) { return lab === null || lab === undefined ? null : lab; }
 
   // Tick values for an axis from lo to hi (about n steps of 1, 2, 2.5, or 5 times a power of ten)
@@ -152,7 +154,10 @@
           cell = '<span class="bar ' + r.cls + '" style="width:' + w.toFixed(2) + '%;height:20px">' + (inside ? v : '') + '</span>' +
                  (inside ? '' : v);
         }
-        return '<div class="brow"><span class="bar-name ' + r.cls + '">' + esc(r.name) + '</span><span class="bcell">' +
+        var t = r.cell.hidden ? [r.name + ': not enough data'] :
+          [r.name + ': ' + fmt(kind, val(kind, r.cell)), 'Margin of error: ± ' + (kind === 'pay' ? moneyMoe(r.cell.moe) : pct(r.cell.moe)),
+           ms.name + ', ' + ms.note];
+        return '<div class="brow"' + tip(t) + '><span class="bar-name ' + r.cls + '">' + esc(r.name) + '</span><span class="bcell">' +
                gridHtml(axis) + cell + '</span></div>';
       }).join('');
       var verdict = lab ? 'Economics vs ' + esc(otherName) + ': ' + lab : 'Not enough data to compare';
@@ -263,7 +268,9 @@
           '<b class="econ">Economics <span data-v="job|' + r.occp + '|econ">' + money(r.economics.median) + '</span></b>' +
           (pick ? ' · <b class="major">' + esc(pick) + ' <span data-v="job|' + r.occp + '|major">' + money(r.major.median) + '</span></b>' : '') +
           ' · Everyone <span data-v="job|' + r.occp + '|all">' + money(r.all.median) + '</span> · economics: ' + lab + '</div></div>' +
-          '<div class="dots" aria-hidden="true">' + gridHtml(axis) + '<span class="all-line" style="left:' + x(r.all.median) + '%"></span>' +
+          '<div class="dots" aria-hidden="true"' + tip([r.label, 'Economics majors: ' + money(r.economics.median) + ' (± ' + moneyMoe(r.economics.moe) + ')',
+            pick ? (r.major.hidden ? pick + ' majors: not enough data' : pick + ' majors: ' + money(r.major.median) + ' (± ' + moneyMoe(r.major.moe) + ')') : '',
+            'Everyone in the job: ' + money(r.all.median)]) + '>' + gridHtml(axis) + '<span class="all-line" style="left:' + x(r.all.median) + '%"></span>' +
           dots(r.economics, 'econ') + (pick ? dots(r.major, 'major') : '') + '</div></div>';
       });
       h += '<div class="axis-row" aria-hidden="true"><div></div><div><div class="axis">' + tickHtml('pay', axis) + '</div>' +
@@ -343,8 +350,13 @@
       svg += '<polyline points="' + pts.join(' ') + '" class="ag-line ' + g.cls + '"/>' +
              pts.map(function (pt) { var q = pt.split(','); return '<circle cx="' + q[0] + '" cy="' + q[1] + '" r="3" class="ag-dot ' + g.cls + '"/>'; }).join('');
     });
+    (shown[0] ? shown[0].cell.bands : []).forEach(function (b, i) {
+      var w = (W - L - R) / 8;
+      svg += '<rect x="' + (x(i) - w / 2) + '" y="' + T + '" width="' + w + '" height="' + (H - T - B) + '" class="ag-hit"' +
+        tip(['Ages ' + b.ages.replace('-', '–')].concat(shown.map(function (g) { return g.name + ': ' + money(g.cell.bands[i].median) + ' a year'; }))) + '/>';
+    });
     var legend = '<div class="legend" aria-hidden="true">' + shown.map(function (g) {
-      var col = { econ: 'var(--navy)', major: 'var(--teal)', all: 'var(--gray)', hs: '#8A5A00' }[g.cls];
+      var col = { econ: 'var(--navy)', major: 'var(--teal)', all: 'var(--gray)' }[g.cls];
       return '<span><i class="dot-key" style="background:' + col + '"></i>' + esc(g.name) + '</span>';
     }).join('') + '</div>';
     return '<figure role="group" aria-label="Median yearly earnings by age group (the data table has every value)">' +
@@ -355,10 +367,9 @@
     var pick = realPick(), k = 'grad=' + (state.lifeGrad ? 1 : 0), L = D.lifetime[k];
     var groups = [{ cls: 'econ', tag: 'econ', name: ECON, cell: L.economics }];
     if (pick) { groups.push({ cls: 'major', tag: 'major', name: pick, cell: L.by_major[pick].major }); }
-    groups.push({ cls: 'all', tag: 'all', name: 'All bachelor’s', cell: L.all_bachelors },
-                { cls: 'hs', tag: 'hs', name: 'High school only', cell: L.high_school });
+    groups.push({ cls: 'all', tag: 'all', name: 'All bachelor’s', cell: L.all_bachelors });
     var mx = 0;
-    [L.economics, L.all_bachelors, L.high_school].concat(Object.keys(L.by_major).map(function (m) { return L.by_major[m].major; }))
+    [L.economics, L.all_bachelors].concat(Object.keys(L.by_major).map(function (m) { return L.by_major[m].major; }))
       .forEach(function (c) { if (!c.hidden) { mx = Math.max(mx, c.total); } });
     var axis = niceTicks(0, mx, 4);
     var bars = groups.map(function (g) {
@@ -370,7 +381,9 @@
         var v = '<span class="bar-val ' + g.cls + (inside ? ' inside' : '') + '" data-v="life|' + g.tag + '">' + millions(g.cell.total) + '</span>';
         cell = '<span class="bar ' + g.cls + '" style="width:' + w.toFixed(2) + '%;height:20px">' + (inside ? v : '') + '</span>' + (inside ? '' : v);
       }
-      return '<div class="brow"><span class="bar-name ' + g.cls + '">' + esc(g.name) + '</span><span class="bcell">' + gridHtml(axis) + cell + '</span></div>';
+      var t = g.cell.hidden ? [g.name + ': not enough data'] : [g.name + ': ' + millions(g.cell.total), 'Margin of error: ' + lifeMoe(g.cell),
+        'Ages 25–64, added up from eight age groups'];
+      return '<div class="brow"' + tip(t) + '><span class="bar-name ' + g.cls + '">' + esc(g.name) + '</span><span class="bcell">' + gridHtml(axis) + cell + '</span></div>';
     }).join('');
     var mticks = '<span class="ticks">' + axis.ticks.map(function (t, i) {
       var shift = i === 0 ? '0' : (i === axis.ticks.length - 1 ? '-100%' : '-50%');
@@ -388,13 +401,13 @@
         millions((pick ? L.by_major[pick].major : L.all_bachelors).total) + '.';
     }
     var verdict = vs.label ? 'Economics vs ' + esc(other) + ': ' + vs.label : 'Not enough data to compare';
-    var sub = L.high_school.hidden ? '' : 'People with only a high school diploma: about ' + millions(L.high_school.total) +
-      ' (economics vs high school only: ' + (L.econ_vs_hs.label || 'not enough data') + ').';
+    var sub = !vs.label ? '' : vs.label === 'about the same' ? 'The data cannot tell the two apart: the gap is inside the margin of error.'
+      : 'That is a gap of about ' + millions(Math.abs(vs.d)) + ' over a working life.';
     var trows = groups.map(function (g) {
       return [esc(g.name), g.cell.hidden ? 'not enough data' : '<span data-v="life|' + g.tag + '">' + millions(g.cell.total) + '</span> (' + lifeMoe(g.cell) + ')']
         .concat(g.cell.hidden ? ['', '', '', '', '', '', '', ''] : g.cell.bands.map(function (b) { return money(b.median); }));
     });
-    var bandHead = (L.economics.bands.length ? L.economics.bands : L.high_school.bands).map(function (b) { return 'Ages ' + b.ages.replace('-', '–'); });
+    var bandHead = (L.economics.bands.length ? L.economics.bands : L.all_bachelors.bands).map(function (b) { return 'Ages ' + b.ages.replace('-', '–'); });
     return '<div class="controls" role="group" aria-label="Who is counted"><label class="check"><input type="checkbox" id="life-grad" data-act="lifeGrad"' +
       (state.lifeGrad ? ' checked' : '') + '> Include people with graduate degrees</label></div>' +
       '<div class="headline"><strong>' + head + '</strong><span>' + sub + '</span></div>' +
@@ -570,6 +583,38 @@
     });
   }
 
+  // ---------- chart tooltips ----------
+  var tipEl = null;
+  function showTip(el, px, py) {
+    if (!tipEl) {
+      tipEl = document.createElement('div');
+      tipEl.className = 'tip'; tipEl.setAttribute('role', 'tooltip'); tipEl.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(tipEl);
+    }
+    tipEl.innerHTML = el.getAttribute('data-tip').split('\n').map(function (l, i) {
+      return i ? esc(l) : '<b>' + esc(l) + '</b>';
+    }).join('<br>');
+    tipEl.style.display = 'block';
+    var w = tipEl.offsetWidth, h = tipEl.offsetHeight, dw = document.documentElement.clientWidth;
+    var bodyH = document.body.getBoundingClientRect().height;
+    var top = py - h - 12 < window.pageYOffset ? py + 16 : py - h - 12;
+    tipEl.style.left = Math.max(4, Math.min(px - w / 2, dw - w - 4)) + 'px';
+    tipEl.style.top = Math.max(0, Math.min(top, bodyH - h)) + 'px';   // stay inside the frame (it is sized to the page)
+  }
+  function hideTip() { if (tipEl) { tipEl.style.display = 'none'; } }
+  function watchTips() {
+    var target = function (e) { return e.target && e.target.closest ? e.target.closest('[data-tip]') : null; };
+    document.addEventListener('mousemove', function (e) {
+      var t = target(e);
+      if (t) { showTip(t, e.pageX, e.pageY); } else { hideTip(); }
+    });
+    document.documentElement.addEventListener('mouseleave', hideTip);
+    document.addEventListener('click', function (e) {          // touch screens: a tap shows it, a tap elsewhere hides it
+      var t = target(e);
+      if (t) { showTip(t, e.pageX, e.pageY); } else { hideTip(); }
+    });
+  }
+
   // ---------- frame height (Canvas) ----------
   // In a frame, tell the parent page the content height after every change, so Canvas can fit the frame to the
   // panel (Canvas's 'lti.frameResize' message; ledger E45). Outside a frame, or if the parent ignores the message,
@@ -635,6 +680,7 @@
       shell();
       listen();
       watchHeight();
+      watchTips();
       render();
       if (bc) { bc.postMessage({ type: 'hello' }); }
       document.documentElement.setAttribute('data-ready', 'true');

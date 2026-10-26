@@ -35,7 +35,6 @@ class Vintage:
         p = self.puma_vintage
         self.tract_puma = raw / "benchmarks" / "census-geo" / f"{p}_Census_Tract_to_{p}_PUMA.txt"
         self.cache = ROOT / "cache" / f"acs5-{a}-{b}-ba.parquet"
-        self.cache_hs = ROOT / "cache" / f"acs5-{a}-{b}-hs.parquet"   # high school only (spec/lifetime-panel.yaml)
         panels = ROOT / "output" / "panels"
         self.rank_json, self.rank_csv = panels / f"rank-{y}.json", panels / f"rank-{y}.csv"
         self.rank_profile, self.compare_json = panels / f"rank-{y}-profile.json", panels / f"compare-{y}.json"
