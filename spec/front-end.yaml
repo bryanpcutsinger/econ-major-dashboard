@@ -99,6 +99,9 @@ rulings_2026_10_26:            # instructor, ledger E43
   heights: "phone height (ruled): each panel's Canvas frame = its 320 px max height from site/heights.json; no
             scroll box inside the page (step 12)"
   shared_major: "reset per tab (sessionStorage; see shared_major)"
+  panel_order: "compare, samejob, rank, local, then cause: every chart and figure first, the question-and-answer
+                panel last (instructor 2026-10-26). The single-panel footer goes with the last panel. Step 12
+                embeds the Canvas frames in this order"
 
 done_check:                    # plan row 10, minus the Canvas part (say-so; needs the push)
   1: "compare.json built; rank files byte-identical; gates 10/10 on the rebuilt bundle; tests pass"

@@ -7,7 +7,7 @@
 
   var ECON = 'Economics', UNDECIDED = 'Undecided';
   var KEY = 'econ-major-dashboard:major';
-  var PANELS = ['compare', 'samejob', 'cause', 'rank', 'local'];
+  var PANELS = ['compare', 'samejob', 'rank', 'local', 'cause'];   // figures first, the questions last (instructor 2026-10-26)
   var FILES = { compare: ['compare'], samejob: ['same_occupation'], cause: ['same_occupation'],
                 rank: ['rank'], local: ['local', 'codes'] };
   var TITLES = {
@@ -407,7 +407,7 @@
     panels.forEach(function (p) {
       h += '<section class="panel" id="panel-' + p + '" aria-labelledby="h-' + p + '"><h2 id="h-' + p + '">' + TITLES[p] + '</h2>' +
         (full ? '' : picker(p)) + '<div class="panel-body" id="body-' + p + '"></div>' +
-        (full ? '' : (p === 'local' ? footer() : '') +
+        (full ? '' : (p === PANELS[PANELS.length - 1] ? footer() : '') +
           '<p class="open-full"><a href="index.html" target="_blank" rel="noopener">Open the full explorer</a></p>') + '</section>';
     });
     if (full) { h += footer(); }
