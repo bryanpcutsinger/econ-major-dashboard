@@ -1,18 +1,18 @@
 {
- "note": "Content height in px (all details closed), the maximum over every major and switch state; from tests/site/harness.html on bundle 2024-1yr_2020-24-5yr_6f8bddb5-880490, 2026-10-26 (re-measured after the panel reorder: the footer moved to the last panel). Step 12 (ruled 2026-10-26): each Canvas frame = the panel's 320 px height. Open <details> boxes add height; step 12 measures them too.",
+ "note": "Content height in px (all details closed), the maximum over every major and switch state; from tests/site/harness.html on bundle 2024-1yr_2020-24-5yr_6f8bddb5-27bdb9, 2026-10-26. Since E45 the page tells Canvas its height (lti.frameResize; works in Canvas, desktop Chrome, 2026-10-26), so these are only the fallback frame heights (each panel's 320 px value).",
  "heights": {
   "compare": {
-   "320": 1770,
-   "380": 1619,
+   "320": 1795,
+   "380": 1640,
    "640": 1319
   },
   "samejob": {
    "320": 2815,
-   "380": 2558,
+   "380": 2589,
    "640": 1962
   },
   "rank": {
-   "320": 1396,
+   "320": 1416,
    "380": 1242,
    "640": 854
   },
@@ -22,9 +22,9 @@
    "640": 636
   },
   "cause": {
-   "320": 898,
-   "380": 834,
-   "640": 642
+   "320": 965,
+   "380": 879,
+   "640": 664
   }
  }
 }

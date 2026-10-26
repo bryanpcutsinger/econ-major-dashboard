@@ -1,0 +1,62 @@
+{
+ "bundle": "2024-1yr_2020-24-5yr_6f8bddb5-27bdb9",
+ "code": {
+  "scripts/build_acs5_panels.py": "0f393e0335a237c82e72516ae52f9733b056ba7f1000ca7c5e240888f60d94bd",
+  "scripts/build_rank_panel.py": "ef28eb9ad07416524aaa1c94a022842750552273c9f041ddc453f0337e1cb124",
+  "scripts/extract_acs5.py": "f0ce491d6d52f53a4ce8b4741dbdd6ff080768a9ceda5ed1a043285e415abf4d",
+  "scripts/occp_labels.py": "8ed20882b9fa2675323aacd1de2e524abd9eda48b008e1f16da3a0c4374727db"
+ },
+ "dictionaries": {
+  "acs1": "cd562a3719c6cdf79736bd9cfbacf8c20e650d641c62abd7e67fd131da036e18",
+  "acs5": "8816ab616c9025bf6a217588d18c402ebb84ddf889d5d1bd7161a9f0c2e099ae"
+ },
+ "dollars": "2024 dollars (ADJINC)",
+ "files": {
+  "codes.json": "cefb1e931e4cd6a262c93e1a38b3b67ac6c2c07712e01d1ff7cddca6fa69ff62",
+  "compare.json": "e8e8801fb74db888e8d283c1849eb7c155ba80609cd7e4f0c8ed17b93aa7a989",
+  "local.json": "2140eb30b1e91b4b11fbe4c3e956e782e44f7fdba93f75508621baa00bce7b17",
+  "rank.json": "08f54728cdb12fb1c953e7f771b7b968f5893c2e69a1991d2c84f01fb4f99f4f",
+  "same_occupation.json": "fc451f24a2639378ed42bbf9ae1bda990018a5fdff9f325fe454b12e583db41a"
+ },
+ "gates": {
+  "fod1p_unmapped_persons": 0,
+  "negative_weight_cells": 329,
+  "occp_without_label": [],
+  "same_occupation_majors_present": {
+   "grad=0": 73,
+   "grad=1": 73
+  },
+  "south_florida_pumas": 52
+ },
+ "git_commit": "7cf670d62fe8d4015ad0124dfa5a02c2895082c3",
+ "sources": {
+  "raw/acs1-2024/csv_pus.zip": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
+  "raw/acs5-2020-2024/csv_pus.zip": "7e8f4f189d850fef9dd79de0ae0c6a6398471df27631e5a6613479b739e06d27"
+ },
+ "spec": {
+  "spec/acs5-panels.yaml": "2d031e6760acc3f7409ae000cfdad3b12e57ae926c455577eb87890a70822af4",
+  "spec/front-end.yaml": "f7a021b05e27cc530fa99f432c5314b00a7864bf3c7f87a9cfc5f45fa1d63a0c",
+  "spec/major73.csv": "0682075400397f0c84e2a55f87888bd5b81a6d86c2276df81b0ca12aed5b3d47",
+  "spec/rank-panel.yaml": "65cc71e9c84e40a24a40047a035ac811c48300b881e7385984048d1615c2af1e"
+ },
+ "stats": {
+  "acs1": {
+   "civilian_employed_recent_grads": 51729,
+   "civilian_employed_recent_grads_unscored": 0,
+   "fod1p_missing_persons": 0,
+   "fod1p_unmapped_persons": 0,
+   "pwgtp_sum": 43818205,
+   "records_kept": 401748
+  },
+  "acs5": {
+   "fod1p_unmapped_persons": 0,
+   "pwgtp_sum": 69469358,
+   "records_kept": 3306902
+  }
+ },
+ "worktree_dirty": false,
+ "years": {
+  "other": "ACS 2020-24 5-year",
+  "rank": "ACS 2024 1-year"
+ }
+}
