@@ -1,10 +1,16 @@
 {
  "confirmed": {},
- "decision": "nothing",
- "errors": [],
- "last_attempt": "2026-10-26T15:55:22Z",
+ "decision": "error",
+ "errors": [
+  "HEAD https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip: fixture has no answer (connection error)",
+  "GET https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.csv: fixture has no answer (connection error)",
+  "HEAD https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pus.zip: fixture has no answer (connection error)",
+  "GET https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2020-2024.csv: fixture has no answer (connection error)",
+  "HEAD https://www2.census.gov/programs-surveys/acs/data/pums/2025/1-Year/csv_pus.zip: fixture has no answer (connection error)"
+ ],
+ "last_attempt": "2026-10-26T15:57:39Z",
  "last_success": "2026-10-26T15:55:22Z",
  "live": "2024-1yr_2020-24-5yr_6f8bddb5-542f98",
  "reasons": [],
- "run_url": "https://github.com/bryanpcutsinger/econ-major-dashboard/actions/runs/40354016996"
+ "run_url": "https://github.com/bryanpcutsinger/econ-major-dashboard/actions/runs/40354370041"
 }
